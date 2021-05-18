@@ -13,7 +13,7 @@ import travelMaker.model.dto.GroupMemberDTO;
 
 @Repository
 public class GroupMemberDAOImpl implements GroupMemberDAO { 
-	
+	 
 	@Autowired
 	private SqlSessionTemplate sqlSession = null;
 	
