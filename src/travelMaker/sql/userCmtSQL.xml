@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  
+<mapper namespace="userCmt">
+
+<!-- groupMember테이블에서 사용자가 참여중인거 DTO가져오기 -->
+<select id="myGroup" parameterType="string" resultType="GroupMemberDTO">
+	select * from GroupMember where id=#{id} and status=1
+</select>
+
+<!-- 그룹고유번호에 맞는 그룹정보 가져오기 -->
+<select id="getGroupInfo" parameterType="int" resultType="GroupSpaceDTO">
+	select * from GroupSpace where gNo=#{num}
+</select>
+
+<select id="getMem" parameterType="int" resultType="GroupMemberDTO">
+	select * from groupMember where gNo=#{gNo} and status=1
+</select>
+
+<!-- comment 남겼는지 확인 -->
+<select id="chcomment" parameterType="Hashmap" resultType="int">
+	select count(*) from userCmt where receiver=#{recId} and sender=#{senId} and gNo=#{gNo}
+</select>
+
+
+<!-- 코멘트 넣기 -->
+<insert id="insertCom" parameterType="Hashmap">
+	insert into userCmt values(#{gNo}, comment_seq.nextval, #{recId}, #{senId}, #{comment}, 0, sysdate)
+</insert>
+
+<!-- 사용자 여행그룹 갯수 -->
+<select id="countGroup" parameterType="String" resultType="int">
+	select count(*) from groupMember where id=#{id}
+</select>
+
+<!-- 코멘트DTO가져오기 받는사람 : 사용자일떄-->
+<select id="comRecUser" parameterType="Hashmap" resultType="UserCmtDTO">
+	select * from userCmt where receiver=#{id} and status=0
+</select>
+
+<!-- 코멘트DTO가져오기 보낸사람 : 사용자일떄-->
+<select id="comSenUser" parameterType="Hashmap" resultType="UserCmtDTO">
+	select * from userCmt where sender=#{id} and status=0
+</select>
+
+<!-- 여행가져오기 -->
+<select id="selectGroupMem" parameterType="int" resultType="GroupMemberDTO">
+	select * from groupmember where gNo=#{groupNum}
+</select>
+
+<!-- 코멘트작성에서 사용할 코멘트 확인 -->
+<select id="cmtCh" parameterType="Hashmap" resultType="int">
+	select count(*) from userCmt where gNo=#{gNo} and receiver=#{recMem}
+</select>
+
+<!-- 사용자가 작성한 코멘트 전체수확인 -->
+<select id="cntCmt" parameterType="Hashmap" resultType="int">
+	select count(*) from userCmt where gNo=#{gNo} and sender=#{senId}
+</select>
+
+<!-- 코멘트 작성 가능한 여행카운트 status=4 -->
+<select id="okCmtGroupCnt" parameterType="int" resultType="int"> 
+	select count(*) from GroupSpaceDTO where gNo=${gNo} and status=4
+</select>
+
+<!-- 받는사람이 사용자인거 카운트 receiver=사용자 -->
+<select id="comRecUserCnt" parameterType="Hashmap" resultType="int">
+	select count(*) from userCmt where gNo=#{gNo} and receiver=#{id}
+</select>
+
+<!-- 보낸사람이 사용자인거 카운트 sender=사용자 -->
+<select id="comSenUserCnt" parameterType="Hashmap" resultType="int">
+	select count(*) from userCmt where gNo=#{gNo} and sender=#{id}
+</select>
+
+</mapper>

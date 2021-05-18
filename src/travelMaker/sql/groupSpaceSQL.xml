@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  
+<mapper namespace="groupSpace">
+
+	<insert id="insertMaking" parameterType="GroupSpaceDTO">
+		<selectKey keyProperty="gNo" resultType="int" order="BEFORE">
+			select groupSpace_seq.nextVal from dual
+		</selectKey>
+		insert into groupSpace values(#{gNo},#{id},#{subject},#{concept},#{maxNum},#{actualNum},#{closingDate},#{startDate},#{endDate},#{loc},#{dongsung},#{courseExpl},#{addExpl},#{po1},#{po2},#{po3},#{cost},#{status},#{likedCnt},#{readCnt},#{shared},#{genReview},sysdate)
+	</insert>
+		
+	<select id="getArticleCount" resultType="int">
+		select count(*) from groupSpace where status=0
+	</select>
+	
+	<select id="getSearchArticleCount" parameterType="hashmap" resultType="int">
+		<![CDATA[
+		select count(*) from groupSpace where status=0 and startDate>=#{startD} and endDate<=#{endD}
+		]]>
+	</select>
+	
+	<select id="getArticles" parameterType="hashmap" resultType="GroupSpaceDTO">
+		<![CDATA[
+		(select a.*, r FROM (select groupSpace.*, rownum r from groupSpace where status=0 order by reg desc) a where r>=#{start} and r<=#{end})
+		]]>
+	</select>
+	
+	<select id="getSearchArticles" parameterType="hashmap" resultType="GroupSpaceDTO">
+		<![CDATA[
+		select b.*, r from (select a.*, rownum r from 
+		(select * from groupSpace where startDate>=#{startD} and endDate<=#{endD} order by reg desc) a order by reg desc) b 
+		where r>=#{start} and r<=#{end} and startDate>=#{startD} and endDate<=#{endD} and status=0
+		]]>
+	</select>
+	
+	<select id="getContent" parameterType="int" resultType="GroupSpaceDTO">
+		select * from groupSpace where gNo=#{gNo}
+	</select>
+	
+	<delete id="deleteContent" parameterType="int">
+		delete from groupSpace where gNo=#{value}
+	</delete>
+	
+	<update id="updateActNum" parameterType="hashmap">
+		update groupSpace set actualNum=actualNum+#{actualNum} where gNo=#{gNo}
+	</update>
+	
+	<!-- jbr 그룹관리 : 전체 그룹 가져오기 -->
+	<select id="groupAllList" resultType="GroupSpaceDTO">
+		select * from groupspace order by gNo DESC
+	</select>
+	
+	<!-- jbr 그룹관리 : 전체 그룹 개수 -->
+	<select id="groupAllCnt" resultType="int">
+		select count(*) from groupspace
+	</select>
+	 
+	<!-- jbr 그룹관리 : 검색 결과 카운트  -->
+	<select id="searchGroupCtn" parameterType="hashmap" resultType="int">
+		select count(*) from groupspace where ${sel} like '%'||#{search}||'%'
+	</select>
+	 
+	<!-- jbr 그룹관리 : 검색 결과 가져오기  -->
+	<select id="searchGroupList" parameterType="hashmap" resultType="GroupSpaceDTO">
+		select * from groupspace where ${sel} like '%'||#{search}||'%'
+	</select>
+	
+	<!-- jbr gNo에 해당하는 그룹스페이스 가져오기 -->
+	<select id="getGroup" parameterType="int" resultType="GroupSpaceDTO">
+		select * from groupspace where gNo=#{gNo}
+	</select>
+	
+	
+	<update id="changeGrpStatus" parameterType="hashmap">
+		update groupSpace set status=#{status} where gNo=#{gNo}
+	</update>
+	
+	<select id="getAllGroups" resultType="GroupSpaceDTO">
+		select * from groupSpace
+	</select>
+	
+	<!-- 개설자 여행총평 -->
+	<update id="genReview" parameterType="Hashmap">
+		update groupspace set genReview=#{genReview} where gNo=#{gNo}
+	</update>
+	
+	<!-- 공개여부 업데이트 -->
+	<update id="updateShared" parameterType="Hashmap">
+		update groupspace set shared=${shared} where gNo=#{gNo}
+	</update>
+	
+</mapper>

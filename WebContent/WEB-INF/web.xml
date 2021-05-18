@@ -1,12 +1,50 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd" id="WebApp_ID" version="3.1">
-  <display-name>filo</display-name>
-  <welcome-file-list>
-    <welcome-file>index.html</welcome-file>
-    <welcome-file>index.htm</welcome-file>
-    <welcome-file>index.jsp</welcome-file>
-    <welcome-file>default.html</welcome-file>
-    <welcome-file>default.htm</welcome-file>
-    <welcome-file>default.jsp</welcome-file>
-  </welcome-file-list>
+	
+	<!-- ERROR PAGE -->
+	<error-page>
+		<error-code>500</error-code>
+		<location>/mem/error500page.fl</location>
+	</error-page>
+	<error-page>
+		<error-code>404</error-code>
+		<location>/mem/error404page.fl</location>
+	</error-page>
+	
+	<!-- 클러스터링 
+	<distributable/>
+	-->
+	
+	<!-- 한글 인코딩 처리 -->
+	<filter>
+		<filter-name>characterEncodingFilter</filter-name>
+		<filter-class>org.springframework.web.filter.CharacterEncodingFilter</filter-class>
+		<init-param>
+			<param-name>encoding</param-name>
+			<param-value>UTF-8</param-value>
+		</init-param>
+	</filter>
+	<filter-mapping>
+		<filter-name>characterEncodingFilter</filter-name>
+		<url-pattern>/*</url-pattern>
+	</filter-mapping>
+	
+	<!-- 서블릿 매핑: 스프링MVC가 웹 요청을 처리하려면 DispatcherServlet을 통함 -->
+	<servlet>
+		<servlet-name>filo</servlet-name>
+		<servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
+		<init-param>
+			<param-name>contextConfigLocation</param-name>
+			<param-value>
+				/WEB-INF/controller/filo-context.xml
+			</param-value>
+		</init-param>
+	</servlet>
+	
+	<servlet-mapping>
+		<servlet-name>filo</servlet-name>
+		<url-pattern>*.fl</url-pattern>
+	</servlet-mapping>
+
 </web-app>
+

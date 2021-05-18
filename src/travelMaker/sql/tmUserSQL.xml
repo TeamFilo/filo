@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  
+<mapper namespace="tmUser">
+
+	<insert id="insertMember" parameterType="TmUserDTO">
+		insert into tmUser (id,pw,name,nickname,email,birth,gender,rk,position1,position2,travelcnt,posmodi,status,reg)  values (#{id},#{pw},#{name},#{nickname},#{email},#{birth},#{gender},1,0,0,0,0,0,sysdate)
+	</insert>
+	
+	<select id="idPwCheck" parameterType="TmUserDTO" resultType="int">
+		select count(*) from tmUser where id=#{id} and pw=#{pw}
+	</select>
+	
+	<select id="emailCheck" parameterType="string" resultType="int">
+		select count(*) from tmUser where email=#{email}
+	</select>
+	
+	<select id="getMemInfo" parameterType="string" resultType="TmUserDTO">
+		select * from tmUser where email=#{email}
+	</select>
+	
+	<select id="idEmailCheck" parameterType="TmUserDTO" resultType="int">
+		select count(*) from tmUser where id=#{id} and email=#{email}
+	</select>
+	
+	<update id="pwChange" parameterType="TmUserDTO">
+		update tmUser set pw=#{pw} where id=#{id}
+	</update>	
+
+	<select id="getMember" parameterType="string" resultType="TmUserDTO">
+		select * from tmUser where id=#{id}
+	</select>
+
+	<select id="getGender" parameterType="string" resultType="int">
+		select gender from tmUser where id=#{id}
+	</select>
+	
+	<update id="updaNick" parameterType="string">
+		update tmUser set nickname=#{nickname} where id=#{id}
+	</update>	
+	
+	<update id="changeStat" parameterType="hashMap">
+		update tmUser set status=#{status} where id=#{id}
+	</update>
+	
+	<select id="getMembers" parameterType="hashMap" resultType="TmUserDTO">
+		<![CDATA[
+			select b.*, r from (select a.*,rownum r from
+			(select * from tmUser order by reg desc)a
+			order by reg desc)b where r>=#{start} AND r<=#{end}
+		]]>
+	</select>
+	
+	<select id="getSearchMembers" parameterType="string" resultType="TmUserDTO">
+		select * from tmUser where id like '%'||#{search}||'%'
+	</select>
+	
+	<select id="getSearchMemberCount" parameterType="string" resultType="int">
+		select count(*) from tmUser where id like '%'||#{search}||'%'
+	</select>
+	
+	<select id="getMemberCount" resultType="int">
+		select count(*) from tmUser 
+	</select>
+	
+	<select id="getPosName" parameterType="int" resultType="string">
+		select posName from smallpos where posno=#{posNo}
+	</select>
+
+	<select id="getAllPos" resultType="SmallPosDTO">
+		select posno,posname from smallpos order by posno
+	</select>
+	
+	<update id="updateMember" parameterType="TmUserDTO">
+		update tmUser set gender=#{gender},rk=#{rk},
+		position1=#{position1},position2=#{position2},travelCnt=#{travelCnt},status=#{status} 
+		where id=#{id}
+	</update>
+	
+	<select id="getRk" resultType="UserRkDTO">
+		select * from userrk order by rkno
+	</select>
+	
+	<insert id="insertRank" parameterType="UserRKDTO">
+		insert into userrk values (userrk_seq.nextval,#{rkName},#{rkNeed},#{rkExpl},#{rkAddExpl})
+	</insert>	
+	
+	<select id="getRkInfo" parameterType="int" resultType="UserRKDTO">
+		select * from userrk where rkNo=#{value}
+	</select>
+	
+	<update id="updateRank" parameterType="UserRKDTO">
+		update userrk set rkName=#{rkName},rkNeed=#{rkNeed},rkExpl=#{rkExpl},rkAddExpl=#{rkAddExpl} where rkNo=#{rkNo}
+	</update>
+	
+	<delete id="deleteRk" parameterType="string">
+		delete from userrk where rkNo=#{rkNo}
+	</delete>
+	
+	<select id="getSPos" resultType="SmallPosDTO">
+		select * from smallpos order by posNo
+	</select>
+	
+	<select id="getPosCount" resultType="int">
+		select count(*) from smallpos
+	</select>
+	
+	<select id="getPosList" parameterType="hashmap" resultType="SmallPosDTO">
+		<![CDATA[
+			select b.*, r from (select a.*,rownum r from
+			(select * from smallpos order by posNo desc)a
+			order by posNo desc)b where r>=#{start} AND r<=#{end}
+		]]>
+	</select>
+	
+	<insert id="addSPos" parameterType="SmallPosDTO">
+		insert into smallpos values (#{posCate},SMALLPOS_seq.nextval,#{posName},#{posExpl},#{posRoot})
+	</insert>	
+	
+	<select id="getSPosInfo" parameterType="int" resultType="SmallPosDTO">
+		select * from smallpos where posNo=#{value}
+	</select>
+	
+	<update id="updatePos" parameterType="SmallPosDTO">
+		update smallpos set posCate=#{posCate},posRoot=#{posRoot},posName=#{posName},posExpl=#{posExpl} where posNo=#{posNo}
+	</update>
+	
+	<delete id="deletePos" parameterType="string">
+		delete from smallpos where posNo=#{posNo}
+	</delete>
+	
+	<select id="idCheck" parameterType="string" resultType="int">
+		select count(*) from tmUser where id=#{id}
+	</select>
+	
+	<select id="selPosList" parameterType="string" resultType="SmallPosDTO">
+		select * from smallpos where posCate=#{posCate}
+	</select>
+	
+	<select id="exPwCheck" parameterType="string" resultType="string">
+		select pw from tmUser where id=#{id}
+	</select>
+	
+	<select id="eCheck" parameterType="string" resultType="int">
+		select count(*) from tmUser where email=#{email}
+	</select>
+	
+	<select id="nickCheck" parameterType="string" resultType="int">
+		select count(*) from tmUser where nickname=#{nickname}
+	</select>
+	
+	<select id="getAllMembers" resultType="TmUserDTO">
+		select * from tmUser
+	</select>
+	
+	<select id="getUserRanking" parameterType="string" resultType="int">
+		select a from (select id, rank() over (order by travelCnt desc) a from tmUser) where id=#{value}
+	</select>
+	
+	<update id="posDecision" parameterType="hashmap">
+		update tmUser set
+		<if test='num==1'>
+			position1=#{posNo}, posModi=#{num}
+		</if>
+		<if test='num==2'>
+			position2=#{posNo}, posModi=#{num}
+		</if>
+		where id=#{id}
+	</update>
+	
+	<update id="updateTravelCnt" parameterType="hashmap">
+		update tmUser set travelCnt = travelCnt + #{ud} where id = #{id}
+	</update>
+	
+	
+</mapper>

@@ -1,0 +1,551 @@
+@charset "UTF-8";
+/*client.css*/
+
+/*index*/
+/*basic*/
+.c-red {color:#ff0000;}
+
+.titWrap .tit1 {color:#444; font-family: 'Play', serif; font-size: 115px; font-weight: 600;}
+.titWrap .tit2 {line-height: 48px; letter-spacing: -1.1px; font-size: 37px; font-weight: 500;}
+.titWrap .txt {line-height: 26px; letter-spacing: -0.4px; font-size: 17px; font-weight: 300; margin: 15px 0 40px;}
+
+.btnMore {line-height: 35px; color:#000; font-size:20px; font-weight: 400;}
+.btnMore:hover {color:#ff0000;}
+
+.btnWrap {overflow: hidden; display: inline-block; position: relative;left: 50%; transform: translateX(-50%);}
+.btnWrap .btn {float: left; display: inline-block; color:#fff; font-size:20px; font-weight:500; cursor:pointer; padding: 20px 60px; margin: 0 3px;}
+.btnWrap .btn.btnY {background:#ff0000;}
+.btnWrap .btn.btnC {background:#444;}
+.btnWrap .txt {text-align: center; font-size:17px; font-weight: 500; margin: 0 0 20px;}
+
+/*mainVisual*/
+.mainVisual {width: 100%; height: calc(85vh + 80px); background: url(../images/tm/mv1.jpg)no-repeat center; background-size: 100% auto; position:relative;}
+.mainVisual .mvCover {display:none; width: 100%; height: 100%; background: rgba(0,0,0,.75); position:absolute;}
+.mainVisual .titWrap {position:absolute;top: 30%;left: 50%; transform: translateX(-50%);}
+.mainVisual .titWrap .tit1 {display: none; text-align: center; color:#fff;}
+.mainVisual .titWrap .tit2 {display: none; text-align: center; color:#fff; font-size: 25px; font-weight:100; margin: 30px 0 0;}
+.mainVisual .scDown {position:absolute;bottom: 0;left: 50%; transform: translateX(-50%);}
+.mainVisual .scDown .txt {text-align: center; color:#fff;}
+.mainVisual .scDown .move {overflow:hidden; width:3px; height:200px; background:rgba(255,255,255,.3); margin: 30px auto 0; position:relative;}
+.mainVisual .scDown .move .bar {width:3px; height:100px; background:#fff; animation: scd 2s linear infinite; position:absolute;top:0;}
+@-webkit-keyframes scd {
+    0% {
+        top: -100px;
+    }
+    100% {
+        top: 330px;
+    }
+}
+
+
+/*rankM*/
+.rankM {overflow: hidden; position: relative;}
+.rankM .rankBg {width: 43%; height: 80vh; background: url(../images/tm/rankBg.jpg)no-repeat left top; background-size: auto 100%; position: absolute;top: 0;right: 0; z-index: -1;}
+.rankM .rankBg img {height: 100%;}
+.rankM .titWrap {margin: 11% 0 180px 20%;}
+.rankM .titWrap .tit1 {margin: 0 0 70px -50px;}
+.rankM .titWrap .tit2 {}
+.rankM .titWrap .txt {width: 550px; margin: 25px 0 30px;}
+.rankM .gr {width:150px; color:#000; font-size: 22px; font-weight: 500; letter-spacing: -1px; padding: 0 50px 0 0; position: relative;}
+.rankM .gr span {display: block; width: 50px; height: 22px; background:url(../images/tm/goRight.png)no-repeat center; background-size: auto 100%; position: absolute;bottom: 0;right: 5px;}
+.rankM .gr:hover span {animation: gr .3s linear infinite alternate;}
+
+.flow {float: left; overflow: hidden; margin: 0 0 0 7%;}
+.flow li {float: left; width: 250px; margin-right: 5px; position: relative;}
+.flow li img {display: block; height: 130px; filter: grayscale(100%); margin: 0 auto;}
+.flow li.on img {height: 130px; filter: grayscale(0%);}
+.flow li:hover img {height: 130px; filter: grayscale(0%);}
+.flow li .name {text-align: center; letter-spacing: -0.4px; font-size:24px; font-weight: 600; margin: 37px 0 16px;}
+.flow li .txt {line-height: 26px; text-align: center; letter-spacing: -0.7px; font-size:16px; font-weight: 300;}
+.flow li .rnext {width: 9px; height: 9px; background:url(../images/tm/rnext.png)no-repeat center; background-size: 100% auto; position: absolute;top: 25%;right: 0;transform:translateY(-50%);}
+
+.rankM .titWrap.right {float:left; text-align: right; margin: 30px 0 0 50px;}
+.rankM .titWrap.right .tit2 {width: 400px;}
+.rankM .titWrap.right .txt {width: 400px;}
+
+/*posM*/
+.posM {margin: 250px 0 0;}
+
+.posM .titWrap {width: 1200px; margin: 0 auto;}
+.posM .titWrap .tit1 {margin: 0 0 70px -50px;}
+.posM .titWrap .tit2 {}
+.posM .titWrap .txt {margin: 25px 0 80px;}
+.posM .titWrap .btnMore {margin: 0 0 100px;}
+
+.posM .posBgWrap {overflow: hidden;}
+.posM .posBg1 {float: left; width: 45%; height: 400px; background: #000;}
+.posM .posBg2 {float: left; width: 15%; height: 200px; background: #000;}
+
+.posSlide {position: relative;}
+.posSlide #posTit {color:#fff; font-size: 45px; font-weight: 300; transition:.5s .2s; position: absolute;top: 210px;left: calc(28.8% + 100px); z-index: 2;}
+.posSlide .cont {overflow: hidden;}
+.posSlide .cont li {overflow: hidden; float: left; width: 7%; height: 550px; background: #eee; filter: grayscale(100%); cursor:pointer; transition:.4s; margin-right: 0.2%; position: relative;}
+.posSlide .cont li img {height: 100%; position: absolute;bottom: 0;left: 0; z-index:1;}
+.posSlide .cont li .txtWrap {position: absolute;top: 20px;left: 20px; z-index:2;}
+.posSlide .cont li .txtWrap .tit {writing-mode: vertical-rl; color:#fff; font-size:25px; font-weight: 100;}
+.posSlide .cont li .txtWrap .txt {display: none; line-height: 26px; color:#fff; font-size:17px; font-weight: 100;}
+.posSlide .cont li:last-child {margin: 0;}
+.posSlide .cont li.on {width: 64%; cursor:default; background-size: 110% auto; filter: grayscale(0);}
+.posSlide .cont li.on .txtWrap {top:auto;bottom: 170px;left: 100px;}
+.posSlide .cont li.on .txtWrap .tit {writing-mode: unset; font-size:35px; font-weight: 500; margin-bottom: 15px;}
+.posSlide .cont li.on .txtWrap .txt {display: block;}
+.posSlide .cont li:hover {filter: grayscale(0);}
+
+/*travelM*/
+.travelM {overflow: hidden; padding: 180px 0 50px;}
+
+.travelM .titWrap {margin: 0 0 0 20%;}
+.travelM .titWrap .tit2 {margin: 40px 0 25px;}
+
+.tListWrap {overflow: hidden; margin: 50px 0 0 25%;}
+.tListWrap .tList {float: left; margin: 100px 100px 0 0; position: relative;}
+.tListWrap .tList li {width: 480px; margin: 0 0 120px;}
+.tListWrap .tList li img {display:block; width:100%;}
+.tListWrap .tList li .tit {font-size: 32px; font-weight: 500; letter-spacing: -1px; margin: 30px 0 20px;}
+.tListWrap .tList li .txt {line-height: 1.5; font-size: 16px; letter-spacing: -0.5;}
+.tListWrap .tList.tListR {margin: 0; position: relative;}
+
+.travelM .gr {color:#000; font-size: 22px; font-weight: 500; letter-spacing: -1px; padding: 0 50px 0 0; position: absolute;bottom: 0;right: 0;}
+.travelM .gr span {display: block; width: 50px; height: 22px; background:url(../images/tm/goRight.png)no-repeat center; background-size: auto 100%; position: absolute;bottom: 0;right: 5px;}
+.travelM .gr:hover span {animation: gr .3s linear infinite alternate;}
+@-webkit-keyframes gr {
+    0% {
+        right: 5px;
+    }
+    100% {
+        right: -5px;
+    }
+}
+
+/*landM*/
+.landM {width:100%; height:500px; background-color: #000; position: relative;}
+.landBg {overflow: hidden; width:100%; height:500px;  position:relative; z-index: 1;}
+.landBg .left {float:left; width:50%; height:500px; background-color:#20242a;}
+.landBg .right {float:left; width:50%; height:500px; background-color:#f1f1f1;}
+.landM .cont {min-width:1150px; min-height:354px; position:absolute; top:50%;left:50%; transform:translate(-50%,-50%); z-index:2;}
+.landM .cont .tit {color:#fff; font-family: 'Noto Serif TC', serif; font-size: 80px; font-weight: 500; position:absolute; left:200px; top:50px; z-index:3;}
+.landM .cont .map {position:absolute;top:50%;left:50%; transform:translate(-50%,-50%);}
+.landM .cont .info {line-height:28px;  font-size:18px; font-weight:lighter; position:absolute; right:150px; bottom:50px;}
+.landname {font-size: 30px; font-weight: 600; margin-bottom:10px;}
+.landM .cont .info .arrow {overflow: hidden;}
+.landM .cont .info .arrow a {float:right; color:#5066aa; font-size:12px;}
+
+
+/*making*/
+.makingListWrap {width: 100%; margin: 0 auto;}
+
+.makingListWrap .titWrap {width: 1300px; padding: 140px 0 130px 340px; margin: 0 auto; position: relative;}
+.makingListWrap .titWrap .myMakeBtn {display: inline-block; color:#444; font-size: 25px; font-weight: 600; cursor: pointer; margin: 50px 0 0;}
+.makingListWrap .titWrap .myMakeBtn span {float: left; display: block; width: 50px; height: 25px; background: url(../images/tm/da.png)no-repeat center; background-size: auto 100%; position: relative;}
+.makingListWrap .titWrap .myMakeBtn.on span {background: url(../images/tm/ua.png)no-repeat center; background-size: auto 100%;}
+.makingListWrap .titWrap .myMakeBtn:hover span {animation: da .3s linear infinite alternate;}
+.makingListWrap .titWrap .goMake {width: 230px; height: 380px; position: absolute;bottom: 20px;left: 0;}
+.makingListWrap .titWrap .goMake .txt {text-align: center; font-size:30px; font-weight: 500; transition:.3s;}
+.makingListWrap .titWrap .goMake:hover .txt {opacity:0;}
+.makingListWrap .titWrap .goMake a {display: block; width: 100%; height: 100%; position: absolute;top: 0;left: 0; z-index:1;}
+.makingListWrap .titWrap .goMake .bag {width: 100%; transition:.3s; position: absolute;top: 55px;left: 0;}
+.makingListWrap .titWrap .goMake .bag.bag2 {animation: bag .3s linear infinite alternate;}
+.makingListWrap .titWrap .goMake .bag.bag3 {animation: bag3 .3s linear infinite alternate; top: 70px;}
+.makingListWrap .titWrap .goMake:hover .bag {animation: bag .3s linear infinite alternate;}
+.makingListWrap .titWrap .goMake:hover .bag.bag3 {animation: bag3 .3s linear infinite alternate;}
+.makingListWrap .titWrap .goMake .bagsh {opacity:0; transition:.3s; position: absolute;bottom: 0;left: 50%; transform: translateX(-50%);}
+.makingListWrap .titWrap .goMake:hover .bagsh {opacity:.6;}
+@-webkit-keyframes bag {
+    0% {
+        top: 55px;
+    }
+    100% {
+        top: 45px;
+    }
+}
+@-webkit-keyframes bag3 {
+    0% {
+        top: 70px;
+    }
+    100% {
+        top: 80px;
+    }
+}
+@-webkit-keyframes da {
+    0% {
+        top: 0px;
+    }
+    100% {
+        top: 5px;
+    }
+}
+
+.makingListWrap .myMake {display: none; width: 1300px; border: 2px solid #777; padding: 50px 50px 0; margin: 0 auto 80px; position: relative;top:-30px;}
+.makingListWrap .myMake .tit {font-size: 17px; font-weight: 600; margin: 0 0 15px;}
+.makingListWrap .myMake .txt {font-size: 17px; font-weight: 400; margin: 0 0 40px;}
+
+.makingListWrap .myMake .list {overflow: hidden;}
+.makingListWrap .myMake .list li {float: left; width: 22%; height: 100px; background: #444; border-radius: 5px; margin: 0 4% 4% 0; padding: 30px; position: relative;}
+.makingListWrap .myMake .list li:nth-child(4n) {margin: 0 0 4% 0;}
+.makingListWrap .myMake .list li a {width: 100%; height: 100%; position: absolute;top: 0;left: 0;}
+.makingListWrap .myMake .list li .sub {color: #fff; font-size: 18px; font-weight: 500;}
+
+.searchMake {width: 100%; height: 100px; background: #333; margin: 0 0 80px; position: relative;}
+.searchMake .inner {overflow: hidden; display: inline-block; padding: 24px 0 0; position: absolute;left: 50%; transform: translateX(-50%);}
+.searchMake .inner .dp {float: left; line-height:52px; color:#fff; font-size: 20px; font-weight: 300; margin: 0 20px 0 0;}
+.searchMake .inner .dp input {height: 46px; background: transparent; border-bottom: 2px solid #fff; outline: 0; line-height:52px; color:#fff; font-size: 20px; font-weight: 400; margin: 0; padding: 0;}
+.searchMake .inner .sc {float: left;}
+.searchMake .inner .sc input {width: 48px; height: 48px; background: url(../images/tm/ic_search.png)no-repeat center, #fff; background-size: 23px; cursor:pointer;}
+
+.makingList {overflow: hidden; width: 1300px; margin: 0 auto;}
+.makingList li {float: left; width: 22%; height: 300px; border: 0; transition: .3s; margin: 0 4% 4% 0; position: relative;}
+.makingList li:nth-child(4n) {margin: 0 0 4% 0;}
+.makingList li a {display: block; width: 100%; height: 100%; position: absolute;top: 0;left: 0; z-index:2;}
+.makingList li .no {}
+.makingList li .tit {width:100%; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; font-size: 27px; font-weight: 500; border-bottom: 1px solid #ccc; padding: 0 40px 15px 0; margin: 0 0 30px; position:relative; z-index:1;}
+.makingList li .tit span {float: right; display: none; width: 27px; height: 20px; background: url(../images/tm/ra.png)no-repeat center; background-size: auto 100%; margin-top: 3.5px; position:absolute;top:0;right:0;}
+.makingList li .date {font-size:20px;}
+.makingList li .date2 {color:#777; font-size:14px;}
+.makingList li .txt {display: inline-block; width: 100%; font-size: 16px; line-height: 1.2; max-height: 3.6em; overflow: hidden; display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; margin: 15px 0;}
+.makingList li .maker {display:inline-block; font-size: 20px; font-weight: 500; margin: 0 0 7px; position:relative; z-index:3;}
+.makingList li .cost {font-size: 20px; font-weight: 500; margin: 0 0 13px;}
+.makingList li:hover .tit span {display: block;}
+
+/*makingCont*/
+.makingContWrap {overflow: hidden; width: 1200px; background: #eee; border-radius: 10px; margin: 120px auto 80px; padding: 80px;}
+.makingContWrap .titWrap {text-align: center; margin: 0 0 50px;}
+.makingContWrap .fl {float: left; width: 48%; margin: 0 4% 40px 0;}
+.makingContWrap .fl2 {float: left; width: 48%; margin: 0 4% 0 0;}
+.makingContWrap .fl.mz {margin: 0;}
+.makingContWrap .txtWrap {margin: 0 0 30px;}
+.makingContWrap .txtWrap .sub {font-size:15px; font-weight: 600; margin: 0 0 7px;}
+
+.makingContWrap .txtWrap .txt {min-height: 56px; background: #fff; border-radius: 3px; line-height: 1.6; font-size:20px; font-weight: 400; padding: 12px 20px; position:relative;}
+.makingContWrap .txtWrap .txt2 {padding:0;}
+.makingContWrap .txtWrap .txt3 {padding:30px;}
+.makingContWrap .txtWrap .txt > .txt {width:100%; line-height:56px; font-size:17px; border:0; padding: 0 15px;}
+.makingContWrap .txtWrap .txt > .txt2 {width:200px; height:52px; border-bottom: 2px solid #000; line-height:54px; font-size:17px; padding: 0 15px;}
+.makingContWrap .txtWrap .txt > .txt3 {width:500px;}
+.makingContWrap .txtWrap .txt3 textarea {width:100%; border:0; font-size:17px; font-weight: 400; padding: 0;}
+.makingContWrap .txtWrap .txt span {position:absolute;right:50px;}
+.makingContWrap .line {clear:both; width: 100%; height: 1px; background: #ddd; margin: 0 0 40px;}
+
+/*groupSpace*/
+.gsWrap {width: 1300px; padding:80px 0; margin: 0 auto;}
+
+.chatWrap {padding:20px 20px 0 0; position:fixed;top:17%;right:10%; z-index:5;}
+.chatWrap .btnChat {width:40px; height:40px; border-radius:100%; background:url(../images/tm/close.png)no-repeat center,#555; background-size:18px; cursor:pointer; transition:.2s; position:absolute;top:0;right:0; z-index:2;}
+.chatWrap .btnChat:hover {background:url(../images/tm/close.png)no-repeat center,#111; background-size:18px;}
+.chatWrap .btnChat.on {width:40px; height:40px; border-radius:100%; background:url(../images/tm/chico.png)no-repeat center,#555; background-size:18px; transition:.2s; position:absolute;top:0;right:0;}
+.chatWrap .btnChat.on:hover {background:url(../images/tm/chico.png)no-repeat center,#b6a4ff; background-size:18px;}
+.chatWrap .chat {overflow: hidden; width: 400px; height:300px; border-radius: 7px;}
+.chatWrap .chat.off {display:none;}
+.chatWrap .chat .viewChatWrap {overflow: auto; width: 100%; height:260px; background: #b6a4ff; padding: 35px;}
+.chatWrap .chat .viewChatWrap li {line-height:30px; height:30px; text-align: left; color: #fff;}
+.chatWrap .chat .viewChatWrap li.mine {text-align: right;}
+.chatWrap .chat .sendChatWrap {overflow: hidden;}
+.chatWrap .chat .sendChatWrap #sendChat {float:left; width: 80%; height: 40px; background: #eee; border: 0; padding: 0 0 0 15px;}
+.chatWrap .chat .sendChatWrap #sendChatBtn {float:left; width: 20%; height: 40px; background: #555; border: 0; color:#fff; font-size:14px; font-weight:600; cursor: pointer; padding: 0;}
+
+.gsMenu {overflow: hidden;}
+.gsMenu li {float: left; line-height: 40px; color:#ccc; font-size: 24px; font-weight: 600; cursor:pointer; margin: 0 40px 0 0;}
+.gsMenu li a {color:#ccc;}
+.gsMenu li.on {color:#000; border-bottom: 3px solid #000;}
+.gsMenu li.on a {color:#000;}
+.gsMenu li:hover a {color:#000;}
+
+.gsCont {}
+.gsCont .titWrap {margin: 30px 0 50px;}
+
+.gsHome {display: block;}
+.gsHome .list {overflow: hidden; background: url(../images/tm/gsBg.png)no-repeat center top; background-size: 1300px;}
+.gsHome .list li {float: left; width: 575px; height: 600px;}
+.gsHome .list li:nth-child(1) {padding: 200px 40px 0 70px; margin: 0 50px 0 0;}
+.gsHome .list li:nth-child(2) {width: 540px; padding: 200px 0 0 30px;}
+.gsHome .list li:nth-child(3) {padding: 50px 40px 100px 70px; margin: 150px 0 0;}
+.gsHome .list li:nth-child(4) {overflow: auto; padding: 50px 40px 100px 70px; margin: 150px 0 0;}
+.gsHome .list li .tit {color:#fff; font-size:55px; font-weight: 600; margin: 0 0 30px;}
+.gsHome .list li:nth-child(4) .tit {text-align:right; color:#000; font-size:55px; font-weight: 600; margin: 0 0 30px;}
+.gsHome .list li:nth-child(4) .txt {text-align:right; line-height:1.6; font-size:20px; font-weight: 400;}
+.gsHome .list li .write {margin: 0 0 50px;}
+.gsHome .list li select {background:transparent; border:0; color:#fff; font-size:20px; font-weight:500;}
+.gsHome .list li input {background:transparent; border:0; border-bottom:2px solid #fff; color:#fff; font-size:20px; font-weight:500;}
+.gsHome .list li input.btn {background:#fff; border:0; line-height:27px; color:#000; font-size:14px; font-weight:600; cursor:pointer; padding: 0 15px;}
+.gsHome .list li textarea {width: 100%; height: 100%; border: 0;}
+.gsHome .list li .inner {overflow:auto; height:250px;}
+.gsHome .list li .inner .txt {line-height:1.6; font-size:20px; font-weight: 500;}
+.gsHome .list li .inner .writeDown {margin: 0 0 30px;}
+.gsHome .list li .inner .writeDown input.date {border: 0; line-height:1.6; font-size:17px; font-weight: 400;}
+.gsHome .list li .inner .writeDown input.txt {width:100%; border: 0; line-height:1.6; font-size:17px; font-weight: 400;}
+.gsHome .list li .inner .writeDown .ent {width:100%; height:0;}
+.mang {float:left; margin-right:5px;}
+
+
+.gsGal .list {overflow: hidden; margin: 50px 0 0;}
+.gsGal .list li {overflow: hidden; float: left; width: 24.25%; height: 320px; background: #eee; padding: 25px 15px; margin: 0 1% 1% 0;}
+.gsGal .list li:nth-child(4n) {margin: 0 0 1% 0;}
+.gsGal .list li .tic1 {font-size:17x; font-weight: 500; margin: 0 0 10px; position:relative;}
+.gsGal .list li .tic1 span {font-size:20px; font-weight: 500; position:absolute;top:-5px;right:0;}
+.gsGal .list li img {display: block; width: 100%;}
+
+
+.gsGal .btnY {float:none;}
+.mang {float:left; margin-right:5px;}
+
+
+
+/*gallery*/
+.gallery {overflow: hidden;}
+.gallery li {float: left; width:32.33%; min-height: 350px; background: #eee; margin: 0 1.5% 1.5% 0;}
+.gallery li:nth-child(3n) {float: left; width:32.34%; margin: 0 0 1.5% 0;}
+
+
+/*manual*/
+/*main*/
+.manualWrap {position:relative; width:100%;}
+.manualHead {position:relative; background: url(../images/tm/forest.png) no-repeat rgba(0,0,0,0.9); background-size:cover; min-height:500px;}
+.headCont {position:absolute; padding:150px 15% 20px; color:#ffffff; }
+.headTitle {font-size:50px; font-weight:bold; line-height:70px; margin-bottom:30px;}
+.headSubTitle {font-size:20px; line-height:30px; font-weight:lighter;}
+.manualBody {padding:180px 15%; }
+.manualTitle {font-size:35px; font-weight:bold; margin-bottom:20px;}
+.manualSubTit {font-size:20px; font-weight:lighter;}
+.picWrap {overflow:hidden; margin-top:25px;}
+.manualPic {position:relative; float:left; width:49%; height:490px;}
+.sec {margin-left:2%;}
+.picTxt { position:absolute; left:20px; bottom:20px; color:#ffffff; font-weight:lighter;}
+.manualMix {overflow:hidden; margin-top:150px; }
+.txtArea {padding: 0 30px;  float:left; width:49%; height:490px; }
+.txtTitle {font-size:36px; font-weight:bold; margin-bottom:20px;}
+.txtCont {font-size:30px; font-weight:lighter; line-height:40px; margin: 35px 0;}
+.posTxt {margin-top:150px;}
+.posPic {width:100%; height:490px; border:solid 1px; margin:25px 0;}
+.posA {color:#5066aa; font-size:20px; float:right;}
+.soloT {background: url(../images/tm/soloT.png) no-repeat rgba(0,0,0,0.9); background-size:cover;}
+.groupT {background: url(../images/tm/groupT.png) no-repeat rgba(0,0,0,0.9); background-size:cover;}
+.picTxtHead {margin-bottom:10px;}
+
+/*rank*/
+.rankHead {padding:5px 0; overflow:hidden;}
+.rankLeft {position:relative; border-style:solid; border-width: 0 3px 0 0 ; float:left; width:20%; height: 150px;}
+.rankNeed {position:absolute; top:50px; right:30px;}
+.rankRight {float:left; width:70%; font-size:20px; margin-left:100px; line-height:30px; letter-spacing:2px; font-weight:thin;}
+.rankBody {overflow:hidden; margin-top:120px;}
+.rightTit {font-weight:lighter; border-bottom:solid 0.5px; margin-bottom:10px; padding: 0 0 10px 0;}
+.rightSub {font-weight:lighter;}
+.firstRank {overflow:hidden;}
+.rankRLeft {height:250px;}
+.rankA {margin-top:100px; font-size:15px;}
+
+/*position*/
+.posTitle {font-size:30px; font-weight:bold; margin-bottom:20px;}
+.posEx {margin-top:30px;}
+.beer {width:80px; height:80px; background: url(../images/tm/bus.png) no-repeat; background-size:cover;}
+
+
+/*member*/
+/*loginForm*/
+.loginCover {width:700px; margin:0 auto; padding:100px 0; }
+.loginForm {height:600px; padding: 60px 70px; text-align:left;font-size: 16px; border: 1px solid #e5e5e5;}
+.loginForm h1 {text-align:left; margin: 0 0 30px 0; font-weight:600; font-size:50px;}
+.input-area input {width:100%; left:0; font-size:17px; padding: 50px 2px 20px; border:none; border-bottom:1px solid #cccccc; outline:none;}
+input::placeholder {font-size:17px;}
+.set-login {margin:45px 0 10px; font-size:14px;} 
+.btn-area {margin-top:60px;}
+.btn-area button {width:100%; height:50px; border-radius: 4px; color:#ffffff; font-size: 17px; background-color:#ff0000; border:0; cursor:pointer;}
+.caption {margin-top:50px; font-size:17px;}
+.caption .list_user {float:right;}
+.caption .list_user li {float:left; margin-left:5px;}
+.caption a{color:rgba(0,0,0,0.7);}
+
+
+/*signupForm*/
+#signupWrap {position:relative; height:100%; vertical-align:middle; padding:150px 0;}
+#signup-head {text-align:center; margin:0 auto; }
+#signup-title{font-weight:400; font-size:32px;}
+#signup-article {overflow:hidden; position: relative; width:580px; margin:40px auto; padding: 58px 69px 139px; border: 1px solid #e5e5e5; border-radius: 2px; box-sizing: border-box;}
+#signup-article input {width:80%; left:0; height:28px; padding: 11px 70px 8px 0; border:none; border-bottom:1px solid #cccccc; outline:none; font-size:16px; }
+.tf_required {display: block; font-size: 12px; color: #000; font-weight: normal; margin-top: 40px;}
+#signup-radio {margin-top:20px;}
+#signup-radio .radioDetail {float:left; width:20px; margin:0 40px 0 0;}
+.radioDetail .gen {position:relative; left:7px; font-size:13px;}
+#sign-btn {width:100%; margin-top:60px; height: 50px; padding: 0; border: 0; border-radius: 4px; font-size: 15px; color: #ffffff; cursor:pointer; background-color:#ff0000;}
+
+/*new signupForm*/
+.tableWrap {display:table; width:100%; height:100%;}
+.signupWrap {display:table-cell; vertical-align:middle; padding:50px 0; position:relative;}
+.signHead {max-width:520px; margin:0 auto; text-align:center; font-size:30px; font-weight:500;}
+.signArticle {max-width:680px; min-height:592px; margin:40px auto; padding:58px 69px 139px; border:1px solid #e5e5e5; border-radius:2px; box-sizing:border-box;}
+.signArticle h2 {margin-bottom:23px; font-size:24px; line-height:34px; color:#252525; font-weight:normal;}
+
+.formBox {position:relative;}
+.inputTit {display:block; margin-top:40px; font-size:12px; font-weight:normal;}
+.inputArea {position:relative; padding-right:0;}
+.inputPlace {overflow:hidden; font-size:15px; cursor:pointer; position:relative; display:block;}
+.signInput {width:100%; height:48px; border-width:0 0 2px 0; border-color:#ebebeb; padding: 11px 70px 8px 0; font-family: 'Play', 'Noto Sans KR', sans-serif; font-size:18px; font-weight:bold; color: #252525; box-sizing: border-box; text-decoration: none;}
+.screenIn {position:absolute; top:0; left:0; width:100%; height:47px; line-height:47px; color:#ccc;}
+.screenOut {overflow:hidden; width:0; height:0; line-height:0; position:absolute; text-indent:-999px;}
+.existError {margin-top:10px; color:#e65f3e; font-size:13px;}
+
+.wrapRadio {}
+.radioItem {display:inline-block; height:48px; line-height:47px;}
+.radioItem label {font-size:15px; color:#4c4c4c; cursor:pointer;}
+.radioItem+.radioItem {margin-left:50px;}
+
+.signBtn {width:100%; margin-top:60px; height: 50px; padding: 0; border: 0; border-radius: 4px; font-size: 15px; color: #ffffff; cursor:pointer; background-color:#a1a1a1;}
+.signBtn:hover {background-color:#ff0000;}
+
+.errorBor {border-color:#e65f3e;}
+.errorBor1 {border-color:#e65f3e;}
+input:focus {outline:none;}
+
+/*findId*/
+.travelPWrap {display:table; width:100%; height:100%; min-width:320px;border-collapse: separate;}
+.travelPWrap .travelWrap {position: relative; display: table-cell; height: 100%; vertical-align: middle;  padding: 200px 0;}
+.travelHead h1 {font-weight:400; font-size:32px; text-align:center; }
+.tArticle {position: relative; max-width: 580px; min-height: 440px; margin: 40px auto; padding: 70px 69px 100px; border: 1px solid #e5e5e5; border-radius: 2px; box-sizing: border-box;}
+.titMain {font-size: 24px; line-height: 34px; color: #252525; letter-spacing: -1px; font-weight: normal;}
+.descMain {margin-top: 15px; text-align: left; color:#7c7c7c;}
+.formArea {margin-top:4px;}
+.itemTf {position: relative; padding-right: 0;}
+.itemTf input {width:80%; left:0; height:28px; padding: 13px 70px 8px 0; border:none; border-bottom:1px solid #cccccc; outline:none; font-size:16px;}    
+.subBtn {width:100%; margin-top:60px; height: 50px; padding: 0; border: 0; border-radius: 4px; font-size: 15px; color: #ffffff; cursor:pointer; background-color:#ff0000;}    
+    
+/*findIdPro*/
+.wrapFind {margin-top: 20px; border-top: 1px solid rgba(0,0,0,0.08);}
+.boxFind {padding: 20px 0; border-bottom: 1px solid rgba(0,0,0,0.08); letter-spacing: 0;} 
+.txtContact {font-size:20px; font-weight:bold; color:#191919; margin-botton:30px;}
+.linkComm {text-decoration: underline;color: #2c88de; font-size:12px;margin: 20px 0 0;}
+.descMain .findIdPro {line-height:5px;}
+
+
+/*mypage*/
+/*makingCont == myHistoryCont == CompletedCont*/
+.aContWrap {margin-bottom:300px;}
+.aContHead {overflow:hidden; padding:20px 0; margin-bottom:30px;}
+.aContHead .pageTit {float:left; width:80%;}
+.aContLine {float:right; width:20%; text-align:right;}
+.aContLine p {font-size:18px; line-height:30px; position:relative; top:20px;}
+.aContInfo {padding:20px 0;}
+.aInfoTit {float:left; width:100%; text-align:left; font-weight:normal; font-size:35px; margin-bottom:50px; padding:10px 0; border-bottom:1px #d3d3d3 solid;}
+.aContBox {width:100%; overflow:hidden; margin-bottom:60px;}
+.aContLeft {float:left; width:10%; color:#a1a1a1;}
+.aContRight{float:left; width:80%; padding:0 40px 0;}
+.aMemTit {padding-top:20px;}
+.aMemCnt {font-size:23px; margin-bottom:15px;}
+.aMemPos {margin-bottom:50px;}
+.aConList {overflow: hidden;}
+.aConList li {float: left; width: 24.25%; height: 200px; border: 0; background: #777; transition: .3s; padding: 45px; margin: 0 1% 1% 0; position: relative;}
+.aConList li:nth-child(4n) {margin: 0 0 1% 0;}
+.comBtn {width: 130px;height: 40px; margin:10px 3px; padding: 0; border: 0; border-radius: 4px; font-size: 15px; color: #191919; background-color: #e9e9e9; cursor:pointer;}
+.comBtn:hover {background-color:#d6d6d6;}
+.btnRight {float:right; margin-top:100px;}
+textarea {resize:none; padding:20px;}
+.lastWrap {margin-top:50px;}
+
+/*myhome 승헌 다녀감*/
+/*myhome 승헌 다녀감*/
+.myContainer {padding-top:80px;}
+.myContainer .myBg {width:100%; height:650px; background-image: url(/portfolio/resources/images/tm/myBg.png); background-repeat: no-repeat; background-size:cover;}
+.topCont {width:800px; color:#fff; margin:0 auto; position:relative; top:50%; transform:translateY(-50%);}
+.topCont .tit {font-family: 'Noto Serif TC', serif; font-size: 90px; line-height: 110px; text-align: center; font-weight: 500; margin-bottom: 10px;}
+.topCont .sub {margin: 50px 0 0; line-height: 48px; text-align: center; color: #fff; font-size: 25px; font-weight: 100;}
+
+.myPageWrap {padding:60px 0 120px; width:1180px; margin:auto; box-sizing:border-box; position:relative;}
+.myPageWrap2 {padding:150px 0; width:1180px; margin:auto; box-sizing:border-box; position:relative;}
+.myPageWrap3 {padding:0 0 150px;} 
+.myPageWrap .pageTit {font-size:56px; font-weight:bold; color:#000; line-height:1.5; letter-spacing:-1.5px;}
+.myPageWrap .pageSub {font-size:18px; line-height:1.89; letter-spacing:-0.7px; font-weight:normal; margin-top:30px;}
+.myPageWrap img {width:100%; margin-top: 60px;}
+.myPageWrap .HomeSubTit {font-size: 24px; line-height: 1.5; letter-spacing: -0.7px; font-weight: bold; color: #000; display: inline-block; margin-top: 80px; margin-bottom:30px;}
+.myPageWrap .HomeSubCont {font-size:17px; line-height: 1.5; margin-bottom:50px;}
+.myPageWrap .travelList {overflow:hidden;}
+.myPageWrap .travelList ul {margin-left: -20px;}
+.myPageWrap .travelList ul li {float: left;  width: 25%; box-sizing: border-box; padding-left: 20px; padding-bottom: 20px; position: relative;}
+.myPageWrap .travelList ul li div {background: rgba(0,0,0,.8); height: 244px; box-sizing: border-box; padding: 30px; color: #fff;  position: relative;}
+.myPageWrap .travelList ul li .ing {background: rgb(255, 0, 0); height: 244px; box-sizing: border-box; padding: 30px; color: #fff;  position: relative;}
+.myPageWrap .travelList ul li div .date {font-size: 12px; font-weight: lighter; line-height: 1.43;}
+.myPageWrap .travelList ul li div .title {font-size: 20px; font-weight: 500; line-height: 2; letter-spacing: -0.7px;}
+.myPageWrap .travelList ul li div .position {position: absolute; bottom: 30px; width: 100%; box-sizing: border-box; padding: 0 30px; font-size: 16px; line-height: 1.75; letter-spacing: -0.8px; font-weight: normal; left: 0;}
+.myPageWrap .rpinner {padding: 0 0 170px 400px; position:relative;}
+.myPageWrap .rank {position:absolute; left:0px; top:0;}
+.myPageWrap .rpinner h2 {font-family: 'Noto Serif TC', serif; font-size:80px; font-weight:500; line-height:1.2; color:#000;}
+.myPageWrap .rpinner .rank .rankCont {margin-top:30px; font-size:16px; line-height:1.5; color:#555; }
+.myPageWrap .rpinner .rank .rankCont .barArea p {color:#000; font-size:24px; font-weight:500;}
+.barArea .bar {margin:10px 10px 30px 0;}
+.barArea .bar span {font-size:15px;}
+.rankCont .auth {line-height: 30px;}
+.myPageWrap .rpinner .position .posList li {border-bottom:1px #e5e5e5 solid; letter-spacing:-0.5px; font-size:16px; line-height:1.5; color:#555; padding:30px 0;}
+.myPageWrap .rpinner .position .posList li strong {font-size:24px; font-weight:500; line-height:1.5; letter-spacing:-0.6px; color: #000; display:block; margin-bottom:20px;}
+.myPageWrap .rpinner .position .posList li span {overflow:hidden; display:inline-block; width:740px; height:26px; text-overflow:ellipsis; font-weight:400; white-space:nowrap;}
+.xPos {padding-top:30px; font-size:17px;}
+.position #cont2 {margin-top:120px;}
+.posSelList li {margin-bottom:10px;}
+.posSelList .posName {padding:0 3px 0 5px; font-size:17px; font-weight:bold;}
+.posSelList .posExpl {font-size:16px; letter-spacing:-1px;}
+progress {-webkit-appearance: none; }
+::-webkit-progress-bar {background-color: rgb(235, 235, 235); }
+::-webkit-progress-value {background-color: rgb(255, 0, 0); }
+
+/*MyTravel*/
+.infoList {overflow:hidden; margin-top: 120px; margin-left: -100px;}
+.infoList li {float: left;  width: 50%; box-sizing: border-box; padding-left: 100px; margin-bottom: 100px; font-family: 'Noto Sans kR', sans-serif; }
+.infoList h2 {font-size: 32px; font-weight: bold; line-height: 48px; letter-spacing: -1px; color: #000; border-bottom: 1px #000 solid; padding-bottom: 10px;}
+.infoList h2 .posA {font-size: 13px; font-weight: lighter; line-height: 78px; letter-spacing: -1px;}
+.infoList dl {margin-top: 20px; position: relative; box-sizing: border-box; padding-left: 100px; font-size: 16px; font-weight: 500; letter-spacing: -0.7px; color: #000; line-height: 28px;}
+.infoList dt {position: absolute; left: 0; text-align: left;}
+.infoList .cos {font-weight:normal;}
+
+/*MyComment*/
+.commentTab {text-align: left; margin-top: 100px; padding-bottom: 120px;}
+.commentTab li {display: inline-block; position: relative; font-size: 24px; font-weight: 500; line-height: 40px; letter-spacing: -1px; box-sizing: border-box; padding: 0 20px 0 0;}
+.commentTab li:nth-child(2) {padding: 0 20px ;}
+.commentTab a{color:#888;}
+.commentTab a.active{color:#000;}
+.commentTab li::before {content: ''; display: block; width: 1px; height: 20px; background: #d4d4d4; position: absolute; left: 0; top: 50%; margin-top: -10px;}
+.commentTab ul::after {content: '';display: block; clear: both;}
+.com {margin-bottom: 50px; font-size:40px; font-weight:500;}
+.commentContent {width:75%; margin-bottom:100px;}
+.comBox {position: relative; box-sizing: border-box; padding: 30px 0; padding-left: 400px; border-bottom: 1px #ccc solid;}
+.comBox a {font-size:16px; padding-right: 12px;}
+.commentContent dl dt {position: absolute; width: 240px; padding-right: 60px; left: 0; top: 30px;}
+.commentContent dl dt strong {font-size:19px; font-weight: normal; line-height: 36px; letter-spacing: -0.5px; color: #000; display: block; margin-bottom: 20px;}
+.commentContent dl dd {position:relative;}
+.commentContent dl dd ul {margin-top:50px;}
+.commentContent dl dd p {font-size: 18px; line-height: 8px; letter-spacing: -0.5px; color: #000;}
+.send {margin-top:170px;}
+.comBox textarea {border:none;}
+/* #cont2 {position:relative; top:-100px;} */
+#cont2 form select {margin-bottom:80px; display:block; width:500px; padding:10px 10px;  font-family:inherit; font-size:30px; font-weight:500;  border:none; border-radius:0; border-bottom: 3px solid #000; -webkit-appearance: none; -moz-appearance: none; appearance: none; background: url('/portfolio/resources/images/tm/selectArro.jpg') no-repeat 95% 50%;}
+#cont2 form select:focus {outline:none;}
+#cont2 form textarea {width:1180px; border:none; background-color:#ececec; box-sizing:border-box; font-family:inherit; font-size:20px;}
+#cont2 form textarea:focus {outline:none;}
+#cont2 form button {float:left; margin:15px 2px 0 15px;}
+
+/*myLand*/
+#map {margin-top:60px; width: 100%; height: 400px;}
+.myLandCont {width:100%; margin-top:50px;}
+.btnMyWrap {overflow:hidden; margin-top:30px;}
+.btnY {float:right;  background:#ff0000; color:#fff; font-size:15px; font-weight:500; cursor:pointer; padding: 10px 30px; margin: 0 3px;}
+.btnC {float:right;  background:#444; color:#fff; font-size:15px; font-weight:500; cursor:pointer; padding: 10px 30px; margin: 0 3px;}
+.Cont .HomeSubTit {margin-top:40px; border-bottom: 1px #ccc solid; display:block;}
+.mapBox {margin-bottom:100px;}
+.content1 {overflow:hidden; margin-bottom:30px; }
+.mapLeft {float:left; font-size:20px; font-weight:500;}
+.mapRight {float:right;}
+.content2 {font-size:17px; font-weight:normal;}
+.content3 {font-size:17px; font-weight:normal;}
+.landTit {font-size:20px;}
+.likeLand li:nth-child(1) {float:left;}
+.likeLand {position:relative;}
+.likeLand li {position:relative; left:30px; top:-27px; margin-top:10px;}
+.lastBtn {margin-bottom:100px;}
+
+/*myModi*/
+.travelContent {padding-bottom:140px; padding-top:20px; background-color:#ffffff;}
+.mArticle {margin-top:100px;}
+.titModi {font-weight: normal; font-size: 35px; letter-spacing: 0; padding-bottom:20px;}
+.wrapModi {margin-top:10px; padding-bottom: 80px; border-top: 1px solid #7c7c7c;}
+.boxManage {margin-top:40px;}
+.boxManage:first-child {margin-top:30px;}
+.descComm {margin-top:4px; margin-bottom:20px; font-size:17px; color:#959595;}
+.boxSet {padding: 20px 25px 20px 0; border-bottom: 1px solid #ebebeb; font-size: 20px; color: #252525; }
+.titManage {font-weight: normal; font-size: 17px; color: #4a4a4a;}
+.titSet {font-weight:normal; font-size: 20px; color: #252525; }
+.txtSet {float:right; color:#5066aa;}
+.deleBtn {float:right; margin-top:40px; width:100px; height:35px;  padding: 3px 0; border: 0; font-size: 14px; color: #b2b2b2; cursor:pointer; background-color:#e7e7e7;;}

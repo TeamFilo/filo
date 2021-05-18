@@ -1,0 +1,10 @@
+/*card CSS*/
+.width500px{width: 450px; display: inline-block;}
+.center{text-align: center;}
+#startBtn{border: none; color: white; background-color: #FE9A2E; width: 80px;padding: 5px; font-weight: bold; cursor: pointer;}
+#cardTable{border-collapse: collapse;}
+#cardTable td{border: 1px solid #FE9A2E; width: 75px; height: 121px; text-align: center; cursor: pointer;}
+#cardTable td img{max-width: 70px;}
+#cardTable td span{font-size: 25pt; font-weight: bold; color: #FE9A2E; display: none;}
+#countDown{background-color: #FE9A2E; color: white; font-size: 20pt;}
+#info{width: 450px; height: 250px; background-color: #F7F2E0; color: white; padding-top: 230px;}

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  
+<mapper namespace="landmarkBoard">
+	<insert id="insertLand" parameterType="LandmarkBoardDTO">
+		insert into LANDMARKBOARD values(LANDMARKBOARD_SEQ.nextVal,#{writer},#{lName},#{lType},#{addr},#{xLoc},#{yLoc},#{lCont},#{lOpen},0,sysdate)
+	</insert>
+	
+	<select id="getLands" parameterType="int" resultType="LandmarkBoardDTO">
+		select * from LANDMARKBOARD
+	</select>
+	
+	<select id="getLand" parameterType="int" resultType="LandmarkBoardDTO">
+		select * from LANDMARKBOARD where lNo = #{value}
+	</select>
+	
+	<select id="myLand" parameterType="string" resultType="LandmarkBoardDTO">
+		select * from LANDMARKBOARD where writer=#{id}
+	</select> 
+	
+	<delete id="deletemyLand" parameterType="int">
+		delete from landmarkBoard where lNo=#{value}
+	</delete>
+	
+	<update id="landmarkLikedCnt" parameterType="int">
+		update LANDMARKBOARD set likedCnt=likedCnt+ #{ud} where lNo=#{lNo}
+	</update>
+</mapper>
