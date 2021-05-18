@@ -57,13 +57,23 @@
 		<constructor-arg value="D:\yoonseohuh\framework\workspace\travelMaker\tmGallery"/>
 	</bean>
 	 -->
-    <!-- DB 데이터 소스 db커넥션정보를 쓴다-->
+    <!-- DB 데이터 소스 db커넥션정보를 쓴다
     <bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource"
           destroy-method="close"
           p:driverClassName="oracle.jdbc.driver.OracleDriver"
           p:url="jdbc:oracle:thin:@123.108.162.94:1521:tmServer"
           p:username="travelmanager"
           p:password="1234" />
+          -->
+          
+    <!-- DB 데이터 소스 db커넥션정보를 쓴다-->
+    <bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource"
+          destroy-method="close"
+          p:driverClassName="oracle.jdbc.driver.OracleDriver"
+          p:url="jdbc:oracle:thin:@132.226.168.192:1521:filo"
+          p:username="ubuntu"
+          p:password="Filo12345678" />
+          
        
     <!-- 커넥션 풀 역할 -->
     <bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
