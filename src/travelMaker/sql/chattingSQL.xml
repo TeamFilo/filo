@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  
+<mapper namespace="chatting">
+
+	<insert id="sendChat" parameterType="hashmap">
+		insert into chatting values(#{gNo}, chatting_seq.nextVal, #{writer}, #{cont}, sysdate)
+	</insert>
+	
+	<select id="getChats" parameterType="int" resultType="ChattingDTO">
+		select * from chatting where gNo=#{gNo} order by reg asc
+	</select>
+	
+	<select id="getLastChat" parameterType="int" resultType="ChattingDTO">
+		select * from chatting where reg=(select max(reg) from chatting where gNo=#{gNo}); 
+	</select>
+	
+</mapper>

@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  
+<mapper namespace="groupMember">
+
+	<!-- null방지를 위해 getMemStatus 이전에 count수 먼저 체크 -->
+	<select id="getMemCnt" parameterType="hashmap" resultType="int">
+		select count(*) from groupMember where gNo=#{gNo} and id=#{id}
+	</select>
+	
+	<select id="getMemStatus" parameterType="hashmap" resultType="int">
+		select status from groupMember where gNo=#{gNo} and id=#{id}
+	</select>
+	
+	<insert id="insertMemToGroup" parameterType="GroupMemberDTO">
+		insert into groupMember values(#{gNo},#{id},#{nickname},'',#{status})
+	</insert>
+	
+	<select id="getMyGroups" parameterType="hashmap" resultType="GroupMemberDTO">
+		select * from groupMember where id=#{id} and status=#{status}
+	</select>
+	
+	<select id="getMembers" parameterType="int" resultType="GroupMemberDTO">
+		select * from groupMember where gNo=#{gNo}
+	</select>
+	
+	<update id="changeMemStatus" parameterType="hashmap">
+		update groupMember set status=#{status} where gNo=#{gNo} and id=#{id}
+	</update>
+	
+	<!-- 그룹삭제시 그룹멤버 삭제 -->
+	<delete id="deleteGroupMem" parameterType="int">
+		delete from groupMember where gNo=#{gNo}	
+	</delete>
+	
+	
+	<!-- 개설자 여행총평 -->
+	<update id="genReply" parameterType="Hashmap">
+		update groupMember set genReply=#{genReply} where gNo=#{gNo} and id=#{id}
+	</update>
+	
+	<!-- 총평 쓴거있는지 체크 -->
+	<select id="chReview" parameterType="Hashmap" resultType="GroupMemberDTO">
+		select * from groupMember where id=#{id} and gNo=#{gNo} 
+	</select>
+	
+	<!-- 코멘트 그룹멤버 카운트-->
+	<select id="groupMemCnt" parameterType="int" resultType="int">
+		select count(*) from groupMember where gNo=#{gNo} and status=1
+	</select>
+	
+	
+	
+</mapper>

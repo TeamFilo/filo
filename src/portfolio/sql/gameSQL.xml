@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  
+<mapper namespace="game">
+	
+	<!-- 회원가입 시 지갑 생성 -->
+	<insert id="addWallet" parameterType="string">
+		insert into wallet values(#{value},20,0,0,0,0)
+	</insert>
+	
+	<!-- 회원 지갑 정보 리턴 -->
+	<select id="userWallet" parameterType="string" resultType="WalletDTO">
+		select * from wallet where id=#{value}
+	</select>
+	
+	<!-- 회원 게임 정보 리턴 -->
+	<select id="userAllRecord" parameterType="string" resultType="GameRecordDTO">
+		select * from gameRecord where id=#{value}
+	</select>
+	
+	<!-- 게임 정보 리턴 -->
+	<select id="getGameInfo" parameterType="int" resultType="GameInfoDTO">
+		select * from gameInfo where gameCate=#{value}
+	</select>
+	
+	<!-- 게임 결과에 따른 포인트 적립 -->
+	
+	<!-- 포인트 소비 -->
+	
+	<!-- 복권, 룰렛 카운트 리셋 -->
+	<update id="resetCnt">
+		update wallet set lotteryCnt=0, rouletteCnt=0
+	</update>
+	
+	
+	<!-- 게임 결과 insert: 복권0/업다운1/가위바위보2/카드3 
+	<insert id="insertGame">
+		insert into gameRecord values(#{id},${gameCate},${score},sysdate)
+	</insert>
+	-->
+	
+	<insert id="insertRock" parameterType="hashMap">
+		insert into gameRecord values (game_seq.nextval,#{user},#{gameCate},#{gameResult})
+	</insert>
+	 
+	<insert id="insertUpdown" parameterType="hashMap">
+		insert into gameRecord values (game_seq.nextval,#{user},2,#{result})
+	</insert>
+	
+</mapper>
