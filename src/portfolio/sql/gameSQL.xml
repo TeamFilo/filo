@@ -7,7 +7,7 @@
 	
 	<!-- 회원가입 시 지갑 생성 -->
 	<insert id="addWallet" parameterType="string">
-		insert into wallet values(#{value},20,0,0,0,0)
+		insert into wallet values(#{value},20,0,0)
 	</insert>
 	
 	<!-- 회원 지갑 정보 리턴 -->
