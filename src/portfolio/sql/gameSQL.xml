@@ -35,6 +35,16 @@
 		select * from icon where iNo=#{value}
 	</select>
 	
+	<!-- 승패가 있는 경우 회원의 특정 게임 승률 리턴 -->
+	<select id="getWinningRate" parameterType="hashmap" resultType="int">
+		SELECT ((SELECT count(*) FROM gameRecord WHERE id=#{id} AND gameCate=#{gameCate} AND score=#{score})/(SELECT count(*) FROM gameRecord WHERE id=#{id} AND gameCate=#{gameCate})*100) d FROM dual
+	</select>
+	
+	<!-- 특정 게임에서 얻은 누적 포인트 리턴 
+	<select id="totalGetPoint" parameterType="hashmap" resultType="int">
+	</select>
+	-->
+	
 	<!-- 포인트 업데이트 -->
 	<update id="updatePoint" parameterType="hashmap">
 		update wallet set point=point+#{point} where id=#{id}
