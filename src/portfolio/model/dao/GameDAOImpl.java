@@ -61,10 +61,8 @@ public class GameDAOImpl implements GameDAO  {
 	//지갑에 포인트 업데이트
 	@Override
 	public void updatePoint(Map map) {
-	/*
-		1) 서비스에서 updatePoint() 메서드를 탄 경우라면 map에는 id와 needPoint가 있음
-		2) 서비스에서 insRecordPoint() 메서드를 탄 경우라면 map에는 id, gameCate, score가 있음
-	*/
+	/*	1) 서비스에서 updatePoint() 메서드를 탄 경우라면 map에는 id와 needPoint가 있음
+		2) 서비스에서 insRecordPoint() 메서드를 탄 경우라면 map에는 id, gameCate, score가 있음	*/
 		sqlSession.update("game.updatePoint",map);
 	}
 	
