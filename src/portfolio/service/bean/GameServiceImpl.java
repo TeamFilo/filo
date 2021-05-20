@@ -40,7 +40,7 @@ public class GameServiceImpl implements GameService {
 		return wallet;
 	}
 	
-	//회원 gameRecord 리턴
+	//회원의 모든 gameRecord 리턴
 	@Override
 	public List<GameRecordDTO> getGameRecord(String id) {
 		List<GameRecordDTO> records = gameDAO.getGameRecord(id);
@@ -54,10 +54,28 @@ public class GameServiceImpl implements GameService {
 		return info;		
 	}
 	
-	//게임 시 포인트 차감
+	//포인트 업데이트 (게임 시작 및 아이템 구매 등)
+	@Override
+	public void updatePoint(String id, int needPoint) {
+		Map map = new HashMap();
+		map.put("id",id);
+		//소모할 포인트(needPoint)를 point라는 key 값으로 보낸다
+		map.put("point",needPoint);
+		gameDAO.updatePoint(map);
+	}
 	
-	//게임 승패에 따른 포인트 획득
-	
+	//gameRecord테이블에 insert + wallet테이블에 포인트 추가
+	@Override
+	public void insRecordPoint(String id, int gameCate, int score) {
+		Map map = new HashMap();
+		map.put("id",id);
+		map.put("gameCate",gameCate);
+		//얻은 점수(score)를 point라는 key 값으로 보낸다
+		map.put("point",score);
+		gameDAO.insertRecord(map);
+		gameDAO.updatePoint(map);
+	}
+
 	
 	//Rock 승리 구분
 	@Override

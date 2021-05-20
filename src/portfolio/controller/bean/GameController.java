@@ -41,10 +41,21 @@ public class GameController {
 	@RequestMapping("updown.fl")
 	public String numUpDown(Model model) {
 		String user = (String)RequestContextHolder.getRequestAttributes().getAttribute("memId", RequestAttributes.SCOPE_SESSION);
-		int answer = (int)(Math.random()*25)+1;	//0~24 +1
-		//게임 시작 전 포인트 체크 후 게임 가능 여부 판별 → 게임 시작 시 포인트 차감
-		//gameService.getWallet(user);
-		model.addAttribute("answer",answer);
+		answer = (int)(Math.random()*25)+1;	//0~24 +1
+		if(user!=null) {
+			int needPoint = gameService.getGameInfo(1).getNeedPoint();
+			int userPoint = gameService.getWallet(user).getPoint();
+			boolean isPossible = false;
+			if(needPoint>userPoint) {
+				isPossible = false;	//게임 불가능
+			}else {
+				isPossible = true;	//게임 가능
+				gameService.updatePoint(user,-needPoint);	//포인트 차감
+			}
+			model.addAttribute("isPossible",isPossible);
+			model.addAttribute("answer",answer);
+		}
+		
 		return "/pf/game/numUpDown";
 	}
 	
@@ -53,17 +64,6 @@ public class GameController {
 	@RequestMapping("updownGuess.fl")
 	public Map numUpDownGuess(@RequestBody Map<String, Integer> map) throws Exception {
 		String user = (String)RequestContextHolder.getRequestAttributes().getAttribute("memId", RequestAttributes.SCOPE_SESSION);
-		
-		int needPoint = gameService.getGameInfo(1).getNeedPoint();
-		int userPoint = gameService.getWallet(user).getPoint();
-		int isPossible = 0;
-		
-		if(needPoint>userPoint) {
-			isPossible = 0;	//게임 불가능
-		}else {
-			isPossible = 1;	//게임 가능
-			
-		}
 		
 		int chance = map.get("chance");
 		int input = map.get("guess");
@@ -75,7 +75,7 @@ public class GameController {
 			if(input==answer) {
 				result = 1;
 				System.out.println("정답! user:"+user+"/result:"+result);
-				gameService.insertUpdown(user, result);
+				gameService.insRecordPoint(user,1,50);	//이기면 50포인트
 			}else if(input>answer) {
 				chance-=1;
 				end = input-1;
@@ -85,16 +85,21 @@ public class GameController {
 			}
 		}else if(chance<=1){
 			chance-=1;
-			result = 0;
-			System.out.println("실패! user:"+user+"/result:"+result);
-			gameService.insertUpdown(user, result);
+			if(input==answer) {
+				result = 1;
+				System.out.println("정답! user:"+user+"/result:"+result);
+				gameService.insRecordPoint(user,1,50);	//이기면 50포인트
+			}else {
+				result = 0;
+				System.out.println("실패! user:"+user+"/result:"+result);
+				gameService.insRecordPoint(user,1,0);	//지면 0포인트
+			}
 		}
 		map.put("input",input);
 		map.put("chance",chance);
 		map.put("start",start);
 		map.put("end",end);
 		map.put("result",result);
-		map.put("isPossible",isPossible);
 		return map;
 	}
 	

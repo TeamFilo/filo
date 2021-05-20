@@ -15,16 +15,16 @@ public interface GameService {
 	public void addWallet(String id);
 	//회원 wallet 리턴
 	public WalletDTO getWallet(String id);
-	//회원 gameRecord 리턴
+	//회원의 모든 gameRecord 리턴
 	public List<GameRecordDTO> getGameRecord(String id);
 	//게임 정보 리턴
 	public GameInfoDTO getGameInfo(int gameCate);
-	/*
-	//게임 시 포인트 차감
-	public void takePoint(String id, int gameCate);
-	//게임 승패에 따른 포인트 획득
-	public void getPoint(String id, int gameCate);
-	*/
+	
+	//포인트 업데이트 (게임 시작 및 아이템 구매 등)
+	public void updatePoint(String id, int needPoint);
+	//gameRecord테이블에 insert + wallet테이블에 포인트 추가
+	public void insRecordPoint(String id, int gameCate, int score);
+	
 	
 	//rock 승패여부
 	public int rockResult(int pScore, int cScore);

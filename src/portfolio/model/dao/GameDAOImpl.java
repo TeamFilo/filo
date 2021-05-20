@@ -1,5 +1,6 @@
 package portfolio.model.dao;
 
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -37,7 +38,7 @@ public class GameDAOImpl implements GameDAO  {
 		return wallet;
 	}
 	
-	//회원 gameRecord 리턴
+	//회원의 모든 gameRecord 리턴
 	@Override
 	public List<GameRecordDTO> getGameRecord(String id) {
 		List<GameRecordDTO> records = sqlSession.selectList("game.userAllRecord",id);
@@ -51,11 +52,21 @@ public class GameDAOImpl implements GameDAO  {
 		return info;
 	}
 	
+	//게임 레코드 insert
+	@Override
+	public void insertRecord(Map map) {
+		sqlSession.insert("game.insertRecord",map);
+	}
 	
-	
-	
-	
-	
+	//지갑에 포인트 업데이트
+	@Override
+	public void updatePoint(Map map) {
+	/*
+		1) 서비스에서 updatePoint() 메서드를 탄 경우라면 map에는 id와 needPoint가 있음
+		2) 서비스에서 insRecordPoint() 메서드를 탄 경우라면 map에는 id, gameCate, score가 있음
+	*/
+		sqlSession.update("game.updatePoint",map);
+	}
 	
 	
 	@Override

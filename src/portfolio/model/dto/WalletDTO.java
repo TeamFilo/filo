@@ -3,7 +3,8 @@ package portfolio.model.dto;
 public class WalletDTO {
 	
 	private String id;
-	private Integer point, lotteryCnt, rouletteVCnt;
+	private Integer point, lotteryCnt, rouletteCnt;
+	
 	public String getId() {
 		return id;
 	}
@@ -22,12 +23,11 @@ public class WalletDTO {
 	public void setLotteryCnt(Integer lotteryCnt) {
 		this.lotteryCnt = lotteryCnt;
 	}
-	public Integer getRouletteVCnt() {
-		return rouletteVCnt;
+	public Integer getRouletteCnt() {
+		return rouletteCnt;
 	}
-	public void setRouletteVCnt(Integer rouletteVCnt) {
-		this.rouletteVCnt = rouletteVCnt;
+	public void setRouletteCnt(Integer rouletteCnt) {
+		this.rouletteCnt = rouletteCnt;
 	}
-
 	
 }
