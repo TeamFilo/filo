@@ -18,6 +18,7 @@ public class TmUserDTO {
 	private Integer posModi;
 	private Integer status;
 	private Timestamp reg;
+	private String idColor, idIcon, idSkin;
 	
 	public String getId() {
 		return id;
@@ -103,5 +104,22 @@ public class TmUserDTO {
 	public void setReg(Timestamp reg) {
 		this.reg = reg;
 	}
-	
+	public String getIdColor() {
+		return idColor;
+	}
+	public void setIdColor(String idColor) {
+		this.idColor = idColor;
+	}
+	public String getIdIcon() {
+		return idIcon;
+	}
+	public void setIdIcon(String idIcon) {
+		this.idIcon = idIcon;
+	}
+	public String getIdSkin() {
+		return idSkin;
+	}
+	public void setIdSkin(String idSkin) {
+		this.idSkin = idSkin;
+	}
 }
