@@ -14,6 +14,7 @@
 		<typeAlias type="portfolio.model.dto.GameInfoDTO" alias="GameInfoDTO"/>
 		<typeAlias type="portfolio.model.dto.GameRecordDTO" alias="GameRecordDTO"/>
 		<typeAlias type="portfolio.model.dto.WalletDTO" alias="WalletDTO"/>
+		<typeAlias type="portfolio.model.dto.IconDTO" alias="IconDTO"/>
 		<typeAlias type="travelMaker.model.dto.TmUserDTO" alias="TmUserDTO"/>
 		<typeAlias type="travelMaker.model.dto.UserRkDTO" alias="UserRkDTO"/>
 		<typeAlias type="travelMaker.model.dto.LargePosDTO" alias="LargePosDTO"/>

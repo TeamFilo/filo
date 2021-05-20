@@ -15,38 +15,47 @@
 		select * from wallet where id=#{value}
 	</select>
 	
-	<!-- 회원 게임 정보 리턴 -->
+	<!-- 회원의 모든 게임 정보 리턴 -->
 	<select id="userAllRecord" parameterType="string" resultType="GameRecordDTO">
 		select * from gameRecord where id=#{value}
 	</select>
 	
-	<!-- 게임 정보 리턴 -->
+	<!-- 회원의 특정 게임 정보 리턴 -->
+	<select id="userGameRecord" parameterType="hashmap" resultType="GameRecordDTO">
+		select * from gameRecord where id=#{id} and gameCate=#{gameCate}
+	</select>
+	
+	<!-- 게임 하나 정보 리턴 -->
 	<select id="getGameInfo" parameterType="int" resultType="GameInfoDTO">
 		select * from gameInfo where gameCate=#{value}
 	</select>
 	
-	<!-- 게임 결과에 따른 포인트 적립 -->
+	<!-- 아이콘 하나 정보 리턴 -->
+	<select id="getIconInfo" parameterType="int" resultType="IconDTO">
+		select * from icon where iNo=#{value}
+	</select>
 	
-	<!-- 포인트 소비 -->
+	<!-- 포인트 업데이트 -->
+	<update id="updatePoint" parameterType="hashmap">
+		update wallet set point=point+#{point} where id=#{id}
+	</update>
+	
+	<!-- 게임 레코드 insert -->
+	<insert id="insertRecord" parameterType="hashmap">
+		insert into gameRecord values(#{id},#{gameCate},#{point},sysdate)
+	</insert>
 	
 	<!-- 복권, 룰렛 카운트 리셋 -->
 	<update id="resetCnt">
 		update wallet set lotteryCnt=0, rouletteCnt=0
 	</update>
 	
-	
-	<!-- 게임 결과 insert: 복권0/업다운1/가위바위보2/카드3 
-	<insert id="insertGame">
-		insert into gameRecord values(#{id},${gameCate},${score},sysdate)
-	</insert>
-	-->
-	
-	<insert id="insertRock" parameterType="hashMap">
-		insert into gameRecord values (game_seq.nextval,#{user},#{gameCate},#{gameResult})
+	<insert id="insertRock" parameterType="hashmap">
+		insert into gameRecord values (gameRecord_seq.nextval,#{user},#{gameCate},#{gameResult})
 	</insert>
 	 
-	<insert id="insertUpdown" parameterType="hashMap">
-		insert into gameRecord values (game_seq.nextval,#{user},2,#{result})
+	<insert id="insertUpdown" parameterType="hashmap">
+		insert into gameRecord values (#{user},1,#{result},sysdate)
 	</insert>
 	
 </mapper>
