@@ -2,6 +2,7 @@ package portfolio.controller.bean;
 
 import java.sql.SQLException;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 import java.util.Map;
 
@@ -27,12 +28,11 @@ public class GameController {
 	@Autowired
 	private GameService gameService = null;
 	
-	/*
-	@Scheduled(cron = "1 0 12 1/1 * ? *")
+	@Scheduled(cron = "1 0 0 * * *")
 	public void resetCnt() {
+		System.out.println("매일 0시 0분 1초 실행 ["+new Date()+"]");
 		gameService.resetCnt();
 	}
-	*/
 	
 	
 	int answer = 0;	//updown 시 ajax와 게임페이지에서 변수를 공유하기 위해 바깥으로 뺌
@@ -121,14 +121,18 @@ public class GameController {
 		int cScore = (int)map.get("cScoreResult");
 		System.out.println(pScore);
 		System.out.println(cScore);
-		int gameCate = 1;
+		
 		//게임 고유 번호, 아이디, 종목, 승패여부
 		//1. 스코어를 넣었을 때 승패 여부 알려주기
 		//승리시 1 패배시 0 
 		int gameResult = gameService.rockResult(pScore,cScore);
 		System.out.println("gameResult:"+gameResult);
 		//2. 아이디, 승패여부, 종목 db에 넣어주기 
-		gameService.insertRock(user,gameResult,gameCate);
+		if(gameResult==1) {
+			gameService.insRecordPoint(user, 2, 60);
+		}else if(gameResult==0) {
+			gameService.insRecordPoint(user, 2, 0);
+		}
 		
 		ObjectMapper mapper = new ObjectMapper();
 		String json = mapper.writeValueAsString(result);
