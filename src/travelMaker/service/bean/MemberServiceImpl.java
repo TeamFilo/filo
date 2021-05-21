@@ -15,8 +15,10 @@ import org.springframework.web.context.request.RequestAttributes;
 import org.springframework.web.context.request.RequestContextHolder;
 import org.springframework.web.context.request.ServletRequestAttributes;
 
+import travelMaker.model.dao.GroupSpaceDAO;
 import travelMaker.model.dao.SmallPosDAO;
 import travelMaker.model.dao.TmUserDAO;
+import travelMaker.model.dto.GroupSpaceDTO;
 import travelMaker.model.dto.SmallPosDTO;
 import travelMaker.model.dto.TmUserDTO;
 import travelMaker.model.dto.UserRkDTO;
@@ -28,6 +30,8 @@ public class MemberServiceImpl implements MemberService {
 	private TmUserDAO tmuserDAO = null;
 	@Autowired
 	private SmallPosDAO smallPosDAO = null;
+	@Autowired
+	private GroupSpaceDAO groupSpaceDAO = null;
 	
 	//회원 가입
 	@Override
@@ -453,8 +457,26 @@ public class MemberServiceImpl implements MemberService {
 	}
 	
 	//구매한 아이템 내정보에 업데이트
+	@Override
 	public void purchaseUpdate(String itemCate, String result) {
 		String id = (String)RequestContextHolder.getRequestAttributes().getAttribute("memId", RequestAttributes.SCOPE_SESSION);
 		tmuserDAO.purchaseUpdate(id, itemCate, result);
+		
+		//내가 작성한 그룹스페이스 글에 업데이트해줘야함 
+		List UserWriteList = getUserWrite(id);
+		
 	}
+	
+	//사용자가 개설한 여행목록 가져오기
+	@Override
+	public List getUserWrite(String id) {
+		List<GroupSpaceDTO> UserWriteList = groupSpaceDAO.getUserWrite(id);
+		
+		/*for(int i=0; i<UserWriteList.size(); i++) {
+			System.out.println("작성글 : " + ((GroupSpaceDTO)UserWriteList.get(i)).getPo1() );
+		}*/
+		
+		return UserWriteList;
+	}
+	
 }

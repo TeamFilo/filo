@@ -174,21 +174,7 @@
 		update tmUser set travelCnt = travelCnt + #{ud} where id = #{id}
 	</update>
 	
-	<!-- 스킨변경 -->
-	<update id="updateSkin" parameterType="hashmap">
-		update tmUser set idSkin=#{skin} where id=#{id}
-	</update>
-	
-	<!-- 색깔변경 -->
-	<update id="updateColor" parameterType="hashmap">
-		update tmUser set idColor=#{color} where id=#{id}
-	</update>
-	
-	<!-- 아이콘변경 -->
-	<update id="updateIcon" parameterType="hashmap">
-		update tmUser set idIcon=#{iNo} where id=#{id}
-	</update>
-	
+	<!-- 샵 구매건 회원정보 반영 -->
 	<update id="purchaseUpdate" parameterType="hashmap">
 		update tmUser set
 		<if test='itemCate == "memColor"'>

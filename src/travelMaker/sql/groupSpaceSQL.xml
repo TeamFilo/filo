@@ -92,4 +92,9 @@
 		update groupspace set shared=${shared} where gNo=#{gNo}
 	</update>
 	
+	<!-- 사용자가 개설한 여행 목록 가져오기 -->
+	<select id="getUserWrite" parameterType="String" resultType="groupSpaceDTO">
+		select * from groupspace where id =#{id}
+	</select>
+	
 </mapper>

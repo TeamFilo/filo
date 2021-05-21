@@ -179,5 +179,12 @@ public class GroupSpaceDAOImpl implements GroupSpaceDAO{
 		System.out.println("DAO 나옴");
 	}
 
+	//사용자가 개설한 여행목록 가져오기
+	@Override
+	public List getUserWrite(String id) {
+		List UserWriteList =  sqlSession.selectList("groupSpace.getUserWrite",id);
+		
+		return UserWriteList;
+	}
 	
 }
