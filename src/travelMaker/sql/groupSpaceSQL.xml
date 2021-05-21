@@ -9,7 +9,7 @@
 		<selectKey keyProperty="gNo" resultType="int" order="BEFORE">
 			select groupSpace_seq.nextVal from dual
 		</selectKey>
-		insert into groupSpace values(#{gNo},#{id},#{subject},#{concept},#{maxNum},#{actualNum},#{closingDate},#{startDate},#{endDate},#{loc},#{dongsung},#{courseExpl},#{addExpl},#{po1},#{po2},#{po3},#{cost},#{status},#{likedCnt},#{readCnt},#{shared},#{genReview},sysdate)
+		insert into groupSpace values(#{gNo},#{po1},#{po2},#{po3},#{id},#{subject},#{concept},#{maxNum},#{actualNum},#{closingDate},#{startDate},#{endDate},#{loc},#{dongsung},#{courseExpl},#{addExpl},#{cost},#{status},#{likedCnt},#{readCnt},#{shared},#{genReview},sysdate,#{idSkin})
 	</insert>
 		
 	<select id="getArticleCount" resultType="int">

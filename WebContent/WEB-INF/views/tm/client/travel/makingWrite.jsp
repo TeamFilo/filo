@@ -134,7 +134,7 @@
 				<input type="hidden" name="po1" id="po1"/>
 				<input type="hidden" name="po2" id="po2"/>
 				<input type="hidden" name="po3" id="po3"/>
-				
+				<input type="hidden" name="id" value="${sessionScope.memId}"/>
 				<div class="fl fl2">
 					<div class="txtWrap">
 						<p class="sub">여행 제목</p>

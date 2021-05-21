@@ -16,8 +16,22 @@ const game = ()=>{
         })
 
         playBtn.addEventListener('click', () => {
-            introScreen.classList.add('fadeOut');
-            match.classList.add('fadeIn');
+        	$(document).ready(function(event){
+				var data = {"gameCate":2};
+				$.ajax({
+					type:"post",
+					url: "/filo/game/pointCheck.fl",
+					dataType: "json",
+					contentType: "application/json",
+					data: JSON.stringify(data),
+					success : function(result){
+						var check = JSON.parse(result);
+						alert(check);
+					}
+				});
+	    	});
+    		introScreen.classList.add('fadeOut');
+    		match.classList.add('fadeIn');
         });
         
     };
@@ -114,7 +128,7 @@ const game = ()=>{
 				console.log(data);
 				$.ajax({
 					type:"post",
-					url: "/portfolio/game/insertRockResult.pf",
+					url: "/filo/game/insertRockResult.fl",
 					dataType: "json",
 					contentType: "application/json",
 					data: JSON.stringify(data),

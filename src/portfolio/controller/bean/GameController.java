@@ -20,6 +20,7 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 
 import portfolio.model.dto.GameInfoDTO;
 import portfolio.service.bean.GameService;
+import travelMaker.service.bean.MemberService;
 
 @Controller
 @RequestMapping("/game/")
@@ -27,6 +28,9 @@ public class GameController {
 	
 	@Autowired
 	private GameService gameService = null;
+	
+	@Autowired
+	private MemberService memService = null;
 	
 	@Scheduled(cron = "1 0 0 * * *")
 	public void resetCnt() {
@@ -105,14 +109,27 @@ public class GameController {
 	
 	//lsh rockPS game page
 	@RequestMapping("rockPS.fl")
-	public String rockPS() {
-		
+	public String rockPS(Model model) {
+		String user = (String)RequestContextHolder.getRequestAttributes().getAttribute("memId", RequestAttributes.SCOPE_SESSION);
+		String nick = memService.getMember(user).getNickname();
+		model.addAttribute("nickname",nick);
 		return "/pf/game/rockPS";
+	}
+	
+	@ResponseBody
+	@RequestMapping("pointCheck.fl")
+	public Map pointCheck(@RequestBody Map<String,Integer> map) {
+		String user = (String)RequestContextHolder.getRequestAttributes().getAttribute("memId", RequestAttributes.SCOPE_SESSION);
+		int needPoint = gameService.getGameInfo(map.get("gameCate")).getNeedPoint();
+		int userPoint = gameService.getWallet(user).getPoint();
+		map.put("needPoint",needPoint);
+		map.put("userPoint",userPoint);
+		return map;
 	}
 	
 	//lhs ajaxTest
 	@ResponseBody
-	@RequestMapping("insertRockResult")
+	@RequestMapping("insertRockResult.fl")
 	public String insertRockResult(@RequestBody Map<Object, Object> map)throws Exception {
 		String result ="";
 		String user = (String)RequestContextHolder.getRequestAttributes().getAttribute("memId", RequestAttributes.SCOPE_SESSION);
