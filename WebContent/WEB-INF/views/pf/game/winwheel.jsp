@@ -14,6 +14,8 @@
 	                        <div class="power_controls">
 	                            <br />
 	                            <br />
+	                            <!-- 
+	                            <br />
 	                            <table class="power" cellpadding="10" cellspacing="0">
 	                                <tr>
 	                                    <th align="center">Power</th>
@@ -28,10 +30,9 @@
 	                                    <td align="center" id="pw1" onClick="powerSelected(1);">Low</td>
 	                                </tr>
 	                            </table>
-	                            <br />
+	                             -->
 	                            <img id="spin_button" src="/filo/resources/images/pf/spin_off.png" alt="Spin" onClick="startSpin();" />
 	                            <br /><br />
-	                            &nbsp;&nbsp;<a href="#" onClick="resetWheel(); return false;">Play Again</a><br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(reset)
 	                        </div>
 	                    </td>
 	                    <td width="438" height="582" class="the_wheel" align="center" valign="center">
@@ -49,15 +50,15 @@
 	                'outerRadius'  : 212,   // Set outer radius so wheel fits inside the background.
 	                'textFontSize' : 28,    // Set font size as desired.
 	                'segments'     :        // Define segments including colour and text.
-	                [
-	                   {'fillStyle' : '#eae56f', 'text' : '5point'},
-	                   {'fillStyle' : '#89f26e', 'text' : '10point'},
-	                   {'fillStyle' : '#7de6ef', 'text' : '5point'},
-	                   {'fillStyle' : '#e7706f', 'text' : '10point'},
-	                   {'fillStyle' : '#eae56f', 'text' : '5point'},
-	                   {'fillStyle' : '#89f26e', 'text' : '10point'},
-	                   {'fillStyle' : '#7de6ef', 'text' : '100point'},
-	                   {'fillStyle' : '#e7706f', 'text' : '1point'}
+            	    [
+	                     {'fillStyle' : '#eae56f', 'text' : '5point'},
+	                     {'fillStyle' : '#89f26e', 'text' : '10point'},
+	                     {'fillStyle' : '#7de6ef', 'text' : '5point'},
+	                     {'fillStyle' : '#e7706f', 'text' : '10point'},
+	                     {'fillStyle' : '#eae56f', 'text' : '5point'},
+	                     {'fillStyle' : '#89f26e', 'text' : '10point'},
+	                     {'fillStyle' : '#7de6ef', 'text' : '100point'},
+	                     {'fillStyle' : '#e7706f', 'text' : '1point'}
 	                ],
 	                'animation' :           // Specify the animation to use.
 	                {
@@ -114,12 +115,12 @@
 	            // Code below for the power controls etc which is entirely optional. You can spin the wheel simply by
 	            // calling theWheel.startAnimation();
 	            // =======================================================================================================================
-	            let wheelPower    = 0;
+	            let wheelPower    = 4;
 	            let wheelSpinning = false;
-	
-	            // -------------------------------------------------------
-	            // Function to handle the onClick on the power buttons.
-	            // -------------------------------------------------------
+				/*
+	             -------------------------------------------------------
+	             Function to handle the onClick on the power buttons.
+	             -------------------------------------------------------
 	            function powerSelected(powerLevel)
 	            {
 	                // Ensure that power can't be changed while wheel is spinning.
@@ -150,12 +151,12 @@
 	                    document.getElementById('spin_button').className = "clickable";
 	                }
 	            }
-	           
+	           */
 	            // -------------------------------------------------------
 	            // Click handler for spin button.
 	            // -------------------------------------------------------
-	            function startSpin()
-	            {
+	            function startSpin(){
+	            	// ****** 여기다가 ajax 써서 cnt 확인하기 ******
 	                // Ensure that spinning can't be clicked again while already running.
 	                if (wheelSpinning == false) {
 	                    // Based on the power level selected adjust the number of spins for the wheel, the more times is has
@@ -180,10 +181,10 @@
 	                    wheelSpinning = true;
 	                }
 	            }
-	
-	            // -------------------------------------------------------
-	            // Function for reset button.
-	            // -------------------------------------------------------
+				/*
+	             -------------------------------------------------------
+	             Function for reset button.
+	             -------------------------------------------------------
 	            function resetWheel()
 	            {
 	                theWheel.stopAnimation(false);  // Stop the animation, false as param so does not call callback function.
@@ -196,6 +197,7 @@
 	
 	                wheelSpinning = false;          // Reset to false to power buttons and spin can be clicked again.
 	            }
+				*/
 	        </script>
 		</div>
 		<!-- //wrapAll end -->

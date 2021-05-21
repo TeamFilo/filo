@@ -211,11 +211,9 @@ public class GameController {
 		String user = (String)RequestContextHolder.getRequestAttributes().getAttribute("memId", RequestAttributes.SCOPE_SESSION);
 		String point[] = pointText.split("p");
 		int p = Integer.parseInt(point[0]);
-	//1)wallet에 포인트 추가	
-		gameService.updatePoint(user, p);
-	//2)wallet에 rouletteCnt +1
+	//1)wallet에 rouletteCnt +1
 		gameService.updateWheelCnt(user);
-	//3)gameRecord에 레코드 insert
+	//2)gameRecord에 레코드 insert
 		gameService.insRecordPoint(user, 4, p);
 	}
 }
