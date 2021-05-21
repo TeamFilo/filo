@@ -85,4 +85,6 @@ public interface TmUserDAO {
 	public void posDecision(String id, int num, int posNo) throws Exception;
 	//여행횟수 업데이트
 	public void updateTravelCnt(String id, int ud) throws Exception;
+	//구매한 아이템 내정보에 업데이트
+	public void purchaseUpdate(String id, String itemCate, String result);
 }
