@@ -98,22 +98,16 @@
 	            {
 	                // Do basic alert of the segment text.
 	                // You would probably want to do something more interesting with this information.
-	                
+	                var getPoint = indicatedSegment.text;
 					$.ajax({
 						url: "/filo/game/winwheelAjax.fl",
 						cache: false,
 						type: "POST",
 						dataType: "json",
 						contentType: "application/json",
-						data: indicatedSegment.text,
-						success: function(){
-							
-						}
+						data: JSON.stringify(getPoint),
 					});
-	                
-	                
-	                
-	                alert("축하합니다! " + indicatedSegment.text +"점이 적립됩니다!");
+	                alert("축하합니다! " +getPoint+"가 적립됩니다!");
 	            }
 	
 	            // =======================================================================================================================

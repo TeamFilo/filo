@@ -25,18 +25,15 @@ public interface GameService {
 	//gameRecord테이블에 insert + wallet테이블에 포인트 추가
 	public void insRecordPoint(String id, int gameCate, int score);
 	
-	
 	//rock 승패여부
 	public int rockResult(int pScore, int cScore);
-	//rock 결과 insert
-	public void insertRock(String user,int gameResult,int gameCate);
-	
 
 	public String randomNum();
-	public int[] oneToFifty();
-
-	//updown 결과 insert
-	public void insertUpdown(String user, int gameResult);
 	
-
+	//데일리 룰렛 횟수 올리기
+	public void updateWheelCnt(String user);
+	//복권 구매 횟수 올리기
+	public void updateLotteryCnt(String user);
+	
+	
 }

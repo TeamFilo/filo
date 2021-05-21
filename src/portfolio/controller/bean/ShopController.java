@@ -78,5 +78,4 @@ public class ShopController {
 		return "/pf/shop/purchaseSkinPro";
 	}
 	
-
 }

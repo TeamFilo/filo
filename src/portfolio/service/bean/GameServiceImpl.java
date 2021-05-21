@@ -89,17 +89,6 @@ public class GameServiceImpl implements GameService {
 		}
 		return result;
 	}
-	//Rock 결과 insert
-	@Override
-	public void insertRock(String user, int gameResult, int gameCate) {
-		//게임 결과 insert
-		Map rockMap = new HashMap();
-		rockMap.put("user", user);
-		rockMap.put("gameResult", gameResult);
-		rockMap.put("gameCate", gameCate);
-		gameDAO.insertRock(rockMap);
-	}
-
 	
 	//jbr
 	@Override
@@ -127,33 +116,16 @@ public class GameServiceImpl implements GameService {
 		return coupon;
 	}
 	
-	public int[] oneToFifty() {
-		int[] numArray = new int[10];
-		for(int i = 0; i < 10; i++) {
-			numArray[i] = (int)(Math.random()*10+1);
-			
-			for(int j = 0;  j < i; j++) {
-				if(numArray[i] == numArray[j]) {
-					i--;
-					break;
-				}
-			}
-		}
-		for(int i=0; i<numArray.length; i++) {
-			System.out.println("출력!" + numArray[i] );
-		}
-		
-		return numArray;
-	}
-	
+	//데일리 룰렛 횟수 올리기
 	@Override
-	public void insertUpdown(String user, int gameResult) {
-		Map map = new HashMap();
-		map.put("user", user);
-		map.put("result", gameResult);
-		gameDAO.insertUpdown(map);
+	public void updateWheelCnt(String user) {
+		gameDAO.updateWheelCnt(user);
 	}
 	
-	
+	//복권 구매 횟수 올리기
+	@Override
+	public void updateLotteryCnt(String user) {
+		gameDAO.updateLotteryCnt(user);
+	}
 	
 }
