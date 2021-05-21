@@ -110,6 +110,9 @@ public class MemberController {
 	public String logout(TmUserDTO dto, String auto) {
 		//세션 지워주기 
 		memService.removeSession("memId");
+		memService.removeSession("memColor");
+		memService.removeSession("memSkin");
+		memService.removeSession("memIcon");
 		//자동 로그인 했다면 쿠키 지워 주기 
 		memService.removeCookie(dto, auto);
 		
