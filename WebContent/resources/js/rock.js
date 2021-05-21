@@ -16,7 +16,6 @@ const game = ()=>{
         })
 
         playBtn.addEventListener('click', () => {
-        	$(document).ready(function(event){
 				var data = {"gameCate":2};
 				$.ajax({
 					type:"post",
@@ -25,13 +24,16 @@ const game = ()=>{
 					contentType: "application/json",
 					data: JSON.stringify(data),
 					success : function(result){
-						var check = JSON.parse(result);
-						alert(check);
+						var np = result.needPoint;
+						var up = result.userPoint;
+						if(up>=np){
+							introScreen.classList.add('fadeOut');
+							match.classList.add('fadeIn');
+						}else{
+							alert("포인트가 부족합니다!");
+						}
 					}
 				});
-	    	});
-    		introScreen.classList.add('fadeOut');
-    		match.classList.add('fadeIn');
         });
         
     };

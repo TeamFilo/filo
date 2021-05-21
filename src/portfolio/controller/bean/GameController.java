@@ -122,6 +122,9 @@ public class GameController {
 		String user = (String)RequestContextHolder.getRequestAttributes().getAttribute("memId", RequestAttributes.SCOPE_SESSION);
 		int needPoint = gameService.getGameInfo(map.get("gameCate")).getNeedPoint();
 		int userPoint = gameService.getWallet(user).getPoint();
+		if(userPoint>=needPoint) {
+			gameService.updatePoint(user,-needPoint);	//포인트 차감
+		}
 		map.put("needPoint",needPoint);
 		map.put("userPoint",userPoint);
 		return map;
