@@ -43,6 +43,9 @@ public class MemberServiceImpl implements MemberService {
 		//맞다면 세션을 만들어준다. 
 		if(result == 1) {
 			RequestContextHolder.getRequestAttributes().setAttribute("memId", dto.getId(), RequestAttributes.SCOPE_SESSION);
+			RequestContextHolder.getRequestAttributes().setAttribute("memColor", dto.getIdColor(), RequestAttributes.SCOPE_SESSION);
+			RequestContextHolder.getRequestAttributes().setAttribute("memSkin", dto.getIdSkin(), RequestAttributes.SCOPE_SESSION);
+			RequestContextHolder.getRequestAttributes().setAttribute("memIcon", dto.getIdIcon(), RequestAttributes.SCOPE_SESSION);
 			//RequestAttributes ra = RequestContextHolder.getRequestAttributes();
 			//ServletRequestAttributes sra = (ServletRequestAttributes)ra;
 			//HttpServletRequest request = sra.getRequest(); 
@@ -61,6 +64,7 @@ public class MemberServiceImpl implements MemberService {
 			Cookie c1 = new Cookie("autoId",dto.getId());
 			Cookie c2 = new Cookie("autoPw",dto.getPw());
 			Cookie c3 = new Cookie("autoCh",auto);
+			
 			c1.setMaxAge(60*60*24);
 			c2.setMaxAge(60*60*24);
 			c3.setMaxAge(60*60*24);
@@ -448,4 +452,9 @@ public class MemberServiceImpl implements MemberService {
 		tmuserDAO.updateTravelCnt(id,ud);
 	}
 	
+	//구매한 아이템 내정보에 업데이트
+	public void purchaseUpdate(String itemCate, String result) {
+		String id = (String)RequestContextHolder.getRequestAttributes().getAttribute("memId", RequestAttributes.SCOPE_SESSION);
+		tmuserDAO.purchaseUpdate(id, itemCate, result);
+	}
 }

@@ -271,4 +271,18 @@ public class TmUserDAOImpl implements TmUserDAO {
 		sqlSession.update("tmUser.updateTravelCnt",map);
 	}
 	
+	//구매한 아이템 내정보에 업데이트
+	public void purchaseUpdate(String id, String itemCate, String result) {
+		Map map = new HashMap();
+		map.put("id", id);
+		map.put("itemCate", itemCate);
+		map.put("result", result);
+		
+		
+		sqlSession.update("tmUser.purchaseUpdate", map);
+		
+	}
+	
+	
 }
+

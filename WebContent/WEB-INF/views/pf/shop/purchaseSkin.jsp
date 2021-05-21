@@ -6,7 +6,11 @@
 	<!-- //top_pf end -->
 	
 		<div class="wrapAll client">
-			<h1>구매</h1>
+			<h1>스킨구매</h1>
+			<form action="/filo/shop/purchaseSkinPro.fl" method="get">
+				<input type="text" name="skin" />
+				<input type="submit" value="구매하기" />
+			</form>
 		</div>
 		<!-- //wrapAll end -->
 		
