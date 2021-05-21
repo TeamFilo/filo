@@ -66,14 +66,16 @@ public class GameDAOImpl implements GameDAO  {
 		sqlSession.update("game.updatePoint",map);
 	}
 	
-	
+	//데일리 룰렛 횟수 올리기
 	@Override
-	public void insertRock(Map rockMap) {
-		sqlSession.insert("game.insertRock",rockMap);
+	public void updateWheelCnt(String user) {
+		sqlSession.update("game.updateWheelCnt",user);
 	}
 	
+	//복권 구매 횟수 올리기
 	@Override
-	public void insertUpdown(Map map) {
-		sqlSession.insert("game.insertUpdown", map);
+	public void updateLotteryCnt(String user) {
+		sqlSession.update("game.updateLotteryCnt",user);
 	}
+	
 }

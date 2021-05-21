@@ -50,7 +50,7 @@
                     var idx = generateRandom(0,23-i);
                     var img = cards.splice(idx,1);
  
-                    cardTableCode += '<td id="card'+i+'"><img src="/filo/resources/images/'+img+'"><span>?</span></td>';
+                    cardTableCode += '<td id="card'+i+'"><img src="/filo/resources/images/pf/'+img+'"><span>?</span></td>';
                 }											
                 cardTableCode += '</tr>';
                 $('#cardTable').html(cardTableCode);
@@ -112,6 +112,15 @@
                         openCardId2 = '';
                         scorePlus();
                         if(++openedCtn == 12){
+                            //score를 wallet에 update 시키고 gameRecord 테이블에 레코드 insert 시키기
+                            var data = {"gameCate":3,"score":score};
+                            $.ajax({
+            					type:"post",
+            					url: "/filo/game/insertCardResult.fl",
+            					dataType: "json",
+            					contentType: "application/json",
+            					data: JSON.stringify(data),
+            				});
                             alert('성공!!\n'+score+'점 입니다!');
                         }
                     }else { // 불일치
@@ -151,10 +160,26 @@
             }
  
             $(document).on('click', '#startBtn', function(){
-                if(gameState == '') {
-                    startGame();
-                    gameState = 'alreadyStart'
-                }
+                var data = {"gameCate":3};
+                $.ajax({
+					type:"post",
+					url: "/filo/game/pointCheck.fl",
+					dataType: "json",
+					contentType: "application/json",
+					data: JSON.stringify(data),
+					success : function(result){
+						var np = result.needPoint;
+						var up = result.userPoint;
+						if(up>=np){
+			            	if(gameState == '') {
+			                    startGame();
+			                    gameState = 'alreadyStart'
+			                }
+						}else{
+							alert("포인트가 부족합니다!");
+						}
+					}
+				});
             }); 
 			</script>
 			

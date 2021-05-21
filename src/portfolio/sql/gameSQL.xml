@@ -60,12 +60,15 @@
 		update wallet set lotteryCnt=0, rouletteCnt=0
 	</update>
 	
-	<insert id="insertRock" parameterType="hashmap">
-		insert into gameRecord values (gameRecord_seq.nextval,#{user},#{gameCate},#{gameResult})
-	</insert>
-	 
-	<insert id="insertUpdown" parameterType="hashmap">
-		insert into gameRecord values (#{user},1,#{result},sysdate)
-	</insert>
+	<!-- 룰렛 구매 횟수 올리기 -->
+	<update id="updateWheelCnt" parameterType="string">
+		update wallet set rouletteCnt=rouletteCnt+1 where id=#{value}
+	</update>
+	
+	<!-- 복권 구매 횟수 올리기 -->
+	<update id="updateLotteryCnt" parameterType="string">
+		update wallet set lotteryCnt=lottery+1 where id=#{value}
+	</update>
+	
 	
 </mapper>

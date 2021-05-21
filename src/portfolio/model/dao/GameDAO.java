@@ -25,12 +25,10 @@ public interface GameDAO {
 	public void insertRecord(Map map);
 	//지갑에 포인트 업데이트
 	public void updatePoint(Map map);
-	
-	//rock 결과 insert
-	public void insertRock(Map rockMap);
-	
-	//updown 결과 insert
-	public void insertUpdown(Map map);
+	//데일리 룰렛 횟수 올리기
+	public void updateWheelCnt(String user);
+	//복권 구매 횟수 올리기
+	public void updateLotteryCnt(String user);
 	
 	
 }

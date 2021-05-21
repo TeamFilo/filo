@@ -162,8 +162,16 @@ public class GameController {
 	//lsm lottery game page
 	@RequestMapping("lottery.fl")
 	public String lottery() {
-		
 		return "pf/game/lottery";
+	}
+	
+	//복권 구매
+	@ResponseBody
+	@RequestMapping("buyLottery.fl")
+	public String buyLottery() {
+		
+		//gameService.buyLottery();
+		return "";
 	}
 	
 	
@@ -176,45 +184,38 @@ public class GameController {
 	}
 	
 	//jbr
-	@RequestMapping("oneToFifty")
-	public String oneToFifty(Model model) {
-		int[] numArray = gameService.oneToFifty();
-		
-		model.addAttribute("numArray", numArray);
-		return "pf/game/1to50";
-	}
-	
-	
-	//jbr
 	@RequestMapping("card.fl")
 	public String card() {
-		
 		return "pf/game/card";
+	}
+
+	@ResponseBody
+	@RequestMapping("insertCardResult.fl")
+	public void insertCardResult(@RequestBody Map<String,Integer> map) {
+		String user = (String)RequestContextHolder.getRequestAttributes().getAttribute("memId", RequestAttributes.SCOPE_SESSION);
+		gameService.insRecordPoint(user, map.get("gameCate"), map.get("score"));
 	}
 	
 	//룰렛
 	@RequestMapping("winwheel.fl")
-	public String winwheel(){
-		
+	public String winwheel(Model model){
+		String user = (String)RequestContextHolder.getRequestAttributes().getAttribute("memId", RequestAttributes.SCOPE_SESSION);
+		model.addAttribute("user",user);
 		return "pf/game/winwheel";
 	}
 	
 	//룰렛 ajax
 	@ResponseBody
 	@RequestMapping("winwheelAjax.fl")
-	public void winwheelAjax(String pointText){
-		System.out.println("포인트" + pointText);
-		
-		String point[] = pointText.split("p");
-		System.out.println("잘 잘렸나" + point[0]);
-		int p = Integer.parseInt(point[0]);
-		System.out.println("숫자변환" + p);
-		//인트로변환해줘야함
-		
+	public void winwheelAjax(@RequestBody String pointText){
 		String user = (String)RequestContextHolder.getRequestAttributes().getAttribute("memId", RequestAttributes.SCOPE_SESSION);
-		// gameService.updatePoint(user, p);
-		// gameService.updateLottety(user);
-		
-		
+		String point[] = pointText.split("p");
+		int p = Integer.parseInt(point[0]);
+	//1)wallet에 포인트 추가	
+		gameService.updatePoint(user, p);
+	//2)wallet에 rouletteCnt +1
+		gameService.updateWheelCnt(user);
+	//3)gameRecord에 레코드 insert
+		gameService.insRecordPoint(user, 4, p);
 	}
 }
