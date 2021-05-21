@@ -11,7 +11,7 @@
 		    	<form class="sscore">
 		        <div class="score">
 		            <div class="playerScore">
-		                <h2>Test19202</h2>
+		                <h2>${nickname}님</h2>
 		                <p id="pScoreResult">0</p>
 		            </div>
 		            <div class="computerScore">

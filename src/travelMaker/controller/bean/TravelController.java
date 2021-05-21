@@ -121,6 +121,9 @@ public class TravelController {
 	
 	@RequestMapping("makingWritePro.fl")
 	public String makingWritePro(String pageNum, GroupSpaceDTO dto, Model model) throws Exception {
+		String idSkin = memberService.getMember(dto.getId()).getIdSkin();
+		System.out.println("idSkin:"+idSkin);
+		dto.setIdSkin(idSkin);
 		travelService.insertMaking(dto);
 		model.addAttribute("pageNum",pageNum);
 		return "redirect:makingList.fl";

@@ -139,7 +139,7 @@
 					<div id="articleTable">				
 						<ul class="makingList">
 							<c:forEach var="article" items="${articleList}" varStatus="status">
-							<li>
+							<li style="background:${article.idSkin};">
 								<a href="makingCont.fl?gNo=${article.gNo}&pageNum=${pageNum}"></a>
 								<%-- <p class="no">${number}</p><c:set var="number" value="${number-1}"/> --%>
 								<p class="tit">${article.subject}<span></span></p>

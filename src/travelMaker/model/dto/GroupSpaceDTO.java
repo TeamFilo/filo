@@ -14,6 +14,8 @@ public class GroupSpaceDTO {
 	private Integer cost, status, likedCnt, readCnt, shared;
 	private String genReview;
 	private Timestamp reg;
+	private String idSkin;
+	
 	public Integer getgNo() {
 		return gNo;
 	}
@@ -152,8 +154,11 @@ public class GroupSpaceDTO {
 	public void setReg(Timestamp reg) {
 		this.reg = reg;
 	}
-	
-	
-	
+	public String getIdSkin() {
+		return idSkin;
+	}
+	public void setIdSkin(String idSkin) {
+		this.idSkin = idSkin;
+	}
 	
 }
