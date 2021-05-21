@@ -97,4 +97,11 @@
 		select * from groupspace where id =#{id}
 	</select>
 	
+	<!-- 샵 구매건 그룹스페이스 반영 -->
+	<update id="GroupSpaceSkinUpdate" parameterType="hashmap">
+		update groupspace set idSkin=#{result} where id=#{id}
+	</update>
+	
+	
+	
 </mapper>

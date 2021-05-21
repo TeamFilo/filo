@@ -183,8 +183,17 @@ public class GroupSpaceDAOImpl implements GroupSpaceDAO{
 	@Override
 	public List getUserWrite(String id) {
 		List UserWriteList =  sqlSession.selectList("groupSpace.getUserWrite",id);
-		
 		return UserWriteList;
+	}
+	
+	//스킨 구매 후 그룹스페이스 idSkin 업데이트
+	@Override
+	public void GroupSpaceSkinUpdate(String id, String result) {
+		Map map = new HashMap();
+		map.put("id", id);
+		map.put("result", result);
+		
+		sqlSession.update("groupSpace.GroupSpaceSkinUpdate", map);
 	}
 	
 }
