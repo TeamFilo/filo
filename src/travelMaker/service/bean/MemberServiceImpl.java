@@ -475,9 +475,7 @@ public class MemberServiceImpl implements MemberService {
 	@Override
 	public List getUserWrite(String id) {
 		List<GroupSpaceDTO> UserWriteList = groupSpaceDAO.getUserWrite(id);
-		for(int i=0; i<UserWriteList.size(); i++) {
-			System.out.println("작성글 목록만 가져온거 : " + ((GroupSpaceDTO)UserWriteList.get(i)).getIdSkin() );
-		}
+	
 		return UserWriteList;
 	}
 	

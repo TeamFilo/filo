@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.context.request.RequestAttributes;
 import org.springframework.web.context.request.RequestContextHolder;
 
-import portfolio.service.bean.ShopService;
+import portfolio.service.bean.GameService;
 import travelMaker.service.bean.MemberService;
 
 @Controller
@@ -16,9 +16,9 @@ public class ShopController {
 	
 	@Autowired
 	private MemberService memService = null;
-	
 	@Autowired
-	private ShopService shopService = null;
+	private GameService gameService = null;
+	
 	
 	//색깔 구매
 	@RequestMapping("purchaseColor.fl") 
@@ -50,6 +50,10 @@ public class ShopController {
 		String memColor = "memColor";
 		memService.purchaseUpdate(memColor, color);
 		
+		// 구매시 포인트 차감
+		String id = (String)RequestContextHolder.getRequestAttributes().getAttribute("memId", RequestAttributes.SCOPE_SESSION);
+		gameService.updatePoint(id, -5);
+		
 		return "/pf/shop/purchaseColorPro";
 	}
 	
@@ -62,6 +66,10 @@ public class ShopController {
 		String memIcon = "memIcon";
 		memService.purchaseUpdate(memIcon, icon);
 		
+		// 구매시 포인트 차감
+		String id = (String)RequestContextHolder.getRequestAttributes().getAttribute("memId", RequestAttributes.SCOPE_SESSION);
+		gameService.updatePoint(id, -5);
+		
 		return "/pf/shop/purchaseIconPro";
 	}
 	
@@ -71,8 +79,13 @@ public class ShopController {
 		memService.removeSession("memSkin");
 		RequestContextHolder.getRequestAttributes().setAttribute("memSkin", skin, RequestAttributes.SCOPE_SESSION);
 		
+		
 		String memSkin = "memSkin";
 		memService.purchaseUpdate(memSkin, skin);
+		
+		// 구매시 포인트 차감
+		String id = (String)RequestContextHolder.getRequestAttributes().getAttribute("memId", RequestAttributes.SCOPE_SESSION);
+		gameService.updatePoint(id, -5);
 		
 		
 		return "/pf/shop/purchaseSkinPro";
