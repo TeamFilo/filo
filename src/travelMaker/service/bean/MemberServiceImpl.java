@@ -464,18 +464,20 @@ public class MemberServiceImpl implements MemberService {
 		
 		//내가 작성한 그룹스페이스 글에 업데이트해줘야함 
 		List UserWriteList = getUserWrite(id);
-		
+		for(int i=0; i<UserWriteList.size(); i++) {
+			groupSpaceDAO.GroupSpaceSkinUpdate(((GroupSpaceDTO)UserWriteList.get(i)).getId(),result);
+			
+			//System.out.println("작성글스킨업데이트한후 : " + ((GroupSpaceDTO)UserWriteList.get(i)).getIdSkin() );
+		}
 	}
 	
 	//사용자가 개설한 여행목록 가져오기
 	@Override
 	public List getUserWrite(String id) {
 		List<GroupSpaceDTO> UserWriteList = groupSpaceDAO.getUserWrite(id);
-		
-		/*for(int i=0; i<UserWriteList.size(); i++) {
-			System.out.println("작성글 : " + ((GroupSpaceDTO)UserWriteList.get(i)).getPo1() );
-		}*/
-		
+		for(int i=0; i<UserWriteList.size(); i++) {
+			System.out.println("작성글 목록만 가져온거 : " + ((GroupSpaceDTO)UserWriteList.get(i)).getIdSkin() );
+		}
 		return UserWriteList;
 	}
 	
