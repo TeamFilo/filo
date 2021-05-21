@@ -49,4 +49,7 @@ public interface GroupSpaceDAO {
 	//공개여부 업데이트
 	public void updateShared(int gNo, int shared);
 	
+	//사용자가 개설한 여행목록 가져오기
+	public List getUserWrite(String id);
+	
 }

@@ -91,4 +91,6 @@ public interface MemberService {
 	public void updateTravelCnt(String id, int ud) throws Exception;
 	//구매한 아이템 내정보에 업데이트
 	public void purchaseUpdate(String id, String result);
+	//사용자가 개설한 여행목록 가져오기
+	public List getUserWrite(String id);
 }
