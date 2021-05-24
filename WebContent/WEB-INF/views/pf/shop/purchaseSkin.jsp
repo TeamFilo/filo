@@ -8,7 +8,8 @@
 		<div class="wrapAll client">
 			<h1>스킨구매</h1>
 			<form action="/filo/shop/purchaseSkinPro.fl" method="get">
-				<input type="text" name="skin" />
+				<h4>스킨색상을 골라주세요</h4>
+				<input type="color" name="skin" />
 				<input type="submit" value="구매하기" />
 			</form>
 		</div>
