@@ -70,5 +70,4 @@
 		update wallet set lotteryCnt=lottery+1 where id=#{value}
 	</update>
 	
-	
 </mapper>

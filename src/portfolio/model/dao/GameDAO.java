@@ -30,5 +30,4 @@ public interface GameDAO {
 	//복권 구매 횟수 올리기
 	public void updateLotteryCnt(String user);
 	
-	
 }

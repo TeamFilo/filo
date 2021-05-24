@@ -19,6 +19,7 @@ import org.springframework.web.context.request.RequestContextHolder;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
 import portfolio.model.dto.GameInfoDTO;
+import portfolio.model.dto.WalletDTO;
 import portfolio.service.bean.GameService;
 import travelMaker.service.bean.MemberService;
 
@@ -37,7 +38,6 @@ public class GameController {
 		System.out.println("매일 0시 0분 1초 실행 ["+new Date()+"]");
 		gameService.resetCnt();
 	}
-	
 	
 	int answer = 0;	//updown 시 ajax와 게임페이지에서 변수를 공유하기 위해 바깥으로 뺌
 	
@@ -111,8 +111,10 @@ public class GameController {
 	@RequestMapping("rockPS.fl")
 	public String rockPS(Model model) {
 		String user = (String)RequestContextHolder.getRequestAttributes().getAttribute("memId", RequestAttributes.SCOPE_SESSION);
-		String nick = memService.getMember(user).getNickname();
-		model.addAttribute("nickname",nick);
+		if(user!=null) {
+			String nick = memService.getMember(user).getNickname();
+			model.addAttribute("nickname",nick);
+		}
 		return "/pf/game/rockPS";
 	}
 	
@@ -216,4 +218,21 @@ public class GameController {
 	//2)gameRecord에 레코드 insert
 		gameService.insRecordPoint(user, 4, p);
 	}
+	
+	//회원의 룰렛 복권 횟수 체크
+	@ResponseBody
+	@RequestMapping("dailyCntCheck.fl")
+	public int dailyCntCheck(@RequestBody String gameCate) {
+		String user = (String)RequestContextHolder.getRequestAttributes().getAttribute("memId", RequestAttributes.SCOPE_SESSION);
+		int cate = Integer.parseInt(gameCate);
+		WalletDTO wallet = gameService.getWallet(user);
+		int count = -1;
+		if(cate==0) {	//복권
+			count = wallet.getLotteryCnt();
+		}else if(cate==4) {	//룰렛
+			count = wallet.getRouletteCnt();
+		}
+		return count;
+	}
+	
 }
