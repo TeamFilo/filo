@@ -46,10 +46,12 @@ public class MemberServiceImpl implements MemberService {
 		int result = tmuserDAO.idPwCheck(dto);
 		//맞다면 세션을 만들어준다. 
 		if(result == 1) {
+			//id와 pw 외에 회원의 정보를 모두 담아와서 샵 정보로 세션 생성
+			TmUserDTO user = tmuserDAO.getMember(dto.getId());
 			RequestContextHolder.getRequestAttributes().setAttribute("memId", dto.getId(), RequestAttributes.SCOPE_SESSION);
-			RequestContextHolder.getRequestAttributes().setAttribute("memColor", dto.getIdColor(), RequestAttributes.SCOPE_SESSION);
-			RequestContextHolder.getRequestAttributes().setAttribute("memSkin", dto.getIdSkin(), RequestAttributes.SCOPE_SESSION);
-			RequestContextHolder.getRequestAttributes().setAttribute("memIcon", dto.getIdIcon(), RequestAttributes.SCOPE_SESSION);
+			RequestContextHolder.getRequestAttributes().setAttribute("memColor", user.getIdColor(), RequestAttributes.SCOPE_SESSION);
+			RequestContextHolder.getRequestAttributes().setAttribute("memSkin", user.getIdSkin(), RequestAttributes.SCOPE_SESSION);
+			RequestContextHolder.getRequestAttributes().setAttribute("memIcon", user.getIdIcon(), RequestAttributes.SCOPE_SESSION);
 			//RequestAttributes ra = RequestContextHolder.getRequestAttributes();
 			//ServletRequestAttributes sra = (ServletRequestAttributes)ra;
 			//HttpServletRequest request = sra.getRequest(); 

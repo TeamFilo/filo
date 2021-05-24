@@ -17,7 +17,7 @@
 			<a href="/filo/login.fl"><p class="btnSign">로그인</p></a>
 		</c:if>
 		<c:if test="${sessionScope.memId != null}">
-			<p class="txtSign">환영합니다! <strong>${sessionScope.memId}</strong>님</p>
+			<p class="txtSign">환영합니다! <strong style="color:${sessionScope.memColor}";>${sessionScope.memId}</strong>님</p>
 			<a href="/filo/logout.fl"><p class="btnSign">로그아웃</p></a>
 		</c:if>
 	</div>
