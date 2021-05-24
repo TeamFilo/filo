@@ -235,4 +235,10 @@ public class GameController {
 		return count;
 	}
 	
+	//스크래치 테스트
+	@RequestMapping("scratchTest.fl")
+	public String scratchTest() {
+		return "pf/game/scratchTest";
+	}
+	
 }
