@@ -6,6 +6,12 @@
 	<!-- //top_pf end -->
 	
 		<div class="wrapAll client">
+			<c:if test="${sessionScope.memId==null}">
+				<script>
+					alert("로그인 후에 이용해주세요");
+					location.href="/filo/login.fl";
+				</script>
+			</c:if>
 	        <div align="center">
 	          
 	            <table cellpadding="0" cellspacing="0" border="0">
@@ -157,29 +163,47 @@
 	            // -------------------------------------------------------
 	            function startSpin(){
 	            	// ****** 여기다가 ajax 써서 cnt 확인하기 ******
-	                // Ensure that spinning can't be clicked again while already running.
-	                if (wheelSpinning == false) {
-	                    // Based on the power level selected adjust the number of spins for the wheel, the more times is has
-	                    // to rotate with the duration of the animation the quicker the wheel spins.
-	                    if (wheelPower == 1) {
-	                        theWheel.animation.spins = 3;
-	                    } else if (wheelPower == 2) {
-	                        theWheel.animation.spins = 8;
-	                    } else if (wheelPower == 3) {
-	                        theWheel.animation.spins = 15;
-	                    }
-	
-	                    // Disable the spin button so can't click again while wheel is spinning.
-	                    document.getElementById('spin_button').src       = "/filo/resources/images/pf/spin_off.png";
-	                    document.getElementById('spin_button').className = "";
-	
-	                    // Begin the spin animation by calling startAnimation on the wheel object.
-	                    theWheel.startAnimation();
-	
-	                    // Set to true so that power can't be changed and spin button re-enabled during
-	                    // the current animation. The user will have to reset before spinning again.
-	                    wheelSpinning = true;
-	                }
+	            	var gameCate = 4;	//gameCate
+					$.ajax({
+						type:"post",
+						url: "/filo/game/dailyCntCheck.fl",
+						dataType: "json",
+						contentType: "application/json",
+						data: JSON.stringify(gameCate),
+						success : function(result){
+							//result가 문자로 넘어오기 때문에 문자로 비교
+							if(result=='0'){	//오늘 안했으면
+				                // Ensure that spinning can't be clicked again while already running.
+				                if (wheelSpinning == false) {
+				                    // Based on the power level selected adjust the number of spins for the wheel, the more times is has
+				                    // to rotate with the duration of the animation the quicker the wheel spins.
+				                    if (wheelPower == 1) {
+				                        theWheel.animation.spins = 3;
+				                    } else if (wheelPower == 2) {
+				                        theWheel.animation.spins = 8;
+				                    } else if (wheelPower == 3) {
+				                        theWheel.animation.spins = 15;
+				                    } else if (wheelPower == 4) {
+				                        theWheel.animation.spins = 30;
+				                    }
+				
+				                    // Disable the spin button so can't click again while wheel is spinning.
+				                    document.getElementById('spin_button').src       = "/filo/resources/images/pf/spin_off.png";
+				                    document.getElementById('spin_button').className = "";
+				
+				                    // Begin the spin animation by calling startAnimation on the wheel object.
+				                    theWheel.startAnimation();
+				
+				                    // Set to true so that power can't be changed and spin button re-enabled during
+				                    // the current animation. The user will have to reset before spinning again.
+				                    wheelSpinning = true;
+				                }
+							}else{
+								alert("이미 참여하셨습니다");
+							}
+						}
+					});
+                    
 	            }
 				/*
 	             -------------------------------------------------------

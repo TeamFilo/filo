@@ -6,7 +6,12 @@
 	<!-- //top_pf end -->
 	
 		<div class="wrapAll client">
-			
+			<c:if test="${sessionScope.memId==null}">
+				<script>
+					alert("로그인 후에 이용해주세요");
+					location.href="/filo/login.fl";
+				</script>
+			</c:if>
 			<div class="gameWrap">
 		    	<form class="sscore">
 		        <div class="score">
