@@ -45,6 +45,7 @@ public class ShopController {
 	@RequestMapping("purchaseColorPro.fl")
 	public String purchasePro(String color) {
 		memService.removeSession("memColor");
+		System.out.println("선택한 색상" + color);
 		RequestContextHolder.getRequestAttributes().setAttribute("memColor", color, RequestAttributes.SCOPE_SESSION);
 	
 		String memColor = "memColor";
