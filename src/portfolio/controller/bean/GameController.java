@@ -168,6 +168,7 @@ public class GameController {
 		int ranNum = (int)(Math.random()*5+1);
 		String ranImg = "lottery"+ranNum+".png";
 		//System.out.println("랜덤이미지" + ranImg); 
+		model.addAttribute("ranNum",ranNum);
 		model.addAttribute("ranImg",ranImg);
 		return "pf/game/lottery";
 	}
@@ -223,6 +224,19 @@ public class GameController {
 	//2)gameRecord에 레코드 insert
 		gameService.insRecordPoint(user, 4, p);
 	}
+	
+	//복권 ajax
+	@ResponseBody
+	@RequestMapping("lotteryAjax.fl")
+	public void lotteryAjax(@RequestBody String point){
+		String user = (String)RequestContextHolder.getRequestAttributes().getAttribute("memId", RequestAttributes.SCOPE_SESSION);
+		int p = Integer.parseInt(point);
+		//1)wallet에 lotteryCnt +1
+		gameService.updateLotteryCnt(user);
+		//2)gameRecord에 레코드 insert
+		gameService.insRecordPoint(user, 0, p);
+	}
+	
 	
 	//회원의 룰렛 복권 횟수 체크
 	@ResponseBody
