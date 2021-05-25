@@ -1,9 +1,13 @@
 package portfolio.controller.bean;
 
+import java.util.Map;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.context.request.RequestAttributes;
 import org.springframework.web.context.request.RequestContextHolder;
 
@@ -53,7 +57,18 @@ public class ShopController {
 		
 		// 구매시 포인트 차감
 		String id = (String)RequestContextHolder.getRequestAttributes().getAttribute("memId", RequestAttributes.SCOPE_SESSION);
-		gameService.updatePoint(id, -5);
+		int userPoint = gameService.getWallet(id).getPoint();
+		
+		// 구매 포인트
+		int purPoint= -20;
+		
+		// 보유포인트와 비교를 위한 절대값 변환 
+		int pp = Math.abs(purPoint);
+		
+		// 보유 포인트가 구매포인트보다 클경우에만 업데이트 
+		if(userPoint >= pp) {
+			gameService.updatePoint(id, purPoint);
+		}
 		
 		return "/pf/shop/purchaseColorPro";
 	}
@@ -64,12 +79,24 @@ public class ShopController {
 		memService.removeSession("memIcon");
 		RequestContextHolder.getRequestAttributes().setAttribute("memIcon", icon, RequestAttributes.SCOPE_SESSION);
 		
+		//구입한 아이콘 반영
 		String memIcon = "memIcon";
 		memService.purchaseUpdate(memIcon, icon);
 		
 		// 구매시 포인트 차감
 		String id = (String)RequestContextHolder.getRequestAttributes().getAttribute("memId", RequestAttributes.SCOPE_SESSION);
-		gameService.updatePoint(id, -5);
+		int userPoint = gameService.getWallet(id).getPoint();
+		
+		// 구매 포인트
+		int purPoint= -20;
+		
+		// 보유포인트와 비교를 위한 절대값 변환 
+		int pp = Math.abs(purPoint);
+		
+		// 보유 포인트가 구매포인트보다 클경우에만 업데이트 
+		if(userPoint >= pp) {
+			gameService.updatePoint(id, purPoint);
+		}
 		
 		return "/pf/shop/purchaseIconPro";
 	}
@@ -80,16 +107,51 @@ public class ShopController {
 		memService.removeSession("memSkin");
 		RequestContextHolder.getRequestAttributes().setAttribute("memSkin", skin, RequestAttributes.SCOPE_SESSION);
 		
-		
+		//tmuser에 스킨 업데이트
 		String memSkin = "memSkin";
 		memService.purchaseUpdate(memSkin, skin);
 		
-		// 구매시 포인트 차감
+		// 포인트 차감
 		String id = (String)RequestContextHolder.getRequestAttributes().getAttribute("memId", RequestAttributes.SCOPE_SESSION);
-		gameService.updatePoint(id, -5);
+		int userPoint = gameService.getWallet(id).getPoint();
 		
+		// 구매 포인트
+		int purPoint= -20;
+		System.out.println("purPoint" + purPoint);
+		
+		// 보유포인트와 비교를 위한 절대값 변환 
+		int pp = Math.abs(purPoint);
+		System.out.println("pp" + pp);
+		System.out.println("유저포인트" + userPoint);
+		// 보유 포인트가 구매포인트보다 클경우에만 업데이트 
+		if(userPoint >= pp) {
+			System.out.println("업데이트전");
+			gameService.updatePoint(id, purPoint);
+			System.out.println("업데이트후");
+		}
+	
 		
 		return "/pf/shop/purchaseSkinPro";
+	}
+	
+	
+	// 샵에서 아이템 구입시 포인트 확인하기위한 ajax
+	@ResponseBody
+	@RequestMapping("shopPointCh.fl")
+	public Map shopPointCh(@RequestBody Map<String,Integer> map) {
+		String user = (String)RequestContextHolder.getRequestAttributes().getAttribute("memId", RequestAttributes.SCOPE_SESSION);
+		int needPoint = map.get("purchaseShop");
+		int userPoint = gameService.getWallet(user).getPoint();
+		
+		/*
+		if(userPoint>=needPoint) {
+			System.out.println("구매 ㄱㄱ");
+		}
+		*/
+		map.put("needPoint",needPoint);
+		map.put("userPoint",userPoint);
+		
+		return map;
 	}
 	
 }
