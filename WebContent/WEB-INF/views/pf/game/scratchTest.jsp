@@ -3,11 +3,13 @@
 <jsp:include page="/WEB-INF/views/include/header_pf.jsp" />
    
 	<jsp:include page="/WEB-INF/views/include/top_pf.jsp" />
-	<script type="text/javascript" src="<c:url value="/resources/js/lotteryScratch.js" />"></script>
+	<script type="text/javascript" src="<c:url value="/resources/js/wScratchPad.js" />"></script>
 	<!-- //top_pf end -->
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<meta http-equiv="X-UA-Compatible" content="ie=edge">
-
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width" />
+	<link rel="icon" type="image/vnd.microsoft.icon"  href="./demo/img/favicon.ico" />
+	<!--  -->
+	
 		<div class="wrapAll client">
 			<c:if test="${sessionScope.memId==null}">
 				<script>
@@ -15,47 +17,68 @@
 					location.href="/filo/login.fl";
 				</script>
 			</c:if>
-	 
+			<!--
+			<div id="demo1" class="scratchpad"></div>
+			-->
+			<div id="demo2" class="scratchpad"></div>
+			<div class="afterScratch"></div>
+			<!--
+			<div id="demo3" class="scratchpad"></div>
+			<br/>
+			<input type="button" value="Reset" onclick="$('.scratchpad').wScratchPad('reset');"/>
+			<input type="button" value="Clear" onclick="$('.scratchpad').wScratchPad('clear');"/>
+			<input type="button" value="Enable" onclick="$('.scratchpad').wScratchPad('enable', true);"/>
+			<input type="button" value="Disable" onclick="$('.scratchpad').wScratchPad('enable', false);"/>
+			-->
+			
+			<style>
+				#demo1, #demo2, #demo3 {
+				  width: 25%;
+				  height: 100px;
+				  border: solid 1px;
+				  display: inline-block;
+				}
+			</style>
+			<!--
+			<script type="text/javascript" src="/resources/js/wScratchPad.js"></script>
+			-->
 			<script>
-				window.addEventListener('load', function () {
-					var lotteryScratchGo1 = new lotteryScratch(
-						document.querySelector('#lotteryScratch1'), 492, 259, 20,
-						'/filo/resources/images/pf/img_cont02.jpg'
-					);
-					var lotteryScratchGo2 = new lotteryScratch(
-						document.querySelector('#lotteryScratch2'), 492, 259, 25,
-						'/filo/resources/images/pf/img_cont02.jpg'
-					);
-					lotteryScratchGo1.LotteryScratchInit();
-					lotteryScratchGo2.LotteryScratchInit();
-					
-					lotteryScratchGo1.LotteryScratchCallback(function () {
-						document.querySelector('#lotteryScratch1').style.backgroundImage = "url('./images/pf/20190719_112814.png')";
-					}).LotteryScratch();
-					
-					
-					document.querySelector('#lotteryScratch2').onclick = function () {
-						lotteryScratchGo2.LotteryScratchReadyAlert('lotteryScratch2 start or reset 버튼을 클릭한 뒤 진행해주세요!');
+				/* Test 1
+				$('#demo1').wScratchPad({
+				  scratchMove: function (e, percent) {
+				    console.log(percent);
+				  }
+				});
+				*/
+				// Test 2
+				$('#demo2').wScratchPad({
+					bg: '/filo/resources/images/pf/slide1.jpg',
+					fg: '#ff0000',
+					scratchMove: function (e, percent) {
+						console.log(percent);
+						if (percent > 60) {
+							this.clear();
+							alert("짜잔");
+							$('.scratchpad').wScratchPad('reset');
+							$('.scratchpad').hide();
+							$('.afterScratch').html("<h1>다시하기</h1>");
+						}
 					}
-					document.querySelector('#resetButton').onclick = function () {
-						lotteryScratchGo2
-						.LotteryScratchClear()
-						.LotteryScratchCallback(function () {
-						document.querySelector('#lotteryScratch2').style.backgroundImage = "url('./images/pf/20190719_114105.png')";
-						}).LotteryScratch();
+				});
+				$('#demo2').wScratchPad('cursor', 'url("/filo/resources/images/pf/coin.png") 5 5, default');
+				
+				/* Test 3
+				$('#demo3').wScratchPad({
+					cursor: 'url("../cursors/mario.png") 5 5, default',
+					scratchMove: function (e, percent) {
+						console.log(percent);
 					}
-				});	//addlistener end
+				});
+				$('#demo3').wScratchPad('bg', 'filo/resources/images/pf/winner.png');
+				$('#demo3').wScratchPad('fg', 'filo/resources/images/pf/scratch-to-win.png');
+				$('#demo3').wScratchPad('size', 10);
+				*/
 			</script>
-			
-			<h1>스크래치</h1>
-			
-			<span>lotteryScratch1</span>
-			<div id="lotteryScratch1"></div>
-			<br><br><br>
-			
-			<span>lotteryScratch2</span>
-			<div id="lotteryScratch2"></div>
-			<button id="resetButton">lotteryScratch2 start or reset</button>
 			
 		</div>
 		<!-- //wrapAll end -->

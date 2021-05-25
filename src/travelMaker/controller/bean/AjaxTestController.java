@@ -34,10 +34,10 @@ public class AjaxTestController {
 		return "/client/travel/testFile";
 	}
 
-	
+	@RequestMapping("t.fl")
 	public String testComment() {
 		
-		return "/client/mypage/testComment";
+		return "/tm/sample";
 	}
 	
 	
