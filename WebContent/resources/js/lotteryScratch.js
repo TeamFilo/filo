@@ -2,8 +2,8 @@ var lotteryScratch = (function () {
   /** 
     * _lotteryScratch : function 
     * @param element : 해당 Element. 
-    * @param width : 그려질 cnavas의 가로사이즈. 
-    * @param height : 그려질 cnavas의 세로사이즈. 
+    * @param width : 그려질 canvas의 가로사이즈. 
+    * @param height : 그려질 canvas의 세로사이즈. 
     * @param circleRadius : 원의 크기만큼 지워진다. 
     * @param topImageSrc : 덮어서 마우스 드래그 시 지워질 이미지의 주소. 
   */
@@ -44,21 +44,24 @@ var lotteryScratch = (function () {
 
     /** 
       * _cutCircle : function 
-      * canvas에 마우스 드래그 evnet발생시 실행되는 함수 
+      * canvas에 마우스 드래그 event발생시 실행되는 함수 
       * circle형태로 이미지를 지워나간다. 
-      * @param context : cavans.getContext(2d); 값. 
+      * @param context : canvas.getContext(2d); 값. 
       * @param pointX : 현재 마우스의 X 좌표 값. 
       * @param pointY : 현재 마우스의 Y 좌표 값. 
       * @param radius : 원의 크기 값 (클수록 크게 지워짐). 
     */
     _cutCircle: function (context, pointX, pointY, radius) {
       context.globalCompositeOperation = 'destination-out';
-      context.beginPath();
-      context.arc(pointX, pointY, radius, 0, Math.PI * 2, true);
-      context.fill();
+      context.beginPath();	//지우면 캠퍼스처럼 긁힘
+      context.arc(pointX, pointY, radius, 0, Math.PI * 2, true);	//지워도 차이 없음
+      context.fill();		//지우면 안긁힘
+      //hys
+      
+      /*
+      */
     },
-
-
+    
     /** 
      * LotteryScratchReadyAlert : function 
      * 바로 canvas를 드래그하는 경우를 막을 때 사용됨,
@@ -137,6 +140,10 @@ var lotteryScratch = (function () {
                 pointX = Math.round(e.pageX - rect.left),
                 pointY = Math.round(e.pageY - rect.top - scrollPosition);
               cutCircle(context, pointX, pointY, radius);
+              //hys
+              /*
+              if(pointX==0){ alert("pointX==0"); }else if(pointY==0){ alert("pointY==0"); }
+              */
             }
             document.addEventListener('mousemove', deleteMoveAction);
             document.onmouseup = function () {
@@ -177,6 +184,7 @@ var lotteryScratch = (function () {
      */
     LotteryScratchCallback: function (callbackFunction) {
       this.callback = callbackFunction;
+      //페이지 로드 시 실행되는 부분
       return this;
     }
   }

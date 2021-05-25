@@ -27,6 +27,5 @@
 	<script type="text/javascript" src="<c:url value="/resources/js/lotteryScratch.js" />"></script>
 	
 	
-	
 </head>
 <body>

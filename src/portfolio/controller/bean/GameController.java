@@ -132,6 +132,7 @@ public class GameController {
 		return map;
 	}
 	
+	
 	//lhs ajaxTest
 	@ResponseBody
 	@RequestMapping("insertRockResult.fl")
