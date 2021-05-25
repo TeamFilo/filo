@@ -7,6 +7,11 @@
 <meta charset="UTF-8">
 <title>Insert title here</title>
 </head>
+	<script>
+		alert("구매완료!");
+		document.location.href="/filo/shop/purchaseSkin.fl";
+	</script>
+
 <body>
 	스킨구매프로 : ${memSkin}  // ${memId}
 </body>

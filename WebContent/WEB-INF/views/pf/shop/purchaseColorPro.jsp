@@ -6,6 +6,9 @@
 <meta charset="UTF-8">
 <title>Insert title here</title>
 </head>
+	<script>
+		alert("구매완료!");
+	</script>
 <body>
 	컬러구매프로 ${memColor}  // ${memId}
 </body>
