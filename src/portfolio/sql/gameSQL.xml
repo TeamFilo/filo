@@ -67,7 +67,7 @@
 	
 	<!-- 복권 구매 횟수 올리기 -->
 	<update id="updateLotteryCnt" parameterType="string">
-		update wallet set lotteryCnt=lottery+1 where id=#{value}
+		update wallet set lotteryCnt=lotteryCnt+1 where id=#{value}
 	</update>
 	
 </mapper>
