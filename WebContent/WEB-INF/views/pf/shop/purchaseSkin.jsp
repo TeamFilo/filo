@@ -6,8 +6,35 @@
 	<!-- //top_pf end -->
 	
 		<div class="wrapAll client">
+			<script>
+				function check(){
+						
+						// 보유 포인트 확인 ajax
+						var data = {"purchaseShop":20};
+		          		
+						$.ajax({
+							type:"post",
+							url: "/filo/shop/shopPointCh.fl",
+							dataType: "json",
+							contentType: "application/json",
+							data: JSON.stringify(data),
+							success : function(result){
+								var np = result.needPoint;
+								var up = result.userPoint;
+								if(up>=np){
+									introScreen.classList.add('fadeOut');
+									match.classList.add('fadeIn');
+								}else{
+									alert("포인트가 부족합니다!");
+									location.href="/filo/shop/purchaseSkin.fl";
+								}
+							}
+						});
+				}
+			</script>
+		 
 			<h1>스킨구매</h1>
-			<form action="/filo/shop/purchaseSkinPro.fl" method="post">
+			<form action="/filo/shop/purchaseSkinPro.fl" onsubmit="return check()" method="post">
 				<h4>스킨색상을 골라주세요</h4>
 				<input type="color" name="skin" />
 				<input type="submit" value="구매하기" />
