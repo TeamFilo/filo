@@ -8,9 +8,9 @@
 </head>
 	<script>
 		alert("구매완료!");
+		document.location.href="/filo/shop/purchase.fl";
 	</script>
-
 <body>
-	아이콘구매프로 ${memIcon}  // ${memId}
+	아이콘구매프로 ${memIcon}  // ${memId} // ${icon}
 </body>
 </html>

@@ -70,4 +70,9 @@
 		update wallet set lotteryCnt=lotteryCnt+1 where id=#{value}
 	</update>
 	
+	<!-- IconDTO가져오기 -->
+	<select id="getIcon" resultType="IconDTO">
+		select * from icon
+	</select>
+	
 </mapper>
