@@ -23,11 +23,18 @@ public class ShopController {
 	@Autowired
 	private GameService gameService = null;
 	
+	//아이템샵 홈
+	@RequestMapping("purchase.fl")
+	public String purchase() {
+		return "/pf/shop/purchase";
+	}
 	
 	//색깔 구매
 	@RequestMapping("purchaseColor.fl") 
-	public String purchaseColor() {
-		
+	public String purchaseColor(Model model) {
+		String id = (String)RequestContextHolder.getRequestAttributes().getAttribute("memId", RequestAttributes.SCOPE_SESSION);
+		String nowColor = memService.getMember(id).getIdColor();
+		model.addAttribute("nowColor",nowColor);
 		return "/pf/shop/purchaseColor";
 	}
 	
@@ -40,8 +47,10 @@ public class ShopController {
 	
 	//스킨 구매
 	@RequestMapping("purchaseSkin.fl") 
-	public String purchaseSkin() {
-		
+	public String purchaseSkin(Model model) {
+		String id = (String)RequestContextHolder.getRequestAttributes().getAttribute("memId", RequestAttributes.SCOPE_SESSION);
+		String nowColor = memService.getMember(id).getIdSkin();
+		model.addAttribute("nowColor",nowColor);
 		return "/pf/shop/purchaseSkin";
 	}
 	
@@ -152,6 +161,12 @@ public class ShopController {
 		map.put("userPoint",userPoint);
 		
 		return map;
+	}
+	
+	
+	@RequestMapping("colorTest.fl")
+	public String colorTest() {
+		return "/pf/shop/purchaseColorPicker";
 	}
 	
 }

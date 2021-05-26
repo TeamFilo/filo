@@ -6,7 +6,7 @@
 	<!-- //top_pf end -->
 	
 		<div class="wrapAll client">
-			<h1>구매</h1>
+			<h1>아이템샵 홈</h1>
 			
 		</div>
 		<!-- //wrapAll end -->

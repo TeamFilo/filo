@@ -17,15 +17,17 @@
 	<link href="<c:url value="/resources/css/rockPS.css" />" rel="stylesheet"/>
 	
 	<link href="<c:url value="/resources/css/winwheel.css" />" rel="stylesheet"/>
+	<link href="<c:url value="/resources/css/colorPick.css" />" rel="stylesheet"/>
 	
 	
 	<!-- JS -->
 	<script type="text/javascript" src="<c:url value="/resources/js/jquery.min.js" />"></script>
 
 	<script type="text/javascript" src="<c:url value="/resources/js/Winwheel.js" />"></script>
-  <script src="http://cdnjs.cloudflare.com/ajax/libs/gsap/latest/TweenMax.min.js"></script>
+  	<script src="http://cdnjs.cloudflare.com/ajax/libs/gsap/latest/TweenMax.min.js"></script>
 
-	<script type="text/javascript" src="<c:url value="/resources/js/aos.js" />"></script>	
+	<script type="text/javascript" src="<c:url value="/resources/js/aos.js" />"></script>
+	<script type="text/javascript" src="<c:url value="/resources/js/colorPick.js" />"></script>
 
 	
 </head>
