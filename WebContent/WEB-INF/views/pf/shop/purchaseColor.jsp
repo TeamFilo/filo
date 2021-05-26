@@ -34,6 +34,7 @@
 			</script>
 			
 			<h1>색깔구매</h1>
+
 			<form action="/filo/shop/purchaseColorPro.fl" onsubmit="return check()" method="post">
 				<h4>색깔을 골라주세요</h4>
 				<input type="color" name="color" />

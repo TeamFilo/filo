@@ -34,6 +34,7 @@
 			</script>
 		 
 			<h1>스킨구매</h1>
+			
 			<form action="/filo/shop/purchaseSkinPro.fl" onsubmit="return check()" method="post">
 				<h4>스킨색상을 골라주세요</h4>
 				<input type="color" name="skin" />
