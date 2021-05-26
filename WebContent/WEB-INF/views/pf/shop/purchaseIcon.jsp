@@ -35,7 +35,9 @@
 			
 			<h1>아이콘구매</h1>
 			<form action="/filo/shop/purchaseIconPro.fl" onsubmit="return check()" method="get">
-				<input type="text" name="icon" />
+				<c:forEach var="icon" items="${getIcon}">
+					<input type="radio" name="icon" value="${icon.name}"/><img src="<c:url value="/resources/images/pf/${icon.name}${icon.iRoot}" />" width="40" />&nbsp;
+				</c:forEach><br/>
 				<input type="submit" value="구매하기" />
 			</form>
 		</div>
