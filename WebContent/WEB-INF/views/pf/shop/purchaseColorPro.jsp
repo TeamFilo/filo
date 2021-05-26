@@ -8,6 +8,7 @@
 </head>
 	<script>
 		alert("구매완료!");
+		document.location.href="/filo/shop/purchase.fl";
 	</script>
 <body>
 	컬러구매프로 ${memColor}  // ${memId}

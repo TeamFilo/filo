@@ -9,7 +9,7 @@
 </head>
 	<script>
 		alert("구매완료!");
-		document.location.href="/filo/shop/purchaseSkin.fl";
+		document.location.href="/filo/shop/purchase.fl";
 	</script>
 
 <body>
