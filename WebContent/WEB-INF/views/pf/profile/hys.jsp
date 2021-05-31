@@ -23,8 +23,8 @@
 	            </div>
 	
 	            <div class="imgWrap">
-	                <img src="/resources/images/bg_hys.png" class="bg">
-	                <img src="/resources/images/all_hys.png" class="all">
+	                <img src="/filo/resources/images/pf/logo_hys.png" class="bg">
+	                <img src="/filo/resources/images/pf/hys_my.png" class="all">
 	            </div>
 	
 	            <div class="txtWrap hys">
@@ -87,56 +87,56 @@
 	                <li>
 	                    <div class="bg"></div>
 	                    <p class="name">JAVA & JSP</p>
-	                    <img class="ico" src="/resources/images/skico1.png" alt="">
+	                    <img class="ico" src="/filo/resources/images/pf/skico1.png" alt="">
 	                    <p class="txt">필요한 알고리즘을 짤 수 있으며, 적용가능 합니다.</p>
 	                    <p class="per">70%</p>                    
 	                </li>
 	                <li>
 	                    <div class="bg"></div>
 	                    <p class="name">SPRING</p>
-	                    <img class="ico" src="/resources/images/skico2.png" alt="">
+	                    <img class="ico" src="/filo/resources/images/pf/skico2.png" alt="">
 	                    <p class="txt">필요한 알고리즘을 짤 수 있으며, 적용가능 합니다.</p>
 	                    <p class="per">70%</p>                    
 	                </li>
 	                <li>
 	                    <div class="bg"></div>
 	                    <p class="name">SQL</p>
-	                    <img class="ico" src="/resources/images/skico3.png" alt="">
+	                    <img class="ico" src="/filo/resources/images/pf/skico3.png" alt="">
 	                    <p class="txt">필요한 알고리즘을 짤 수 있으며, 적용가능 합니다.</p>
 	                    <p class="per">70%</p>                    
 	                </li>
 	                <li>
 	                    <div class="bg"></div>
 	                    <p class="name">JQUERY</p>
-	                    <img class="ico" src="/resources/images/skico4.png" alt="">
+	                    <img class="ico" src="/filo/resources/images/pf/skico4.png" alt="">
 	                    <p class="txt">필요한 알고리즘을 짤 수 있으며, 적용가능 합니다.</p>
 	                    <p class="per">70%</p>                    
 	                </li>
 	                <li>
 	                    <div class="bg"></div>
 	                    <p class="name">HTML5</p>
-	                    <img class="ico" src="/resources/images/skico5.png" alt="">
+	                    <img class="ico" src="/filo/resources/images/pf/skico5.png" alt="">
 	                    <p class="txt">필요한 알고리즘을 짤 수 있으며, 적용가능 합니다.</p>
 	                    <p class="per">70%</p>                    
 	                </li>
 	                <li>
 	                    <div class="bg"></div>
 	                    <p class="name">CSS3</p>
-	                    <img class="ico" src="/resources/images/skico6.png" alt="">
+	                    <img class="ico" src="/filo/resources/images/pf/skico6.png" alt="">
 	                    <p class="txt">필요한 알고리즘을 짤 수 있으며, 적용가능 합니다.</p>
 	                    <p class="per">70%</p>                    
 	                </li>
 	                <li>
 	                    <div class="bg"></div>
 	                    <p class="name">JAVA SCRIPT</p>
-	                    <img class="ico" src="/resources/images/skico7.png" alt="">
+	                    <img class="ico" src="/filo/resources/images/pf/skico7.png" alt="">
 	                    <p class="txt">필요한 알고리즘을 짤 수 있으며, 적용가능 합니다.</p>
 	                    <p class="per">70%</p>                    
 	                </li>
 	                <li>
 	                    <div class="bg"></div>
 	                    <p class="name">GITHUB</p>
-	                    <img class="ico" src="/resources/images/skico8.png" alt="">
+	                    <img class="ico" src="/filo/resources/images/pf/skico8.png" alt="">
 	                    <p class="txt">필요한 알고리즘을 짤 수 있으며, 적용가능 합니다.</p>
 	                    <p class="per">70%</p>                    
 	                </li>
