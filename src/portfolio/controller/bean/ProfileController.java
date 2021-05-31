@@ -7,6 +7,11 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @RequestMapping("/profile/")
 public class ProfileController {
 	//팀프로필
+	@RequestMapping("main.fl")
+	public String main() {
+		return "/pf/profile/main";
+	}
+	//팀프로필
 	@RequestMapping("team.fl")
 	public String home() {
 		return "/pf/profile/team";

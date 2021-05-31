@@ -106,7 +106,7 @@
 .imgBundle li {float:left;}
 .imgBundle li img {width: 480px;}
 .logoFonts {overflow: hidden; padding:60px 0 80px;}
-.logoFonts .graphPaper {background-image: url(/portfolio/resources/images/pf/graphPaper.png);}
+.logoFonts .graphPaper {background-image: url(/filo/resources/images/pf/graphPaper.png);}
 .logoFonts .graphPaper {width:500px; height:500px; margin:25px 50px 0 0; padding:65px 100px 0; position: relative;}
 .logoFonts .graphFonts {width:650px; margin:25px 0 0 0;}
 .logoFonts .graphPaper > img {display:block; position: absolute; top:50%; left:50%; transform:translate(-50%,-50%);}

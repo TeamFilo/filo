@@ -1,5 +1,9 @@
 @charset "UTF-8";
-/*common.css*/
+/*common.css*/  
+
+/*font*/
+body {font-family: 'Play', 'Noto Sans KR', sans-serif;}
+
 /*SCROLLBAR IE*/
 * {scrollbar-arrow-color:#9D9992; scrollbar-3dlight-color:#D4D0C8; scrollbar-darkshadow-color:#D4D0C8; scrollbar-face-color:#FFFFFF; scrollbar-hightlight-color:#FFFFFF; scrollbar-shadow-color:#FFFFFF; scrollbar-track-color:#EAE7E1;}
 
