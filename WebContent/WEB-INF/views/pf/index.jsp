@@ -4,7 +4,7 @@
 
 	<jsp:include page="/WEB-INF/views/include/top_pf.jsp" />
 	<!-- //top_pf end -->
-	<div style="display:block;position:fixed;top:50px;left:50px;z-index:999;" id="callbacksDiv"></div>
+	<div style="display:none;position:fixed;top:50px;left:50px;z-index:999;" id="callbacksDiv"></div>
     <!--callbacksDiv end-->
     
     <div class="btnGoTop"><img src="/filo/resources/images/pf/goTop.png"></div>
@@ -396,10 +396,10 @@
     <!-- //popWrap end -->
 
     <div class="fullpageImgWrap">
-        <img class="img img1" src="/filo/resources/images/bread.png"/>
-        <img class="img img2-1" src="/filo/resources/images/bus.png"/>
-        <img class="img img2-2" src="/filo/resources/images/beer.png"/>
-        <img class="img img3" src="/filo/resources/images/soju.png"/>
+        <img class="img img1" src="/filo/resources/images/pf/bread.png"/>
+        <img class="img img2-1" src="/filo/resources/images/pf/bus.png"/>
+        <img class="img img2-2" src="/filo/resources/images/pf/beer.png"/>
+        <img class="img img3" src="/filo/resources/images/pf/soju.png"/>
     </div>
     <!--imgWrap End-->
 
@@ -433,7 +433,7 @@
 	                       높여줄 최고의 워크웨어를 제안합니다.
 	                    </p>
 	                    <div class="btnDef bounce-to-right btnPop btnPop1" id="deBtn1">Detail</div>
-	                    <div class="btnDef bounce-to-right btnPop" id="goBtn1">Go</div>
+	                    <a href="/filo/mem/index.fl"><div class="btnDef bounce-to-right btnPop" id="goBtn1">Go</div></a>
 	                 </div>
 	                 <!--titWrap End-->
 	            </div>
@@ -479,15 +479,17 @@
 	            <div class="titWrap titWrap3">
 	                <p class="tit">3We are FILO.</p>
 	                <p class="sub">
-	                   저희가 궁금하신가요? <br/>
-	                   프로필을 확인해보세요 :)
+				                저희가 궁금하신가요? <br/>
+				                프로필을 확인해보세요 :)
 	                </p>
 	                <p class="txt">
-	                   글로벌한 소재 소싱, 안정된 생산시스템을<br/>
-	                   통해 고객사를 만족시키고, 기업의 가치와 작업능률을<br/>
-	                   높여줄 최고의 워크웨어를 제안합니다.
+				                글로벌한 소재 소싱, 안정된 생산시스템을<br/>
+				                통해 고객사를 만족시키고, 기업의 가치와 작업능률을<br/>
+				                높여줄 최고의 워크웨어를 제안합니다.
 	                </p>
+               		<a href="/filo/mem/index.fl"><div class="btnDef bounce-to-right btnPop" id="goBtn4">Go</div></a>
 	             </div>
+	             <!-- titWrap End -->
 	        </div>
 	        
 	        <div class="section fp-auto-height" id="section3">
@@ -655,6 +657,7 @@
                     $('.titWrap3 > .tit').animate({top:"0",opacity:"1"}, 700);
                     $('.titWrap3 > .sub').delay(400).animate({left:"0",opacity:"1"}, 700);
                     $('.titWrap3 > .txt').delay(700).animate({left:"0",opacity:"1"}, 700);
+                    $('#goBtn4').delay(700).animate({bottom:"0",opacity:"1"}, 750);
                 }
 
                 deleteLog = true;
