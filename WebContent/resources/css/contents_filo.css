@@ -1,0 +1,183 @@
+@charset "UTF-8";
+
+/*contents_filo.css*/
+
+/*index basic*/
+.indexMode {}
+.w1200 {width:1200px; margin:0 auto;}
+.wrapAll {padding:0;}
+.wrapAll.wrapAll2 {padding:0 0 0 310px;}
+.titWrapMy {position: relative;}
+.titWrap .tit {font-size:90px; color:#ff3f02; font-weight:bold;}
+.titWrap .sub {font-size:50px; line-height:60px; margin:20px 0 40px 0;}
+.titWrap .txt {font-size:20px; line-height:35px;}
+.titWrap .txt.right {text-align: right; line-height: 25px; color:#555; position: absolute;top: 0;right: 0;}
+.titWrap .sTit {font-size:25px; font-weight:bold; line-height:35px;}
+.btnDef {width: 150px; height: 47px; background: #ccc; line-height: 47px; color:#fff; font-size: 17px; cursor: pointer; transition: .3s; padding: 0 20px;}
+.btnPop {margin: 40px 0 0;}
+.btnPopGo {width: 120px; text-align: right; position: absolute;top: 350px;left: calc(100% - 200px);}
+.btnPopGo:hover {width: 150px; color:#fff;}
+.btnGoTop {display: none; cursor: pointer; position: fixed; bottom: 50px;right: 3%; z-index: 1002;}
+
+/*index portfolio*/
+#fullpage .titWrap {position: absolute;top: 50%;left: 150px; transform: translateY(-50%);}
+#fullpage .titWrap p {opacity: 0; position: relative;}
+#fullpage .titWrap .tit {top: -80px;}
+#fullpage .titWrap .sub {left: -80px;}
+#fullpage .titWrap .txt {left: -80px;}
+#fullpage .imgWrap {overflow: hidden; width: 50%; height: 100vh; background: #000; transition: 1s; position: fixed;bottom: 0;right: 0;}
+#fullpage .imgWrap img {display: block; height: 100%;}
+.popWrap {display: none; -ms-overflow-style: none; scrollbar-width: none; overflow-y: scroll; width: 100%; height: 100vh; transition:.5s; padding: 0 200px; position: fixed;top: 0;left: 50%; transform: translateX(-50%); z-index: 1001;}
+.popWrap::-webkit-scrollbar {display: none;}
+.popWrap .inner {padding: 100px 0 250px;}
+.popWrap .inner > li {display: none; width: 100%; background: #fff;}
+.popWrap .inner > li .vodWrap {position: relative;}
+.popWrap .inner > li .vodWrap video {width: 100%;}
+.popWrap .inner > li .vodWrap .pCover {width: 100%; height:100%; background: rgba(0, 0, 0, 0.4); position: absolute; top: 0; left: 0; z-index: 1;}
+.popWrap .inner > li .vodWrap .btnPopClose {cursor: pointer; position: absolute; top: 50px; right: 50px; z-index: 2;}
+.popWrap .inner > li .vodWrap .txtWrap {padding:150px 120px; position: absolute; bottom: 0; left: 0; z-index: 2;}
+.popWrap .inner > li .vodWrap > .txtWrap {color:#fff;}
+.popWrap .inner > li .vodWrap .txtWrap .tit {margin:5px 0 40px; font-size:90px; font-weight:bold; }
+.popWrap .inner > li .vodWrap .btnDef {width:150px; background: #fff; font-size:17px; font-weight:bold; color:#000;}
+.popWrap .inner > li .vodWrap .btnDef:hover {width: 150px; color:#fff; transition:.3s;}
+.popWrap .inner > li .vodWrap .txtWrap .bTxt {margin:0; }
+
+.popWrap .inner > li .txtWrap .bTxt {margin: 10px 0 40px 0; font-size:25px; }
+.popWrap .inner > li .devWrap.txtWrap .bTxt {margin: 10px 0 10px 0; font-weight:bold; }
+.popWrap .inner > li .txtWrap .sTit {font-size: 40px; font-weight: bold;}
+.popWrap .inner > li .devWrap.txtWrap .sTit {margin:0 0 20px 0;}
+.popWrap .inner > li .txtWrap .ssTit {font-size: 20px; color:#9e9e9e;}
+.popWrap .inner > li .txtWrap .deTit {font-size: 20px; line-height:1.3;}
+
+.popWrap .inner > li .contWrap {padding:100px 120px;}
+.popWrap .inner > li .contWrap .line {width: 100%; margin:100px 0; border: 1px solid #f3f3f3;}
+.popWrap .inner > li .contWrap .partWrap .techWrap {overflow: hidden; width: 100%; margin:0; padding:50px 0 0;}
+.popWrap .inner > li .contWrap .partWrap .techWrap li {float:left;}
+.popWrap .inner > li .contWrap .partWrap .techWrap li:nth-child(2n-1) {width:30%;}
+.popWrap .inner > li .contWrap .partWrap .techWrap li:nth-child(2n) {width:70%;}
+.popWrap .inner > li .contWrap .partWrap .techWrap li:nth-child(3) .bTxt {margin:10px 0 0 0;}
+.popWrap .inner > li .contWrap .partWrap .techWrap li:nth-child(4) .bTxt {margin:10px 0 0 0;}
+
+.popWrap .inner > li .contWrap .devWrap .pointWrap {overflow: hidden; width: 100%;}
+.popWrap .inner > li .contWrap .devWrap .pointWrap li {float: left; width:32%; margin: 20px 2% 30px 0;}
+.popWrap .inner > li .contWrap .devWrap .pointWrap li:nth-child(3n) {margin: 20px 0 30px 0;}
+.popWrap .inner > li .contWrap .devWrap .pointWrap li img {width: 100%; height:210px; margin:0 0 30px;}
+
+/*main profile*/
+.meetWrap {padding:150px 0;}
+.meetCont {overflow: hidden;}
+.meetCont li {padding: 0 0 0 30px; position:relative;}
+.meetCont li .caption {transform: rotate(270deg); transform-origin: 0% 0%; position:absolute; top:580px; left:0;}
+.meetCont li .caption span {color:#ff3f02;}
+.meetCont li .value .sub {margin:23px 0 15px 0; font-size:40px; font-weight: 600;}
+.meetCont li .value .exp {font-size:20px; line-height:1.3; font-weight:400;}
+.meetCont .imgWrap {width:535px; height:620px; position:relative;}
+.meetCont .imgWrap .bg {width:100%; height:100%; transition: .3s; opacity:0; padding: 80px; position: absolute;top: 0;right: 0; z-index:2;}
+.meetCont .imgWrap .bg p {display: none;}
+.meetCont .imgWrap .bg a {display: block; width:100%; height:100%; position: absolute;top: 0;right: 0; z-index:1;}
+.meetCont .imgWrap .bg .name {line-height: ; color: #fff; font-family: 'Noto Sans KR', sans-serif; font-size: 80px; font-weight: 500;}
+.meetCont .imgWrap .bg .card {position: absolute;bottom: 80px;right: 80px;}
+.meetCont .imgWrap .bg .card .email {text-align: right; color: #fff; font-family: 'Noto Sans KR', sans-serif; font-size: 32px; font-weight: 100; margin: 0 0 10px 0;}
+.meetCont .imgWrap .bg .card .ph {text-align: right; color: #fff; font-family: 'Noto Sans KR', sans-serif; font-size: 32px; font-weight: 200;}
+.meetCont .imgWrap img {width:100%; height:100%; position: absolute;top: 0;right: 0; z-index:1;}
+.meetCont .imgWrap:hover .bg {background: #ff3f02; opacity:1;}
+.meetCont .imgWrap:hover .bg p {display: block;}
+
+.meetCont .meetContRight li:nth-child(1) .imgWrap {width: 535px; height:400px;}
+.meetCont .meetContLeft {float:left; width:46%; margin:150px 8% 0 0;}
+.meetCont .meetContLeft li {margin-bottom:100px;}
+.meetCont .meetContRight {float:left; width:46%;}
+.meetCont .meetContRight li {margin-bottom:100px;}
+
+.contactWrap {width: 100%; background: #f3f3f3; padding: 180px 0;}
+.contactWrap .nameCard {overflow: hidden;}
+.contactWrap .nameCard li {float: left; width: 23.25%; background: #000; padding: 50px 40px; margin: 0 2% 0 0;}
+.contactWrap .nameCard li:nth-child(4) {margin: 0;}
+.contactWrap .nameCard li .name {line-height: 0.8; color: #fff; font-family: 'Noto Sans KR', sans-serif; font-size: 45px; font-weight: 100; margin: 0 0 100px 0;}
+.contactWrap .nameCard li .email {text-align: right; color: #fff; font-family: 'Noto Sans KR', sans-serif; font-size: 16px; font-weight: 100;}
+.contactWrap .nameCard li .ph {text-align: right; color: #fff; font-family: 'Noto Sans KR', sans-serif; font-size: 27px; font-weight: 200;}
+
+/*team profile*/
+.teamIntro { margin:100px 0 100px 0; position:relative;}
+.teamIntro .teamMain {display:block; width:1080px; height:620px;}
+.teamIntro .logoWrap {position:absolute; bottom:50px; left:1140px;}
+.teamDetail {padding:0 0 200px 475px;}
+.imgBundle {overflow: hidden; margin:0 0 20px 0;}
+.imgBundle li {float:left;}
+.imgBundle li img {width: 480px;}
+.logoFonts {overflow: hidden; padding:60px 0 80px;}
+.logoFonts .graphPaper {background-image: url(/portfolio/resources/images/pf/graphPaper.png);}
+.logoFonts .graphPaper {width:500px; height:500px; margin:25px 50px 0 0; padding:65px 100px 0; position: relative;}
+.logoFonts .graphFonts {width:650px; margin:25px 0 0 0;}
+.logoFonts .graphPaper > img {display:block; position: absolute; top:50%; left:50%; transform:translate(-50%,-50%);}
+.logoFonts .logo {float: left;}
+.logoFonts .fonts {float: left;}
+.wrapAll .fonts.titWrap .sub {margin:0; font-weight:bold;}
+.wrapAll .fonts.titWrap .txt.notoS {margin:50px 0 0; font-family: 'Noto Sans KR', sans-serif;}
+
+.colors .cBox {overflow: hidden; margin: 25px 0 100px;}
+/*25 16 16 16 16 //89 mar 5 2*/
+.colors .cBox li {float: left; margin: 0 4% 0 0;}
+.colors .cBox li .top {height:30px; margin:0 0 20px;}
+.colors .cBox li .bottom {height:350px; margin:20px 0 0;}     
+.colors .cBox li:nth-child(1) {width: 16.8%; margin: 0 4% 0 0;}
+.colors .cBox li:nth-child(1) .color {background: #ff3f02;}
+.colors .cBox li:nth-child(2) {width: 16.8%; }
+.colors .cBox li:nth-child(2) .color {background: #000;}
+.colors .cBox li:nth-child(3) {width: 16.8%;}
+.colors .cBox li:nth-child(3) .color { background: #5f5f5f;}
+.colors .cBox li:nth-child(4) {width: 16.8%;}
+.colors .cBox li:nth-child(4) .color { background: #cacaca;}
+.colors .cBox li:nth-child(5) {width: 16.8%; margin:0; }
+.colors .cBox li:nth-child(5) .color {background: #fff; border: 1px solid #000;}
+.colors .hex {margin: 20px 0 0;}
+
+/*myProfile*/
+.infoWrap {height: 1500px; padding: 150px 0; position: relative;}
+
+.infoWrap .imgWrap {width: 1200px; height: 100%; position: absolute;top: 0;left: 0; z-index: -1;}
+.infoWrap .imgWrap .bg {position: absolute;top: 500px;left: 50%; transform: translateX(-50%); z-index: 1;}
+.infoWrap .imgWrap .all {width: 850px; position: absolute;top: 430px;left: 50%; transform: translateX(-50%); z-index: 2;}
+
+.infoWrap .txtWrap {width: 100%; height: calc(100% - 590px); position: absolute; z-index: 2;}
+.infoWrap .txtWrap .box {width: 280px; position: absolute;}
+.infoWrap .txtWrap .box .num {width: 40px; height: 40px; background: #555; line-height: 40px; text-align: center; color:#fff; font-size: 16px; font-weight: 600;}
+.infoWrap .txtWrap .box .txt {width: 100%; line-height: 1.3; font-size:20px; font-weight: 600; margin: 7px 0 0;}
+.infoWrap .txtWrap .box.right .num {float: right;}
+.infoWrap .txtWrap .box.right .txt {float: right; text-align: right;}
+.infoWrap .txtWrap .box .txt span {color:#ff3f02;}
+
+.infoWrap .txtWrap.hys .box1 {top: 0;right: 50px;}
+.infoWrap .txtWrap.hys .box2 {top: 50px;left: 50px;}
+.infoWrap .txtWrap.hys .box3 {bottom: 250px;left: 50px;}
+.infoWrap .txtWrap.hys .box4 {bottom: 300px;right: 50px;}
+
+.infoWrap .tag {color:#f3f3f3; font-size: 90px; font-weight: 500; position: absolute;bottom: 150px;right: 0;}
+
+
+.skillWrap {background: #f3f3f3; padding: 150px 0;}
+.skillWrap .inner {overflow: hidden;}
+.skillWrap .inner li {float: left; width: 23.25%; height: 400px; background: #555; padding: 45px; margin: 0 2% 2% 0; position: relative;}
+.skillWrap .inner li:nth-child(4n) {margin: 0 0 2% 0;}
+.skillWrap .inner li p,img {position: relative; z-index: 2;}
+.skillWrap .inner li .bg {width: 100%; height: 280px; background: #ff3f02; position: absolute;bottom: 0;left: 0; z-index: 1;}
+.skillWrap .inner li .name {text-align: center; color:#fff; font-size:20px; font-weight: 600;}
+.skillWrap .inner li .ico {display: block; margin: 10px auto 60px;}
+.skillWrap .inner li .txt {height: 54px; line-height: 18px; color:#fff; font-size:16px; font-weight: 400; margin: 0 0 20px;}
+.skillWrap .inner li .per {color:#fff; font-size:50px; font-weight: 600;}
+
+
+.eduWrap {padding: 150px 0;}
+.eduWrap .titWrap {width: 100%; padding: 0 0 0 18.75%;}
+.eduWrap .inner {width: 100%; padding: 0 0 0 18.75%;}
+.eduWrap .inner li {background: #f3f3f3; padding: 70px 80px; margin: 0 0 50px;}
+.eduWrap .inner li:last-child {margin: 0;}
+.eduWrap .inner li .tit {font-size: 35px; font-weight: 600;}
+.eduWrap .inner li .sub {font-size: 20px; font-weight: 500; margin: 15px 0 20px;}
+.eduWrap .inner li .txt {line-height: 1.7; font-size: 18px; font-weight: 400;}
+
+/*popup Layer*/
+
+
+/*index game*/
+.gameMode {display: none; background: #333;}
