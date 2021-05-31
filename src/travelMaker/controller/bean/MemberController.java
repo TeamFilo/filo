@@ -33,7 +33,7 @@ import travelMaker.service.bean.MemberService;
 import travelMaker.service.bean.TravelService;
 
 @Controller
-@RequestMapping("/travelMaker/mem/")
+@RequestMapping("/mem/")
 public class MemberController {
 	
 	@Autowired
