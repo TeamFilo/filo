@@ -41,6 +41,12 @@ public class GameController {
 	
 	int answer = 0;	//updown 시 ajax와 게임페이지에서 변수를 공유하기 위해 바깥으로 뺌
 	
+	@RequestMapping("main.fl")
+	public String gameMain() {
+		
+		return "/pf/game/main";
+	}
+	
 	//hys up-down game page
 	@RequestMapping("updown.fl")
 	public String numUpDown(Model model) {
