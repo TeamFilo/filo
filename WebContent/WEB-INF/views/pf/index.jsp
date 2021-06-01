@@ -424,16 +424,15 @@
 	                <div class="titWrap titWrap2-1">
 	                    <p class="tit">2-1We are FILO.</p>
 	                    <p class="sub">
-	                       저희가 궁금하신가요? <br/>
-	                       프로필을 확인해보세요 :)
+				                       포트폴리오가 궁금하신가요? <br/>
+				                       프로필을 확인해보세요 :)
 	                    </p>
 	                    <p class="txt">
-	                       글로벌한 소재 소싱, 안정된 생산시스템을<br/>
-	                       통해 고객사를 만족시키고, 기업의 가치와 작업능률을<br/>
-	                       높여줄 최고의 워크웨어를 제안합니다.
+				                       글로벌한 소재 소싱, 안정된 생산시스템을<br/>
+				                       통해 고객사를 만족시키고, 기업의 가치와 작업능률을<br/>
+				                       높여줄 최고의 워크웨어를 제안합니다.
 	                    </p>
 	                    <div class="btnDef bounce-to-right btnPop btnPop1" id="deBtn1">Detail</div>
-	                    <a href="/filo/mem/index.fl"><div class="btnDef bounce-to-right btnPop" id="goBtn1">Go</div></a>
 	                 </div>
 	                 <!--titWrap End-->
 	            </div>
@@ -442,17 +441,19 @@
 	                <div class="titWrap titWrap2-2">
 	                    <p class="tit">2-2We are FILO.</p>
 	                    <p class="sub">
-	                       저희가 궁금하신가요? <br/>
-	                       프로필을 확인해보세요 :)
+				                       저희가 궁금하신가요? <br/>
+				                       프로필을 확인해보세요 :)
 	                    </p>
 	                    <p class="txt">
-	                       글로벌한 소재 소싱, 안정된 생산시스템을<br/>
-	                       통해 고객사를 만족시키고, 기업의 가치와 작업능률을<br/>
-	                       높여줄 최고의 워크웨어를 제안합니다.
+				                       글로벌한 소재 소싱, 안정된 생산시스템을<br/>
+				                       통해 고객사를 만족시키고, 기업의 가치와 작업능률을<br/>
+				                       높여줄 최고의 워크웨어를 제안합니다.
 	                    </p>
 	                    <div class="btnDef bounce-to-right btnPop btnPop2" id="deBtn2">Detail</div>
-	                    <div class="btnDef bounce-to-right btnPop" id="goBtn2">Go</div>
+	                    <a href="/filo/game/main.fl"><div class="btnDef bounce-to-right btnPop" id="goBtn2">Go</div></a>
 	                 </div>
+	                 
+	                 
 	            </div>
 	
 	            <div class="slide" id="slide3">
@@ -468,7 +469,7 @@
 	                       높여줄 최고의 워크웨어를 제안합니다.
 	                    </p>
 	                    <div class="btnDef bounce-to-right btnPop btnPop3" id="deBtn3">Detail</div>
-	                    <div class="btnDef bounce-to-right btnPop" id="goBtn3">Go</div>
+	                    <a href="/filo/mem/index.fl"><div class="btnDef bounce-to-right btnPop" id="goBtn3">Go</div></a>
 	                 </div>
 	                 <!--titWrap End-->
 	            </div>
@@ -487,7 +488,7 @@
 				                통해 고객사를 만족시키고, 기업의 가치와 작업능률을<br/>
 				                높여줄 최고의 워크웨어를 제안합니다.
 	                </p>
-               		<a href="/filo/mem/index.fl"><div class="btnDef bounce-to-right btnPop" id="goBtn4">Go</div></a>
+               		<a href="/filo/profile/main.fl"><div class="btnDef bounce-to-right btnPop" id="goBtn4">Go</div></a>
 	             </div>
 	             <!-- titWrap End -->
 	        </div>
