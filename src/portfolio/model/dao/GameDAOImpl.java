@@ -10,6 +10,7 @@ import org.springframework.stereotype.Repository;
 
 import portfolio.model.dto.GameInfoDTO;
 import portfolio.model.dto.GameRecordDTO;
+import portfolio.model.dto.GrGiJoinDTO;
 import portfolio.model.dto.WalletDTO;
 
 @Repository
@@ -40,8 +41,8 @@ public class GameDAOImpl implements GameDAO  {
 	
 	//회원의 모든 gameRecord 리턴
 	@Override
-	public List<GameRecordDTO> getGameRecord(String id) {
-		List<GameRecordDTO> records = sqlSession.selectList("game.userAllRecord",id);
+	public List<GrGiJoinDTO> getGameRecord(String id) {
+		List<GrGiJoinDTO> records = sqlSession.selectList("game.userAllRecord",id);
 		return records;
 	}
 	

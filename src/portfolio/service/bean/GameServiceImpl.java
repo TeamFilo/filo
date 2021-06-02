@@ -13,6 +13,7 @@ import org.springframework.stereotype.Service;
 import portfolio.model.dao.GameDAO;
 import portfolio.model.dto.GameInfoDTO;
 import portfolio.model.dto.GameRecordDTO;
+import portfolio.model.dto.GrGiJoinDTO;
 import portfolio.model.dto.WalletDTO;
 
 @Service
@@ -42,8 +43,8 @@ public class GameServiceImpl implements GameService {
 	
 	//회원의 모든 gameRecord 리턴
 	@Override
-	public List<GameRecordDTO> getGameRecord(String id) {
-		List<GameRecordDTO> records = gameDAO.getGameRecord(id);
+	public List<GrGiJoinDTO> getGameRecord(String id) {
+		List<GrGiJoinDTO> records = gameDAO.getGameRecord(id);
 		return records;
 	}
 	

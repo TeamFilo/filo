@@ -11,6 +11,7 @@
 
 	<!-- sql문에서 DTO 쓸 때 경로가 기니까 별칭을 세팅 -->
 	<typeAliases>	
+		<typeAlias type="portfolio.model.dto.GrGiJoinDTO" alias="GrGiJoinDTO"/>
 		<typeAlias type="portfolio.model.dto.GameInfoDTO" alias="GameInfoDTO"/>
 		<typeAlias type="portfolio.model.dto.GameRecordDTO" alias="GameRecordDTO"/>
 		<typeAlias type="portfolio.model.dto.WalletDTO" alias="WalletDTO"/>
