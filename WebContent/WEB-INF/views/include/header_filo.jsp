@@ -20,12 +20,14 @@
 	<link href="<c:url value="/resources/css/rockPS.css" />" rel="stylesheet"/>
 	<link href="<c:url value="/resources/css/winwheel.css" />" rel="stylesheet"/>
 	<link href="<c:url value="/resources/css/fullpage.css" />" rel="stylesheet"/>
+	<link href="<c:url value="/resources/css/swiper.css" />" rel="stylesheet"/>
 	
 	
 	<!-- JS -->
 	<script type="text/javascript" src="<c:url value="/resources/js/jquery.min.js" />"></script>
 	<script type="text/javascript" src="<c:url value="/resources/js/aos.js" />"></script>	
 	<script type="text/javascript" src="<c:url value="/resources/js/fullpage.min.js" />"></script>	
+	<script type="text/javascript" src="<c:url value="/resources/js/swiper.min.js" />"></script>	
 	<script type="text/javascript" src="<c:url value="/resources/js/lotteryScratch.js" />"></script>
 	<script type="text/javascript" src="<c:url value="/resources/js/Winwheel.js" />"></script>
 	<script type="text/javascript" src="<c:url value="/resources/js/rock.js" />"></script>	

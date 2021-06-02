@@ -464,3 +464,68 @@ body {font-family: 'Roboto', 'Noto Sans KR', sans-serif;}
           transform: scale(1, 0);
       }
   }
+  
+  /*top_filo*/
+#top_game {width: 100%; height: 80px; border-bottom: 1px solid rgba(255,255,255,.1); position: fixed;top: 0;left: 0; z-index: 997;}
+
+.game .txtWrap .tit {font-size:25px;}
+.game .txtWrap .sub {font-size:15px;}
+.game .txtWrap .txt {font-size:12px; color:#9D9992;}
+
+/*left_game*/
+#left_game {overflow: hidden; width: 350px; height: calc(100vh - 80px); position: fixed;top: 80px;left: 30px; z-index: 996;}
+#left_game .swiper-container {width: 100%; height: 100%; padding: 30px 0;}
+#left_game .swiper-container .swiper-slide {border-radius: 15px; background: #2C2D31; color:#fff; padding: 30px;}
+#left_game .swiper-container .gameBio .bioWrap {position: relative; margin: 0 0 50px;}
+#left_game .swiper-container .gameBio img {width: 100px; height: 100px;}
+#left_game .swiper-container .gameBio .nameWrap {position: absolute; top:50%; left:120px; transform: translateY(-50%);}
+#left_game .swiper-container .gameBio .nameWrap .tit {margin:0 0 10px 0;}
+
+progress {-webkit-appearance: none; width: 100%;}
+::-webkit-progress-bar {background-color: #21252a; border-radius: 15px; width: 100%; height: 9px;  }
+::-webkit-progress-value {background-color: #ff3f02; border-radius: 10px;  }
+#left_game .swiper-container .gameBio .proBar {overflow: hidden; margin:0 0 70px;}
+#left_game .swiper-container .gameBio .proBar .txt.percen {float:right; margin:5px 0 0; color:#fff;}
+#left_game .swiper-container .gameBio .proBar .txt {float:left; margin:5px 0 0;}
+#left_game .swiper-container .gameBio .pIconWrap {overflow: hidden; width: 100%; margin:0 0 30px; position: relative; }
+#left_game .swiper-container .gameBio .pIconWrap img {float: right; width: 22px; height: auto;}
+#left_game .swiper-container .gameBio .pIconWrap .sub {float:right; margin:0 10px 0 30px; font-size:18px; line-height: 22px;}
+
+#left_game .swiper-container .gameBio .graBtn {width: 100%; height: 45px; line-height: 45px; text-align: center; border-radius:5px ; cursor: pointer; background: linear-gradient(to right, #ff3f02, #00eeff); }
+
+#left_game .swiper-container .player li {overflow: hidden; width: 100%; margin:35px 0; position: relative;}
+#left_game .swiper-container .player li:nth-child(1) {margin:55px 0 0; position: relative; z-index:2;}
+#left_game .swiper-container .player li:nth-child(4) {margin:35px 0 0; position: relative; z-index:2;}
+#left_game .swiper-container .player li > * {float:left; margin:0 20px 0 0;}
+#left_game .swiper-container .player li .playPoint {position: absolute; left:70px; top:50%; transform: translateY(-50%);}
+#left_game .swiper-container .player li .sub {margin:0 0 5px;}
+#left_game .swiper-container .player li .tit {float:right; margin:0; line-height: 50px;}
+#left_game .swiper-container .player li img {width: 50px; height: 50px;}
+#left_game .swiper-container .player .rCover {width: 100%; height: 90px; background:#1d1d1d; position: absolute; bottom: 0; left: 0; z-index:1;}
+
+/*20 20 20 16 m32*/
+#left_game .swiper-container .morePoint .tit {margin:0 0 60px 0;}
+#left_game .swiper-container .morePoint .gameCount li {overflow: hidden; width: 100%; margin: 0 0 30px 0;}
+#left_game .swiper-container .morePoint .gameCount li > * {float:left; width: 20%; margin: 0 13% 0 0 }
+#left_game .swiper-container .morePoint .gameCount li img {height: auto;}
+#left_game .swiper-container .morePoint .gameCount li .subWrap {width: 34%;}
+#left_game .swiper-container .morePoint .gameCount li .sub {font-size:20px; line-height:58px;}
+#left_game .swiper-container .morePoint .gameCount li .goBtn {height: 58px; background: #21252A; margin:0;}
+
+#left_game .swiper-container .todayRec .tit {margin: 0 0 40px 0;}
+#left_game .swiper-container .todayRec .someWrap {overflow: hidden; margin: 0 0 20px 0;}
+#left_game .swiper-container .todayRec .someWrap li {float:left; width: 20%; margin:0 20% 0 0; color:#fff;}
+#left_game .swiper-container .todayRec .someWrap li .txt {color:#fff;}
+#left_game .swiper-container .todayRec .someWrap li:nth-child(2) {width: 16%; margin:0 12% 0 0; }
+#left_game .swiper-container .todayRec .someWrap li:nth-child(3) {width:25%; margin:0 3% 0 0;}
+
+#left_game .swiper-container .todayRec .totalRecord > li {margin:0 0 20px 0;}
+
+
+#left_game .swiper-container .todayRec .totalRecord .recordWrap {overflow: hidden;}
+#left_game .swiper-container .todayRec .totalRecord .recordWrap li {float:left; width: 20%; margin:0 20% 0 0; color:#fff;}
+#left_game .swiper-container .todayRec .totalRecord .recordWrap li .sub {color:#9D9992;}
+#left_game .swiper-container .todayRec .totalRecord .recordWrap li:nth-child(2) {width: 16%; margin:0 12% 0 0;}
+#left_game .swiper-container .todayRec .totalRecord .recordWrap li:nth-child(3) {width:25%; margin:0 3% 0 0;}
+
+#left_game .swiper-container .todayRec .totalRecord .recordWrap li .onWin {color:#00eeff;}
