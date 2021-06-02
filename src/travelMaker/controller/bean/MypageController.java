@@ -67,7 +67,7 @@ public class MypageController {
 		
 		Iterator<GroupSpaceDTO> iter = jList.iterator();
 		while(iter.hasNext()) {
-			if(iter.next().getStatus()>=3) {	//끝났거나 모집취소한 건 제외
+			if(iter.next().getStatus()>=3) {
 				iter.remove();
 			}
 		}

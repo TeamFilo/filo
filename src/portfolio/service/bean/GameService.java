@@ -3,7 +3,7 @@ package portfolio.service.bean;
 import java.util.List;
 
 import portfolio.model.dto.GameInfoDTO;
-import portfolio.model.dto.GameRecordDTO;
+import portfolio.model.dto.GrGiJoinDTO;
 import portfolio.model.dto.WalletDTO;
 
 public interface GameService {
@@ -16,7 +16,7 @@ public interface GameService {
 	//회원 wallet 리턴
 	public WalletDTO getWallet(String id);
 	//회원의 모든 gameRecord 리턴
-	public List<GameRecordDTO> getGameRecord(String id);
+	public List<GrGiJoinDTO> getGameRecord(String id);
 	//게임 정보 리턴
 	public GameInfoDTO getGameInfo(int gameCate);
 	

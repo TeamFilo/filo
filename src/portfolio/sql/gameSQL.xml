@@ -16,8 +16,8 @@
 	</select>
 	
 	<!-- 회원의 모든 게임 정보 리턴 -->
-	<select id="userAllRecord" parameterType="string" resultType="GameRecordDTO">
-		select * from gameRecord where id=#{value}
+	<select id="userAllRecord" parameterType="string" resultType="GrGiJoinDTO">
+		SELECT gr.*, gi.name FROM gameRecord gr JOIN GameInfo gi ON gr.gameCate=gi.gameCate WHERE id=#{value} ORDER BY reg DESC
 	</select>
 	
 	<!-- 회원의 특정 게임 정보 리턴 -->

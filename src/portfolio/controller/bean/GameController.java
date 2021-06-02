@@ -1,7 +1,10 @@
 package portfolio.controller.bean;
 
 import java.sql.SQLException;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.Date;
 import java.util.List;
 import java.util.Map;
@@ -19,6 +22,8 @@ import org.springframework.web.context.request.RequestContextHolder;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
 import portfolio.model.dto.GameInfoDTO;
+import portfolio.model.dto.GameRecordDTO;
+import portfolio.model.dto.GrGiJoinDTO;
 import portfolio.model.dto.WalletDTO;
 import portfolio.service.bean.GameService;
 import travelMaker.service.bean.MemberService;
@@ -42,7 +47,36 @@ public class GameController {
 	int answer = 0;	//updown 시 ajax와 게임페이지에서 변수를 공유하기 위해 바깥으로 뺌
 	
 	@RequestMapping("main.fl")
-	public String gameMain() {
+	public String gameMain(Model model) throws Exception {
+		String user = (String)RequestContextHolder.getRequestAttributes().getAttribute("memId", RequestAttributes.SCOPE_SESSION);
+		
+		//오늘 한 게임
+		SimpleDateFormat sdf = new SimpleDateFormat("yyyyMMdd");
+		String today = sdf.format(Calendar.getInstance().getTime());
+		List<GrGiJoinDTO> records = gameService.getGameRecord(user);
+		List<GrGiJoinDTO> todayRecords = new ArrayList<GrGiJoinDTO>();
+
+		for(int i=0; i<records.size(); i++) {
+			//GameRecordDTO rec = records.get(i);
+			String gameReg = sdf.format(new Date(records.get(i).getReg().getTime()));
+			if(gameReg.equals(today)) { //&& rec.getGameCate()!=0 && rec.getGameCate()!=4;
+				todayRecords.add(records.get(i));
+			}
+		}
+		model.addAttribute("todayRecords",todayRecords);
+		
+		//오늘 룰렛, 복권 횟수
+		model.addAttribute("lotteryCnt", gameService.getWallet(user).getLotteryCnt());
+		model.addAttribute("rouletteCnt", gameService.getWallet(user).getRouletteCnt());
+		
+		//랭킹
+		/*
+		업다운
+		카드
+		가위바위보
+		*/
+		
+		
 		
 		return "/pf/game/main";
 	}
