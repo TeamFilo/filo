@@ -75,8 +75,8 @@ public class GameController {
 		카드
 		가위바위보
 		*/
-		
-		
+		double gamePercent = gameService.gamePercent(user);	
+		model.addAttribute("gamePercent" ,gamePercent);
 		
 		return "/pf/game/main";
 	}

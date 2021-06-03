@@ -79,4 +79,18 @@ public class GameDAOImpl implements GameDAO  {
 		sqlSession.update("game.updateLotteryCnt",user);
 	}
 	
+	//상위 퍼센트 정보 구하기
+	@Override
+	public Map gamePercent(String user) {
+		System.out.println("게임퍼센트");
+		double myRank = sqlSession.selectOne("game.myRank",user);
+		double allCnt = sqlSession.selectOne("game.allMemCnt", user);
+		
+		Map map = new HashMap<Double, Double>();
+		map.put("myRank", myRank);
+		map.put("allCnt", allCnt);
+		
+		return map;
+	}
+	
 }

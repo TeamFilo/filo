@@ -75,4 +75,13 @@
 		select * from icon
 	</select>
 	
+	<!-- 게임퍼센트 구하기 : 등수-->
+	<select id="myRank" parameterType="String" resultType="double">
+		SELECT all_rank FROM (select id, rank() over (order by avg(score) desc) all_rank from gameRecord group by id) WHERE id=#{value}
+	</select>
+	
+	<select id="allMemCnt" resultType="double">
+		SELECT count(*) FROM tmuser
+	</select>
+	
 </mapper>
