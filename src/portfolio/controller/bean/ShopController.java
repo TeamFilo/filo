@@ -40,8 +40,12 @@ public class ShopController {
 	@RequestMapping("purchaseColor.fl") 
 	public String purchaseColor(Model model) {
 		String id = (String)RequestContextHolder.getRequestAttributes().getAttribute("memId", RequestAttributes.SCOPE_SESSION);
-		String nowColor = memService.getMember(id).getIdColor();
-		model.addAttribute("nowColor",nowColor);
+		
+		if(id!=null) {
+			String nowColor = memService.getMember(id).getIdColor();
+			model.addAttribute("nowColor",nowColor);
+		}
+		
 		return "/pf/shop/purchaseColor";
 	}
 	
@@ -63,8 +67,12 @@ public class ShopController {
 	@RequestMapping("purchaseSkin.fl") 
 	public String purchaseSkin(Model model) {
 		String id = (String)RequestContextHolder.getRequestAttributes().getAttribute("memId", RequestAttributes.SCOPE_SESSION);
-		String nowColor = memService.getMember(id).getIdSkin();
-		model.addAttribute("nowColor",nowColor);
+		
+		if(id!=null) {
+			String nowColor = memService.getMember(id).getIdSkin();
+			model.addAttribute("nowColor",nowColor);
+		}
+		
 		return "/pf/shop/purchaseSkin";
 	}
 	
@@ -203,4 +211,6 @@ public class ShopController {
 		return "/pf/shop/purchaseColorPicker";
 	}
 	
+
+
 }

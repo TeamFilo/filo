@@ -481,4 +481,12 @@ public class MemberServiceImpl implements MemberService {
 		return UserWriteList;
 	}
 	
+	
+	//카카오 로그인 테스트
+	@Override
+	public void insertKakao(Map<String, String> map) {
+		tmuserDAO.insertKakao(map);
+			
+	}
+	
 }

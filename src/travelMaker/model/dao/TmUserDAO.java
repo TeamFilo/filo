@@ -87,4 +87,7 @@ public interface TmUserDAO {
 	public void updateTravelCnt(String id, int ud) throws Exception;
 	//구매한 아이템 내정보에 업데이트
 	public void purchaseUpdate(String id, String itemCate, String result);
+	//카카오 로그인 테스트
+	public void insertKakao(Map<String, String> map);
+	
 }

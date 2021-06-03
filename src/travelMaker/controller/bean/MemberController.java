@@ -420,4 +420,37 @@ public class MemberController {
 	
 	
 	
+	
+	
+	
+	//카카오로그인 테스트
+	@RequestMapping("kakaoTest.fl")
+	public String kakaoTest() {
+		return "/pf/shop/kakaoTest";
+	}
+	
+	
+	//카카오로그인테스트
+	@ResponseBody
+	@RequestMapping("kakaoTestPro.fl")
+	public Map kakaoTestPro(@RequestBody Map<String,String> map) {
+		if(map.get("gender").equals("female")) {
+			map.put("gender", "1");
+			System.out.println("맵젠더" + map.get("gender"));
+		}else {
+			System.out.println("문자열구분못한다");
+		}
+		
+		memService.insertKakao(map);
+		
+		System.out.println("아이디"+map.get("id"));
+		System.out.println(map.get("nickname"));
+		System.out.println(map.get("email"));
+		System.out.println(map.get("gender"));
+		
+		return map;
+	}
+	
+	
+	
 }

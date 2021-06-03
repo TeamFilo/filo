@@ -283,6 +283,15 @@ public class TmUserDAOImpl implements TmUserDAO {
 		
 	}
 	
+	//카카오 로그인 테스트
+	@Override
+	public void insertKakao(Map<String, String> map) {
+		sqlSession.insert("tmUser.insertKakao", map);
+		System.out.println("인써트까지");
+		
+	}
+	
+	
 	
 }
 
