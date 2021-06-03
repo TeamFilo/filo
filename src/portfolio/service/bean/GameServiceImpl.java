@@ -129,4 +129,15 @@ public class GameServiceImpl implements GameService {
 		gameDAO.updateLotteryCnt(user);
 	}
 	
+	//오늘 한 게임 정보 리턴
+	@Override
+	public List<GrGiJoinDTO> todayRecords(String user) {
+		return null;
+	}
+	
+	//상위 퍼센트 정보 리턴
+	public double gamePercent(String user) {
+		return 0;
+	}
+	
 }
