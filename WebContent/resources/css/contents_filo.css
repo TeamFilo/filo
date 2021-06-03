@@ -3,7 +3,6 @@
 /*contents_filo.css*/
 
 /*index basic*/
-.indexMode {}
 .w1200 {width:1200px; margin:0 auto;}
 .wrapAll {padding:0;}
 .wrapAll.wrapAll2 {padding:0 0 0 310px;}
@@ -159,7 +158,7 @@
 .skillWrap .inner {overflow: hidden;}
 .skillWrap .inner li {float: left; width: 23.25%; height: 400px; background: #555; padding: 45px; margin: 0 2% 2% 0; position: relative;}
 .skillWrap .inner li:nth-child(4n) {margin: 0 0 2% 0;}
-.skillWrap .inner li p,img {position: relative; z-index: 2;}
+.skillWrap .inner li p, .skillWrap .inner li img {position: relative; z-index: -1;}
 .skillWrap .inner li .bg {width: 100%; height: 280px; background: #ff3f02; position: absolute;bottom: 0;left: 0; z-index: 1;}
 .skillWrap .inner li .name {text-align: center; color:#fff; font-size:20px; font-weight: 600;}
 .skillWrap .inner li .ico {display: block; margin: 10px auto 60px;}
@@ -176,11 +175,48 @@
 .eduWrap .inner li .sub {font-size: 20px; font-weight: 500; margin: 15px 0 20px;}
 .eduWrap .inner li .txt {line-height: 1.7; font-size: 18px; font-weight: 400;}
 
-/*popup Layer*/
-
 
 /*index game*/
-.index_game .inner1 {width: 100%; height: calc(100% - 430px); background: #2C2D31;}
+.index_game .inner1 {width: 100%; height: calc(100% - 430px); border-radius: 15px; background: url(/resources/images/g_bg1.png)no-repeat bottom right 300px, #2C2D31; background-size: auto 80%;}
+
 .index_game .inner2 {width: calc(100% - 30px); height: 400px; position: absolute;bottom: 30px;left: 30px; z-index: 996;}
 .index_game .inner2 .swiper-container {width: 100%; height: 100%;}
-.index_game .inner2 .swiper-container .swiper-slide {background: #2C2D31; color:#fff; padding: 50px;}
+
+.index_game .inner2 .here {overflow: hidden; transition: 1s; position: absolute;bottom: 240px;left: 0px;}
+.index_game .inner2 .swiper-container .swiper-slide:hover .here {left: 90px;}
+.index_game .inner2 .here p {float: left; color:#fff; font-size:20px; font-weight: 600;}
+.index_game .inner2 .here img {height: 16px; float: left; margin: 0 0 0 7px;}
+
+.index_game .inner2 .gImg {width: 120px; filter: grayscale(100%); transition:.3s; position: absolute;top: 70px;right: 70px; z-index: 2;}
+.index_game .inner2 .swiper-container .swiper-slide:hover .gImg {width: 250px; filter: grayscale(0); right: 50px; animation:gImg .7s ease-in Infinite Alternate;}
+
+.index_game .inner2 .txtWrap {width: 100%; height: 100%; border-radius: 15px; background: #2C2D31; transition:.5s; padding: 70px; position: absolute;bottom: 0;left: 0; z-index: 1;}
+.index_game .inner2 .swiper-container .swiper-slide:hover .txtWrap {height: 220px;}
+.index_game .inner2 .txtWrap .tit {color:#fff; font-size: 65px; font-weight: 600; opacity: 1; transition: .2s;}
+.index_game .inner2 .swiper-container .swiper-slide:hover .txtWrap .tit {opacity: 0; cursor: default;}
+.index_game .inner2 .txtWrap .txt {line-height: 1.4; color:#fff; font-size: 18px; font-weight: 100; opacity: 1; transition: .2s; position: absolute;bottom: 90px;left: 70px;}
+.index_game .inner2 .swiper-container .swiper-slide:hover .txtWrap .txt {opacity: 0; cursor: default;}
+.index_game .inner2 .txtWrap .txt_hide {display: none; line-height: 1.4; color:#ff3f02; font-size:18px; font-weight: 600;}
+.index_game .inner2 .swiper-container .swiper-slide:hover .txtWrap .txt_hide {display: block; position: absolute;top: 60px;left: 70px;}
+.index_game .inner2 .txtWrap .txt_hide span {display: inline-block; width: 100px; color:#fff; font-weight: 200;}
+.index_game .inner2 .txtWrap .txt_hide span.start {display: block; width: auto; color:#575B6B; font-size:14px; font-weight: 600; margin: 15px 0 0;}
+
+@keyframes gImg {
+    0% {top: 60px;}
+    100%{top: 30px;}
+}
+
+/*shop_game*/
+.tab_menu {overflow: hidden;}
+.tab_menu > li {float: left; border-radius: 15px 15px 0 0; background: #2C2D31; color:#fff; cursor: pointer; opacity: .3; padding: 17px 35px 12px; margin: 0 1px 0 0;}
+.tab_menu > li.on {background: #2C2D31; opacity: 1;}
+
+.tab_cont {height: calc(100% - 46px);}
+.tab_cont > li {display: none; overflow: hidden; width: 100%; height: 100%; border-radius: 0 15px 15px 15px; background: #2C2D31; padding: 50px;}
+.tab_cont > li:first-child {display: block;}
+
+.tab_cont > li .item_id {float: left; overflow: hidden; width: calc(50% - 10px); height: 130px; background: #fff; padding: 10px 30px; margin: 0 20px 20px 0; position: relative;}
+.tab_cont > li .item_id:nth-child(2n) {margin: 0 0 20px 0;}
+.tab_cont > li .item_id img {float: left; height: 100%;}
+.tab_cont > li .item_id .box {float: left; height: 100%;}
+.tab_cont > li .item_id .btn_purchase {padding: 20px; background: red; cursor:pointer; position: absolute;top: 0;right: 0;}
