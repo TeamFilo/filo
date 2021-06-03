@@ -107,7 +107,6 @@
                         <!--player End-->
                     </div>
                     <!--rankWrap End-->
-                    
                     <div class="swiper-slide todayRec txtWrap">
                         <p class="tit">Recent Records</p>
                         <ul class="someWrap">
