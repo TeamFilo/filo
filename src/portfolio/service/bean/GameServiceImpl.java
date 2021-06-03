@@ -152,8 +152,14 @@ public class GameServiceImpl implements GameService {
 	}
 	
 	//상위 퍼센트 정보 리턴
+	@Override
 	public double gamePercent(String user) {
-		return 0;
+		Map map =gameDAO.gamePercent(user);
+		double myRank = (double)map.get("myRank");
+		double allCnt = (double)map.get("allCnt");
+		double gamePercent = myRank/allCnt*100;
+		
+		return gamePercent;
 	}
-	
+
 }

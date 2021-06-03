@@ -31,4 +31,7 @@ public interface GameDAO {
 	//복권 구매 횟수 올리기
 	public void updateLotteryCnt(String user);
 	
+	//상위 퍼센트 정보 구하기
+	public Map<Double, Double> gamePercent(String user);
+	
 }
