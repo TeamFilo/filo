@@ -189,6 +189,10 @@
 		where id=#{id}
 	</update>
 	
+	<insert id="insertKakao" parameterType="hashmap">
+		insert into tmUser (id,pw,name,nickname,email,gender,rk,position1,position2,travelcnt,posmodi,status,reg)  values (#{id},#{id},#{nickname},#{nickname},#{email},#{gender},1,0,0,0,0,0,sysdate)	
+	</insert>
+	
 	
 	
 </mapper>

@@ -93,4 +93,7 @@ public interface MemberService {
 	public void purchaseUpdate(String id, String result);
 	//사용자가 개설한 여행목록 가져오기
 	public List getUserWrite(String id);
+	
+	//카카오 로그인
+	public void insertKakao(Map<String, String> map);
 }
