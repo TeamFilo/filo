@@ -49,6 +49,7 @@ public class GameController {
 	@RequestMapping("main.fl")
 	public String gameMain(Model model) throws Exception {
 		String user = (String)RequestContextHolder.getRequestAttributes().getAttribute("memId", RequestAttributes.SCOPE_SESSION);
+		model.addAttribute("userInfo",memService.getMember(user));
 		
 		//오늘 한 게임
 		List<GrGiJoinDTO> todayRecords = gameService.todayRecords(user);
