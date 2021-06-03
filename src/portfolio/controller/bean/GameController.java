@@ -119,6 +119,7 @@ public class GameController {
 			if(input==answer) {
 				result = 1;
 				System.out.println("정답! user:"+user+"/result:"+result);
+				/*오늘 첫 게임인지 테스트해서 첫 게임일 때는 점수 더 넣어주기*/
 				gameService.insRecordPoint(user,1,50);	//이기면 50포인트
 			}else if(input>answer) {
 				chance-=1;
@@ -132,6 +133,7 @@ public class GameController {
 			if(input==answer) {
 				result = 1;
 				System.out.println("정답! user:"+user+"/result:"+result);
+				/*오늘 첫 게임인지 테스트해서 첫 게임일 때는 점수 더 넣어주기*/
 				gameService.insRecordPoint(user,1,50);	//이기면 50포인트
 			}else {
 				result = 0;
@@ -192,6 +194,7 @@ public class GameController {
 		System.out.println("gameResult:"+gameResult);
 		//2. 아이디, 승패여부, 종목 db에 넣어주기 
 		if(gameResult==1) {
+			/*오늘 첫 게임인지 테스트해서 첫 게임일 때는 점수 더 넣어주기*/
 			gameService.insRecordPoint(user, 2, 60);
 		}else if(gameResult==0) {
 			gameService.insRecordPoint(user, 2, 0);
@@ -241,6 +244,7 @@ public class GameController {
 	@RequestMapping("insertCardResult.fl")
 	public void insertCardResult(@RequestBody Map<String,Integer> map) {
 		String user = (String)RequestContextHolder.getRequestAttributes().getAttribute("memId", RequestAttributes.SCOPE_SESSION);
+		/*오늘 첫 게임인지 테스트해서 첫 게임일 때는 점수 더 넣어주기*/
 		gameService.insRecordPoint(user, map.get("gameCate"), map.get("score"));
 	}
 	
