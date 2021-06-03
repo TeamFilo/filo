@@ -18,7 +18,7 @@ import portfolio.service.bean.ShopService;
 import travelMaker.service.bean.MemberService;
 
 @Controller
-@RequestMapping("/shop/")
+@RequestMapping("/game/shop/")
 public class ShopController {
 	
 	@Autowired

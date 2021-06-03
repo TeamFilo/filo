@@ -4,7 +4,7 @@
 <html>
 <head>
 	<meta charset="UTF-8">
-	<title>FILO PORTFOLIO</title>
+	<title>FILO GAME</title>
   	
   	<!-- FONTS -->
 	<link rel="preconnect" href="https://fonts.gstatic.com"/>
@@ -14,13 +14,22 @@
 	<!-- CSS -->	
 	<link href="<c:url value="/resources/css/reset.css" />" rel="stylesheet"/>
 	<link href="<c:url value="/resources/css/common_filo.css" />" rel="stylesheet"/>
+	<link href="<c:url value="/resources/css/aos.css" />" rel="stylesheet"/>
 	<link href="<c:url value="/resources/css/contents_filo.css" />" rel="stylesheet"/>
-	<link href="<c:url value="/resources/css/fullpage.css" />" rel="stylesheet"/>
+	<link href="<c:url value="/resources/css/card.css" />" rel="stylesheet"/>
+	<link href="<c:url value="/resources/css/rockPS.css" />" rel="stylesheet"/>
+	<link href="<c:url value="/resources/css/winwheel.css" />" rel="stylesheet"/>
+	<link href="<c:url value="/resources/css/swiper.css" />" rel="stylesheet"/>
 	
 	
 	<!-- JS -->
 	<script type="text/javascript" src="<c:url value="/resources/js/jquery.min.js" />"></script>
-	<script type="text/javascript" src="<c:url value="/resources/js/fullpage.min.js" />"></script>	
+	<script type="text/javascript" src="<c:url value="/resources/js/aos.js" />"></script>	
+	<script type="text/javascript" src="<c:url value="/resources/js/swiper.min.js" />"></script>	
+	<script type="text/javascript" src="<c:url value="/resources/js/lotteryScratch.js" />"></script>
+	<script type="text/javascript" src="<c:url value="/resources/js/Winwheel.js" />"></script>
+	<script type="text/javascript" src="<c:url value="/resources/js/rock.js" />"></script>	
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/gsap/latest/TweenMax.min.js" ></script>
 	
 	
 </head>
