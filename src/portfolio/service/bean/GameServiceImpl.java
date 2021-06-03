@@ -4,7 +4,11 @@ package portfolio.service.bean;
 import java.util.HashMap;
 import java.util.Map;
 import org.springframework.beans.factory.annotation.Autowired;
+
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Calendar;
+import java.util.Date;
 import java.util.List;
 
 
@@ -132,7 +136,19 @@ public class GameServiceImpl implements GameService {
 	//오늘 한 게임 정보 리턴
 	@Override
 	public List<GrGiJoinDTO> todayRecords(String user) {
-		return null;
+		SimpleDateFormat sdf = new SimpleDateFormat("yyyyMMdd");
+		String today = sdf.format(Calendar.getInstance().getTime());
+		List<GrGiJoinDTO> records = getGameRecord(user);
+		List<GrGiJoinDTO> todayRecords = new ArrayList<GrGiJoinDTO>();
+
+		for(int i=0; i<records.size(); i++) {
+			//GameRecordDTO rec = records.get(i);
+			String gameReg = sdf.format(new Date(records.get(i).getReg().getTime()));
+			if(gameReg.equals(today)) { //&& rec.getGameCate()!=0 && rec.getGameCate()!=4;
+				todayRecords.add(records.get(i));
+			}
+		}
+		return todayRecords;
 	}
 	
 	//상위 퍼센트 정보 리턴
@@ -145,7 +161,5 @@ public class GameServiceImpl implements GameService {
 		
 		return gamePercent;
 	}
-	
 
-	
 }

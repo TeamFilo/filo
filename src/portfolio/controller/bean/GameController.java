@@ -51,18 +51,7 @@ public class GameController {
 		String user = (String)RequestContextHolder.getRequestAttributes().getAttribute("memId", RequestAttributes.SCOPE_SESSION);
 		
 		//오늘 한 게임
-		SimpleDateFormat sdf = new SimpleDateFormat("yyyyMMdd");
-		String today = sdf.format(Calendar.getInstance().getTime());
-		List<GrGiJoinDTO> records = gameService.getGameRecord(user);
-		List<GrGiJoinDTO> todayRecords = new ArrayList<GrGiJoinDTO>();
-
-		for(int i=0; i<records.size(); i++) {
-			//GameRecordDTO rec = records.get(i);
-			String gameReg = sdf.format(new Date(records.get(i).getReg().getTime()));
-			if(gameReg.equals(today)) { //&& rec.getGameCate()!=0 && rec.getGameCate()!=4;
-				todayRecords.add(records.get(i));
-			}
-		}
+		List<GrGiJoinDTO> todayRecords = gameService.todayRecords(user);
 		model.addAttribute("todayRecords",todayRecords);
 		
 		//오늘 룰렛, 복권 횟수

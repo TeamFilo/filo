@@ -34,5 +34,9 @@ public interface GameService {
 	public void updateWheelCnt(String user);
 	//복권 구매 횟수 올리기
 	public void updateLotteryCnt(String user);
+	//오늘 한 게임 정보 리턴
+	public List<GrGiJoinDTO> todayRecords(String user);
+	//상위 퍼센트 정보 리턴
+	public double gamePercent(String user);
 	
 }
