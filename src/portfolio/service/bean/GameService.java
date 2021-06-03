@@ -36,6 +36,8 @@ public interface GameService {
 	public void updateLotteryCnt(String user);
 	//오늘 한 게임 정보 리턴
 	public List<GrGiJoinDTO> todayRecords(String user);
+	//오늘 첫 게임인지 판단
+	public int didPlayToday(String user, int gameCate);
 	//상위 퍼센트 정보 리턴
 	public double gamePercent(String user);
 	

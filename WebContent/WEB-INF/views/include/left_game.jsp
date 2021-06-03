@@ -7,6 +7,18 @@
         <div class="swiper-wrapper">
         
             <div class="swiper-slide gameBio txtWrap">
+            	
+            	<c:if test="${sessionScope.memId==null}">
+           		<div class="bioWrap">
+                    <img src="/filo/resources/images/pf/pf2-1.jpg">
+                    <div class="nameWrap">
+                        <p class="tit">guest</p>
+                        <p class="txt">You can use our services after log in.</p>
+                    </div>
+                </div>
+            	</c:if>
+                
+                <c:if test="${sessionScope.memId!=null}">
                 <div class="bioWrap">
                     <img src="/filo/resources/images/pf/pf2-1.jpg">
                     <div class="nameWrap">
@@ -27,6 +39,7 @@
                     <img src="/filo/resources/images/pf/pIco.png" />
                 </div>
                 <div class="graBtn sub">Purchase Item</div>
+                </c:if>
             </div>
             <!--gameBio End-->
             

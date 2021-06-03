@@ -151,6 +151,19 @@ public class GameServiceImpl implements GameService {
 		return todayRecords;
 	}
 	
+	//오늘 첫 게임인지 판단
+	@Override
+	public int didPlayToday(String user, int gameCate) {
+		List<GrGiJoinDTO> list = todayRecords(user);
+		List<GrGiJoinDTO> thisList = new ArrayList<GrGiJoinDTO>();
+		for(int i=0; i<list.size(); i++) {
+			if(gameCate == list.get(i).getGameCate()) {
+				thisList.add(list.get(i));
+			}
+		}
+		return thisList.size();
+	}
+	
 	//상위 퍼센트 정보 리턴
 	@Override
 	public double gamePercent(String user) {
