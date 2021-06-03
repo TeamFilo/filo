@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <div id="left_game">
     <div class="swiper-container" id="left_game_swiper">
         <div class="swiper-wrapper">
@@ -41,14 +43,28 @@
                     <li>
                         <img src="/filo/resources/images/pf/roulette.png">
                         <div class="subWrap">
-                            <p class="sub">Roulette</p>
+                            <p class="sub">Lottery</p>
                         </div>    
                         <div class="goBtn"></div>
                     </li>
                     <li>
                         <img src="/filo/resources/images/pf/roulette.png">
                         <div class="subWrap">
-                            <p class="sub">Roulette</p>
+                            <p class="sub">Card</p>
+                        </div>    
+                        <div class="goBtn"></div>
+                    </li>
+                    <li>
+                        <img src="/filo/resources/images/pf/roulette.png">
+                        <div class="subWrap">
+                            <p class="sub">Rock P.S</p>
+                        </div>    
+                        <div class="goBtn"></div>
+                    </li>
+                    <li>
+                        <img src="/filo/resources/images/pf/roulette.png">
+                        <div class="subWrap">
+                            <p class="sub">Up & Down</p>
                         </div>    
                         <div class="goBtn"></div>
                     </li>
@@ -100,7 +116,7 @@
                 <!--player End-->
             </div>
             <!--rankWrap End-->
-            
+            <c:if test="${!empty todayRecords}">
             <div class="swiper-slide todayRec txtWrap">
                 <p class="tit">Recent Records</p>
                 <ul class="someWrap">
@@ -109,64 +125,25 @@
                     <li><p class="txt">Date</p></li>
                 </ul>
                 <ul class="totalRecord">
+                	<c:forEach var="list" items="${todayRecords}">
                     <li>
                         <ul class="recordWrap">
-                            <li><p class="sub">RockPS</p></li>
-                            <li><p class="sub">+ 20</p></li>
-                            <li><p class="sub">PM 12:00</p></li>
+                   			<c:if test="${list.score<=0}">
+                            <li><p class="sub">${list.name}</p></li>
+                            <li><p class="sub">${list.score}</p></li>
+                            <li><p class="sub"><fmt:formatDate value="${list.reg}" type="time" pattern="HH:mm"/></p></li>
+                   			</c:if>
+                   			<c:if test="${list.score>0}">
+                            <li><p class="sub onWin">${list.name}</p></li>
+                            <li><p class="sub onWin">+${list.score}</p></li>
+                            <li><p class="sub onWin"><fmt:formatDate value="${list.reg}" type="time" timeStyle="short"/></p></li>
+                   			</c:if>
                         </ul>    
                     </li>
-                    <li>
-                        <ul class="recordWrap">
-                            <li><p class="sub">RockPS</p></li>
-                            <li><p class="sub">+ 20</p></li>
-                            <li><p class="sub">PM 12:00</p></li>
-                        </ul>    
-                    </li>
-                    <li>
-                        <ul class="recordWrap">
-                            <li><p class="sub onWin">RockPS</p></li>
-                            <li><p class="sub onWin">+ 20</p></li>
-                            <li><p class="sub onWin">PM 12:00</p></li>
-                        </ul>    
-                    </li>
-                    <li>
-                        <ul class="recordWrap">
-                            <li><p class="sub onWin">RockPS</p></li>
-                            <li><p class="sub onWin">+ 20</p></li>
-                            <li><p class="sub onWin">PM 12:00</p></li>
-                        </ul>    
-                    </li>
-                    <li>
-                        <ul class="recordWrap">
-                            <li><p class="sub">RockPS</p></li>
-                            <li><p class="sub">+ 20</p></li>
-                            <li><p class="sub">PM 12:00</p></li>
-                        </ul>    
-                    </li>
-                    <li>
-                        <ul class="recordWrap">
-                            <li><p class="sub onWin">RockPS</p></li>
-                            <li><p class="sub onWin">+ 20</p></li>
-                            <li><p class="sub onWin">PM 12:00</p></li>
-                        </ul>    
-                    </li>
-                    <li>
-                        <ul class="recordWrap">
-                            <li><p class="sub onWin">RockPS</p></li>
-                            <li><p class="sub onWin">+ 20</p></li>
-                            <li><p class="sub onWin">PM 12:00</p></li>
-                        </ul>    
-                    </li>
-                    <li>
-                        <ul class="recordWrap">
-                            <li><p class="sub onWin">RockPS</p></li>
-                            <li><p class="sub onWin">+ 20</p></li>
-                            <li><p class="sub onWin">PM 12:00</p></li>
-                        </ul>    
-                    </li>
+					</c:forEach>
                 </ul>
             </div>
+            </c:if>
             <!--todayRec End-->
             
             
