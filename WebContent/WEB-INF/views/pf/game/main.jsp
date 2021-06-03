@@ -35,6 +35,34 @@
                     </div>
                     <!--gameBio End-->
                     
+                    <div class="swiper-slide morePoint txtWrap">
+                        <p class="tit">Get More Point</p>
+                        <ul class="gameCount">
+                            <li>
+                                <img src="/filo/resources/images/pf/roulette.png">
+                                <div class="subWrap">
+                                    <p class="sub">Roulette</p>
+                                </div>    
+                                <div class="goBtn"></div>
+                            </li>
+                            <li>
+                                <img src="/filo/resources/images/pf/roulette.png">
+                                <div class="subWrap">
+                                    <p class="sub">Roulette</p>
+                                </div>    
+                                <div class="goBtn"></div>
+                            </li>
+                            <li>
+                                <img src="/filo/resources/images/pf/roulette.png">
+                                <div class="subWrap">
+                                    <p class="sub">Roulette</p>
+                                </div>    
+                                <div class="goBtn"></div>
+                            </li>
+                        </ul>
+                    </div>
+                    <!--morePoint End-->
+                    
                     <div class="swiper-slide rankWrap txtWrap">
                         <p class="tit">Player Ranking</p>
                         <ul class="player">
@@ -148,40 +176,14 @@
                     </div>
                     <!--todayRec End-->
                     
-                    <div class="swiper-slide morePoint txtWrap">
-                        <p class="tit">Get More Point</p>
-                        <ul class="gameCount">
-                            <li>
-                                <img src="/filo/resources/images/pf/roulette.png">
-                                <div class="subWrap">
-                                    <p class="sub">Roulette</p>
-                                </div>    
-                                <div class="goBtn"></div>
-                            </li>
-                            <li>
-                                <img src="/filo/resources/images/pf/roulette.png">
-                                <div class="subWrap">
-                                    <p class="sub">Roulette</p>
-                                </div>    
-                                <div class="goBtn"></div>
-                            </li>
-                            <li>
-                                <img src="/filo/resources/images/pf/roulette.png">
-                                <div class="subWrap">
-                                    <p class="sub">Roulette</p>
-                                </div>    
-                                <div class="goBtn"></div>
-                            </li>
-                        </ul>
-                    </div>
-                    <!--morePoint End-->
+                    
                 </div>
             </div>
             <!-- swiperContainer End -->
         </div>
         <!-- //left_game end -->
         
-        <div class="index_game">
+        <div class="right_game index_game">
             <div class="inner1">
                 123
             </div>
@@ -212,7 +214,7 @@
         var swiper = new Swiper('#left_game_swiper', {
         direction: 'vertical',
         mousewheel: true,
-        slidesPerView: 1.85,
+        slidesPerView: 1.65,
         spaceBetween: 30,
         });
 
@@ -220,6 +222,10 @@
         mousewheel: true,
         slidesPerView: 2.5,
         spaceBetween: 30,
+        });
+        
+        $(document).ready(function(){
+            $('.right_game').css('opacity','1');
         });
     </script>
 </body>
