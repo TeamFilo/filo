@@ -6,7 +6,7 @@
     <div class="wrapAll game">
 
         <jsp:include page="/WEB-INF/views/include/top_game.jsp" />
-        
+      
         <jsp:include page="/WEB-INF/views/include/left_game.jsp" />
 
         <div class="right_game index_game">
