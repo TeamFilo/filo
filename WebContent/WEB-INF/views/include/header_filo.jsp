@@ -21,6 +21,7 @@
 	<!-- JS -->
 	<script type="text/javascript" src="<c:url value="/resources/js/jquery.min.js" />"></script>
 	<script type="text/javascript" src="<c:url value="/resources/js/fullpage.min.js" />"></script>	
+	<script type="text/javascript" src="<c:url value="/resources/js/colorPick.js" />"></script>	
 	
 	
 </head>

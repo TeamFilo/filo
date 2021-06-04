@@ -31,7 +31,16 @@ public class ShopController {
 
 	//아이템샵 홈
 	@RequestMapping("purchase.fl")
-	public String purchase() {
+	public String purchase(Model model) {
+		List<IconDTO> getIcon = shopService.getIcon();
+		
+		
+
+		model.addAttribute("getIcon", getIcon);
+		
+		
+		
+		
 
 		return "/pf/shop/purchase";
 	}
@@ -57,7 +66,6 @@ public class ShopController {
 		for(int i=0; i<getIcon.size(); i++) {
 			System.out.println("이름목록"+getIcon.get(i).getName());
 		}
-		
 		
 		model.addAttribute("getIcon", getIcon);
 		return "/pf/shop/purchaseIcon";
@@ -181,7 +189,6 @@ public class ShopController {
 			gameService.updatePoint(id, purPoint);
 		}
 	
-		
 		return "/pf/shop/purchaseSkinPro";
 	}
 	
