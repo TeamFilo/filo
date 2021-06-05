@@ -15,6 +15,9 @@
                         <p class="tit">guest</p>
                         <p class="txt">You can use our services after log in.</p>
                     </div>
+                    <!-- 임시로 로그인 회원가입 버튼을 만들어놨는데 배치가 요상하네요 -->
+                   	<div class="graBtn sub">Login</div>
+                   	<div class="graBtn sub">Join</div>
                 </div>
             	</c:if>
                 
@@ -22,8 +25,8 @@
                 <div class="bioWrap">
                     <img src="/filo/resources/images/pf/pf2-1.jpg">
                     <div class="nameWrap">
-                        <p class="tit">vino_costa</p>
-                        <p class="txt">cameliner</p>
+                        <p class="tit">${userInfo.id}</p>
+                        <p class="txt">${userInfo.nickname}</p>
                     </div>
                 </div>
                 <!--bioWrap End-->
@@ -35,7 +38,7 @@
                 </div>
                 <!--proBar End-->
                 <div class="pIconWrap">
-                    <p class="sub">1,203</p>
+                    <p class="sub">${wal.point}</p>
                     <img src="/filo/resources/images/pf/pIco.png" />
                 </div>
                 <div class="graBtn sub">Purchase Item</div>

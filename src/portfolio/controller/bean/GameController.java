@@ -51,7 +51,7 @@ public class GameController {
 		String user = (String)RequestContextHolder.getRequestAttributes().getAttribute("memId", RequestAttributes.SCOPE_SESSION);
 		if(user!=null) {
 			model.addAttribute("userInfo",memService.getMember(user));
-			
+			model.addAttribute("wal",gameService.getWallet(user));
 			//오늘 한 게임
 			List<GrGiJoinDTO> todayRecords = gameService.todayRecords(user);
 			model.addAttribute("todayRecords",todayRecords);
@@ -61,6 +61,9 @@ public class GameController {
 			model.addAttribute("rouletteCnt", gameService.getWallet(user).getRouletteCnt());
 			
 			//랭킹
+			
+			
+			//퍼센트
 			double gamePercent = gameService.gamePercent(user);	
 			model.addAttribute("gamePercent" ,gamePercent);
 		}
