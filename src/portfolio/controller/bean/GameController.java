@@ -60,9 +60,12 @@ public class GameController {
 			model.addAttribute("lotteryCnt", gameService.getWallet(user).getLotteryCnt());
 			model.addAttribute("rouletteCnt", gameService.getWallet(user).getRouletteCnt());
 			
-			//랭킹
+			//내 등수
+			model.addAttribute("myRank", gameService.myRank(user));
 			
-			
+			//랭킹 탑3 정보
+      
+      
 			//퍼센트
 			double gamePercent = gameService.gamePercent(user);	
 			model.addAttribute("gamePercent" ,gamePercent);

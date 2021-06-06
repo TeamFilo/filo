@@ -174,5 +174,27 @@ public class GameServiceImpl implements GameService {
 		
 		return gamePercent;
 	}
+	
+	//랭킹 세 명 정보
+	@Override
+	public List topThree() {
+	/*
+		등수 | 아이디 | 닉네임 뽑혀야 함
+		select all_rank from 
+		(select id, rank() over (order by avg(score) desc) all_rank
+		from gameRecord group by id);
+	*/
+		
+		
+		return null;
+	}
+	
+	//내 등수
+	@Override
+	public int myRank(String user) {
+		Map map = gameDAO.gamePercent(user);
+		int rank = (int)map.get("myRank");
+		return rank;
+	}
 
 }

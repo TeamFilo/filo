@@ -93,4 +93,12 @@ public class GameDAOImpl implements GameDAO  {
 		return map;
 	}
 	
+	//랭킹 세 명 정보
+	@Override
+	public List topThree() {
+		
+		return null;
+	}
+	
+	
 }

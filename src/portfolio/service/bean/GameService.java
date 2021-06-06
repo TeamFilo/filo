@@ -40,5 +40,9 @@ public interface GameService {
 	public int didPlayToday(String user, int gameCate);
 	//상위 퍼센트 정보 리턴
 	public double gamePercent(String user);
+	//랭킹 세 명 정보
+	public List topThree();
+	//내 등수
+	public int myRank(String user);
 	
 }
