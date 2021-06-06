@@ -183,6 +183,12 @@ public class GameServiceImpl implements GameService {
 		select all_rank from 
 		(select id, rank() over (order by avg(score) desc) all_rank
 		from gameRecord group by id);
+		
+		위의 쿼리문으로 등수|아이디만 출력, DTO에 담을 수 없으므로
+		resulttype은 hashmap으로 한다(Map<Integer(등수),String(아이디)>)
+		
+		아니면 gameRecord랑 tmUser 조인해서 TuGrJoinDTO 만든 후
+		tmUser테이블에 랭크만 붙여서 뽑기
 	*/
 		
 		
