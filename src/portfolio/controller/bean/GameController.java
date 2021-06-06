@@ -64,8 +64,8 @@ public class GameController {
 			model.addAttribute("myRank", gameService.myRank(user));
 			
 			//랭킹 탑3 정보
-			
-			
+      
+      
 			//퍼센트
 			double gamePercent = gameService.gamePercent(user);	
 			model.addAttribute("gamePercent" ,gamePercent);
