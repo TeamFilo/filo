@@ -185,6 +185,7 @@ public class GameServiceImpl implements GameService {
 		from gameRecord group by id);
 	*/
 		
+		
 		return null;
 	}
 	
