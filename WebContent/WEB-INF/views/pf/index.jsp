@@ -623,13 +623,13 @@
                 console.log("nowPage : " + nowPage);
                 
                 if(nowPage == "1stPage"){
-                    $('.fullpageImgWrap').css('background','#123456');
+                    $('.fullpageImgWrap').css('background','#f6f6f6');
                     $('.img1').fadeIn();
                     $('.titWrap1 > .tit').animate({top:"0",opacity:"1"}, 700);
                     $('.titWrap1 > .sub').delay(400).animate({left:"0",opacity:"1"}, 700);
                     $('.titWrap1 > .txt').delay(700).animate({left:"0",opacity:"1"}, 700);
                 }else if(nowPage == "2ndPage" && nowSlide == "0"){
-                    $('.fullpageImgWrap').css('background','#321456');
+                    $('.fullpageImgWrap').css('background','#f6f6f6');
                     $('.img2-1').fadeIn();
                     $('.titWrap2-1 > .tit').animate({top:"0",opacity:"1"}, 700);
                     $('.titWrap2-1 > .sub').delay(400).animate({left:"0",opacity:"1"}, 700);
@@ -637,7 +637,7 @@
                     $('#deBtn1').delay(700).animate({bottom:"0",opacity:"1"}, 700);
                     $('#goBtn1').delay(700).animate({bottom:"0",opacity:"1"}, 700);
                 }else if(nowPage == "2ndPage" && nowSlide == "1"){
-                    $('.fullpageImgWrap').css('background','#cacaca');
+                    $('.fullpageImgWrap').css('background','#f6f6f6');
                     $('.img2-2').fadeIn();
                     $('.titWrap2-2 > .tit').animate({top:"0",opacity:"1"}, 700);
                     $('.titWrap2-2 > .sub').delay(400).animate({left:"0",opacity:"1"}, 700);
@@ -645,7 +645,7 @@
                     $('#deBtn2').delay(700).animate({bottom:"0",opacity:"1"}, 750);
                     $('#goBtn2').delay(700).animate({bottom:"0",opacity:"1"}, 750);
                 }else if(nowPage == "2ndPage" && nowSlide == "2"){
-                    $('.fullpageImgWrap').css('background','#330302');
+                    $('.fullpageImgWrap').css('background','#f6f6f6');
                     $('.img2-3').fadeIn();
                     $('.titWrap2-3 > .tit').animate({top:"0",opacity:"1"}, 700);
                     $('.titWrap2-3 > .sub').delay(400).animate({left:"0",opacity:"1"}, 700);
@@ -653,7 +653,7 @@
                     $('#deBtn3').delay(700).animate({bottom:"0",opacity:"1"}, 750);
                     $('#goBtn3').delay(700).animate({bottom:"0",opacity:"1"}, 750);
                 }else if(nowPage == "3rdPage"){
-                    $('.fullpageImgWrap').css('background','#654456');
+                    $('.fullpageImgWrap').css('background','#f6f6f6');
                     $('.img3').fadeIn();
                     $('.titWrap3 > .tit').animate({top:"0",opacity:"1"}, 700);
                     $('.titWrap3 > .sub').delay(400).animate({left:"0",opacity:"1"}, 700);
@@ -684,7 +684,7 @@
                 console.log("nowSlide : " + nowSlide);
                 
                 if(nowSlide == "0"){
-                    $('.fullpageImgWrap').css('background','#321456');
+                    $('.fullpageImgWrap').css('background','#f6f6f6');
                     $('.img2-1').fadeIn();
                     $('.titWrap2-1 > .tit').animate({top:"0",opacity:"1"}, 700);
                     $('.titWrap2-1 > .sub').delay(400).animate({left:"0",opacity:"1"}, 700);
@@ -692,7 +692,7 @@
                     $('#deBtn1').delay(700).animate({bottom:"0",opacity:"1"}, 750);
                     $('#goBtn1').delay(700).animate({bottom:"0",opacity:"1"}, 750);
                 }else if(nowSlide == "1"){
-                    $('.fullpageImgWrap').css('background','#cacaca');
+                    $('.fullpageImgWrap').css('background','#f6f6f6');
                     $('.img2-2').fadeIn();
                     $('.titWrap2-2 > .tit').animate({top:"0",opacity:"1"}, 700);
                     $('.titWrap2-2 > .sub').delay(400).animate({left:"0",opacity:"1"}, 700);
@@ -700,7 +700,7 @@
                     $('#deBtn2').delay(700).animate({bottom:"0",opacity:"1"}, 750);
                     $('#goBtn2').delay(700).animate({bottom:"0",opacity:"1"}, 750);
                 }else if(nowSlide == "2"){
-                    $('.fullpageImgWrap').css('background','#654456');
+                    $('.fullpageImgWrap').css('background','#f6f6f6');
                     $('.img2-3').fadeIn();
                     $('.titWrap2-3 > .tit').animate({top:"0",opacity:"1"}, 700);
                     $('.titWrap2-3 > .sub').delay(400).animate({left:"0",opacity:"1"}, 700);
