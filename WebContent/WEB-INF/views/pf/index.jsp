@@ -428,8 +428,8 @@
 				                     어떻게 만들어졌을까요?
 	                    </p>
 	                    <p class="txt">
-							게임과 프로젝트가 서로 연동되는 시스템입니다.<br/>
-				                      전체 구성과 사용된 기술에 대한 설명입니다.
+							포트폴리오에 사용된 기술에 대한 설명입니다.<br/>
+				                     아래 Detail 버튼으로 자세한 내용을 확인해보세요.
 	                    </p>
 	                    <div class="btnDef bounce-to-right btnPop btnPop1" id="deBtn1">Detail</div>
 	                 </div>
@@ -440,13 +440,13 @@
 	                <div class="titWrap titWrap2-2">
 	                    <p class="tit">Game</p>
 	                    <p class="sub">
-				                       단순히 보기만 하지마세요 <br/>
-				                       다양한 게임을 즐겨보세요 :)
+				                       미니게임 즐기고 <br/>
+				                       포인트 모아보세요.
 	                    </p>
 	                    <p class="txt">
+				                       게임과 프로젝트가 서로 연동되는 시스템입니다<br/>
 				                       게임을 통해 포인트를 획득하고<br/>
-				                       이모티콘, 아이디 색상 등의 아이템을 구매해보세요!<br/>
-				                       연동된 프로젝트에서도 사용가능합니다.
+				                       이모티콘, 아이디 색상 등의 아이템을 구매해보세요!
 	                    </p>
 	                    <div class="btnDef bounce-to-right btnPop btnPop2" id="deBtn2">Detail</div>
 	                    <a href="/filo/game/main.fl"><div class="btnDef bounce-to-right btnPop" id="goBtn2">Go</div></a>
@@ -459,8 +459,8 @@
 	                <div class="titWrap titWrap2-3">
 	                    <p class="tit">TravelMaker</p>
 	                    <p class="sub">
-							여행 동행 매칭 서비스! <br/>
-							자신만의 여행을 만들어보세요 :)
+							여행 동행 매칭 서비스 <br/>
+							자신만의 추억을 만들어보세요.
 	                    </p>
 	                    <p class="txt">
 							여행 횟수에 따라 레벨을 올리고 포지션을 선택해보세요<br/>
