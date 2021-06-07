@@ -199,7 +199,8 @@ public class GameServiceImpl implements GameService {
 	@Override
 	public int myRank(String user) {
 		Map map = gameDAO.gamePercent(user);
-		int rank = (int)map.get("myRank");
+		double r = (double)map.get("myRank");
+		int rank = (int)r;
 		return rank;
 	}
 
