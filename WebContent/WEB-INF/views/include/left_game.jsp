@@ -41,7 +41,7 @@
                     <p class="sub">${wal.point}</p>
                     <img src="/filo/resources/images/pf/pIco.png" />
                 </div>
-                <div class="graBtn sub">Purchase Item</div>
+                 <a href="/filo/game/shop/purchase.fl"><div class="graBtn sub">Purchase Item</div></a>
                 </c:if>
             </div>
             <!--gameBio End-->
@@ -49,20 +49,6 @@
             <div class="swiper-slide morePoint txtWrap">
                 <p class="tit">Get More Point</p>
                 <ul class="gameCount">
-                    <li>
-                        <img src="/filo/resources/images/pf/roulette.png">
-                        <div class="subWrap">
-                            <p class="sub">Roulette</p>
-                        </div>    
-                        <div class="goBtn"></div>
-                    </li>
-                    <li>
-                        <img src="/filo/resources/images/pf/roulette.png">
-                        <div class="subWrap">
-                            <p class="sub">Lottery</p>
-                        </div>    
-                        <div class="goBtn"></div>
-                    </li>
                     <li>
                         <img src="/filo/resources/images/pf/roulette.png">
                         <div class="subWrap">
