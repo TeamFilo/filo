@@ -8,7 +8,7 @@
 		<span class="bar2"></span>
 		<span class="bar3"></span>
 	</div>
-	<jsp:include page="/WEB-INF/views/include/clientMenu_pf.jsp" />
+	<jsp:include page="/WEB-INF/views/include/clientMenu.jsp" />
 	<div id="mCover"></div>
 	<a href="/filo/index.fl"><p id="logo"></p></a>
 	<div id="sign">
@@ -58,7 +58,7 @@
 	    $(this).toggleClass("active");
 	    $('#logo').fadeToggle();
 	    $('#sign').fadeToggle();
-	    $('#clientMenuWrap_pf').fadeToggle();
+	    $('#clientMenuWrap').fadeToggle();
 	    $('#mCover').fadeToggle();
 	});
 	var nowUrl = window.location.pathname;

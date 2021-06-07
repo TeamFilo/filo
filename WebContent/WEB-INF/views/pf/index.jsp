@@ -2,7 +2,6 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <jsp:include page="/WEB-INF/views/include/header_filo.jsp" />
 
-	<jsp:include page="/WEB-INF/views/include/top_pf.jsp" />
 	<!-- //top_pf end -->
 	<div style="display:none;position:fixed;top:50px;left:50px;z-index:999;" id="callbacksDiv"></div>
     <!--callbacksDiv end-->
@@ -406,7 +405,7 @@
     	<div id="fullpage">
 	        <div class="section active" id="section0">
 	            <div class="titWrap titWrap1">
-	                <p class="tit">1We are FILO.</p>
+	                <p class="tit">We are FILO.</p>
 	                <p class="sub">
 				                   저희가 궁금하신가요? <br/>
 				                   프로필을 확인해보세요 :)
@@ -422,7 +421,7 @@
 	        <div class="section" id="section1">
 	            <div class="slide" id="slide1">
 	                <div class="titWrap titWrap2-1">
-	                    <p class="tit">2-1We are FILO.</p>
+	                    <p class="tit">Portfolio</p>
 	                    <p class="sub">
 				                       포트폴리오가 궁금하신가요? <br/>
 				                       프로필을 확인해보세요 :)
@@ -439,7 +438,7 @@
 	
 	            <div class="slide" id="slide2">               
 	                <div class="titWrap titWrap2-2">
-	                    <p class="tit">2-2We are FILO.</p>
+	                    <p class="tit">Game</p>
 	                    <p class="sub">
 				                       저희가 궁금하신가요? <br/>
 				                       프로필을 확인해보세요 :)
@@ -458,7 +457,7 @@
 	
 	            <div class="slide" id="slide3">
 	                <div class="titWrap titWrap2-3">
-	                    <p class="tit">2-3We are FILO.</p>
+	                    <p class="tit">TravelMaker</p>
 	                    <p class="sub">
 	                       저희가 궁금하신가요? <br/>
 	                       프로필을 확인해보세요 :)
@@ -478,7 +477,7 @@
 	        
 	        <div class="section" id="section2">
 	            <div class="titWrap titWrap3">
-	                <p class="tit">3We are FILO.</p>
+	                <p class="tit">Meet FILO.</p>
 	                <p class="sub">
 				                저희가 궁금하신가요? <br/>
 				                프로필을 확인해보세요 :)
