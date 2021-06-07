@@ -44,5 +44,8 @@ public interface GameService {
 	public List topThree();
 	//내 등수
 	public int myRank(String user);
-	
+	//게임 해봤는지 여부
+	public int haveEverPlayed(String user);
+
+
 }

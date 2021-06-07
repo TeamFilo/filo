@@ -203,5 +203,13 @@ public class GameServiceImpl implements GameService {
 		int rank = (int)r;
 		return rank;
 	}
-
+	
+	//게임 해봤는지 여부
+	@Override
+	public int haveEverPlayed(String user) {
+		int check = gameDAO.haveEverPlayed(user);
+		return check;
+	}
+	
+	
 }

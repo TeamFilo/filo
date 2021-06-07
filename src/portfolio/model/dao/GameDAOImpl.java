@@ -100,5 +100,11 @@ public class GameDAOImpl implements GameDAO  {
 		return null;
 	}
 	
+	//게임 해봤는지 여부
+	@Override
+	public int haveEverPlayed(String user) {
+		int check = sqlSession.selectOne("game.haveEverPlayed",user);
+		return check;
+	}
 	
 }

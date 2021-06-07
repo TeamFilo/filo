@@ -62,15 +62,17 @@ public class GameController {
 			model.addAttribute("lotteryCnt", gameService.getWallet(user).getLotteryCnt());
 			model.addAttribute("rouletteCnt", gameService.getWallet(user).getRouletteCnt());
 			
-			//내 등수
-			model.addAttribute("myRank", gameService.myRank(user));
+			int playCnt = gameService.haveEverPlayed(user);
+			if(playCnt>0) {
+				//내 등수
+				model.addAttribute("myRank", gameService.myRank(user));
+				//퍼센트
+				double gamePercent = gameService.gamePercent(user);	
+				model.addAttribute("gamePercent", gamePercent);
+			}
 			
 			//랭킹 탑3 정보
       
-      
-			//퍼센트
-			double gamePercent = gameService.gamePercent(user);	
-			model.addAttribute("gamePercent" ,gamePercent);
 		}
 		
 		return "/pf/game/main";
