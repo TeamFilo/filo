@@ -406,15 +406,15 @@
     	<div id="fullpage">
 	        <div class="section active" id="section0">
 	            <div class="titWrap titWrap1">
-	                <p class="tit">1We are FILO.</p>
+	                <p class="tit">We are FILO!</p>
 	                <p class="sub">
-				                   저희가 궁금하신가요? <br/>
-				                   프로필을 확인해보세요 :)
+	                	First In Last Out<br>				    				                   
+	                	Team FILO를 소개합니다.
 	                </p>
 	                <p class="txt">
-				                   글로벌한 소재 소싱, 안정된 생산시스템을<br/>
-				                   통해 고객사를 만족시키고, 기업의 가치와 작업능률을<br/>
-				                   높여줄 최고의 워크웨어를 제안합니다.
+	                	남다른 열정과 뜻을 가진 4명이 모였습니다.<br/>
+	                	부족하지만 나름의 결과물을 준비해봤어요.<br/>
+	                	방문해주셔서 감사합니다 :)
 	                </p>
 	             </div>             
 	        </div>
@@ -478,15 +478,15 @@
 	        
 	        <div class="section" id="section2">
 	            <div class="titWrap titWrap3">
-	                <p class="tit">3We are FILO.</p>
+	                <p class="tit">Profile</p>
 	                <p class="sub">
-				                저희가 궁금하신가요? <br/>
-				                프로필을 확인해보세요 :)
+		                더 나은 개발자로<br/>
+		                성장하고 싶습니다.
 	                </p>
 	                <p class="txt">
-				                글로벌한 소재 소싱, 안정된 생산시스템을<br/>
-				                통해 고객사를 만족시키고, 기업의 가치와 작업능률을<br/>
-				                높여줄 최고의 워크웨어를 제안합니다.
+	                	프로필 페이지입니다.<br/>
+	                	개개인의 특성과 연락처를<br/>
+	                	확인하실 수 있습니다.	                	
 	                </p>
                		<a href="/filo/profile/main.fl"><div class="btnDef bounce-to-right btnPop" id="goBtn4">Go</div></a>
 	             </div>
