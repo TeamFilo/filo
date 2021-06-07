@@ -47,7 +47,7 @@
 	
 	<!-- 포인트 업데이트 -->
 	<update id="updatePoint" parameterType="hashmap">
-		update wallet set point=point+(-#{point}) where id=#{id}
+		update wallet set point=point+#{point} where id=#{id}
 	</update>
 	
 	<!-- 게임 레코드 insert -->
