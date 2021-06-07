@@ -91,6 +91,18 @@
             <div class="swiper-slide rankWrap txtWrap">
                 <p class="tit">Player Ranking</p>
                 <ul class="player">
+                	<!--
+                	<c:forEach var="r" items="${topThree}">
+                    <li>
+                        <img src="/filo/resources/images/pf/pf1.jpg">
+                        <div class="playPoint">
+                            <p class="sub">vino_costa</p>
+                            <p class="txt">pride chicken</p> 
+                        </div>        
+                        <p class="tit">1</p>
+                    </li>
+                	</c:forEach>
+                	-->	
                     <li>
                         <img src="/filo/resources/images/pf/pf1.jpg">
                         <div class="playPoint">
@@ -121,10 +133,10 @@
                     <li>
                         <img src="/filo/resources/images/pf/pf2-1.jpg">
                         <div class="playPoint">
-                            <p class="sub">vino_costa</p>
-                            <p class="txt">pride chicken</p> 
+                            <p class="sub">${userInfo.id}</p>
+                            <p class="txt">${userInfo.nickname}</p> 
                         </div>        
-                        <p class="tit">13</p>
+                        <p class="tit">${myRank}</p>
                     </li>
 
                     <div class="rCover"></div>
