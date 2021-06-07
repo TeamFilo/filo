@@ -54,7 +54,9 @@ public class GameController {
 			model.addAttribute("wal",gameService.getWallet(user));
 			//오늘 한 게임
 			List<GrGiJoinDTO> todayRecords = gameService.todayRecords(user);
-			model.addAttribute("todayRecords",todayRecords);
+			if(!todayRecords.isEmpty()) {
+				model.addAttribute("todayRecords",todayRecords);
+			}
 			
 			//오늘 룰렛, 복권 횟수
 			model.addAttribute("lotteryCnt", gameService.getWallet(user).getLotteryCnt());
