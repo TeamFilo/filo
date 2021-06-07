@@ -423,13 +423,12 @@
 	                <div class="titWrap titWrap2-1">
 	                    <p class="tit">Portfolio</p>
 	                    <p class="sub">
-				                       포트폴리오가 궁금하신가요? <br/>
-				                       프로필을 확인해보세요 :)
+							지금 보고 있는 페이지는 <br/>
+				                     어떻게 만들어졌을까요?
 	                    </p>
 	                    <p class="txt">
-				                       글로벌한 소재 소싱, 안정된 생산시스템을<br/>
-				                       통해 고객사를 만족시키고, 기업의 가치와 작업능률을<br/>
-				                       높여줄 최고의 워크웨어를 제안합니다.
+							게임과 프로젝트가 서로 연동되는 시스템입니다.<br/>
+				                      전체 구성과 사용된 기술에 대한 설명입니다.
 	                    </p>
 	                    <div class="btnDef bounce-to-right btnPop btnPop1" id="deBtn1">Detail</div>
 	                 </div>
@@ -440,13 +439,13 @@
 	                <div class="titWrap titWrap2-2">
 	                    <p class="tit">Game</p>
 	                    <p class="sub">
-				                       저희가 궁금하신가요? <br/>
-				                       프로필을 확인해보세요 :)
+				                       단순히 보기만 하지마세요 <br/>
+				                       다양한 게임을 즐겨보세요 :)
 	                    </p>
 	                    <p class="txt">
-				                       글로벌한 소재 소싱, 안정된 생산시스템을<br/>
-				                       통해 고객사를 만족시키고, 기업의 가치와 작업능률을<br/>
-				                       높여줄 최고의 워크웨어를 제안합니다.
+				                       게임을 통해 포인트를 획득하고<br/>
+				                       이모티콘, 아이디 색상 등의 아이템을 구매해보세요!<br/>
+				                       연동된 프로젝트에서도 사용가능합니다.
 	                    </p>
 	                    <div class="btnDef bounce-to-right btnPop btnPop2" id="deBtn2">Detail</div>
 	                    <a href="/filo/game/main.fl"><div class="btnDef bounce-to-right btnPop" id="goBtn2">Go</div></a>
@@ -459,13 +458,13 @@
 	                <div class="titWrap titWrap2-3">
 	                    <p class="tit">TravelMaker</p>
 	                    <p class="sub">
-	                       저희가 궁금하신가요? <br/>
-	                       프로필을 확인해보세요 :)
+							여행 동행 매칭 서비스! <br/>
+							자신만의 여행을 만들어보세요 :)
 	                    </p>
 	                    <p class="txt">
-	                       글로벌한 소재 소싱, 안정된 생산시스템을<br/>
-	                       통해 고객사를 만족시키고, 기업의 가치와 작업능률을<br/>
-	                       높여줄 최고의 워크웨어를 제안합니다.
+							여행 횟수에 따라 레벨을 올리고 포지션을 선택해보세요<br/>
+							여행 테마를 정하고 필요한 포지션의 팀원들을 모아<br/>
+							우리만의 특별한 여행을 떠나보세요! 
 	                    </p>
 	                    <div class="btnDef bounce-to-right btnPop btnPop3" id="deBtn3">Detail</div>
 	                    <a href="/filo/mem/index.fl"><div class="btnDef bounce-to-right btnPop" id="goBtn3">Go</div></a>
