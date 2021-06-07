@@ -53,37 +53,37 @@
 	});
 	var nowUrl = window.location.pathname;
 	if(nowUrl == "/filo/index.fl"){
-		$('#clientMenuWrap_pf').children('.menu').children('li').eq(0).addClass('on');
+		$('#clientMenuWrap').children('.menu').children('li').eq(0).addClass('on');
 	}else if(nowUrl == "/filo/game/home.fl"){
-		$('#clientMenuWrap_pf').children('.menu').children('li').eq(1).addClass('on');
+		$('#clientMenuWrap').children('.menu').children('li').eq(1).addClass('on');
 	}else if(nowUrl == "/filo/game/1to50.fl"){
-		$('#clientMenuWrap_pf').children('.menu').children('li').eq(1).addClass('on');	
+		$('#clientMenuWrap').children('.menu').children('li').eq(1).addClass('on');	
 	}else if(nowUrl == "/filo/game/card.fl"){
-		$('#clientMenuWrap_pf').children('.menu').children('li').eq(1).addClass('on');
+		$('#clientMenuWrap').children('.menu').children('li').eq(1).addClass('on');
 	}else if(nowUrl == "/filo/game/lottery.fl"){
-		$('#clientMenuWrap_pf').children('.menu').children('li').eq(1).addClass('on');	
+		$('#clientMenuWrap').children('.menu').children('li').eq(1).addClass('on');	
 	}else if(nowUrl == "/filo/game/numUpDown.fl"){
-		$('#clientMenuWrap_pf').children('.menu').children('li').eq(1).addClass('on');	
+		$('#clientMenuWrap').children('.menu').children('li').eq(1).addClass('on');	
 	}else if(nowUrl == "/filo/game/purchase.fl"){
-		$('#clientMenuWrap_pf').children('.menu').children('li').eq(1).addClass('on');
+		$('#clientMenuWrap').children('.menu').children('li').eq(1).addClass('on');
 	}else if(nowUrl == "/filo/game/randomPick.fl"){ 	
-		$('#clientMenuWrap_pf').children('.menu').children('li').eq(1).addClass('on');		
+		$('#clientMenuWrap').children('.menu').children('li').eq(1).addClass('on');		
 	}else if(nowUrl == "/filo/game/rockPS.fl"){
-		$('#clientMenuWrap_pf').children('.menu').children('li').eq(1).addClass('on');
+		$('#clientMenuWrap').children('.menu').children('li').eq(1).addClass('on');
 	}else if(nowUrl == "/filo/project/tmEx.fl"){
-		$('#clientMenuWrap_pf').children('.menu').children('li').eq(2).addClass('on');
+		$('#clientMenuWrap').children('.menu').children('li').eq(2).addClass('on');
 	}else if(nowUrl == "/filo/profile/team.fl"){
-		$('#clientMenuWrap_pf').children('.menu').children('li').eq(3).addClass('on');
+		$('#clientMenuWrap').children('.menu').children('li').eq(3).addClass('on');
 	}else if(nowUrl == "/filo/profile/lsm.fl"){
-		$('#clientMenuWrap_pf').children('.menu').children('li').eq(3).addClass('on');
+		$('#clientMenuWrap').children('.menu').children('li').eq(3).addClass('on');
 	}else if(nowUrl == "/filo/profile/jbr.fl"){
-		$('#clientMenuWrap_pf').children('.menu').children('li').eq(3).addClass('on');
+		$('#clientMenuWrap').children('.menu').children('li').eq(3).addClass('on');
 	}else if(nowUrl == "/filo/profile/lsh.fl"){
-		$('#clientMenuWrap_pf').children('.menu').children('li').eq(3).addClass('on');
+		$('#clientMenuWrap').children('.menu').children('li').eq(3).addClass('on');
 	}else if(nowUrl == "/filo/profile/hys.fl"){
-		$('#clientMenuWrap_pf').children('.menu').children('li').eq(3).addClass('on');
+		$('#clientMenuWrap').children('.menu').children('li').eq(3).addClass('on');
 	}else if(nowUrl == "/filo/mem/index.fl"){
-		$('#clientMenuWrap_pf').children('.menu').children('li').eq(4).addClass('on');
+		$('#clientMenuWrap').children('.menu').children('li').eq(4).addClass('on');
 	}
 	
 	
