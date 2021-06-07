@@ -84,4 +84,9 @@
 		SELECT count(*) FROM tmuser
 	</select>
 	
+	<!-- 게임 한 적 있는지 여부 -->
+	<select id="haveEverPlayed" parameterType="string" resultType="int">
+		select count(*) from gameRecord where id=#{value}
+	</select>
+	
 </mapper>
