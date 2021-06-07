@@ -309,7 +309,7 @@ body.noscrb::-webkit-scrollbar {display: none;}
 
 
 /*game basic*/
-.game .txtWrap .tit {font-size:25px;}
+#left_game .tit {font-size:25px; margin:0 0 60px 0;}
 .game .txtWrap .sub {font-size:15px;}
 .game .txtWrap .txt {font-size:12px; color:#9D9992;}
 
@@ -337,31 +337,30 @@ progress {-webkit-appearance: none; width: 100%;}
 #left_game .swiper-container .gameBio .proBar {overflow: hidden; margin:0 0 70px;}
 #left_game .swiper-container .gameBio .proBar .txt.percen {float:right; margin:5px 0 0; color:#fff;}
 #left_game .swiper-container .gameBio .proBar .txt {float:left; margin:5px 0 0;}
-#left_game .swiper-container .gameBio .pIconWrap {overflow: hidden; width: 100%; margin:0 0 30px; position: relative; }
+#left_game .swiper-container .gameBio .pIconWrap {overflow: hidden; width: 100%; margin:0 0 30px; line-height:22px; position: relative; }
+#left_game .swiper-container .gameBio .pIconWrap .txt {float:left;}
 #left_game .swiper-container .gameBio .pIconWrap img {float: right; width: 22px; height: auto;}
-#left_game .swiper-container .gameBio .pIconWrap .sub {float:right; margin:0 10px 0 30px; font-size:18px; line-height: 22px;}
-#left_game .swiper-container .gameBio .graBtn {width: 100%; height: 45px; line-height: 45px; text-align: center; border-radius:5px ; cursor: pointer; background: linear-gradient(to right, #ff3f02, #00eeff); color:#fff; }
+#left_game .swiper-container .gameBio .pIconWrap .sub {float:right; margin:0 0 0 10px; font-size:18px; line-height: 22px;}
+#left_game .swiper-container .gameBio .graBtn {width: calc(100% - 60px); height: 75px; line-height: 75px; text-align: center; border-radius:5px ; cursor: pointer; background: linear-gradient(to right, #ff3f02, #00eeff); color:#fff; position:absolute; bottom:30px; left:50%; transform:translateX(-50%); }
 
-#left_game .swiper-container .player li {overflow: hidden; width: 100%; margin:35px 0; position: relative;}
-#left_game .swiper-container .player li:nth-child(1) {margin:55px 0 0; position: relative; z-index:2;}
-#left_game .swiper-container .player li:nth-child(4) {margin:35px 0 0; position: relative; z-index:2;}
-#left_game .swiper-container .player li > * {float:left; margin:0 20px 0 0;}
-#left_game .swiper-container .player li .playPoint {position: absolute; left:70px; top:50%; transform: translateY(-50%);}
-#left_game .swiper-container .player li .sub {margin:0 0 5px;}
-#left_game .swiper-container .player li .tit {float:right; margin:0; line-height: 50px;}
-#left_game .swiper-container .player li img {width: 50px; height: 50px;}
-#left_game .swiper-container .player .rCover {width: 100%; height: 90px; background:#1d1d1d; position: absolute; bottom: 0; left: 0; z-index:1;}
+#left_game .player li {overflow:hidden; margin:0 0 35px 0; position:relative;}
+#left_game .player li:last-child {background:#1f1f1f;}
+#left_game .player li img {float:left; width:50px; height:50px;}
+#left_game .player li .box {float:left; overflow:hidden; max-width:140px; text-indent:18px;}
+#left_game .player li .box .user {font-size:20px; margin: 6.5px 0 5px 0;}
+#left_game .player li .box .name {color:rgba(255,255,255,.5); font-size:12px; font-weight:100;}
+#left_game .player li .rank {line-height:50px; font-size:22px; font-weight:500; position:absolute;top:0;right:0;}
 
 /*20 20 20 16 m32*/
-#left_game .swiper-container .morePoint .tit {margin:0 0 60px 0;}
-#left_game .swiper-container .morePoint .gameCount li {overflow: hidden; width: 100%; margin: 0 0 30px 0;}
-#left_game .swiper-container .morePoint .gameCount li > * {float:left; width: 20%; margin: 0 13% 0 0 }
+#left_game .swiper-container .morePoint .gameCount li {overflow: hidden; width: 100%; margin: 0 0 40px 0;}
+#left_game .swiper-container .morePoint .gameCount li > * {float:left; width: 20%; margin: 0 11% 0 0 }
 #left_game .swiper-container .morePoint .gameCount li img {height: auto;}
-#left_game .swiper-container .morePoint .gameCount li .subWrap {width: 34%;}
+#left_game .swiper-container .morePoint .gameCount li .subWrap {width: 38%;}
 #left_game .swiper-container .morePoint .gameCount li .sub {font-size:20px; line-height:58px;}
-#left_game .swiper-container .morePoint .gameCount li .goBtn {height: 58px; background: #21252A; margin:0;}
+#left_game .swiper-container .morePoint .gameCount li .goBtn {height: 58px; background: #21252A; cursor:pointer; position:relative;}
+#left_game .swiper-container .morePoint .gameCount li .goBtn img {width:15px; height: 20px; position:absolute; top:50%; left:50%; transform:translate(-50%,-50%);}
+#left_game .swiper-container .morePoint .gameCount li a {margin:0;}
 
-#left_game .swiper-container .todayRec .tit {margin: 0 0 40px 0;}
 #left_game .swiper-container .todayRec .someWrap {overflow: hidden; margin: 0 0 20px 0;}
 #left_game .swiper-container .todayRec .someWrap li {float:left; width: 20%; margin:0 20% 0 0; color:#fff;}
 #left_game .swiper-container .todayRec .someWrap li .txt {color:#fff;}
