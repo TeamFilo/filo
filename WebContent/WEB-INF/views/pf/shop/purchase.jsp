@@ -8,6 +8,37 @@
         <jsp:include page="/WEB-INF/views/include/top_game.jsp" />
         
         <jsp:include page="/WEB-INF/views/include/left_game.jsp" />
+        
+      <!--    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script> -->
+        <script>	
+			function check(){
+				// 보유 포인트 확인 ajax
+				var data = {"purchaseShop":$('input[name=price]').val()};
+				
+				console.log(data);
+	         		
+				$.ajax({
+					type:"post",
+					url: "/filo/game/shop/shopPointCh.fl",
+					dataType: "json",
+					contentType: "application/json",
+					data: JSON.stringify(data),
+					success : function(result){
+						console.log('값 넘어왔냐');
+						var np = result.needPoint;
+						var up = result.userPoint;
+						if(up>=np){
+							console.log('이프문타냐');
+							introScreen.classList.add('fadeOut');
+							match.classList.add('fadeIn');
+						}else{
+							alert("포인트가 부족합니다!");
+							location.href="/filo/game/shop/purchase.fl";
+						}
+					}
+				});
+			}
+		</script>
 
         <div class="right_game shop_game">
             
@@ -42,20 +73,43 @@
 						});
 					</script>
                     
+                    <!-- 
+                    <form action="/filo/shop/purchaseColorPro.fl" onsubmit="return check()" method="post">
+						<input type="hidden" name="color" id="color"/>
+						<input type="submit" value="구매하기" />
+					</form>
+                     -->
                 
                 </li>
                 <li>
+                	<!-- 아이콘구매 -->
                 	<c:forEach var="icon" items="${getIcon}">
-	                	<div class="item_id">
-	                        <img src="/filo/resources/images/pf/${icon.name}.png" alt="${icon.name}">
-	                        <div class="box">
-	                            <p class="name">${icon.name}</p>
-	                            <p class="price">${icon.needPoint} point</p>
-	                        </div>
-	                        <div class="btn_purchase">buy</div>
-	                    </div>
-                	</c:forEach>
-                	<!--  
+                	<div class="item_id">
+                        <img src="/filo/resources/images/pf/${icon.name}.png" alt="">
+                        <div class="box">
+                            <p class="name">${icon.name}</p>
+                            <p class="price">${icon.needPoint} point</p>
+                        </div>
+                        
+                    <!--<form action="/filo/game/shop/purchasePro.fl" onsubmit="return check()" method="get"> -->
+                        <form action="/filo/game/shop/purchasePro.fl" onsubmit="return check()" method="post">
+                        <input type="hidden" name="item" value="icon"/>
+                        <input type="hidden" name="result" value="${icon.name}"/>
+                        <input type="hidden" name="price" value="${icon.needPoint}"/>
+                        <!-- 버튼을 어떻게해야할지 모르겠다 -->
+                        <div class="btn_purchase"><input type="submit" value="buy" class="btn_purchase"/></div>
+                       
+                <!--    <input type="submit" class="btn_purchase">buy</button>	-->
+                		</form>
+                        
+                    </div>
+                    
+                    </c:forEach>
+	             
+                	
+                	
+                	
+					<!--  
                     <div class="item_id">
                         <img src="/filo/resources/images/pf/bread.png" alt="">
                         <div class="box">
@@ -64,15 +118,7 @@
                         </div>
                         <div class="btn_purchase">buy</div>
                     </div>
-                    <div class="item_id">
-                        <img src="/filo/resources/images/pf/bread.png" alt="">
-                        <div class="box">
-                            <p class="name">아이콘 이름1</p>
-                            <p class="price">1000 point</p>
-                        </div>
-                        <div class="btn_purchase">buy</div>
-                    </div>
-                    -->
+                   -->
                 </li>
                 <li>
                     Skin

@@ -8,7 +8,7 @@
 </head>
 	<script>
 		alert("구매완료!");
-		document.location.href="/filo/shop/purchase.fl";
+		document.location.href="/filo/game/shop/purchase.fl";
 	</script>
 <body>
 	아이콘구매프로 ${memIcon}  // ${memId} // ${icon}

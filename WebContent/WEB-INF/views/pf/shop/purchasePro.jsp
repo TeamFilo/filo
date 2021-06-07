@@ -6,6 +6,12 @@
 	
 	<div class="wrapAll">
 		<script>
+			alert("구매완료!");
+			document.location.href="/filo/game/shop/purchase.fl";
+		</script>
+		
+		<!--  
+		<script>
 			var curr_url = document.URL;
 			var new_curr_url = new URL(curr_url);
 			
@@ -20,6 +26,7 @@
 				document.location.href="/filo/shop/purchase.fl";
 			}
 		</script>
+		-->
 	</div>
 	<!-- //wrapAll end -->
 	

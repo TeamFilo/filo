@@ -16,9 +16,7 @@ public class ShopServiceImpl implements ShopService {
 
 	@Override
 	public List<IconDTO> getIcon() {
-		System.out.println("서비스");
 		List getIcon = shopDAO.getIcon();
-		System.out.println("서비스나옴");
 		return getIcon;
 	}
 
