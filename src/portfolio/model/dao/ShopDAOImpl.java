@@ -16,9 +16,7 @@ public class ShopDAOImpl implements ShopDAO {
 
 	@Override
 	public List<IconDTO> getIcon() {
-		System.out.println("다오");
 		List getIcon = sqlSession.selectList("game.getIcon");
-		System.out.println("다오나옴");
 		return getIcon;
 	}
 

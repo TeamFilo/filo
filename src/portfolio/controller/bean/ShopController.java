@@ -32,16 +32,11 @@ public class ShopController {
 	//아이템샵 홈
 	@RequestMapping("purchase.fl")
 	public String purchase(Model model) {
+		
 		List<IconDTO> getIcon = shopService.getIcon();
 		
-		
-
 		model.addAttribute("getIcon", getIcon);
 		
-		
-		
-		
-
 		return "/pf/shop/purchase";
 	}
 	
@@ -86,7 +81,7 @@ public class ShopController {
 	
 	//색깔변경pro
 	@RequestMapping("purchaseColorPro.fl")
-	public String purchasePro(String color) {
+	public String purchaseColorPro(String color) {
 		String id = (String)RequestContextHolder.getRequestAttributes().getAttribute("memId", RequestAttributes.SCOPE_SESSION);
 
 		// 보유 포인트
@@ -117,7 +112,7 @@ public class ShopController {
 		return "/pf/shop/purchaseColorPro";
 	}
 	
-	//아이콘변경pro
+	/*아이콘변경pro
 	@RequestMapping("purchaseIconPro.fl")
 	public String purchaseIconPro(String icon, Model model) {
 		
@@ -157,6 +152,7 @@ public class ShopController {
 		
 		return "/pf/shop/purchaseIconPro";
 	}
+	*/
 	
 	//스킨변경pro
 	@RequestMapping("purchaseSkinPro.fl")
@@ -201,11 +197,6 @@ public class ShopController {
 		int needPoint = map.get("purchaseShop");
 		int userPoint = gameService.getWallet(user).getPoint();
 		
-		/*
-		if(userPoint>=needPoint) {
-			System.out.println("구매 ㄱㄱ");
-		}
-		*/
 		map.put("needPoint",needPoint);
 		map.put("userPoint",userPoint);
 		
@@ -217,6 +208,37 @@ public class ShopController {
 	public String colorTest() {
 		return "/pf/shop/purchaseColorPicker";
 	}
+	
+	//아이템샵 구매Pro
+	@RequestMapping("purchasePro.fl")
+	public String purchase(String item, String result, int price) {
+		String id = (String)RequestContextHolder.getRequestAttributes().getAttribute("memId", RequestAttributes.SCOPE_SESSION);
+		
+		// 보유포인트 확인
+		int userPoint = gameService.getWallet(id).getPoint();
+		System.out.println("보유포인트확인" + userPoint);
+		
+		// 보유 포인트가 구매포인트보다 클경우에만 업데이트 
+		if(userPoint >= price) {
+			//기존 memIcon삭제
+			memService.removeSession("memIcon");
+			//세션에 저장
+			RequestContextHolder.getRequestAttributes().setAttribute("memIcon", result, RequestAttributes.SCOPE_SESSION);
+			// tmuser에 아이콘 업데이트
+			String memIcon = "memIcon";
+			memService.purchaseUpdate(memIcon, result);
+			// 포인트 차감
+			gameService.updatePoint(id, price);
+		}else {
+			System.out.println("포인트 모자라서 안탔음");
+		}
+		
+		//model.addAttribute("icon", icon);
+		
+		
+		return "/pf/shop/purchasePro";
+	}
+	
 	
 
 
