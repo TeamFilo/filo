@@ -85,47 +85,22 @@
                             <p class="sub">${r.value.nickname}</p>
                             <p class="txt">${r.value.id}</p> 
                         </div>
-                        <!-- c:set으로 변수 만들어서 1씩 추가해주기 -->
                         <p class="tit">${r.key}</p>
                     </li>
                 	</c:forEach>
-                	<!--
-                    <li>
-                        <img src="/filo/resources/images/pf/pf1.jpg">
-                        <div class="box">
-                            <p class="user">vino_costa</p>
-                            <p class="name">pride chicken</p> 
-                        </div>        
-                        <p class="rank">1</p>
-                    </li>
-                    <li>
-                        <img src="/filo/resources/images/pf/pf2-1.jpg">
-                        <div class="box">
-                            <p class="user">vino_costavino_costa</p>
-                            <p class="name">pride chicken</p> 
-                        </div>        
-                        <p class="rank">2</p>
-                    </li>
-                    <li>
-                        <img src="/filo/resources/images/pf/pf2-2.jpg">
-                        <div class="box">
-                            <p class="user">vino_costavino_costa</p>
-                            <p class="name">pride chicken</p> 
-                        </div>        
-                        <p class="rank">3</p>
-                    </li>
 
+                    <!-- 내꺼 랭킹 -->
+                    <c:if test="${sessionScope.memId!=null}">
                     <li>
                         <img src="/filo/resources/images/pf/pf3.jpg">
                         <div class="box">
-                            <p class="user">imymemine</p>
-                            <p class="name">pride chicken</p> 
+                            <p class="user">${userInfo.nickname}</p>
+                            <p class="name">${userInfo.id}</p> 
                         </div>        
-                        <p class="rank">999</p>
+                        <p class="rank">${myRank}</p>
                     </li>
-
                     <div class="rCover"></div>
-
+                    </c:if>
                 </ul>
                 <!--player End-->
             </div>
