@@ -1,10 +1,12 @@
 package portfolio.service.bean;
 
 import java.util.List;
+import java.util.Map;
 
 import portfolio.model.dto.GameInfoDTO;
 import portfolio.model.dto.GrGiJoinDTO;
 import portfolio.model.dto.WalletDTO;
+import travelMaker.model.dto.TmUserDTO;
 
 public interface GameService {
 	
@@ -41,7 +43,7 @@ public interface GameService {
 	//상위 퍼센트 정보 리턴
 	public double gamePercent(String user);
 	//랭킹 세 명 정보
-	public List topThree();
+	public Map<Integer,TmUserDTO> topThree();
 	//내 등수
 	public int myRank(String user);
 	//게임 해봤는지 여부

@@ -33,8 +33,8 @@ public interface GameDAO {
 	
 	//상위 퍼센트 정보 구하기
 	public Map<Double, Double> gamePercent(String user);
-	//랭킹 세 명 정보
-	public List topThree();
+	//랭커들 정보
+	public List<Map> topRankers();
 	//게임 해봤는지 여부
 	public int haveEverPlayed(String user);
 	

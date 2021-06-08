@@ -78,18 +78,18 @@
             <div class="swiper-slide rankWrap">
                 <p class="tit">Player Ranking</p>
                 <ul class="player">
-                	<!--
-                	<c:forEach var="r" items="${topThree}">
+                	<c:forEach var="r" items="${top3}">
                     <li>
                         <img src="/filo/resources/images/pf/pf1.jpg">
                         <div class="playPoint">
-                            <p class="sub">vino_costa</p>
-                            <p class="txt">pride chicken</p> 
-                        </div>        
-                        <p class="tit">1</p>
+                            <p class="sub">${r.value.nickname}</p>
+                            <p class="txt">${r.value.id}</p> 
+                        </div>
+                        <!-- c:set으로 변수 만들어서 1씩 추가해주기 -->
+                        <p class="tit">${r.key}</p>
                     </li>
                 	</c:forEach>
-                	-->	
+                	<!--
                     <li>
                         <img src="/filo/resources/images/pf/pf1.jpg">
                         <div class="box">
@@ -114,7 +114,7 @@
                         </div>        
                         <p class="rank">3</p>
                     </li>
-                    <!-- 내꺼 랭킹 -->
+
                     <li>
                         <img src="/filo/resources/images/pf/pf3.jpg">
                         <div class="box">
@@ -123,6 +123,9 @@
                         </div>        
                         <p class="rank">999</p>
                     </li>
+
+                    <div class="rCover"></div>
+
                 </ul>
                 <!--player End-->
             </div>
@@ -156,8 +159,6 @@
             </div>
             </c:if>
             <!--todayRec End-->
-            
-            
         </div>
     </div>
     <!-- swiperContainer End -->
