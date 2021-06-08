@@ -20,6 +20,7 @@
 	<link href="<c:url value="/resources/css/rockPS.css" />" rel="stylesheet"/>
 	<link href="<c:url value="/resources/css/winwheel.css" />" rel="stylesheet"/>
 	<link href="<c:url value="/resources/css/swiper.css" />" rel="stylesheet"/>
+	<link href="<c:url value="/resources/css/colorPick.css" />" rel="stylesheet"/>
 	
 	
 	<!-- JS -->
