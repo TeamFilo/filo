@@ -24,14 +24,16 @@
 					contentType: "application/json",
 					data: JSON.stringify(data),
 					success : function(result){
-						console.log('값 넘어왔냐');
 						var np = result.needPoint;
 						var up = result.userPoint;
-						if(up>=np){
-							console.log('이프문타냐');
+						var ch = result.loginCheck;
+						if(ch==0){
+							alert("로그인 후에 이용해주세요.");
+							location.href="/filo/game/shop/purchase.fl";
+						}else if(up>=np){
 							introScreen.classList.add('fadeOut');
 							match.classList.add('fadeIn');
-						}else{
+						}else if(up<np){
 							alert("포인트가 부족합니다!");
 							location.href="/filo/game/shop/purchase.fl";
 						}
@@ -51,24 +53,27 @@
             <ul class="tab_cont">
                 <li>
                     ID color
-                    <!-- ================== -->
-			
 					<h1>색깔구매</h1>
 					<h4>색깔을 골라주세요</h4>
 					<div class="picker" id="picker1"></div>
-					<form action="/filo/shop/purchaseColorPro.fl" onsubmit="return check()" method="post">
-						<input type="hidden" name="color" id="color"/>
+					<form action="/filo/game/shop/purchasePro.fl" onsubmit="return check()" method="get">
+						<input type="hidden" name="item" value="color"/>
+                        <input type="hidden" name="result" id="idColor"/>
+                        <input type="hidden" name="price" value="10"/>
+						
 						<input type="submit" value="구매하기" />
 					</form>
 					<script>
-						var nowColor = '${nowColor}';
+						var nowIdColor = '${nowIdColor}';
 						$("#picker1").colorPick({
-							'initialColor' : nowColor,
+							'initialColor' : nowIdColor,
 							'palette': ["#1abc9c", "#16a085", "#2ecc71", "#27ae60", "#3498db", "#2980b9", "#9b59b6", "#8e44ad", "#34495e", "#2c3e50", "#f1c40f", "#f39c12", "#e67e22", "#d35400", "#e74c3c", "#c0392b", "#ecf0f1"],
 							'onColorSelected': function() {
 								console.log("The user has selected the color: " + this.color)
 								this.element.css({'backgroundColor': this.color, 'color': this.color});
-								$('#color').val(this.color);
+								$('#idColor').val(this.color);
+								console.log($('#idColor').val());
+							//	$("input[name=result]").value("value 값 바꾸기");
 							}
 						});
 					</script>
@@ -125,20 +130,22 @@
                     
                     <h1>스킨구매</h1>
 					<h4>스킨색상을 골라주세요</h4>
-					<div class="picker" id="picker1"></div>
-					<form action="/filo/shop/purchaseSkinPro.fl" onsubmit="return check()" method="post">
-						<input type="hidden" name="skin" id="color"/>
+					<div class="picker" id="picker2"></div>
+					<form action="/filo/game/shop/purchasePro.fl" onsubmit="return check()" method="get">
+						<input type="hidden" name="item" value="skin"/>
+						<input type="hidden" name="result" id="skinColor"/>
+                        <input type="hidden" name="price" value="10"/>
 						<input type="submit" value="구매하기" />
 					</form>
 					<script>
-						var nowColor = '${nowColor}';
-						$("#picker1").colorPick({
-							'initialColor' : nowColor,
+						var nowSkin = '${nowSkin}';
+						$("#picker2").colorPick({
+							'initialColor' : nowSkin,
 							'palette': ["#1abc9c", "#16a085", "#2ecc71", "#27ae60", "#3498db", "#2980b9", "#9b59b6", "#8e44ad", "#34495e", "#2c3e50", "#f1c40f", "#f39c12", "#e67e22", "#d35400", "#e74c3c", "#c0392b", "#ecf0f1"],
 							'onColorSelected': function() {
 								console.log("The user has selected the color: " + this.color)
 								this.element.css({'backgroundColor': this.color, 'color': this.color});
-								$('#color').val(this.color);
+								$('#skinColor').val(this.color);
 							}
 						});
 					</script>

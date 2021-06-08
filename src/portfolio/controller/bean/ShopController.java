@@ -34,9 +34,15 @@ public class ShopController {
 	public String purchase(Model model) {
 		
 		List<IconDTO> getIcon = shopService.getIcon();
-		
 		model.addAttribute("getIcon", getIcon);
+		String id = (String)RequestContextHolder.getRequestAttributes().getAttribute("memId", RequestAttributes.SCOPE_SESSION);
 		
+		if(id!=null) {
+			String nowIdColor = memService.getMember(id).getIdColor();
+			String nowSkin = memService.getMember(id).getIdSkin();
+			model.addAttribute("nowIdColor",nowIdColor);
+			model.addAttribute("nowSkin",nowSkin);
+		}		
 		return "/pf/shop/purchase";
 	}
 	
@@ -195,10 +201,17 @@ public class ShopController {
 	public Map shopPointCh(@RequestBody Map<String,Integer> map) {
 		String user = (String)RequestContextHolder.getRequestAttributes().getAttribute("memId", RequestAttributes.SCOPE_SESSION);
 		int needPoint = map.get("purchaseShop");
-		int userPoint = gameService.getWallet(user).getPoint();
-		
 		map.put("needPoint",needPoint);
-		map.put("userPoint",userPoint);
+		
+		if(user!=null) {
+			int userPoint = gameService.getWallet(user).getPoint();
+			map.put("userPoint",userPoint);
+			map.put("loginCheck",1);
+		}else {
+			map.put("userPoint",-100);
+			map.put("loginCheck",0);
+		}
+		
 		
 		return map;
 	}
@@ -217,6 +230,7 @@ public class ShopController {
 		// 보유포인트 확인
 		int userPoint = gameService.getWallet(id).getPoint();
 		System.out.println("보유포인트확인" + userPoint);
+		System.out.println("item:"+item+"/result:"+result+"/price:"+price);
 		
 		// 보유 포인트가 구매포인트보다 클경우에만 업데이트 
 		if(userPoint >= price) {
