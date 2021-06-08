@@ -31,14 +31,15 @@
                 </div>
                 <!--bioWrap End-->
                 <div class="proBar">
-                    <progress max="100" value="70"></progress>
+                    <progress max="100" value="80"></progress>
                     <p class="txt">TOP RATE</p>
-                    <p class="txt percen">72.1%</p>
+                    <p class="txt percen">13.1%</p>
                     <!--<progress max="${nextVal.rkNeed}" value="${memInfo.travelCnt}"></progress> -->
                 </div>
                 <!--proBar End-->
                 <div class="pIconWrap">
-                    <p class="sub">${wal.point}</p>
+                	<p class="txt">TOTAL POINT</p>
+                    <p class="sub">${wal.point}P</p>
                     <img src="/filo/resources/images/pf/pIco.png" />
                 </div>
                  <a href="/filo/game/shop/purchase.fl"><div class="graBtn sub">Purchase Item</div></a>
@@ -54,27 +55,27 @@
                         <div class="subWrap">
                             <p class="sub">Card</p>
                         </div>    
-                        <div class="goBtn"></div>
+                        <a href="/filo/game/card.fl"><div class="goBtn"><img src="/filo/resources/images/tm/arrowR.png"></div></a>
                     </li>
                     <li>
                         <img src="/filo/resources/images/pf/roulette.png">
                         <div class="subWrap">
                             <p class="sub">Rock P.S</p>
                         </div>    
-                        <div class="goBtn"></div>
+                        <a href="/filo/game/rockPS.fl"><div class="goBtn"><img src="/filo/resources/images/tm/arrowR.png"></div></a>
                     </li>
                     <li>
                         <img src="/filo/resources/images/pf/roulette.png">
                         <div class="subWrap">
                             <p class="sub">Up & Down</p>
                         </div>    
-                        <div class="goBtn"></div>
+                        <a href="/filo/game/updown.fl"><div class="goBtn"><img src="/filo/resources/images/tm/arrowR.png"></div></a>
                     </li>
                 </ul>
             </div>
             <!--morePoint End-->
             
-            <div class="swiper-slide rankWrap txtWrap">
+            <div class="swiper-slide rankWrap">
                 <p class="tit">Player Ranking</p>
                 <ul class="player">
                 	<c:forEach var="r" items="${top3}">
@@ -84,45 +85,18 @@
                             <p class="sub">${r.value.nickname}</p>
                             <p class="txt">${r.value.id}</p> 
                         </div>
-                        <!-- c:set으로 변수 만들어서 1씩 추가해주기 -->
                         <p class="tit">${r.key}</p>
                     </li>
                 	</c:forEach>
-                	<!--
-                    <li>
-                        <img src="/filo/resources/images/pf/pf1.jpg">
-                        <div class="playPoint">
-                            <p class="sub">vino_costa</p>
-                            <p class="txt">pride chicken</p> 
-                        </div>        
-                        <p class="tit">1</p>
-                    </li>
 
+                    <!-- 내꺼 랭킹 -->
                     <li>
                         <img src="/filo/resources/images/pf/pf3.jpg">
-                        <div class="playPoint">
-                            <p class="sub">vino_costa</p>
-                            <p class="txt">pride chicken</p> 
+                        <div class="box">
+                            <p class="user">imymemine</p>
+                            <p class="name">pride chicken</p> 
                         </div>        
-                        <p class="tit">2</p>
-                    </li>
-
-                    <li>
-                        <img src="/filo/resources/images/pf/pf2-2.jpg">
-                        <div class="playPoint">
-                            <p class="sub">vino_costa</p>
-                            <p class="txt">pride chicken</p> 
-                        </div>        
-                        <p class="tit">3</p>
-                    </li>
-                	-->
-                    <li>
-                        <img src="/filo/resources/images/pf/pf2-1.jpg">
-                        <div class="playPoint">
-                            <p class="sub">${userInfo.id}</p>
-                            <p class="txt">${userInfo.nickname}</p> 
-                        </div>        
-                        <p class="tit">${myRank}</p>
+                        <p class="rank">999</p>
                     </li>
                     <div class="rCover"></div>
                 </ul>
