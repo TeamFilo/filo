@@ -35,7 +35,7 @@
 			<h1>색깔구매</h1>
 			<h4>색깔을 골라주세요</h4>
 			<div class="picker" id="picker1"></div>
-			<form action="/filo/shop/purchaseColorPro.fl" onsubmit="return check()" method="post">
+			<form action="/filo/game/shop/purchaseColorPro.fl" onsubmit="return check()" method="post">
 				<input type="hidden" name="color" id="color"/>
 				<input type="submit" value="구매하기" />
 			</form>
