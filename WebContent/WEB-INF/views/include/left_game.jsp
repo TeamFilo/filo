@@ -93,8 +93,8 @@
                         <img src="/filo/resources/images/pf/${r.value.idIcon}.png">
                     	</c:if>
                         <div class="playPoint">
-                            <p class="sub">${r.value.nickname}</p>
-                            <p class="txt">${r.value.id}</p> 
+                            <p class="sub">${r.value.id}</p>
+                            <p class="txt">${r.value.nickname}</p> 
                         </div>
                         <p class="tit">${r.key}</p>
                     </li>
@@ -110,8 +110,8 @@
                         <img src="/filo/resources/images/pf/${userInfo.idIcon}.png">
                     	</c:if>
                         <div class="box">
-                            <p class="user">${userInfo.nickname}</p>
-                            <p class="name">${userInfo.id}</p> 
+                            <p class="user">${userInfo.id}</p>
+                            <p class="name">${userInfo.nickname}</p> 
                         </div>        
                         <p class="rank">${myRank}</p>
                     </li>
