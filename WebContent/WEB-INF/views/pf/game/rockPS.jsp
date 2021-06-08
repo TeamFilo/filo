@@ -117,5 +117,7 @@
 		</div>
 		<!-- //wrapAll end -->
 		
+	<script type="text/javascript" src="<c:url value="/resources/js/rock.js" />"></script>
+	
 <jsp:include page="/WEB-INF/views/include/footer.jsp" />
 <!-- //footer end -->
