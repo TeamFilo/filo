@@ -228,7 +228,7 @@ public class ShopController {
 			String memIcon = "memIcon";
 			memService.purchaseUpdate(memIcon, result);
 			// 포인트 차감
-			gameService.updatePoint(id, -price); 
+			gameService.updatePoint(id, -price);  
 		}else {
 			System.out.println("포인트 모자라서 안탔음");
 		}
