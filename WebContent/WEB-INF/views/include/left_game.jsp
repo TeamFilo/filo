@@ -23,7 +23,12 @@
                 
                 <c:if test="${sessionScope.memId!=null}">
                 <div class="bioWrap">
-                    <img src="/filo/resources/images/pf/pf2-1.jpg">
+                    <c:if test="${userInfo.idIcon==null}">
+                    <img src="/filo/resources/images/pf/user.png">
+                	</c:if>
+                	<c:if test="${r.value.idIcon!=null}">
+                    <img src="/filo/resources/images/pf/${userInfo.idIcon}.png">
+                	</c:if>
                     <div class="nameWrap">
                         <p class="tit">${userInfo.id}</p>
                         <p class="txt">${userInfo.nickname}</p>
@@ -31,10 +36,11 @@
                 </div>
                 <!--bioWrap End-->
                 <div class="proBar">
-                    <progress max="100" value="80"></progress>
+                	<!-- 퍼센트 수치가 낮을수록 프로그레스바를 많이 채워야 하므로(반비례) -->
+                	<c:set var="myper" value="${100-gamePercent}"/>
+                    <progress max="100" value="${myper}"></progress>
                     <p class="txt">TOP RATE</p>
-                    <p class="txt percen">13.1%</p>
-                    <!--<progress max="${nextVal.rkNeed}" value="${memInfo.travelCnt}"></progress> -->
+                    <p class="txt percen">${gamePercent}%</p>
                 </div>
                 <!--proBar End-->
                 <div class="pIconWrap">
@@ -80,7 +86,12 @@
                 <ul class="player">
                 	<c:forEach var="r" items="${top3}">
                     <li>
-                        <img src="/filo/resources/images/pf/pf1.jpg">
+                    	<c:if test="${r.value.idIcon==null}">
+                        <img src="/filo/resources/images/pf/user.png">
+                    	</c:if>
+                    	<c:if test="${r.value.idIcon!=null}">
+                        <img src="/filo/resources/images/pf/${r.value.idIcon}.png">
+                    	</c:if>
                         <div class="playPoint">
                             <p class="sub">${r.value.nickname}</p>
                             <p class="txt">${r.value.id}</p> 
@@ -92,7 +103,12 @@
                     <!-- 내꺼 랭킹 -->
                     <c:if test="${sessionScope.memId!=null}">
                     <li>
-                        <img src="/filo/resources/images/pf/pf3.jpg">
+                        <c:if test="${userInfo.idIcon==null}">
+                        <img src="/filo/resources/images/pf/user.png">
+                    	</c:if>
+                    	<c:if test="${r.value.idIcon!=null}">
+                        <img src="/filo/resources/images/pf/${userInfo.idIcon}.png">
+                    	</c:if>
                         <div class="box">
                             <p class="user">${userInfo.nickname}</p>
                             <p class="name">${userInfo.id}</p> 
