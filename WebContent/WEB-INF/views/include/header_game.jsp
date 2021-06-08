@@ -29,7 +29,6 @@
 	<script type="text/javascript" src="<c:url value="/resources/js/swiper.min.js" />"></script>	
 	<script type="text/javascript" src="<c:url value="/resources/js/lotteryScratch.js" />"></script>
 	<script type="text/javascript" src="<c:url value="/resources/js/Winwheel.js" />"></script>
-	<script type="text/javascript" src="<c:url value="/resources/js/rock.js" />"></script>
 	<script type="text/javascript" src="<c:url value="/resources/js/colorPick.js" />"></script>
 	
     <script src="http://cdnjs.cloudflare.com/ajax/libs/gsap/latest/TweenMax.min.js" ></script>
