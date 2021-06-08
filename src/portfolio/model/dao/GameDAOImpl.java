@@ -93,11 +93,11 @@ public class GameDAOImpl implements GameDAO  {
 		return map;
 	}
 	
-	//랭킹 세 명 정보
+	//랭커들 정보
 	@Override
-	public List topThree() {
-		
-		return null;
+	public List<Map> topRankers() {
+		List<Map> list = sqlSession.selectList("game.topRankers");
+		return list;
 	}
 	
 	//게임 해봤는지 여부

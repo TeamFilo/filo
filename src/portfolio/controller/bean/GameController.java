@@ -6,6 +6,7 @@ import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -26,6 +27,7 @@ import portfolio.model.dto.GameRecordDTO;
 import portfolio.model.dto.GrGiJoinDTO;
 import portfolio.model.dto.WalletDTO;
 import portfolio.service.bean.GameService;
+import travelMaker.model.dto.TmUserDTO;
 import travelMaker.service.bean.MemberService;
 
 @Controller
@@ -70,10 +72,11 @@ public class GameController {
 				double gamePercent = gameService.gamePercent(user);	
 				model.addAttribute("gamePercent", gamePercent);
 			}
-			
-			//랭킹 탑3 정보
-      
 		}
+		
+		//랭킹 탑3 정보
+		Map<Integer,TmUserDTO> top3 = gameService.topThree();
+		model.addAttribute("top3",top3);
 		
 		return "/pf/game/main";
 	}

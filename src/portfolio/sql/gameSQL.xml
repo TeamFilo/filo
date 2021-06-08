@@ -89,4 +89,11 @@
 		select count(*) from gameRecord where id=#{value}
 	</select>
 	
+	<!-- 상위랭커 정보 출력 -->
+	<select id="topRankers" resultType="hashmap">
+		select all_rank, id from (select id, rank() over (order by avg(score) desc) all_rank from gameRecord group by id)
+	</select>
+
+
+	
 </mapper>

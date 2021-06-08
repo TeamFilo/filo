@@ -19,12 +19,17 @@ import portfolio.model.dto.GameInfoDTO;
 import portfolio.model.dto.GameRecordDTO;
 import portfolio.model.dto.GrGiJoinDTO;
 import portfolio.model.dto.WalletDTO;
+import travelMaker.model.dao.TmUserDAO;
+import travelMaker.model.dto.TmUserDTO;
 
 @Service
 public class GameServiceImpl implements GameService {
   
 	@Autowired
 	private GameDAO gameDAO = null;
+	
+	@Autowired
+	private TmUserDAO tmUserDAO = null;
 	
 	//카운트 리셋
 	@Override
@@ -177,22 +182,20 @@ public class GameServiceImpl implements GameService {
 	
 	//랭킹 세 명 정보
 	@Override
-	public List topThree() {
+	public Map<Integer,TmUserDTO> topThree() {
+		List<Map> list = gameDAO.topRankers();
 	/*
-		등수 | 아이디 | 닉네임 뽑혀야 함
-		select all_rank from 
-		(select id, rank() over (order by avg(score) desc) all_rank
-		from gameRecord group by id);
-		
-		위의 쿼리문으로 등수|아이디만 출력, DTO에 담을 수 없으므로
-		resulttype은 hashmap으로 한다(Map<Integer(등수),String(아이디)>)
-		
-		아니면 gameRecord랑 tmUser 조인해서 TuGrJoinDTO 만든 후
-		tmUser테이블에 랭크만 붙여서 뽑기
+		list에는 {ID=yoonseo, ALL_RANK=1}과 같은 식으로 랭킹 정보가 map 타입으로 들어가 있음
+		이를 Map<등수,회원정보DTO>으로 재조합해서 보내줌
 	*/
+		Map<Integer,TmUserDTO> topPlayers = new HashMap<Integer,TmUserDTO>();
 		
-		
-		return null;
+		for(int i=0; i<list.size(); i++) {
+			int rank = Integer.parseInt(String.valueOf(list.get(i).get("ALL_RANK")));
+			String id = (String)list.get(i).get("ID");
+			topPlayers.put(rank, tmUserDAO.getMember(id));
+		}
+		return topPlayers;
 	}
 	
 	//내 등수
