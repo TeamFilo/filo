@@ -90,15 +90,17 @@
                 	</c:forEach>
 
                     <!-- 내꺼 랭킹 -->
+                    <c:if test="${sessionScope.memId!=null}">
                     <li>
                         <img src="/filo/resources/images/pf/pf3.jpg">
                         <div class="box">
-                            <p class="user">imymemine</p>
-                            <p class="name">pride chicken</p> 
+                            <p class="user">${userInfo.nickname}</p>
+                            <p class="name">${userInfo.id}</p> 
                         </div>        
-                        <p class="rank">999</p>
+                        <p class="rank">${myRank}</p>
                     </li>
                     <div class="rCover"></div>
+                    </c:if>
                 </ul>
                 <!--player End-->
             </div>
