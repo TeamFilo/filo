@@ -93,7 +93,22 @@
 	<select id="topRankers" resultType="hashmap">
 		select all_rank, id from (select id, rank() over (order by avg(score) desc) all_rank from gameRecord group by id)
 	</select>
-
+	
+	<!--  현재 사용중인 아이템인지 확인 -->
+	<select id="usingItemCh" parameterType="hashmap" resultType="int">
+		select count(*) from tmuser where
+		<if test='item.equals("idColor")'>
+			idColor=#{result}
+		</if>
+		<if test='item.equals("icon")'>
+			idIcon=#{result}
+		</if>
+		<if test='item.equals("skin")'>
+			idSkin=#{result}
+		</if>
+		and id=#{user}
+	
+	</select>
 
 	
 </mapper>

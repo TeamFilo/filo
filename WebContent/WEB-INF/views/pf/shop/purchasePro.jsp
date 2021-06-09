@@ -1,4 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <jsp:include page="/WEB-INF/views/include/header.jsp" />
    
 	<jsp:include page="/WEB-INF/views/include/top.jsp" />
@@ -6,8 +7,15 @@
 	
 	<div class="wrapAll">
 		<script>
-			alert("구매완료!");
-			document.location.href="/filo/game/shop/purchase.fl";
+		var res = '<c:out value="${resCh}"/>';
+
+			if(res==0){
+				alert("구매완료!");
+				document.location.href="/filo/game/shop/purchase.fl";
+			}else if(res==1){
+				alert("이미 사용중인 아이템입니다.");
+				document.location.href="/filo/game/shop/purchase.fl";
+			}
 		</script>
 		
 		<!--  

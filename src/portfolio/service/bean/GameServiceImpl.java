@@ -144,15 +144,26 @@ public class GameServiceImpl implements GameService {
 		SimpleDateFormat sdf = new SimpleDateFormat("yyyyMMdd");
 		String today = sdf.format(Calendar.getInstance().getTime());
 		List<GrGiJoinDTO> records = getGameRecord(user);
+		List<GrGiJoinDTO> todayR = new ArrayList<GrGiJoinDTO>();
 		List<GrGiJoinDTO> todayRecords = new ArrayList<GrGiJoinDTO>();
 
 		for(int i=0; i<records.size(); i++) {
 			//GameRecordDTO rec = records.get(i);
 			String gameReg = sdf.format(new Date(records.get(i).getReg().getTime()));
 			if(gameReg.equals(today)) { //&& rec.getGameCate()!=0 && rec.getGameCate()!=4;
-				todayRecords.add(records.get(i));
+				todayR.add(records.get(i));
 			}
 		}
+		if(todayR.size()>5) {
+			for(int i=0; i<5; i++) {
+				todayRecords.add(todayR.get(i));
+			}
+		}else {
+			for(int i=0; i<todayR.size(); i++) {
+				todayRecords.add(todayR.get(i));
+			}
+		}
+		
 		return todayRecords;
 	}
 	
@@ -189,8 +200,13 @@ public class GameServiceImpl implements GameService {
 		이를 Map<등수,회원정보DTO>으로 재조합해서 보내줌
 	*/
 		Map<Integer,TmUserDTO> topPlayers = new HashMap<Integer,TmUserDTO>();
-		
-		for(int i=0; i<list.size(); i++) {
+		int index = 0;
+		if(list.size()>3) {
+			index = 3;
+		}else if(list.size()<=3) {
+			index = list.size();
+		}
+		for(int i=0; i<index; i++) {
 			int rank = Integer.parseInt(String.valueOf(list.get(i).get("ALL_RANK")));
 			String id = (String)list.get(i).get("ID");
 			topPlayers.put(rank, tmUserDAO.getMember(id));

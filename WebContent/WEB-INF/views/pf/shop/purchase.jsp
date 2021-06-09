@@ -9,13 +9,16 @@
         
         <jsp:include page="/WEB-INF/views/include/left_game.jsp" />
         
-      <!--    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script> -->
         <script>	
+
 			function check(){
+		
 				// 보유 포인트 확인 ajax
+				//alert($('input[name=price]').val());
 				var data = {"purchaseShop":$('input[name=price]').val()};
 				
-				console.log(data);
+			
+				console.log('데이타',data.purchaseShop);
 	         		
 				$.ajax({
 					type:"post",
@@ -27,19 +30,22 @@
 						var np = result.needPoint;
 						var up = result.userPoint;
 						var ch = result.loginCheck;
+						
 						if(ch==0){
 							alert("로그인 후에 이용해주세요.");
-							location.href="/filo/game/shop/purchase.fl";
+							location.href="/filo/login.fl";
 						}else if(up>=np){
-							introScreen.classList.add('fadeOut');
-							match.classList.add('fadeIn');
+								introScreen.classList.add('fadeOut');
+								match.classList.add('fadeIn');
 						}else if(up<np){
 							alert("포인트가 부족합니다!");
 							location.href="/filo/game/shop/purchase.fl";
 						}
 					}
 				});
+	         	
 			}
+			
 		</script>
 
         <div class="right_game shop_game">
@@ -56,11 +62,10 @@
 					<h1>색깔구매</h1>
 					<h4>색깔을 골라주세요</h4>
 					<div class="picker" id="picker1"></div>
-					<form action="/filo/game/shop/purchasePro.fl" onsubmit="return check()" method="get">
-						<input type="hidden" name="item" value="color"/>
+					<form action="/filo/game/shop/purchasePro.fl" onsubmit="return check()" method="post">
+						<input type="hidden" name="item" value="idColor"/>
                         <input type="hidden" name="result" id="idColor"/>
                         <input type="hidden" name="price" value="10"/>
-						
 						<input type="submit" value="구매하기" />
 					</form>
 					<script>
@@ -72,47 +77,35 @@
 								console.log("The user has selected the color: " + this.color)
 								this.element.css({'backgroundColor': this.color, 'color': this.color});
 								$('#idColor').val(this.color);
+								
 								console.log($('#idColor').val());
-							//	$("input[name=result]").value("value 값 바꾸기");
 							}
 						});
+						
 					</script>
-                    
-                    <!-- 
-                    <form action="/filo/shop/purchaseColorPro.fl" onsubmit="return check()" method="post">
-						<input type="hidden" name="color" id="color"/>
-						<input type="submit" value="구매하기" />
-					</form>
-                     -->
-                
                 </li>
                 <li>
                 	<!-- 아이콘구매 -->
                 	<c:forEach var="icon" items="${getIcon}">
-                	<div class="item_id">
-                        <img src="/filo/resources/images/pf/${icon.name}.png" alt="">
-                        <div class="box">
-                            <p class="name">${icon.name}</p>
-                            <p class="price">${icon.needPoint} point</p>
-                        </div>
-                        
-                    <!--<form action="/filo/game/shop/purchasePro.fl" onsubmit="return check()" method="get"> -->
-                        <form action="/filo/game/shop/purchasePro.fl" onsubmit="return check()" method="post">
-                        <input type="hidden" name="item" value="icon"/>
-                        <input type="hidden" name="result" value="${icon.name}"/>
-                        <input type="hidden" name="price" value="${icon.needPoint}"/>
-                        <!-- 버튼을 어떻게해야할지 모르겠다 -->
-                        <div class="btn_purchase"><input type="submit" value="buy" class="btn_purchase"/></div>
-                       
-                <!--    <input type="submit" class="btn_purchase">buy</button>	-->
-                		</form>
-                        
-                    </div>
-                    
+	                	<div class="item_id">
+	                        <img src="/filo/resources/images/pf/${icon.name}.png" alt="">
+	                        <div class="box">
+	                            <p class="name">${icon.name}</p>
+	                            <p class="price">${icon.needPoint} point</p>
+	                        </div>
+	                        
+	                        <form action="/filo/game/shop/purchasePro.fl" onsubmit="return check()" method="post">
+	                        <input type="hidden" name="item" value="icon"/>
+	                        <input type="hidden" name="result" value="${icon.name}"/>
+	                        <input type="hidden" name="price2" id="icon" value="${icon.needPoint}"/>
+	                        <!-- 버튼을 어떻게해야할지 모르겠다 -->
+	                        <div class="btn_purchase"><input type="submit" value="buy" class="btn_purchase" /></div>
+	                       
+	                <!--    <input type="submit" class="btn_purchase">buy</button>	-->
+	                		</form>
+	                    </div>
                     </c:forEach>
-	             
-                	
-                	
+	
                 	
 					<!--  
                     <div class="item_id">
@@ -126,12 +119,10 @@
                    -->
                 </li>
                 <li>
-                    <!--========================== --> 
-                    
                     <h1>스킨구매</h1>
 					<h4>스킨색상을 골라주세요</h4>
 					<div class="picker" id="picker2"></div>
-					<form action="/filo/game/shop/purchasePro.fl" onsubmit="return check()" method="get">
+					<form action="/filo/game/shop/purchasePro.fl" onsubmit="return check()" method="post">
 						<input type="hidden" name="item" value="skin"/>
 						<input type="hidden" name="result" id="skinColor"/>
                         <input type="hidden" name="price" value="10"/>
@@ -149,10 +140,6 @@
 							}
 						});
 					</script>
-                    
-                    
-                    
-                     <!-- =============================-->
                 </li>
             </ul>
 
