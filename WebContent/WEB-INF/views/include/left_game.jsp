@@ -26,7 +26,7 @@
                     <c:if test="${userInfo.idIcon==null}">
                     <img src="/filo/resources/images/pf/user.png">
                 	</c:if>
-                	<c:if test="${r.value.idIcon!=null}">
+                	<c:if test="${userInfo.idIcon!=null}">
                     <img src="/filo/resources/images/pf/${userInfo.idIcon}.png">
                 	</c:if>
                     <div class="nameWrap">

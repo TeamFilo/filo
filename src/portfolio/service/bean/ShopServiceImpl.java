@@ -20,4 +20,11 @@ public class ShopServiceImpl implements ShopService {
 		return getIcon;
 	}
 
+	// 현재 사용중인 아이템인지 확인
+	@Override
+	public int usingItemCh(String user, String item, String result) {
+		int res = shopDAO.usingItemCh(user,item,result);
+		return res;
+	}
+
 }

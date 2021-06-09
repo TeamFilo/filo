@@ -464,12 +464,14 @@ public class MemberServiceImpl implements MemberService {
 		String id = (String)RequestContextHolder.getRequestAttributes().getAttribute("memId", RequestAttributes.SCOPE_SESSION);
 		tmuserDAO.purchaseUpdate(id, itemCate, result);
 		
-		//내가 작성한 그룹스페이스 글에 업데이트해줘야함 
-		List UserWriteList = getUserWrite(id);
-		for(int i=0; i<UserWriteList.size(); i++) {
-			groupSpaceDAO.GroupSpaceSkinUpdate(((GroupSpaceDTO)UserWriteList.get(i)).getId(),result);
-			
-			//System.out.println("작성글스킨업데이트한후 : " + ((GroupSpaceDTO)UserWriteList.get(i)).getIdSkin() );
+		// memSkin변경되는 경우 내가 작성한 그룹스페이스 글에 업데이트해줘야함
+		if(itemCate.equals("memSkin")) {
+			List UserWriteList = getUserWrite(id);
+			for(int i=0; i<UserWriteList.size(); i++) {
+				groupSpaceDAO.GroupSpaceSkinUpdate(((GroupSpaceDTO)UserWriteList.get(i)).getId(),result);
+				
+				//System.out.println("작성글스킨업데이트한후 : " + ((GroupSpaceDTO)UserWriteList.get(i)).getIdSkin() );
+			}
 		}
 	}
 	

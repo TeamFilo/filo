@@ -52,10 +52,10 @@ public class GameController {
 	public String gameMain(Model model) throws Exception {
 		String user = (String)RequestContextHolder.getRequestAttributes().getAttribute("memId", RequestAttributes.SCOPE_SESSION);
 		if(user!=null) {
-			model.addAttribute("userInfo",memService.getMember(user));
-			model.addAttribute("wal",gameService.getWallet(user));
+			model.addAttribute("userInfo",memService.getMember(user));  //tmUserDTO로가져옴
+			model.addAttribute("wal",gameService.getWallet(user)); 
 			//오늘 한 게임
-			List<GrGiJoinDTO> todayRecords = gameService.todayRecords(user);
+			List<GrGiJoinDTO> todayRecords = gameService.todayRecords(user); //조인시킴
 			if(!todayRecords.isEmpty()) {
 				model.addAttribute("todayRecords",todayRecords);
 			}
