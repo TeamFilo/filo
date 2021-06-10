@@ -9,9 +9,41 @@
         <jsp:include page="/WEB-INF/views/include/left_game.jsp" />
         
         <script>	
-	        function checkColor(){
+	        function check(){
+	        	alert($('input[name=priceIcon]').val());;
 				// 보유 포인트 확인 ajax
-				var data = {"purchaseShop":$('input[name=price]').val()};
+				var data = {"purchaseShop":$('input[name=priceIcon]').val()};
+				console.log('데이타',data.purchaseShop);
+				$.ajax({
+					type:"post",
+					url: "/filo/game/shop/shopPointCh.fl",
+					dataType: "json",
+					contentType: "application/json",
+					data: JSON.stringify(data),
+					success : function(result){
+						var np = result.needPoint;
+						var up = result.userPoint;
+						var ch = result.loginCheck;
+						
+						if(ch==0){
+							alert("로그인 후에 이용해주세요.");
+							location.href="/filo/login.fl";
+						}else if(up>=np){
+							introScreen.classList.add('fadeOut');
+							match.classList.add('fadeIn');
+						}else if(up<np){
+							alert("포인트가 부족합니다!");
+							location.href="/filo/game/shop/purchase.fl";
+						}
+					}
+				});
+			}
+	        
+        
+	        function checkColor(){
+	        	alert($('input[name=priceColor]').val());
+				// 보유 포인트 확인 ajax
+				var data = {"purchaseShop":$('input[name=priceColor]').val()};
 				console.log('데이타',data.purchaseShop);
 				$.ajax({
 					type:"post",
@@ -39,8 +71,9 @@
 			}
 	        
 			function checkSkin(){
+	        	alert($('input[name=priceSkin]').val());
 				// 보유 포인트 확인 ajax
-				var data = {"purchaseShop":$('input[name=price]').val()};
+				var data = {"purchaseShop":$('input[name=priceSkin]').val()};
 				console.log('데이타',data.purchaseShop);
 				$.ajax({
 					type:"post",
@@ -87,6 +120,7 @@
 						<input type="hidden" name="item" value="idColor"/>
                         <input type="hidden" name="result" id="idColor"/>
                         <input type="hidden" name="price" value="10"/>
+                        <input type="hidden" name="priceColor" value="10"/>
 						<input type="submit" value="구매하기" />
 					</form>
 					<script>
@@ -118,6 +152,7 @@
 	                        <input type="hidden" name="item" value="icon"/>
 	                        <input type="hidden" name="result" value="${icon.name}"/>
 	                        <input type="hidden" name="price" id="icon" value="${icon.needPoint}"/>
+	                        <input type="hidden" name="priceIcon" id="icon" value="${icon.needPoint}"/>
 	                        <!-- 버튼을 어떻게해야할지 모르겠다 -->
 	                        <div class="btn_purchase"><input type="submit" value="buy" class="btn_purchase" /></div>
 	                       
@@ -146,6 +181,7 @@
 						<input type="hidden" name="item" value="skin"/>
 						<input type="hidden" name="result" id="skinColor"/>
                         <input type="hidden" name="price" value="30"/>
+                        <input type="hidden" name="priceSkin" value="30"/>
 						<input type="submit" value="구매하기" />
 					</form>
 					<script>
