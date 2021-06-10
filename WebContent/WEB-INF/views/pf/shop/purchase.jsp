@@ -6,7 +6,6 @@
     <div class="wrapAll game">
 
         <jsp:include page="/WEB-INF/views/include/top_game.jsp" />
-        
         <jsp:include page="/WEB-INF/views/include/left_game.jsp" />
         
         <script>	
@@ -14,10 +13,7 @@
 			function check(){
 		
 				// 보유 포인트 확인 ajax
-				//alert($('input[name=price]').val());
 				var data = {"purchaseShop":$('input[name=price]').val()};
-				
-			
 				console.log('데이타',data.purchaseShop);
 	         		
 				$.ajax({
@@ -43,7 +39,6 @@
 						}
 					}
 				});
-	         	
 			}
 			
 		</script>
@@ -72,7 +67,7 @@
 						var nowIdColor = '${nowIdColor}';
 						$("#picker1").colorPick({
 							'initialColor' : nowIdColor,
-							'palette': ["#1abc9c", "#16a085", "#2ecc71", "#27ae60", "#3498db", "#2980b9", "#9b59b6", "#8e44ad", "#34495e", "#2c3e50", "#f1c40f", "#f39c12", "#e67e22", "#d35400", "#e74c3c", "#c0392b", "#ecf0f1"],
+							'palette': ["#1abc9c", "#16a085", "#2ecc71", "#27ae60", "#3498db", "#2980b9", "#9b59b6", "#8e44ad", "#34495e", "#2c3e50", "#f1c40f", "#f39c12", "#e67e22", "#d35400", "#e74c3c", "#c0392b", "#babebf"],
 							'onColorSelected': function() {
 								console.log("The user has selected the color: " + this.color)
 								this.element.css({'backgroundColor': this.color, 'color': this.color});
@@ -81,7 +76,6 @@
 								console.log($('#idColor').val());
 							}
 						});
-						
 					</script>
                 </li>
                 <li>
@@ -97,7 +91,7 @@
 	                        <form action="/filo/game/shop/purchasePro.fl" onsubmit="return check()" method="post">
 	                        <input type="hidden" name="item" value="icon"/>
 	                        <input type="hidden" name="result" value="${icon.name}"/>
-	                        <input type="hidden" name="price2" id="icon" value="${icon.needPoint}"/>
+	                        <input type="hidden" name="price" id="icon" value="${icon.needPoint}"/>
 	                        <!-- 버튼을 어떻게해야할지 모르겠다 -->
 	                        <div class="btn_purchase"><input type="submit" value="buy" class="btn_purchase" /></div>
 	                       
@@ -132,7 +126,7 @@
 						var nowSkin = '${nowSkin}';
 						$("#picker2").colorPick({
 							'initialColor' : nowSkin,
-							'palette': ["#1abc9c", "#16a085", "#2ecc71", "#27ae60", "#3498db", "#2980b9", "#9b59b6", "#8e44ad", "#34495e", "#2c3e50", "#f1c40f", "#f39c12", "#e67e22", "#d35400", "#e74c3c", "#c0392b", "#ecf0f1"],
+							'palette': ["#FFD232", "#FFA98F", "#FFB6C1", "#2C952C", "#ACF3FF", "#00B9FF", "#989898", "#FF6666", "#3CC8C8", "#CE9595", "#603F20", "#f39c12", "#e67e22", "#d35400", "#BD00B6", "#c0392b", "#ecf0f1"],
 							'onColorSelected': function() {
 								console.log("The user has selected the color: " + this.color)
 								this.element.css({'backgroundColor': this.color, 'color': this.color});
