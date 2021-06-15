@@ -13,15 +13,18 @@
 					location.href="/filo/login.fl";
 				</script>
 			</c:if>
+			<!--  포인트확인 막음
 			<c:if test="${!isPossible}">
 				<script>
 					alert("포인트가 부족합니다!");
 					location.href="/filo/index.fl";
 				</script>
 			</c:if>
+			-->
 
 			<script>
-			
+		
+		
 			function check(){
 				var inputs = document.inputForm;
 				if(!inputs.guess.value){
@@ -75,26 +78,37 @@
 					});	//ajax
 				});	//guessForm submit
 			});	//ready
+
 			
 			</script>
 			<!-- ---------------------------------------------------------------------- -->
+			<div class="intro">
+	            <h2>numUpDown</h2>
+	            <button>Let's play</button>
+	        </div>
+		    <!--intro End-->
 			
-			<h1>${user}</h1>
-			<h1>1에서 25 사이의 숫자를 입력하세요</h1>
+			<div class="match fadeOut">
 
-			<!-- 업다운 및 결과 보여주는 부분 -->
-			<div class="cls"></div>
-			
-			<!-- 게임 부분 -->
-			<div class="updownGame">
-				<h2 style="color:#000;">정답:${answer}</h2>
-				<form id="guessForm" name="inputForm" onsubmit="return check()" method="post">
-					남은 기회: <input type="text" name="chance" id="chance" value="3"/><br/>
-					<input type="text" name="start" id="start" value="1"/> ~ <input type="text" name="end" id="end" value="25"/> 사이의 숫자 입력<br/>
-					<input type="number" min="1" max="25" name="guess"/>
-					<input type="submit" value="guess &#33;"/>
-				</form>
+				<h1>${user}</h1>
+				<h1>1에서 25 사이의 숫자를 입력하세요</h1>
+				
+				<!-- 업다운 및 결과 보여주는 부분 -->
+				<div class="cls"></div>
+				
+				<!-- 게임 부분 -->
+				<div class="updownGame">
+					<h2 style="color:#000;">정답:${answer}</h2>
+					<form id="guessForm" name="inputForm" onsubmit="return check()" method="post">
+						남은 기회: <input type="text" name="chance" id="chance" value="3"/><br/>
+						<input type="text" name="start" id="start" value="1"/> ~ <input type="text" name="end" id="end" value="25"/> 사이의 숫자 입력<br/>
+						<input type="number" min="1" max="25" name="guess"/>
+						<input type="submit" value="guess &#33;"/>
+					</form>
+				</div>
 			</div>
+			<!--match End-->
+			 <script type="text/javascript" src="<c:url value="/resources/js/numUpDown.js" />"></script>
 		</div>
 		<!-- //wrapAll end -->
 		
