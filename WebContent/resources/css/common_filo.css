@@ -263,10 +263,13 @@ body.noscrb::-webkit-scrollbar {display: none;}
 }
 #ham span {
   display: block;
-  background: #fff;
+  background: #000;
   width: 36px;
   height: 4px;
-  transition: margin 0.25s 0.25s, transform 0.25s ;
+  transition: background 0.3s,margin 0.25s 0.25s, transform 0.25s ;
+}
+#ham:hover span {
+	background: #ff3f02;
 }
 #ham .bar1 {margin-bottom: 6px;}
 #ham .bar3 {margin-top: 6px;}
@@ -289,20 +292,13 @@ body.noscrb::-webkit-scrollbar {display: none;}
 }
 
 /*top*/
-#top {width: 100%; height:80px; border-bottom: 1px solid rgba(255,255,255,.1); transition: .3s; position: fixed;top: 0;left: 0; z-index:999;}
-#top.nav-up {top: -80px;}
-#top.nav-down {top: 0;}
-#top #logo {width:93px; height:34px; background: url(../images/tm/logo2.png)no-repeat center; background-size: 100% auto; position: absolute;top: 23px;left: 30px; z-index:997;}
-#top #sign {overflow:hidden; position: absolute;top: 24px;right: 110px; z-index:997;}
-#top #sign .btnSign {float:left; background:#ccc; border-radius:3px; color:#fff; font-size: 13px; font-weight: 500; transition:.3s; padding:4px 12px; margin: 0 0 0 5px;}
-#top #sign .btnSign:hover {background:#ff0000;}
-#top #sign .txtSign {float:left; line-height:32px; font-size: 16px; font-weight: 400; margin: 0 30px 0 0;}
+#top_pf {width:100%; height:80px; background:#fff; border-bottom:1px solid #f3f3f3; position:fixed;top:0;left:0; z-index:999;}
 
-/*clientMenu*/
-#clientMenuWrap {display: none; width: 350px; height: 100vh; background: #2C2D31; position: fixed;top: 0;right: 0; z-index:998;}
+/*totalMenu*/
+#clientMenuWrap {display: none; width: 350px; height: 100vh; background: #fff; position: fixed;top: 0;right: 0; z-index:998;}
 #clientMenuWrap .menu {margin: 80px 0;}
 #clientMenuWrap .menu li {height: 50px;}
-#clientMenuWrap .menu li a {display: block; width: 100%; height: 100%; line-height: 50px; text-indent: 30px; color: #fff; font-size: 21px; transition:.3s;}
+#clientMenuWrap .menu li a {display: block; width: 100%; height: 100%; line-height: 50px; text-indent: 30px; color: #000; font-size: 21px; transition:.3s;}
 #clientMenuWrap .menu li.on a {background: #ff3f02; color: #fff;}
 #clientMenuWrap .menu li a:hover {background: #ff3f02; color: #fff;}
 

@@ -2,13 +2,13 @@
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <div id="divView" style="position:absolute; display:none; background-color:#ffffff; border:solid 2px #d0d0d0; width:150px; height:50px; padding: 5px 15px 0;"></div>
 
-<div id="top">
+<div id="top_pf">
 	<div id="ham">
 		<span class="bar1"></span>
 		<span class="bar2"></span>
 		<span class="bar3"></span>
 	</div>
-	<jsp:include page="/WEB-INF/views/include/clientMenu.jsp" />
+	<jsp:include page="/WEB-INF/views/include/clientMenu_pf.jsp" />
 	<div id="mCover"></div>
 	<a href="/filo/index.fl"><p id="logo"></p></a>	
 </div>

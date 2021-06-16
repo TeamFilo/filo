@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<div id="clientMenuWrap">
+<div id="clientMenuWrap" class="clientMenuWrap_pf">
 	<ul class="menu">
         <li><a href="/filo/index.fl">홈</a></li>
         <li><a href="/filo/game/main.fl">게임</a></li>
