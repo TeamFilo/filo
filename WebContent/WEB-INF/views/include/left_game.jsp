@@ -110,7 +110,7 @@
             <!--morePoint End-->
             
             <div class="swiper-slide rankWrap">
-                <p class="tit">Player Ranking / ${fn:length(gn)}</p>
+                <p class="tit">Player Ranking</p>
                 <ul class="player">
                 	<c:forEach var="r" items="${top3}">
 	                    <li>
