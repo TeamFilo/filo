@@ -12,7 +12,7 @@
 	<div id="mCover"></div>
 	<a href="/filo/index.fl"><p id="logo"></p></a>	
 </div>
-<script>
+	<script>
 	var didScroll;
 	var lastScrollTop = 0;
 	var delta = 5;
@@ -44,14 +44,36 @@
 		lastScrollTop = st;
 	}
 	
-	$("#ham").click(function(){
-	    $(this).toggleClass("active");
-	    $('#logo').fadeToggle();
-	    $('#sign').fadeToggle();
-	    $('#totalMenuWrap').fadeToggle();
-	    $('#mCover').fadeToggle();
+	
+	//탑메뉴 햄버거 버튼 눌렀을 때 효과
+	let clicks = 0;	
+	$('#ham').click(function(){
+		if(clicks === 0){
+			$(this).addClass("active");
+		    $('#logo').fadeIn();
+		    $('#sign').fadeIn();
+		    $('#mCover').fadeIn();
+		    $('#totalMenuWrap').fadeIn();
+		    $('#totalMenuWrap > .menu > li').eq(1).animate({left:"0",opacity:"1"}, 750);
+		    $('#totalMenuWrap > .menu > li').eq(2).delay(200).animate({left:"0",opacity:"1"}, 750);
+		    $('#totalMenuWrap > .menu > li').eq(3).delay(400).animate({left:"0",opacity:"1"}, 750);
+		    $('#totalMenuWrap > .menu > li').eq(4).delay(600).animate({left:"0",opacity:"1"}, 750);		    
+		    return clicks = 1;
+		}else{
+			$(this).removeClass("active");
+		    $('#logo').fadeOut();
+		    $('#sign').fadeOut();
+		    $('#mCover').fadeOut();
+		    $('#totalMenuWrap').fadeOut();
+		    $('#totalMenuWrap > .menu > li').eq(1).animate({left:"50px",opacity:"0"}, 10);
+		    $('#totalMenuWrap > .menu > li').eq(2).animate({left:"50px",opacity:"0"}, 10);
+		    $('#totalMenuWrap > .menu > li').eq(3).animate({left:"50px",opacity:"0"}, 10);
+		    $('#totalMenuWrap > .menu > li').eq(4).animate({left:"50px",opacity:"0"}, 10);
+		    return clicks = 0;
+		}
 	});
-	var nowUrl = window.location.pathname;
+	
+	/* var nowUrl = window.location.pathname;
 	if(nowUrl == "/filo/index.fl"){
 		$('#clientMenuWrap').children('.menu').children('li').eq(0).addClass('on');
 	}else if(nowUrl == "/filo/game/home.fl"){
@@ -84,9 +106,5 @@
 		$('#clientMenuWrap').children('.menu').children('li').eq(3).addClass('on');
 	}else if(nowUrl == "/filo/mem/index.fl"){
 		$('#clientMenuWrap').children('.menu').children('li').eq(4).addClass('on');
-	}
-	
-	
-	
-	
-</script>
+	} */
+	</script>
