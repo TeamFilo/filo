@@ -27,7 +27,6 @@
 	<script type="text/javascript" src="<c:url value="/resources/js/jquery.min.js" />"></script>
 	<script type="text/javascript" src="<c:url value="/resources/js/aos.js" />"></script>	
 	<script type="text/javascript" src="<c:url value="/resources/js/swiper.min.js" />"></script>	
-	<script type="text/javascript" src="<c:url value="/resources/js/lotteryScratch.js" />"></script>
 	<script type="text/javascript" src="<c:url value="/resources/js/Winwheel.js" />"></script>
 	<script type="text/javascript" src="<c:url value="/resources/js/colorPick.js" />"></script>
 	

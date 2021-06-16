@@ -160,3 +160,11 @@
     <!-- swiperContainer End -->
 </div>
 <!-- //left_game end -->
+ <script>
+    var swiper = new Swiper('#left_game_swiper', {
+        direction: 'vertical',
+        mousewheel: true,
+        slidesPerView: 1.65,
+        spaceBetween: 30,
+	});
+   </script>
