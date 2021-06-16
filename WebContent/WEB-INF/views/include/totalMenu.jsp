@@ -74,4 +74,12 @@
     $('#totalMenuWrap > ul > li > .depth').hover(function(){
         $(this).prev('.tit_depth').toggleClass('on');
     });
+    
+    $('#totalMenuWrap > ul > li > .depth > li').click(function(){
+    	$('#ham').toggleClass("active");
+	    $('#logo').fadeToggle();
+	    $('#sign').fadeToggle();
+	    $('#totalMenuWrap').fadeToggle();
+	    $('#mCover').fadeToggle();
+    });
 </script>
