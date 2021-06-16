@@ -13,10 +13,23 @@
 .titWrap .txt.right {text-align: right; line-height: 25px; color:#555; position: absolute;top: 0;right: 0;}
 .titWrap .sTit {font-size:25px; font-weight:bold; line-height:35px;}
 .btnDef {width: 150px; height: 47px; background: #ccc; line-height: 47px; color:#fff; font-size: 17px; cursor: pointer; transition: .3s; padding: 0 20px;}
+.btnDef > a {width: 150px; height: 47px; line-height: 47px; color:#fff; font-size: 17px; cursor: pointer; transition: .3s; padding: 0 20px; position:absolute;top:0;left:0;}
 .btnPop {margin: 40px 0 0;}
 .btnPopGo {width: 120px; text-align: right; position: absolute;top: 350px;left: calc(100% - 200px);}
 .btnPopGo:hover {width: 150px; color:#fff;}
 .btnGoTop {display: none; cursor: pointer; position: fixed; bottom: 50px;right: 3%; z-index: 1002;}
+
+@media screen and (max-width: 1600px) {
+	.titWrap .tit {font-size:85px;}
+	.titWrap .sub {font-size:45px; line-height:55px; margin:17px 0 35px 0;}
+	.titWrap .txt {font-size:18px; line-height:32px;}
+}
+
+@media screen and (max-width: 1300px) {
+	.titWrap .tit {font-size:80px;}
+	.titWrap .sub {font-size:40px; line-height:50px; margin:20px 0 40px 0;}
+	.titWrap .txt {font-size:16px; line-height:30px;}
+}
 
 /*index portfolio*/
 #fullpage .titWrap {position: absolute;top: 50%;left: 150px; transform: translateY(-50%);}
@@ -26,6 +39,32 @@
 #fullpage .titWrap .txt {left: -80px;}
 .fullpageImgWrap {overflow: hidden; width: 50%; height: 100vh; background: #000; transition: 1s; position: fixed;bottom: 0;right: 0;}
 .fullpageImgWrap img {display: block; height: 100%;}
+
+@media screen and (max-width: 1600px) {
+	#fullpage .titWrap {position: absolute;top: 50%;left: 150px; transform: translateY(-50%);}
+}
+
+@media screen and (max-width: 1300px) {
+
+}
+
+@media screen and (max-width: 1100px) {
+	
+}
+
+@media screen and (max-width: 900px) {
+	
+}
+
+@media screen and (max-width: 768px) {
+	
+}
+
+@media screen and (max-width: 639px) {
+	
+}
+
+/*index popup*/
 .popWrap {display: none; -ms-overflow-style: none; scrollbar-width: none; overflow-y: scroll; width: 100%; height: 100vh; transition:.5s; padding: 0 200px; position: fixed;top: 0;left: 50%; transform: translateX(-50%); z-index: 1001;}
 .popWrap::-webkit-scrollbar {display: none;}
 .popWrap .inner {padding: 100px 0 250px;}
@@ -33,7 +72,8 @@
 .popWrap .inner > li .vodWrap {position: relative;}
 .popWrap .inner > li .vodWrap video {width: 100%;}
 .popWrap .inner > li .vodWrap .pCover {width: 100%; height:100%; background: rgba(0, 0, 0, 0.4); position: absolute; top: 0; left: 0; z-index: 1;}
-.popWrap .inner > li .vodWrap .btnPopClose {cursor: pointer; position: absolute; top: 50px; right: 50px; z-index: 2;}
+.popWrap .inner > li .vodWrap .btnPopClose {width:51px; height:51px; background: url(/filo/resources/images/pf/xBtn.png)no-repeat center; cursor: pointer; transition:.3s; position: absolute; top: 50px; right: 50px; z-index: 2;}
+.popWrap .inner > li .vodWrap .btnPopClose:hover {width:51px; height:51px; background: url(/filo/resources/images/pf/xBtn_on.png)no-repeat center;}
 .popWrap .inner > li .vodWrap .txtWrap {padding:150px 120px; position: absolute; bottom: 0; left: 0; z-index: 2;}
 .popWrap .inner > li .vodWrap > .txtWrap {color:#fff;}
 .popWrap .inner > li .vodWrap .txtWrap .tit {margin:5px 0 40px; font-size:90px; font-weight:bold; }

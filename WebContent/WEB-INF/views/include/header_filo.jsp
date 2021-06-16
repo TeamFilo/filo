@@ -16,6 +16,7 @@
 	<link href="<c:url value="/resources/css/common_filo.css" />" rel="stylesheet"/>
 	<link href="<c:url value="/resources/css/contents_filo.css" />" rel="stylesheet"/>
 	<link href="<c:url value="/resources/css/fullpage.css" />" rel="stylesheet"/>
+	<link href='https://cdn-uicons.flaticon.com/uicons-regular-straight/css/uicons-regular-straight.css' rel='stylesheet'>
 	
 	
 	<!-- JS -->

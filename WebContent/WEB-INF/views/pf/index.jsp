@@ -1,8 +1,10 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <jsp:include page="/WEB-INF/views/include/header_filo.jsp" />
-
+	
+	<jsp:include page="/WEB-INF/views/include/top_pf.jsp" />
 	<!-- //top_pf end -->
+	
 	<div style="display:none;position:fixed;top:50px;left:50px;z-index:999;" id="callbacksDiv"></div>
     <!--callbacksDiv end-->
     
@@ -14,9 +16,7 @@
                 <div class="vodWrap">
                     <video src="/filo/resources/images/pf/headVideo.mp4" autoplay muted loop></video>
                     <div class="pCover"></div>
-                    <div class="btnPopClose">
-                        <img src="/filo/resources/images/pf/xBtn.png">
-                    </div>
+                    <div class="btnPopClose"></div>
                     <div class="txtWrap">
                         <p class="bTxt">Make your Own Travel</p>
                         <p class="tit">Travel Maker 1</p>
@@ -143,9 +143,7 @@
                 <div class="vodWrap">
                     <video src="/filo/resources/images/pf/headVideo.mp4" autoplay muted loop></video>
                     <div class="pCover"></div>
-                    <div class="btnPopClose">
-                        <img src="/filo/resources/images/pf/xBtn.png">
-                    </div>
+                    <div class="btnPopClose"></div>
                     <div class="txtWrap">
                         <p class="bTxt">Make your Own Travel</p>
                         <p class="tit">Travel Maker 2</p>
@@ -273,9 +271,7 @@
                 <div class="vodWrap">
                     <video src="/filo/resources/images/pf/headVideo.mp4" autoplay muted loop></video>
                     <div class="pCover"></div>
-                    <div class="btnPopClose">
-                        <img src="/filo/resources/images/pf/xBtn.png">
-                    </div>
+                    <div class="btnPopClose"></div>
                     <div class="txtWrap">
                         <p class="bTxt">Make your Own Travel</p>
                         <p class="tit">Travel Maker 3</p>
@@ -449,7 +445,7 @@
 				                       이모티콘, 아이디 색상 등의 아이템을 구매해보세요!
 	                    </p>
 	                    <div class="btnDef bounce-to-right btnPop btnPop2" id="deBtn2">Detail</div>
-	                    <a href="/filo/game/main.fl"><div class="btnDef bounce-to-right btnPop" id="goBtn2">Go</div></a>
+	                    <div class="btnDef bounce-to-right btnPop" id="goBtn2"><a href="/filo/game/main.fl">Go</a></div>
 	                 </div>
 	                 
 	                 
@@ -468,7 +464,7 @@
 							우리만의 특별한 여행을 떠나보세요! 
 	                    </p>
 	                    <div class="btnDef bounce-to-right btnPop btnPop3" id="deBtn3">Detail</div>
-	                    <a href="/filo/mem/index.fl"><div class="btnDef bounce-to-right btnPop" id="goBtn3">Go</div></a>
+	                    <div class="btnDef bounce-to-right btnPop" id="goBtn3"><a href="/filo/mem/index.fl">Go</a></div>
 	                 </div>
 	                 <!--titWrap End-->
 	            </div>
@@ -488,7 +484,7 @@
 	                	개개인의 특성과 연락처를<br/>
 	                	확인하실 수 있습니다.	                	
 	                </p>
-               		<a href="/filo/profile/main.fl"><div class="btnDef bounce-to-right btnPop" id="goBtn4">Go</div></a>
+               		<div class="btnDef bounce-to-right btnPop" id="goBtn4"><a href="/filo/profile/main.fl">Go</a></div>
 	             </div>
 	             <!-- titWrap End -->
 	        </div>
