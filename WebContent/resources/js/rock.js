@@ -66,8 +66,8 @@ const game = ()=>{
                     //compareHands 소환
                     compareHands(this.textContent, computerChoice);
                     //update Images
-                    playerHand.src=`/portfolio/resources/images/pf/${this.textContent}.png`;
-                    computerHand.src=`/portfolio/resources/images/pf/${computerChoice}.png`;
+                    playerHand.src=`/filo/resources/images/pf/${this.textContent}.png`;
+                    computerHand.src=`/filo/resources/images/pf/${computerChoice}.png`;
                 },900);
 
                 //Animation
