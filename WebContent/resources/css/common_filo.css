@@ -305,7 +305,7 @@ body.noscrb::-webkit-scrollbar {display: none;}
 #totalMenuWrap .menu > li:first-child .tit_small span {display: block; color:#aaa; font-size: 13px; margin: 25px 0 0;}
 #totalMenuWrap .menu > li:last-child {border: 0;}
 #totalMenuWrap .menu > li .sub {display: inline-block; background: #666; line-height: 15px; letter-spacing: 0.9; color:#fff; font-size:12px; font-weight: 500; transition: .3s; padding: 1px 17px 0.5px 2.5px; position: relative;}
-#totalMenuWrap .menu > li .sub.on {background: #ff3f02; animation: totalTit .5s linear infinite alternate;}
+#totalMenuWrap .menu > li .sub.on {background: #ff3f02; transform: rotate(-4deg);}
 #totalMenuWrap .menu > li .sub span {display: block; width: 15px; height: 15px; background: #fff; transform: rotate(45deg); position: absolute;top: 1px;right: -6px;}
 #totalMenuWrap .menu > li .tit {height: 50px; margin: 5px 0 0; position: relative;}
 #totalMenuWrap .menu > li .tit span {line-height: 50px; color:#61544f; font-size:30px; font-weight: 500; position: absolute;top: 0;left: 0;}
@@ -322,17 +322,6 @@ body.noscrb::-webkit-scrollbar {display: none;}
 #totalMenuWrap .depth > li:hover .fi {opacity: 0;}
 #totalMenuWrap .depth > li .go {color:#fff; font-size:16px; opacity: 0; transition:.2s; position: absolute;top: 50%;right: 20px; transform: translateY(-50%);}
 #totalMenuWrap .depth > li:hover .go {opacity: 1;}
-
-@-webkit-keyframes totalTit{
-  from{
-    transform: rotate(-3deg);
-  }
-  to{
-    transform: rotate(3deg);
-  }
-}
-
-
 
 /*game basic*/
 #left_game .tit {font-size:25px; margin:0 0 60px 0;}
