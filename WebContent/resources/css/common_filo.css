@@ -295,7 +295,7 @@ body.noscrb::-webkit-scrollbar {display: none;}
 #top_pf {width:100%; height:80px; background:#fff; border-bottom:1px solid #f3f3f3; position:fixed;top:0;left:0; z-index:999;}
 
 /*totalMenu*/
-#totalMenuWrap {width: 100%; height: 100vh; background: #fff; padding: 110px 150px 80px;}
+#totalMenuWrap {display:none; width: 100%; height: 100vh; background: #fff; padding: 110px 150px 80px; position:fixed;top:0;left:0; z-index:998;}
 #totalMenuWrap .menu {overflow: visible; height: 100%;}
 #totalMenuWrap .menu > li {float: left; width: 19%; height: 100%; border-right: 1px solid #eee; padding: 0 45px;}
 #totalMenuWrap .menu > li:first-child {width: 24%; padding: 0; position: relative;}
