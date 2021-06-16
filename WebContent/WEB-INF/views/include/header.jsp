@@ -10,6 +10,7 @@
 	<link rel="preconnect" href="https://fonts.gstatic.com"/>
 	<link href="https://fonts.googleapis.com/css2?family=Hind:wght@300;400;500;600;700&family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap" rel="stylesheet"/>
 	<link href="https://fonts.googleapis.com/css2?family=Play:wght@400;700&display=swap" rel="stylesheet"/>
+	<link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
 	<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@200;300;400;500;600;700;900&display=swap" rel="stylesheet"/>
   	
 	<!-- CSS -->	
@@ -19,6 +20,7 @@
 	<link href="<c:url value="/resources/css/aos.css" />" rel="stylesheet"/>
 	<link href="<c:url value="/resources/css/client.css" />" rel="stylesheet"/>
 	<link href="<c:url value="/resources/css/admin.css" />" rel="stylesheet"/>
+	<link href='https://cdn-uicons.flaticon.com/uicons-regular-straight/css/uicons-regular-straight.css' rel='stylesheet'>
 	
 	<!-- JS -->
 	<script type="text/javascript" src="<c:url value="/resources/js/jquery.min.js" />"></script>	

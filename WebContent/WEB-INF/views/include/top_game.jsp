@@ -11,13 +11,7 @@
 	        <span class="bar2"></span>
 	        <span class="bar3"></span>
 	    </div>
-	    <div id="clientMenuWrap">
-	        <ul class="menu">
-	            <li><a href="/filo/index.fl">포트폴리오</a></li>
-	            <li><a href="/filo/game/main.fl">게임</a></li>            
-	            <li><a href="/filo/mem/index.fl">트래블 메이커</a></li>
-	        </ul>
-	    </div>
+	    <jsp:include page="/WEB-INF/views/include/totalMenu.jsp" />
 	    <div id="mCover"></div>
 	</div>
 	<!-- //top_game -->
@@ -26,7 +20,7 @@
 	    $(this).toggleClass("active");
 	    $('#logo').fadeToggle();
 	    $('#sign').fadeToggle();
-	    $('#clientMenuWrap').fadeToggle();
+	    $('#totalMenuWrap').fadeToggle();
 	    $('#mCover').fadeToggle();
 	});
 	

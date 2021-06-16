@@ -2,7 +2,7 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <jsp:include page="/WEB-INF/views/include/header_filo.jsp" />
    
-	<jsp:include page="/WEB-INF/views/include/top_pfB.jsp" />
+	<jsp:include page="/WEB-INF/views/include/top_game.jsp" />
 	<!-- //top_pf end -->
 	
 		<div class="wrapAll client">

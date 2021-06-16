@@ -18,7 +18,6 @@
 	<link href="<c:url value="/resources/css/fullpage.css" />" rel="stylesheet"/>
 	<link href='https://cdn-uicons.flaticon.com/uicons-regular-straight/css/uicons-regular-straight.css' rel='stylesheet'>
 	
-	
 	<!-- JS -->
 	<script type="text/javascript" src="<c:url value="/resources/js/jquery.min.js" />"></script>
 	<script type="text/javascript" src="<c:url value="/resources/js/fullpage.min.js" />"></script>	
