@@ -129,16 +129,18 @@ table.tm input {width: 80%; font-size:17px;}
 #totalMenuWrap .menu > li:first-child .tit_small span {display: block; color:#aaa; font-size: 13px; margin: 25px 0 0;}
 #totalMenuWrap .menu > li:last-child {border: 0;}
 #totalMenuWrap .menu > li .sub {display: inline-block; background: #666; line-height: 15px; letter-spacing: 0.9; color:#fff; font-size:12px; font-weight: 500; transition: .3s; padding: 1px 17px 0.5px 2.5px; position: relative;}
+#totalMenuWrap .menu > li:hover .sub {background: #ff3f02; transform: rotate(-4deg);}
 #totalMenuWrap .menu > li .sub.on {background: #ff3f02; transform: rotate(-4deg);}
 #totalMenuWrap .menu > li .sub span {display: block; width: 15px; height: 15px; background: #fff; transform: rotate(45deg); position: absolute;top: 1px;right: -6px;}
 #totalMenuWrap .menu > li .tit {height: 50px; margin: 5px 0 0; position: relative;}
 #totalMenuWrap .menu > li .tit span {line-height: 50px; color:#61544f; font-size:30px; font-weight: 500; position: absolute;top: 0;left: 0;}
-#totalMenuWrap .menu > li .tit span.en {display: block; transition: .2s;}
-#totalMenuWrap .menu > li .tit span.ko {display: none; color:#ff3f02; transition: .2s;}
+#totalMenuWrap .menu > li .tit span.en {display: block;}
+#totalMenuWrap .menu > li .tit span.ko {display: none;}
 #totalMenuWrap .menu > li:hover .tit span.en {display: none;}
 #totalMenuWrap .menu > li:hover .tit span.ko {display: block;}
-#totalMenuWrap .menu > li .tit_depth {letter-spacing: 0.8; color:#ccc; font-size: 13px; font-weight: 500; border-bottom: 1px solid #eee; transition:.3s; padding: 0 0 8px; margin: 50px 0 17px;}
-#totalMenuWrap .menu > li .tit_depth.on {color:#000; border-bottom: 1px solid #000;}
+#totalMenuWrap .depth .tit_depth {letter-spacing: 0.8; color:#ccc; font-size: 13px; font-weight: 500; border-bottom: 1px solid #eee; transition:.3s; padding: 0 0 8px; margin: 50px 0 17px;}
+#totalMenuWrap .depth:hover .tit_depth {color:#000; border-bottom: 1px solid #000;}
+#totalMenuWrap .depth .tit_depth.on {color:#000; border-bottom: 1px solid #000;}
 #totalMenuWrap .depth > li {border-radius: 5px; line-height: 20px; color: #666; font-size:15px; font-weight: 400; transition:.3s; padding: 10px 27px; position: relative;}
 #totalMenuWrap .depth > li:hover {background: #ff3f02; color:#fff;}
 #totalMenuWrap .depth > li.on {background: #ff3f02; color:#fff;}
