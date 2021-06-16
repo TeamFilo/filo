@@ -78,6 +78,14 @@ public class GameController {
 		Map<Integer,TmUserDTO> top3 = gameService.topThree();
 		model.addAttribute("top3",top3);
 		
+		
+		/* 게임카테1,2,3 중 오늘 안한 게임 카테만 담겨있음
+			(view에서 안한 게임만 뿌려주기 위해)			*/
+		List<Integer> gameNum = gameService.playToday(user);
+		model.addAttribute("gameNum", gameNum);
+		
+		
+		
 		return "/pf/game/main";
 	}
 	

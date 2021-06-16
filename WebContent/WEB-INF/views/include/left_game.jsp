@@ -2,6 +2,7 @@
     pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 <div id="left_game">
     <div class="swiper-container" id="left_game_swiper">
     
@@ -63,34 +64,53 @@
 	            <div class="swiper-slide morePoint txtWrap">
 	                <p class="tit">Get More Point</p>
 	                <ul class="gameCount">
-	                    <li>
-	                        <img src="/filo/resources/images/pf/poker-cards.png">
-	                        <div class="subWrap">
-	                            <p class="sub">Card</p>
-	                        </div>    
-	                        <a href="/filo/game/card.fl"><div class="goBtn"><img src="/filo/resources/images/tm/arrowR.png"></div></a>
-	                    </li>
-	                    <li>
-	                        <img src="/filo/resources/images/pf/rps.png">
-	                        <div class="subWrap">
-	                            <p class="sub">Rock P.S</p>
-	                        </div>    
-	                        <a href="/filo/game/rockPS.fl"><div class="goBtn"><img src="/filo/resources/images/tm/arrowR.png"></div></a>
-	                    </li>
-	                    <li>
-	                        <img src="/filo/resources/images/pf/upDown.png">
-	                        <div class="subWrap">
-	                            <p class="sub">Up & Down</p>
-	                        </div>    
-	                        <a href="/filo/game/updown.fl"><div class="goBtn"><img src="/filo/resources/images/tm/arrowR.png"></div></a>
-	                    </li>
+	                <c:if test="${fn:length(gameNum)!= 0}">
+		                <c:forEach var="gn" items="${gameNum}">
+		                		<c:if test="${gn == 3}">
+				                    <li>
+				                        <img src="/filo/resources/images/pf/poker-cards.png">
+				                        <div class="subWrap">
+				                            <p class="sub">Card</p>
+				                        </div>    
+				                        <a href="/filo/game/card.fl"><div class="goBtn"><img src="/filo/resources/images/tm/arrowR.png"></div></a>
+				                    </li>
+			                    </c:if>
+			                    <c:if test="${gn == 2}">
+				                    <li>
+				                        <img src="/filo/resources/images/pf/rps.png">
+				                        <div class="subWrap">
+				                            <p class="sub">Rock P.S</p>
+				                        </div>    
+				                        <a href="/filo/game/rockPS.fl"><div class="goBtn"><img src="/filo/resources/images/tm/arrowR.png"></div></a>
+				                    </li>
+			                    </c:if>
+			                    <c:if test="${gn == 1}">
+				                    <li>
+				                        <img src="/filo/resources/images/pf/upDown.png">
+				                        <div class="subWrap">
+				                            <p class="sub">Up & Down</p>
+				                        </div>    
+				                        <a href="/filo/game/updown.fl"><div class="goBtn"><img src="/filo/resources/images/tm/arrowR.png"></div></a>
+				                    </li>
+			                  	</c:if>
+							</c:forEach>
+						</c:if>
+						<!-- gameNum 사이즈가 0아닐때 -->
+						<c:if test="${fn:length(gameNum)==0}">
+							<li>
+							 	<div class="subWrap">
+				                	<p class="sub">첫판 보너스 끝</p>
+				                </div> 
+				             </li>
+						</c:if>
+						<!-- gameNum 사이즈가 0일때 -->
 	                </ul>
 	            </div>
             </c:if>
             <!--morePoint End-->
             
             <div class="swiper-slide rankWrap">
-                <p class="tit">Player Ranking</p>
+                <p class="tit">Player Ranking / ${fn:length(gn)}</p>
                 <ul class="player">
                 	<c:forEach var="r" items="${top3}">
 	                    <li>

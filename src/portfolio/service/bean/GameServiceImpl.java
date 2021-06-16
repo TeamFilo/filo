@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.List;
@@ -179,6 +180,29 @@ public class GameServiceImpl implements GameService {
 		}
 		return thisList.size();
 	}
+	
+	
+	//오늘 한 게임중  게임카테1,2,3 중 오늘 안한 게임 카테만 담겨있음
+	@Override
+	public List playToday(String user) {
+		List<GrGiJoinDTO> playList = todayRecords(user); //오늘 한 게임 
+		List<Integer> gameNum = new ArrayList<Integer>(Arrays.asList(1,2,3));  //Get More Point에 보여주는 전체 게임카테를 배열에 담음
+		
+		// playList에 담겨있는 오늘 한 게임카테를 gameNum배열에서 삭제시킴 
+		for(int i = 0; i < playList.size(); i++) {
+			if(playList.get(i).getGameCate() == 1) {
+				gameNum.remove((Integer)1);
+			}else if(playList.get(i).getGameCate() == 2) {
+				gameNum.remove((Integer)2);
+			}else if(playList.get(i).getGameCate() == 3) {
+				gameNum.remove((Integer)3);
+			}
+		}
+		return gameNum;
+	}
+	
+	
+	
 	
 	//상위 퍼센트 정보 리턴
 	@Override
