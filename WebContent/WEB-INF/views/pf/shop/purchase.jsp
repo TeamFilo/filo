@@ -100,7 +100,7 @@
 				});
 			}
 			
-		</script>
+		</script> 
 
         <div class="right_game shop_game">
             

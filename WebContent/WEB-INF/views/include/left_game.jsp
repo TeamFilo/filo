@@ -30,7 +30,7 @@
                     <img src="/filo/resources/images/pf/${userInfo.idIcon}.png">
                 	</c:if>
                     <div class="nameWrap">
-                        <p class="tit"><strong style="color:${sessionScope.memColor}";>${userInfo.id}</strong></p>
+                        <p class="tit"><strong style="color:${sessionScope.memColor}";>${userInfo.id}</strong></p> 
                         <p class="txt">${userInfo.nickname}</p>
                     </div>
                 </div>
