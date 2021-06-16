@@ -18,7 +18,7 @@
 		                    	<img src="/filo/resources/images/pf/${userInfo.idIcon}.png">
 		                	</c:if>
 		                    <div class="nameWrap">
-		                        <p class="tit">${userInfo.id}</p>
+		                        <p class="tit"><strong style="color:${sessionScope.memColor}";>${userInfo.id}</strong></p>
 		                        <p class="txt">${userInfo.nickname}</p>
 		                    </div>
 		                </div>
@@ -114,8 +114,8 @@
                         <c:if test="${userInfo.idIcon==null}">
                       	  <img src="/filo/resources/images/pf/user.png">
                     	</c:if>
-                    	<c:if test="${r.value.idIcon!=null}">
-                     	   <img src="/filo/resources/images/pf/${userInfo.idIcon}.png">
+                    	<c:if test="${userInfo.idIcon!=null}">
+                     	   <img src="/filo/resources/images/pf/${sessionScope.memIcon}.png">
                     	</c:if>
                         <div class="box">
                             <p class="user">${userInfo.id}</p>
