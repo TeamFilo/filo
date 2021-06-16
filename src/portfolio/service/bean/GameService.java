@@ -40,6 +40,11 @@ public interface GameService {
 	public List<GrGiJoinDTO> todayRecords(String user);
 	//오늘 첫 게임인지 판단
 	public int didPlayToday(String user, int gameCate);
+	
+	//오늘 한 게임 목록 가져오기
+	public List playToday(String user);
+	
+	
 	//상위 퍼센트 정보 리턴
 	public double gamePercent(String user);
 	//랭킹 세 명 정보
