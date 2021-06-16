@@ -166,8 +166,27 @@ public class GameController {
 	public String rockPS(Model model) {
 		String user = (String)RequestContextHolder.getRequestAttributes().getAttribute("memId", RequestAttributes.SCOPE_SESSION);
 		if(user!=null) {
-			String nick = memService.getMember(user).getNickname();
-			model.addAttribute("nickname",nick);
+			model.addAttribute("userInfo",memService.getMember(user));  //tmUserDTO로가져옴
+			model.addAttribute("wal",gameService.getWallet(user));
+			//오늘 한 게임
+			List<GrGiJoinDTO> todayRecords = gameService.todayRecords(user); //조인시킴
+			if(!todayRecords.isEmpty()) {
+				model.addAttribute("todayRecords",todayRecords);
+			}
+			
+			
+			int playCnt = gameService.haveEverPlayed(user);
+			if(playCnt>0) {
+				//내 등수
+				model.addAttribute("myRank", gameService.myRank(user));
+				//퍼센트
+				double gamePercent = gameService.gamePercent(user);	
+				model.addAttribute("gamePercent", gamePercent);
+			}
+			
+			//랭킹 탑3 정보
+			Map<Integer,TmUserDTO> top3 = gameService.topThree();
+			model.addAttribute("top3",top3);
 		}
 		return "/pf/game/rockPS";
 	}

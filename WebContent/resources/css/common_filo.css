@@ -325,12 +325,15 @@ body.noscrb::-webkit-scrollbar {display: none;}
 /*left_game*/
 #left_game {overflow: hidden; width: 410px; height: calc(100vh - 80px); border-right: 1px solid rgba(255,255,255,.1); padding: 0 40px; position: fixed;top: 80px;left: 0; z-index: 996;}
 #left_game .swiper-container {width: 100%; height: 100%; padding: 40px 0;}
-#left_game .swiper-container .swiper-slide {border-radius: 15px; background: #2C2D31; color:#fff; padding: 30px;}
+#left_game .swiper-container .swiper-slide {border-radius: 15px; background: #2C2D31; color:#fff; padding: 30px; position:relative;}
 
 #left_game .swiper-container .gameBio .bioWrap {position: relative; margin: 0 0 50px;}
 #left_game .swiper-container .gameBio img {width: 100px; height: 100px;}
 #left_game .swiper-container .gameBio .nameWrap {position: absolute; top:50%; left:120px; transform: translateY(-50%);}
+#left_game .swiper-container .gameBio .nameWrapB {position: absolute; top:50%;}
 #left_game .swiper-container .gameBio .nameWrap .tit {margin:0 0 10px 0;}
+#left_game .swiper-container .gameBio .nameWrapB .tit {line-height:32px;}
+#left_game .swiper-container .gameBio .abDown {font-size:15px; position:absolute; bottom:30px; right:30px;}
 progress {-webkit-appearance: none; width: 100%;}
 ::-webkit-progress-bar {background-color: #21252a; border-radius: 15px; width: 100%; height: 9px;  }
 ::-webkit-progress-value {background-color: #ff3f02; border-radius: 10px;  }
@@ -341,10 +344,12 @@ progress {-webkit-appearance: none; width: 100%;}
 #left_game .swiper-container .gameBio .pIconWrap .txt {float:left;}
 #left_game .swiper-container .gameBio .pIconWrap img {float: right; width: 22px; height: auto;}
 #left_game .swiper-container .gameBio .pIconWrap .sub {float:right; margin:0 0 0 10px; font-size:18px; line-height: 22px;}
-#left_game .swiper-container .gameBio .graBtn {width: calc(100% - 60px); height: 75px; line-height: 75px; text-align: center; border-radius:5px ; cursor: pointer; background: linear-gradient(to right, #ff3f02, #00eeff); color:#fff; position:absolute; bottom:30px; left:50%; transform:translateX(-50%); }
+#left_game .swiper-container .gameBio .graBtn {width: calc(100% - 60px); height: 75px; line-height: 75px; text-align: center; border-radius:5px ; cursor: pointer; background: linear-gradient(45deg,#00eeff,#ff3f02); color:#fff; position:absolute; bottom:30px; }
+#left_game .swiper-container .gameBio .btn1 {width: calc(100% - 100px); height: 45px; line-height: 45px; position:absolute; left:30px; bottom:130px;}
+#left_game .swiper-container .gameBio .btn2 {width: calc(100% - 100px); height: 45px; line-height: 45px; background: linear-gradient(45deg, #ff3f02, #00eeff); position:absolute; left:60px; bottom:60px;}
 
 #left_game .player li {overflow:hidden; margin:0 0 35px 0; position:relative;}
-#left_game .player li:last-child {background:#1f1f1f;}
+#left_game .player .myRank {background:#1f1f1f;}
 #left_game .player li img {float:left; width:50px; height:50px;}
 #left_game .player li .box {float:left; overflow:hidden; max-width:140px; text-indent:18px;}
 #left_game .player li .box .user {font-size:20px; margin: 6.5px 0 5px 0;}

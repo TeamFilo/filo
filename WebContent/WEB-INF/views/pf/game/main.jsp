@@ -6,7 +6,6 @@
     <div class="wrapAll game">
 
         <jsp:include page="/WEB-INF/views/include/top_game.jsp" />
-      
         <jsp:include page="/WEB-INF/views/include/left_game.jsp" />
 
         <div class="right_game index_game">
@@ -97,17 +96,11 @@
 
     <!-- Initialize Swiper -->
     <script>
-    var swiper = new Swiper('#left_game_swiper', {
-        direction: 'vertical',
-        mousewheel: true,
-        slidesPerView: 1.65,
-        spaceBetween: 30,
-	});
-    var swiper = new Swiper('#right_game_swiper', {
-		mousewheel: true,
-		slidesPerView: 2.3,
-		spaceBetween: 40,
-    });
+	    var swiper = new Swiper('#right_game_swiper', {
+			mousewheel: true,
+			slidesPerView: 2.3,
+			spaceBetween: 40,
+	    });
     </script>
 </body>
 </html>
