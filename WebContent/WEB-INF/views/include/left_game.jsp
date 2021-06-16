@@ -6,6 +6,7 @@
     <div class="swiper-container" id="left_game_swiper">
     
         <div class="swiper-wrapper">
+
         	<!--로그인 했을 때 gameBio -->
            	<c:if test="${sessionScope.memId!=null}">
 	            <div class="swiper-slide gameBio txtWrap">
@@ -42,6 +43,7 @@
 	            </div>
 	            <!--gameBio End-->
             </c:if>
+
             
             <!--비로그인 게임 바이오 -->
             <c:if test="${sessionScope.memId==null}">
