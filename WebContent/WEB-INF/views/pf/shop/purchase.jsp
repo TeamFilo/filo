@@ -10,7 +10,7 @@
         
         <script>	
 	        function check(){
-	        	alert($('input[name=priceIcon]').val());;
+	        	//alert($('input[name=priceIcon]').val());;
 				// 보유 포인트 확인 ajax
 				var data = {"purchaseShop":$('input[name=priceIcon]').val()};
 				console.log('데이타',data.purchaseShop);
@@ -41,7 +41,7 @@
 	        
         
 	        function checkColor(){
-	        	alert($('input[name=priceColor]').val());
+	        	//alert($('input[name=priceColor]').val());
 				// 보유 포인트 확인 ajax
 				var data = {"purchaseShop":$('input[name=priceColor]').val()};
 				console.log('데이타',data.purchaseShop);
@@ -71,7 +71,7 @@
 			}
 	        
 			function checkSkin(){
-	        	alert($('input[name=priceSkin]').val());
+	        //	alert($('input[name=priceSkin]').val());
 				// 보유 포인트 확인 ajax
 				var data = {"purchaseShop":$('input[name=priceSkin]').val()};
 				console.log('데이타',data.purchaseShop);
