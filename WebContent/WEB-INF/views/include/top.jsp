@@ -59,8 +59,8 @@
 	$('#ham').click(function(){
 		if(clicks === 0){
 			$(this).addClass("active");
-		    $('#logo').fadeIn();
-		    $('#sign').fadeIn();
+		    $('#logo').fadeOut();
+		    $('#sign').fadeOut();
 		    $('#mCover').fadeIn();
 		    $('#totalMenuWrap').fadeIn();
 		    $('#totalMenuWrap > .menu > li').eq(1).animate({left:"0",opacity:"1"}, 750);
@@ -70,8 +70,8 @@
 		    return clicks = 1;
 		}else{
 			$(this).removeClass("active");
-		    $('#logo').fadeOut();
-		    $('#sign').fadeOut();
+		    $('#logo').fadeIn();
+		    $('#sign').fadeIn();
 		    $('#mCover').fadeOut();
 		    $('#totalMenuWrap').fadeOut();
 		    $('#totalMenuWrap > .menu > li').eq(1).animate({left:"50px",opacity:"0"}, 10);
