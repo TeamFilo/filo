@@ -6,7 +6,7 @@
 		<div class="wrapAll game">	
 			
 			<jsp:include page="/WEB-INF/views/include/top_game.jsp" />
-       		<jsp:include page="/WEB-INF/views/include/left_game.jsp" />
+      		<jsp:include page="/WEB-INF/views/include/left_game.jsp" />
        		
        		
 			<c:if test="${sessionScope.memId==null}">
@@ -130,6 +130,9 @@
             					data: JSON.stringify(data),
             				});
                             alert('성공!!\n'+score+'점 입니다!');
+                            $("#gameBtn").show();
+                            $("#gameBtn").text("다시하기");
+                            
                         }
                     }else { // 불일치
                         setTimeout(back, 1000);
@@ -168,6 +171,7 @@
             }
  
             $(document).on('click', '#gameBtn', function(){
+            	$("#gameBtn").hide();
                 var data = {"gameCate":3};
                 $.ajax({
 					type:"post",
@@ -188,7 +192,7 @@
 						}
 					}
 				});
-            }); 
+            });        
 			</script>
 			<div class="right_game index_game">
 				<div class="gameWrap">
