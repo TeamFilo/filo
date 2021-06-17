@@ -1,9 +1,9 @@
 /*card CSS*/
-.width500px{width: 450px; display: inline-block;}
+.width500px{width: 1000px; display: inline-block;}
 .center{text-align: center;}
-#startBtn{border: none; color: white; background-color: #FE9A2E; width: 80px;padding: 5px; font-weight: bold; cursor: pointer;}
+#startBtn{border: none; color: white; background-color: #ff3f02; width: 80px;padding: 5px; font-weight: bold; cursor: pointer;}
 #cardTable{border-collapse: collapse;}
-#cardTable td{border: 1px solid #FE9A2E; width: 75px; height: 121px; text-align: center; cursor: pointer;}
+#cardTable td{border: 1px solid #FE9A2E; width: calc(100% / 6); height: 121px; text-align: center; cursor: pointer;}
 #cardTable td img{max-width: 70px;}
 #cardTable td span{font-size: 25pt; font-weight: bold; color: #FE9A2E; display: none;}
 #countDown{background-color: #FE9A2E; color: white; font-size: 20pt;}

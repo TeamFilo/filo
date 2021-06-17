@@ -2,29 +2,28 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <jsp:include page="/WEB-INF/views/include/header_game.jsp" />
 
-	<jsp:include page="/WEB-INF/views/include/top_pf.jsp" />
-	<!-- //top_pf end -->
-	
-		<div class="wrapAll client">
-
-			<c:if test="${sessionScope.memId==null}">
-				<script>
-					alert("로그인 후에 이용해주세요");
-					location.href="/filo/login.fl";
-				</script>
-			</c:if>
-			<!--  포인트확인 막음
-			<c:if test="${!isPossible}">
-				<script>
-					alert("포인트가 부족합니다!");
-					location.href="/filo/index.fl";
-				</script>
-			</c:if>
-			-->
-
+<body class="noscrb">
+		<div class="wrapAll game">
+		
+		<jsp:include page="/WEB-INF/views/include/top_game.jsp" />
+    	<jsp:include page="/WEB-INF/views/include/left_game.jsp" />
+		
+		<c:if test="${sessionScope.memId==null}">
 			<script>
-		
-		
+				alert("로그인 후에 이용해주세요");
+				location.href="/filo/login.fl";
+			</script>
+		</c:if>
+		<!--  포인트확인 막음
+		<c:if test="${!isPossible}">
+			<script>
+				alert("포인트가 부족합니다!");
+				location.href="/filo/index.fl";
+			</script>
+		</c:if>
+		-->
+
+		<script>
 			function check(){
 				var inputs = document.inputForm;
 				if(!inputs.guess.value){
@@ -78,10 +77,11 @@
 					});	//ajax
 				});	//guessForm submit
 			});	//ready
-
-			
-			</script>
-			<!-- ---------------------------------------------------------------------- -->
+		
+		</script>
+		
+		<div class="right_game index_game">
+		
 			<div class="intro">
 	            <h2>numUpDown</h2>
 	            <button>Let's play</button>
@@ -89,7 +89,7 @@
 		    <!--intro End-->
 			
 			<div class="match fadeOut">
-
+	
 				<h1>${user}</h1>
 				<h1>1에서 25 사이의 숫자를 입력하세요</h1>
 				
@@ -107,10 +107,11 @@
 					</form>
 				</div>
 			</div>
-			<!--match End-->
-			 <script type="text/javascript" src="<c:url value="/resources/js/numUpDown.js" />"></script>
+		<!--match End-->
 		</div>
-		<!-- //wrapAll end -->
-		
-<jsp:include page="/WEB-INF/views/include/footer.jsp" />
-<!-- //footer end -->
+		<!-- right_game End -->
+	</div>
+	<!-- //wrapAll game end -->
+	<script type="text/javascript" src="<c:url value="/resources/js/numUpDown.js" />"></script>
+</body>
+</html>	
