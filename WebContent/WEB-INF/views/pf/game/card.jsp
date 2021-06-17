@@ -50,24 +50,24 @@
                 '11.png','11.png', 
                 '12.png','12.png' 
                 ];
-                var cardTableCode = '<tr>';                
+                var cardTableCode = '<ul>';                
                 for(var i=0;i<24;i++) {
                     if(i>0 && i%6 == 0){
-                        cardTableCode += '</tr><tr>';
+                        cardTableCode += '</ul><ul>';
                     }
                     var idx = generateRandom(0,23-i);
                     var img = cards.splice(idx,1);
  
-                    cardTableCode += '<td id="card'+i+'"><img src="/filo/resources/images/pf/'+img+'"><span>?</span></td>';
+                    cardTableCode += '<li id="card'+i+'"><img src="/filo/resources/images/pf/'+img+'"><span>?</span></li>';
                 }											
-                cardTableCode += '</tr>';
+                cardTableCode += '</ul>';
                 $('#cardTable').html(cardTableCode);
             }
  
             // 카드 전체 가리기
             function hiddenCards(){
-                $('#cardTable td img').hide();
-                $('#cardTable td span').show();
+                $('#cardTable ul li img').hide();
+                $('#cardTable ul li span').show().css('display','block');
             }
  
             // 게임 시작
@@ -95,7 +95,7 @@
  
  
             // 카드 선택 시
-            $(document).on('click', '#cardTable td', function(){
+            $(document).on('click', '#cardTable ul li', function(){
                 if(gameState != '') return; // 게임 카운트 다운중일 때 누른 경우 return
                 if(openCardId2 != '') return; // 2개 열려있는데 또 누른 경우 return
                 if($(this).hasClass('opened')) return; // 열려있는 카드를 또 누른 경우                
@@ -167,7 +167,7 @@
                 $('#score').text(score);
             }
  
-            $(document).on('click', '#startBtn', function(){
+            $(document).on('click', '#gameBtn', function(){
                 var data = {"gameCate":3};
                 $.ajax({
 					type:"post",
@@ -192,27 +192,18 @@
 			</script>
 			<div class="right_game index_game">
 				<div class="gameWrap">
-					<div class='width500px'>
 			            <div>
-			                <h2>같은 그림 찾기!</h2>
-			                <table id='menuTable'>
-			                    <tr>
-			                        <td class='alignLeft'>
-			                            <button id='startBtn'>start</button>
-			                        </td>
-			                        <td class='alignRight'>
-			                            <span>score : <span id='score'>0</span></span>
-			                        </td>
-			                    </tr>
-			                </table>
+			                <p class="tit">같은 그림 찾기!</p>
+                            <button id='gameBtn'>start</button>
+                            <p>score : <p id='score'>0</p></p>
 			            </div>
 			            
 			            <div>
 			                <div id='countDown'>
 			                    ready
 			                </div>
-			                <table id='cardTable'>
-			                </table>
+			                <div id='cardTable'>
+			                </div>
 			                <div id='info'>
 			                    start 버튼을 눌러주세요<br>
 			                </div>

@@ -34,7 +34,7 @@
 			            <h2>가위바위보 계단 올라가기</h2>
 			            <p>컴퓨터에게 가위바위보를 이겨 계단을 먼저 올라가면 승리!
 			            <br/>*바위로 승리 시 1칸, 가위 2칸, 보 3칸 진행*</p>
-			            <button>Let's play</button>
+			            <button id="gameBtn">Let's play</button>
 			        </div>
 			        <!--intro End-->
 			        <div class="match fadeOut">
