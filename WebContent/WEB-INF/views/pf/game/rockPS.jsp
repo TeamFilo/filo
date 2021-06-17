@@ -4,6 +4,11 @@
    
 <body class="noscrb">
 		<div class="wrapAll game">
+		<script>
+			function rp(){
+				window.location.reload();
+			}
+		</script>
 		
         	<jsp:include page="/WEB-INF/views/include/top_game.jsp" />
        		<jsp:include page="/WEB-INF/views/include/left_game.jsp" />
@@ -51,6 +56,7 @@
 			        </div>
 			        <div class="end fadeOut">
 			        	<h2>Game End </h2>
+			        	<button onclick="rp();" id="gameBtn">다시 하기</button><br/><br/><br/>	        	
 			        </div>
 			        <!--match End-->
 			        <div class="stair">

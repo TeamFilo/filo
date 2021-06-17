@@ -186,6 +186,11 @@ public class GameServiceImpl implements GameService {
 	@Override
 	public List playToday(String user) {
 		List<GrGiJoinDTO> playList = todayRecords(user); //오늘 한 게임 
+		
+		for(int i =0; i<playList.size(); i++) {
+		System.out.println("오늘한게임"+ ((GrGiJoinDTO)playList.get(i)).getGameCate());
+		}
+		
 		List<Integer> gameNum = new ArrayList<Integer>(Arrays.asList(1,2,3));  //Get More Point에 보여주는 전체 게임카테를 배열에 담음
 		
 		// playList에 담겨있는 오늘 한 게임카테를 gameNum배열에서 삭제시킴 
@@ -197,6 +202,10 @@ public class GameServiceImpl implements GameService {
 			}else if(playList.get(i).getGameCate() == 3) {
 				gameNum.remove((Integer)3);
 			}
+		}
+		
+		for(int i=0; i<gameNum.size(); i++) {
+			System.out.println("게임넘목록"+gameNum.get(i));
 		}
 		return gameNum;
 	}
