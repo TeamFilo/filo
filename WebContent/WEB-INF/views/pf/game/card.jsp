@@ -2,10 +2,13 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <jsp:include page="/WEB-INF/views/include/header_game.jsp" />
    
-	<jsp:include page="/WEB-INF/views/include/top_pf.jsp" />
-	<!-- //top_pf end -->
-	
-		<div class="wrapAll client">
+<body class="noscrb">
+		<div class="wrapAll game">	
+			
+			<jsp:include page="/WEB-INF/views/include/top_game.jsp" />
+       		<jsp:include page="/WEB-INF/views/include/left_game.jsp" />
+       		
+       		
 			<c:if test="${sessionScope.memId==null}">
 				<script>
 					alert("로그인 후에 이용해주세요");
@@ -187,35 +190,41 @@
 				});
             }); 
 			</script>
-			
-			<div class='width500px'>
-	            <div>
-	                <h2>같은 그림 찾기인데 내가한게 아니야</h2>
-	                <table id='menuTable'>
-	                    <tr>
-	                        <td class='alignLeft'>
-	                            <button id='startBtn'>start</button>
-	                        </td>
-	                        <td class='alignRight'>
-	                            <span>score : <span id='score'>0</span></span>
-	                        </td>
-	                    </tr>
-	                </table>
-	            </div>
-	            <div>
-	                <div id='countDown'>
-	                    ready
-	                </div>
-	                <table id='cardTable'>
-	                </table>
-	                <div id='info'>
-	                    start 버튼을 눌러주세요<br>
-	                </div>
-	            </div>
-	        </div>
-			
+			<div class="right_game index_game">
+				<div class="gameWrap">
+					<div class='width500px'>
+			            <div>
+			                <h2>같은 그림 찾기!</h2>
+			                <table id='menuTable'>
+			                    <tr>
+			                        <td class='alignLeft'>
+			                            <button id='startBtn'>start</button>
+			                        </td>
+			                        <td class='alignRight'>
+			                            <span>score : <span id='score'>0</span></span>
+			                        </td>
+			                    </tr>
+			                </table>
+			            </div>
+			            
+			            <div>
+			                <div id='countDown'>
+			                    ready
+			                </div>
+			                <table id='cardTable'>
+			                </table>
+			                <div id='info'>
+			                    start 버튼을 눌러주세요<br>
+			                </div>
+			            </div>
+			            
+			        </div>
+			        <!-- width 500px End -->
+		        </div>
+		        <!-- gameWrap End -->
+		    </div>
+		    <!-- right_game End -->
 		</div>
-		<!-- //wrapAll end -->
-		
-<jsp:include page="/WEB-INF/views/include/footer.jsp" />
-<!-- //footer end -->
+		<!-- //wrapAll game end -->
+</body>
+</html>
