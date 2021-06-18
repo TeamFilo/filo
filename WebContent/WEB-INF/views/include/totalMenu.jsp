@@ -56,6 +56,11 @@
             <ul class="depth total_depth_travelmaker">
 	            <p class="tit_depth">TRAVEL MAKER</p>
                 <li><a href="/filo/mem/index.fl"></a><i class="fi fi-rs-home"></i>트래블메이커 홈<i class="go fi-rs-caret-right"></i></li>               
+                <li><a href="/filo/travel/makingList.fl"></a><i class="fi fi-rs-home"></i>여행 떠나기<i class="go fi-rs-caret-right"></i></li>               
+                <li><a href="/filo/shared/sharedList.fl"></a><i class="fi fi-rs-home"></i>여행공유<i class="go fi-rs-caret-right"></i></li>               
+                <li><a href="/filo/land/landmark.fl"></a><i class="fi fi-rs-home"></i>랜드마크<i class="go fi-rs-caret-right"></i></li>               
+                <li><a href="/filo/mem/manual.fl"></a><i class="fi fi-rs-home"></i>랭크/포지션 안내<i class="go fi-rs-caret-right"></i></li>               
+                <li><a href="/filo/msg/message.fl"></a><i class="fi fi-rs-home"></i>쪽지함<i class="go fi-rs-caret-right"></i></li>               
             </ul>
         </li>
         <li>
