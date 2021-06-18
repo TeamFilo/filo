@@ -12,10 +12,15 @@
 			<c:if test="${sessionScope.memId==null}">
 				<script>
 					alert("로그인 후에 이용해주세요");
-					location.href="/filo/login.fl";
+					location.href="/filo/member/login.fl";
 				</script>
 			</c:if>
 			<script>
+			$(document).ready(function(){
+				$('#reGameBtn').hide();
+				
+			});
+			
             // 게임 상태
             var gameState = '';
  
@@ -133,9 +138,10 @@
             					data: JSON.stringify(data),
             				});
                             alert('성공!!\n'+score+'점 입니다!');
-                            $("#gameBtn").show();
-                            $("#gameBtn").text("다시하기");
+                            $('#reGameBtn').show();
+                           
                             
+                          
                         }
                     }else { // 불일치
                         setTimeout(back, 1000);
@@ -143,6 +149,14 @@
                     }
                 }
             });
+            
+            
+            $(document).on('click', '#reGameBtn', function(){
+            	location.href="/filo/game/card.fl";
+            });
+            
+            
+            
  
             // 두개의 카드 다시 뒤집기
             function back() {
@@ -207,6 +221,10 @@
 			                	*맞으면 10점 획득 틀릴 시 5점 감점*
 			                </p>
                             <button id='gameBtn'>start</button>
+
+                            <button id='reGameBtn'>다시하기</button>
+                            <p>score : <p id='score'>0</p></p>
+
 			            </div>
 			        </div>    
 			            <div class="cardTop">

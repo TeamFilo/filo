@@ -25,6 +25,3 @@
                 $('#myMenu').children('.menu').children('li').eq(4).addClass('active');
             }
         </script>
-
-
-

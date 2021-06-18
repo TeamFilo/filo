@@ -25,13 +25,14 @@
 			<c:if test="${sessionScope.memId==null}">
 				<script>
 					alert("로그인 후에 이용해주세요");
-					location.href="/filo/login.fl";
+					location.href="/filo/member/login.fl";
 				</script>
 			</c:if>
 			
 			<div class="right_game index_game">
 				<!-- view -->
 				<div class="beforeScratch">
+					<img src="/filo/resources/images/pf/lotteryNone.png" id="lotteryNone" ondragstart="return false"/><br/>
 					<button onclick="possibleCheck();">START</button>
 				</div>
 				<div id="demo1" class="scratchpad"></div>
@@ -77,9 +78,14 @@
 							}
 						});
 						$("#demo1").hide();
+						$("#after").hide();
+						$('#dragInfo').hide();
 					});
 					
 					function possibleCheck(){
+						$('#before').hide();
+						$('#dragInfo').show();
+						
 						if(!cntPossible && pointPossible){
 							alert("일일 구매 횟수를 초과하였습니다");
 						}
@@ -145,13 +151,32 @@
 								
 								$('.scratchpad').wScratchPad('reset');
 								$('.scratchpad').hide();
-								$('.afterScratch').html("<h1>끝나고 어떤 버튼들을 보여주면 좋을까</h1>");
+								$('#after').show();
+								$('#dragInfo').hide();
+								$('.afterScratch').html("<img src='/filo/resources/images/pf/lotteryNone.png' id='lotteryNone' ondragstart='return false'/><br/><button id='oneMore'>한번 더 긁기</button>");
 							}
 						}
 					});
 					$('#demo1').wScratchPad('cursor', 'url("/filo/resources/images/pf/coin.png") 5 5, default');
 					$('#demo1').wScratchPad('size', 30);
+					
+					$(document).on('click', '#oneMore', function(){
+						location.href="/filo/game/lottery.fl";
+					});
+			            
 				</script>
+				
+				<p id="before"> 긁기전 남은횟수: 5회중 ${5-lotteryCnt}회 남았습니다.</p>
+				<p id="after">긁은 후남은횟수 : 5회중 ${4-lotteryCnt }회 남았습니다.</p>
+				<p id="dragInfo">마우스로 긁어보세요!</p>
+				
+			
+				<!--  -->
+			
+			
+				<!--  -->
+				
+				
 			</div>
 			<!-- right_game End -->
 		</div>
