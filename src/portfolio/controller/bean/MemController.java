@@ -76,7 +76,7 @@ public class MemController {
 	//회원가입 폼 페이지 
 	@RequestMapping("join.fl")
 	public String join() {
-		return "pf/member/join";
+		return "member/join";
 	}
 	
 	//회원가입 처리
@@ -84,13 +84,14 @@ public class MemController {
 	public String joinPro(TmUserDTO dto) {
 		memService.addMember(dto);
 		gameService.addWallet(dto.getId());
-		return "pf/member/joinPro";
+		return "member/joinPro";
 	}
 	
 	//로그인 폼
 	@RequestMapping("login.fl")
-	public String login() {
-		return "pf/member/login";
+	public String login(Model model, String past) {
+		model.addAttribute("past",past);
+		return "member/loginForm";
 	}
 	
 	//로그인 처리
@@ -103,7 +104,7 @@ public class MemController {
 		//뷰에 로그인 결과 넘겨주기 
 		model.addAttribute("result",result);
 		
-		return "pf/member/loginPro";
+		return "member/loginPro";
 	}
 	
 	//로그아웃
@@ -123,10 +124,10 @@ public class MemController {
 	
 	
 	//아이디 찾기 
-	@RequestMapping("findIdForm.fl")
+	@RequestMapping("findId.fl")
 	public String findIdForm() {
 		
-		return "tm/client/member/findIdForm";
+		return "member/findIdForm";
 	}
 	
 	//아이디 찾기 
@@ -142,14 +143,14 @@ public class MemController {
 		model.addAttribute("mem", mem);
 		model.addAttribute("comId", comId);
 		
-		return "tm/client/member/findIdPro";
+		return "member/findIdPro";
 	}
 	
 	//비로그인 일 때 비밀번호 찾기 form
 	@RequestMapping("findPw.fl")
 	public String findPw() {
 		
-		return "tm/client/member/findPw";
+		return "member/findPw";
 	}
 	
 	
@@ -183,7 +184,7 @@ public class MemController {
 		int result = memService.idEmailCheck(mem);
 		model.addAttribute("result", result);
 		model.addAttribute("mem", mem);
-		return "tm/client/member/modiPwForm";
+		return "member/modiPw";
 	}
 	
 	//비밀번호 재설정 Pro

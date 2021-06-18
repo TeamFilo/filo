@@ -11,6 +11,19 @@
 	<jsp:include page="/WEB-INF/views/include/totalMenu.jsp" />
 	<div id="mCover"></div>
 	<a href="/filo/index.fl"><p id="logo"></p></a>	
+	<div id="sign">
+		<c:if test="${sessionScope.memId == null}">
+			<a href="/filo/member/join.fl"><p class="btnSign">회원가입</p></a>
+			<a href="/filo/member/login.fl"><p class="btnSign">로그인</p></a>
+		</c:if>
+		<c:if test="${sessionScope.memId != null}">
+			<p class="txtSign">환영합니다! 
+			<c:if test="${sessionScope.memIcon == null}"><img src="/filo/resources/images/pf/user.png" width="30"></c:if>
+			<c:if test="${sessionScope.memIcon != null}"><img src="<c:url value="/resources/images/pf/${sessionScope.memIcon}.png"/>" width="30" /></c:if>
+			<strong style="color:${sessionScope.memColor}";>${sessionScope.memId}</strong>님</p>
+			<a href="/filo/member/logout.fl"><p class="btnSign">로그아웃</p></a>
+		</c:if>
+	</div>
 </div>
 	<script>
 	var didScroll;
@@ -50,8 +63,8 @@
 	$('#ham').click(function(){
 		if(clicks === 0){
 			$(this).addClass("active");
-		    $('#logo').fadeIn();
-		    $('#sign').fadeIn();
+		    $('#logo').fadeOut();
+		    $('#sign').fadeOut();
 		    $('#mCover').fadeIn();
 		    $('#totalMenuWrap').fadeIn();
 		    $('#totalMenuWrap > .menu > li').eq(1).animate({left:"0",opacity:"1"}, 750);
@@ -61,8 +74,8 @@
 		    return clicks = 1;
 		}else{
 			$(this).removeClass("active");
-		    $('#logo').fadeOut();
-		    $('#sign').fadeOut();
+		    $('#logo').fadeIn();
+		    $('#sign').fadeIn();
 		    $('#mCover').fadeOut();
 		    $('#totalMenuWrap').fadeOut();
 		    $('#totalMenuWrap > .menu > li').eq(1).animate({left:"50px",opacity:"0"}, 10);

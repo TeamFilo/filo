@@ -13,8 +13,8 @@
 	<a href="/filo/mem/index.fl"><p id="logo"></p></a>
 	<div id="sign">
 		<c:if test="${sessionScope.memId == null}">
-			<a href="/filo/member/join.fl"><p class="btnSign">회원가입</p></a>
-			<a href="/filo/member/login.fl"><p class="btnSign">로그인</p></a>
+			<a href="/filo/member/join.fl?past=tm"><p class="btnSign">회원가입</p></a>
+			<a href="/filo/member/login.fl?past=tm"><p class="btnSign">로그인</p></a>
 		</c:if>
 		<c:if test="${sessionScope.memId != null}">
 			<p class="txtSign">환영합니다! 
