@@ -96,12 +96,13 @@ public class MemController {
 	
 	//로그인 처리
 	@RequestMapping("loginPro.fl")
-	public String loginPro(TmUserDTO dto, Model model, String auto) {
+	public String loginPro(TmUserDTO dto, Model model, String auto, String past) {
 		//id, pw 확인
 		int result = memService.idPwCheck(dto);
 		//자동 로그인 시 쿠키 처리
 		memService.addCookie(dto,auto);
 		//뷰에 로그인 결과 넘겨주기 
+		model.addAttribute("past",past);
 		model.addAttribute("result",result);
 		
 		return "member/loginPro";
