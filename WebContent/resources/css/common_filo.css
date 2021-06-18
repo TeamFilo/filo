@@ -293,6 +293,11 @@ body.noscrb::-webkit-scrollbar {display: none;}
 
 /*top*/
 #top_pf {width:100%; height:80px; background:#fff; border-bottom:1px solid #f3f3f3; position:fixed;top:0;left:0; z-index:999;}
+#top_pf #logo {width:65px; height:32px; background: url(../images/pf/logo_top_pf.png)no-repeat center; background-size: auto 100%; position: absolute;top: 24px;left: 30px; z-index:997;}
+#top_pf #sign {overflow:hidden; position: absolute;top: 24px;right: 110px; z-index:997;}
+#top_pf #sign .btnSign {float:left; background:#ccc; border-radius:3px; line-height:24px; color:#fff; font-size: 13px; font-weight: 500; transition:.3s; padding:4px 12px; margin: 0 0 0 5px;}
+#top_pf #sign .btnSign:hover {background:#ff3f02;}
+#top_pf #sign .txtSign {float:left; line-height:32px; font-size: 16px; font-weight: 400; margin: 0 30px 0 0;}
 
 /*totalMenu*/
 #totalMenuWrap {display:none; width: 100%; height: 100vh; background: url(/filo/resources/images/totalMenuBg.png)no-repeat left -20px center,#fff; font-family: 'ROBOTO', 'Noto Sans KR', sans-serif; padding: 110px 100px 80px 75px; position:fixed;top:0;left:0; z-index:998;}
