@@ -110,7 +110,7 @@ public class MemController {
 	
 	//로그아웃
 	@RequestMapping("logout.fl")
-	public String logout(TmUserDTO dto, String auto) {
+	public String logout(TmUserDTO dto, Model model, String auto, String past) {
 		//세션 지워주기 
 		memService.removeSession("memId");
 		memService.removeSession("memColor");
@@ -118,8 +118,9 @@ public class MemController {
 		memService.removeSession("memIcon");
 		//자동 로그인 했다면 쿠키 지워 주기 
 		memService.removeCookie(dto, auto);
+		model.addAttribute("past",past);
 		
-		return "redirect:index.fl";
+		return "member/logout";
 	}
 	
 	
