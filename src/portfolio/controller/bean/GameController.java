@@ -102,11 +102,48 @@ public class GameController {
 				isPossible = false;	//게임 불가능
 			}else {
 				isPossible = true;	//게임 가능
-				gameService.updatePoint(user,-needPoint);	//포인트 차감
+				//gameService.updatePoint(user,-needPoint);	//포인트 차감
 			}
 			model.addAttribute("isPossible",isPossible);
 			model.addAttribute("answer",answer);
 		}
+		
+		
+		//left_game에 뿌려줄 회원정보
+		if(user!=null) {
+			model.addAttribute("userInfo",memService.getMember(user));  //tmUserDTO로가져옴
+			model.addAttribute("wal",gameService.getWallet(user)); 
+			//오늘 한 게임
+			List<GrGiJoinDTO> todayRecords = gameService.todayRecords(user); //조인시킴
+			if(!todayRecords.isEmpty()) {
+				model.addAttribute("todayRecords",todayRecords);
+			}
+			
+			//오늘 룰렛, 복권 횟수
+			model.addAttribute("lotteryCnt", gameService.getWallet(user).getLotteryCnt());
+			model.addAttribute("rouletteCnt", gameService.getWallet(user).getRouletteCnt());
+			
+			int playCnt = gameService.haveEverPlayed(user);
+			if(playCnt>0) {
+				//내 등수
+				model.addAttribute("myRank", gameService.myRank(user));
+				//퍼센트
+				double gamePercent = gameService.gamePercent(user);	
+				model.addAttribute("gamePercent", Math.round(gamePercent));
+			}
+		}
+		
+		//랭킹 탑3 정보
+		Map<Integer,TmUserDTO> top3 = gameService.topThree();
+		model.addAttribute("top3",top3);
+		
+		
+		/* 게임카테1,2,3 중 오늘 안한 게임 카테만 담겨있음
+			(view에서 안한 게임만 뿌려주기 위해)			*/
+		List<Integer> gameNum = gameService.playToday(user);
+		model.addAttribute("gameNum", gameNum);
+
+		
 		
 		return "/pf/game/numUpDown";
 	}
@@ -172,16 +209,22 @@ public class GameController {
 	//lsh rockPS game page
 	@RequestMapping("rockPS.fl")
 	public String rockPS(Model model) {
+		
 		String user = (String)RequestContextHolder.getRequestAttributes().getAttribute("memId", RequestAttributes.SCOPE_SESSION);
+		
+		//left_game에 뿌려줄 회원정보
 		if(user!=null) {
 			model.addAttribute("userInfo",memService.getMember(user));  //tmUserDTO로가져옴
-			model.addAttribute("wal",gameService.getWallet(user));
+			model.addAttribute("wal",gameService.getWallet(user)); 
 			//오늘 한 게임
 			List<GrGiJoinDTO> todayRecords = gameService.todayRecords(user); //조인시킴
 			if(!todayRecords.isEmpty()) {
 				model.addAttribute("todayRecords",todayRecords);
 			}
 			
+			//오늘 룰렛, 복권 횟수
+			model.addAttribute("lotteryCnt", gameService.getWallet(user).getLotteryCnt());
+			model.addAttribute("rouletteCnt", gameService.getWallet(user).getRouletteCnt());
 			
 			int playCnt = gameService.haveEverPlayed(user);
 			if(playCnt>0) {
@@ -189,13 +232,20 @@ public class GameController {
 				model.addAttribute("myRank", gameService.myRank(user));
 				//퍼센트
 				double gamePercent = gameService.gamePercent(user);	
-				model.addAttribute("gamePercent", gamePercent);
+				model.addAttribute("gamePercent", Math.round(gamePercent));
 			}
-			
-			//랭킹 탑3 정보
-			Map<Integer,TmUserDTO> top3 = gameService.topThree();
-			model.addAttribute("top3",top3);
 		}
+		
+		//랭킹 탑3 정보
+		Map<Integer,TmUserDTO> top3 = gameService.topThree();
+		model.addAttribute("top3",top3);
+		
+		
+		/* 게임카테1,2,3 중 오늘 안한 게임 카테만 담겨있음
+			(view에서 안한 게임만 뿌려주기 위해)			*/
+		List<Integer> gameNum = gameService.playToday(user);
+		model.addAttribute("gameNum", gameNum);
+
 		return "/pf/game/rockPS";
 	}
 	
@@ -253,11 +303,52 @@ public class GameController {
 	//lsm lottery game page
 	@RequestMapping("lottery.fl")
 	public String lottery(Model model) {
+		
 		int ranNum = (int)(Math.random()*5+1);
 		String ranImg = "lottery"+ranNum+".png";
 		//System.out.println("랜덤이미지" + ranImg); 
 		model.addAttribute("ranNum",ranNum);
 		model.addAttribute("ranImg",ranImg);
+		
+		//left_game에 뿌려줄 회원정보
+		String user = (String)RequestContextHolder.getRequestAttributes().getAttribute("memId", RequestAttributes.SCOPE_SESSION);
+		if(user!=null) {
+			model.addAttribute("userInfo",memService.getMember(user));  //tmUserDTO로가져옴
+			model.addAttribute("wal",gameService.getWallet(user)); 
+			//오늘 한 게임
+			List<GrGiJoinDTO> todayRecords = gameService.todayRecords(user); //조인시킴
+			if(!todayRecords.isEmpty()) {
+				model.addAttribute("todayRecords",todayRecords);
+			}
+			
+			//오늘 룰렛, 복권 횟수
+			model.addAttribute("lotteryCnt", gameService.getWallet(user).getLotteryCnt());
+			model.addAttribute("rouletteCnt", gameService.getWallet(user).getRouletteCnt());
+			
+			int playCnt = gameService.haveEverPlayed(user);
+			if(playCnt>0) {
+				//내 등수
+				model.addAttribute("myRank", gameService.myRank(user));
+				//퍼센트
+				double gamePercent = gameService.gamePercent(user);	
+				model.addAttribute("gamePercent", Math.round(gamePercent));
+			}
+		}
+		
+		//랭킹 탑3 정보
+		Map<Integer,TmUserDTO> top3 = gameService.topThree();
+		model.addAttribute("top3",top3);
+		
+		
+		/* 게임카테1,2,3 중 오늘 안한 게임 카테만 담겨있음
+			(view에서 안한 게임만 뿌려주기 위해)			*/
+		List<Integer> gameNum = gameService.playToday(user);
+		
+		model.addAttribute("gameNum", gameNum);
+		
+		
+		
+		
 		return "pf/game/lottery";
 	}
 	
@@ -281,7 +372,44 @@ public class GameController {
 	
 	//jbr
 	@RequestMapping("card.fl")
-	public String card() {
+	public String card(Model model) {
+		
+		//left_game에 뿌려줄 회원정보
+		String user = (String)RequestContextHolder.getRequestAttributes().getAttribute("memId", RequestAttributes.SCOPE_SESSION);
+		if(user!=null) {
+			model.addAttribute("userInfo",memService.getMember(user));  //tmUserDTO로가져옴
+			model.addAttribute("wal",gameService.getWallet(user)); 
+			//오늘 한 게임
+			List<GrGiJoinDTO> todayRecords = gameService.todayRecords(user); //조인시킴
+			if(!todayRecords.isEmpty()) {
+				model.addAttribute("todayRecords",todayRecords);
+			}
+			
+			//오늘 룰렛, 복권 횟수
+			model.addAttribute("lotteryCnt", gameService.getWallet(user).getLotteryCnt());
+			model.addAttribute("rouletteCnt", gameService.getWallet(user).getRouletteCnt());
+			
+			int playCnt = gameService.haveEverPlayed(user);
+			if(playCnt>0) {
+				//내 등수
+				model.addAttribute("myRank", gameService.myRank(user));
+				//퍼센트
+				double gamePercent = gameService.gamePercent(user);	
+				model.addAttribute("gamePercent", Math.round(gamePercent));
+			}
+		}
+		
+		//랭킹 탑3 정보
+		Map<Integer,TmUserDTO> top3 = gameService.topThree();
+		model.addAttribute("top3",top3);
+		
+		
+		/* 게임카테1,2,3 중 오늘 안한 게임 카테만 담겨있음
+			(view에서 안한 게임만 뿌려주기 위해)			*/
+		List<Integer> gameNum = gameService.playToday(user);
+		model.addAttribute("gameNum", gameNum);
+		
+		
 		return "pf/game/card";
 	}
 
@@ -303,6 +431,43 @@ public class GameController {
 	public String winwheel(Model model){
 		String user = (String)RequestContextHolder.getRequestAttributes().getAttribute("memId", RequestAttributes.SCOPE_SESSION);
 		model.addAttribute("user",user);
+		
+		
+		//left_game에 뿌려줄 회원정보
+		if(user!=null) {
+			model.addAttribute("userInfo",memService.getMember(user));  //tmUserDTO로가져옴
+			model.addAttribute("wal",gameService.getWallet(user)); 
+			//오늘 한 게임
+			List<GrGiJoinDTO> todayRecords = gameService.todayRecords(user); //조인시킴
+			if(!todayRecords.isEmpty()) {
+				model.addAttribute("todayRecords",todayRecords);
+			}
+			
+			//오늘 룰렛, 복권 횟수
+			model.addAttribute("lotteryCnt", gameService.getWallet(user).getLotteryCnt());
+			model.addAttribute("rouletteCnt", gameService.getWallet(user).getRouletteCnt());
+			
+			int playCnt = gameService.haveEverPlayed(user);
+			if(playCnt>0) {
+				//내 등수
+				model.addAttribute("myRank", gameService.myRank(user));
+				//퍼센트
+				double gamePercent = gameService.gamePercent(user);	
+				model.addAttribute("gamePercent", Math.round(gamePercent));
+			}
+		}
+		
+		//랭킹 탑3 정보
+		Map<Integer,TmUserDTO> top3 = gameService.topThree();
+		model.addAttribute("top3",top3);
+		
+		
+		/* 게임카테1,2,3 중 오늘 안한 게임 카테만 담겨있음
+			(view에서 안한 게임만 뿌려주기 위해)			*/
+		List<Integer> gameNum = gameService.playToday(user);
+		model.addAttribute("gameNum", gameNum);
+		
+		
 		return "pf/game/winwheel";
 	}
 	
@@ -317,6 +482,8 @@ public class GameController {
 		gameService.updateWheelCnt(user);
 	//2)gameRecord에 레코드 insert
 		gameService.insRecordPoint(user, 4, p);
+		
+		
 	}
 	
 	//복권 ajax
@@ -353,5 +520,17 @@ public class GameController {
 	public String scratchTest() {
 		return "pf/game/scratchTest";
 	}
+	
+	/*
+	@ResponseBody
+	@RequestMapping("gameStartPointCh.fl")
+	public int gameStartPointCh(@RequestBody Model model) {
+		String user = (String)RequestContextHolder.getRequestAttributes().getAttribute("memId", RequestAttributes.SCOPE_SESSION);
+		WalletDTO wallet = gameService.getWallet(user);
+		int rePoint = wallet.getPoint();
+		model.addAttribute("rePoint", rePoint);
+		return rePoint;
+	}
+	*/
 	
 }

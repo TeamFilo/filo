@@ -54,8 +54,8 @@
 	                        <p class="tit">Play game <br/> After sign in</p>
 	                    </div>
 	                </div>
-	                <a href="/filo/login.fl"><div class="graBtn btn1 sub">Sign In</div></a>
-	                <a href="/filo/join.fl"><div class="graBtn btn2 sub">Sign Up</div></a>
+	                <a href="/filo/member/login.fl"><div class="graBtn btn1 sub">Sign In</div></a>
+	                <a href="/filo/member/join.fl"><div class="graBtn btn2 sub">Sign Up</div></a>
 	            </div>
 	            <!--gameBio End-->
 	        </c:if>

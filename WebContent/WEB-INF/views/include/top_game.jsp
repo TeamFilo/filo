@@ -55,8 +55,8 @@
 	}else if(nowUrl == "/gameTest_shop.html"){
 		$('.sc_menu').children('li').eq(1).addClass('on');
 	}	
-	
+	*/
 	$(document).ready(function(){
         $('.right_game').css('opacity','1');
-    }); */
+    }); 
 	</script>

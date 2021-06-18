@@ -4,6 +4,11 @@
    
 <body class="noscrb">
 		<div class="wrapAll game">
+		<script>
+			function rp(){
+				window.location.reload();
+			}
+		</script>
 		
         	<jsp:include page="/WEB-INF/views/include/top_game.jsp" />
        		<jsp:include page="/WEB-INF/views/include/left_game.jsp" />
@@ -13,7 +18,7 @@
 				<c:if test="${sessionScope.memId==null}">
 					<script>
 						alert("로그인 후에 이용해주세요");
-						location.href="/filo/login.fl";
+						location.href="/filo/member/login.fl";
 					</script>
 				</c:if>
 				<div class="gameWrap">
@@ -34,7 +39,7 @@
 			            <h2>가위바위보 계단 올라가기</h2>
 			            <p>컴퓨터에게 가위바위보를 이겨 계단을 먼저 올라가면 승리!
 			            <br/>*바위로 승리 시 1칸, 가위 2칸, 보 3칸 진행*</p>
-			            <button>Let's play</button>
+			            <button id="gameBtn">Let's play</button>
 			        </div>
 			        <!--intro End-->
 			        <div class="match fadeOut">
@@ -51,6 +56,7 @@
 			        </div>
 			        <div class="end fadeOut">
 			        	<h2>Game End </h2>
+			        	<button onclick="rp();" id="gameBtn">다시 하기</button><br/><br/><br/>	        	
 			        </div>
 			        <!--match End-->
 			        <div class="stair">

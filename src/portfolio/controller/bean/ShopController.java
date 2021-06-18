@@ -64,7 +64,7 @@ public class ShopController {
 				model.addAttribute("myRank", gameService.myRank(user));
 				//퍼센트
 				double gamePercent = gameService.gamePercent(user);	
-				model.addAttribute("gamePercent", gamePercent);
+				model.addAttribute("gamePercent", Math.round(gamePercent));
 			}
 		}
 		

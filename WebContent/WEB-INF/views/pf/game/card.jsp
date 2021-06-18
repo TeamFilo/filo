@@ -2,17 +2,25 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <jsp:include page="/WEB-INF/views/include/header_game.jsp" />
    
-	<jsp:include page="/WEB-INF/views/include/top_pf.jsp" />
-	<!-- //top_pf end -->
-	
-		<div class="wrapAll client">
+<body class="noscrb">
+		<div class="wrapAll game">	
+			
+			<jsp:include page="/WEB-INF/views/include/top_game.jsp" />
+      		<jsp:include page="/WEB-INF/views/include/left_game.jsp" />
+       		
+       		
 			<c:if test="${sessionScope.memId==null}">
 				<script>
 					alert("로그인 후에 이용해주세요");
-					location.href="/filo/login.fl";
+					location.href="/filo/member/login.fl";
 				</script>
 			</c:if>
 			<script>
+			$(document).ready(function(){
+				$('#reGameBtn').hide();
+				
+			});
+			
             // 게임 상태
             var gameState = '';
  
@@ -47,24 +55,24 @@
                 '11.png','11.png', 
                 '12.png','12.png' 
                 ];
-                var cardTableCode = '<tr>';                
+                var cardTableCode = '<ul>';                
                 for(var i=0;i<24;i++) {
                     if(i>0 && i%6 == 0){
-                        cardTableCode += '</tr><tr>';
+                        cardTableCode += '</ul><ul>';
                     }
                     var idx = generateRandom(0,23-i);
                     var img = cards.splice(idx,1);
  
-                    cardTableCode += '<td id="card'+i+'"><img src="/filo/resources/images/pf/'+img+'"><span>?</span></td>';
+                    cardTableCode += '<li id="card'+i+'"><img src="/filo/resources/images/pf/'+img+'"><span>?</span></li>';
                 }											
-                cardTableCode += '</tr>';
+                cardTableCode += '</ul>';
                 $('#cardTable').html(cardTableCode);
             }
  
             // 카드 전체 가리기
             function hiddenCards(){
-                $('#cardTable td img').hide();
-                $('#cardTable td span').show();
+                $('#cardTable ul li img').hide();
+                $('#cardTable ul li span').show().css('display','block');
             }
  
             // 게임 시작
@@ -92,7 +100,7 @@
  
  
             // 카드 선택 시
-            $(document).on('click', '#cardTable td', function(){
+            $(document).on('click', '#cardTable ul li', function(){
                 if(gameState != '') return; // 게임 카운트 다운중일 때 누른 경우 return
                 if(openCardId2 != '') return; // 2개 열려있는데 또 누른 경우 return
                 if($(this).hasClass('opened')) return; // 열려있는 카드를 또 누른 경우                
@@ -127,6 +135,10 @@
             					data: JSON.stringify(data),
             				});
                             alert('성공!!\n'+score+'점 입니다!');
+                            $('#reGameBtn').show();
+                           
+                            
+                          
                         }
                     }else { // 불일치
                         setTimeout(back, 1000);
@@ -134,6 +146,14 @@
                     }
                 }
             });
+            
+            
+            $(document).on('click', '#reGameBtn', function(){
+            	location.href="/filo/game/card.fl";
+            });
+            
+            
+            
  
             // 두개의 카드 다시 뒤집기
             function back() {
@@ -164,7 +184,8 @@
                 $('#score').text(score);
             }
  
-            $(document).on('click', '#startBtn', function(){
+            $(document).on('click', '#gameBtn', function(){
+            	$("#gameBtn").hide();
                 var data = {"gameCate":3};
                 $.ajax({
 					type:"post",
@@ -185,37 +206,35 @@
 						}
 					}
 				});
-            }); 
+            });        
 			</script>
-			
-			<div class='width500px'>
-	            <div>
-	                <h2>같은 그림 찾기인데 내가한게 아니야</h2>
-	                <table id='menuTable'>
-	                    <tr>
-	                        <td class='alignLeft'>
-	                            <button id='startBtn'>start</button>
-	                        </td>
-	                        <td class='alignRight'>
-	                            <span>score : <span id='score'>0</span></span>
-	                        </td>
-	                    </tr>
-	                </table>
-	            </div>
-	            <div>
-	                <div id='countDown'>
-	                    ready
-	                </div>
-	                <table id='cardTable'>
-	                </table>
-	                <div id='info'>
-	                    start 버튼을 눌러주세요<br>
-	                </div>
-	            </div>
-	        </div>
-			
+			<div class="right_game index_game">
+				<div class="gameWrap">
+			            <div>
+			                <p class="tit">같은 그림 찾기!</p>
+                            <button id='gameBtn'>start</button>
+                            <button id='reGameBtn'>다시하기</button>
+                            <p>score : <p id='score'>0</p></p>
+			            </div>
+			            
+			            <div>
+			                <div id='countDown'>
+			                    ready
+			                </div>
+			                <div id='cardTable'>
+			                </div>
+			                <div id='info'>
+			                    start 버튼을 눌러주세요<br>
+			                </div>
+			            </div>
+			            
+			        </div>
+			        <!-- width 500px End -->
+		        </div>
+		        <!-- gameWrap End -->
+		    </div>
+		    <!-- right_game End -->
 		</div>
-		<!-- //wrapAll end -->
-		
-<jsp:include page="/WEB-INF/views/include/footer.jsp" />
-<!-- //footer end -->
+		<!-- //wrapAll game end -->
+</body>
+</html>
