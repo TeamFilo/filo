@@ -30,7 +30,13 @@
             <a href="/filo/game/main.fl"><p class="logo gm">FILO GAMES</p></a>
             </c:if>
             <div class="inputField">
-                <form action="/filo/mem/loginPro.fl" method="post">
+                <form action="/filo/member/loginPro.fl" method="post">                
+		        	<c:if test="${past == 'tm'}">
+		            <input type="hidden" name="past" value="tm"/>
+		            </c:if>
+		            <c:if test="${past == 'gm'}">
+		            <input type="hidden" name="past" value="gm"/>
+		            </c:if>
                     <div class="inputOuter">
                         <input type="text" name="id" autocomplete="off" placeholder="아이디" maxlength="41"/>
                     </div>
