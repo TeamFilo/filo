@@ -16,6 +16,11 @@
 				</script>
 			</c:if>
 			<script>
+			$(document).ready(function(){
+				$('#reGameBtn').hide();
+				
+			});
+			
             // 게임 상태
             var gameState = '';
  
@@ -130,9 +135,10 @@
             					data: JSON.stringify(data),
             				});
                             alert('성공!!\n'+score+'점 입니다!');
-                            $("#gameBtn").show();
-                            $("#gameBtn").text("다시하기");
+                            $('#reGameBtn').show();
+                           
                             
+                          
                         }
                     }else { // 불일치
                         setTimeout(back, 1000);
@@ -140,6 +146,14 @@
                     }
                 }
             });
+            
+            
+            $(document).on('click', '#reGameBtn', function(){
+            	location.href="/filo/game/card.fl";
+            });
+            
+            
+            
  
             // 두개의 카드 다시 뒤집기
             function back() {
@@ -199,6 +213,7 @@
 			            <div>
 			                <p class="tit">같은 그림 찾기!</p>
                             <button id='gameBtn'>start</button>
+                            <button id='reGameBtn'>다시하기</button>
                             <p>score : <p id='score'>0</p></p>
 			            </div>
 			            
