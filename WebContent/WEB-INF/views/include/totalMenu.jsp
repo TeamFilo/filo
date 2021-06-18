@@ -16,7 +16,7 @@
             	<p class="tit_depth">MAIN</p>
                 <li><a href="/filo/index.fl#1stPage"></a><i class="fi fi-rs-home"></i>포트폴리오 홈<i class="go fi-rs-caret-right"></i></li>
                 <li><a href="/filo/index.fl#2ndPage"></a><i class="fi fi-rs-comment"></i>포트폴리오 소개<i class="go fi-rs-caret-right"></i></li>
-                <li><a href="/filo/index.fl#2ndPage/1"></a><i class="fi fi-rs-playing-cards"></i>게임 소개<i class="go fi-rs-caret-right"></i></li>
+                <li><a href="/filo/index.fl#2ndPage/1"></a><i class="fi fi-rs-book"></i>게임 소개<i class="go fi-rs-caret-right"></i></li>
                 <li><a href="/filo/index.fl#2ndPage/2"></a><i class="fi fi-rs-backpack"></i>트래블메이커 소개<i class="go fi-rs-caret-right"></i></li>
             </ul>            
             <ul class="depth total_depth_profile">
@@ -56,11 +56,11 @@
             <ul class="depth total_depth_travelmaker">
 	            <p class="tit_depth">TRAVEL MAKER</p>
                 <li><a href="/filo/mem/index.fl"></a><i class="fi fi-rs-home"></i>트래블메이커 홈<i class="go fi-rs-caret-right"></i></li>               
-                <li><a href="/filo/travel/makingList.fl"></a><i class="fi fi-rs-home"></i>여행 떠나기<i class="go fi-rs-caret-right"></i></li>               
-                <li><a href="/filo/shared/sharedList.fl"></a><i class="fi fi-rs-home"></i>여행공유<i class="go fi-rs-caret-right"></i></li>               
-                <li><a href="/filo/land/landmark.fl"></a><i class="fi fi-rs-home"></i>랜드마크<i class="go fi-rs-caret-right"></i></li>               
-                <li><a href="/filo/mem/manual.fl"></a><i class="fi fi-rs-home"></i>랭크/포지션 안내<i class="go fi-rs-caret-right"></i></li>               
-                <li><a href="/filo/msg/message.fl"></a><i class="fi fi-rs-home"></i>쪽지함<i class="go fi-rs-caret-right"></i></li>               
+                <li><a href="/filo/travel/makingList.fl"></a><i class="fi fi-rs-world"></i>여행 떠나기<i class="go fi-rs-caret-right"></i></li>               
+                <li><a href="/filo/shared/sharedList.fl"></a><i class="fi fi-rs-share"></i>여행공유<i class="go fi-rs-caret-right"></i></li>               
+                <li><a href="/filo/land/landmark.fl"></a><i class="fi fi-rs-marker"></i>랜드마크<i class="go fi-rs-caret-right"></i></li>               
+                <li><a href="/filo/mem/manual.fl"></a><i class="fi fi-rs-trophy"></i>랭크/포지션 안내<i class="go fi-rs-caret-right"></i></li>               
+                <li><a href="/filo/msg/message.fl"></a><i class="fi fi-rs-paper-plane"></i>쪽지함<i class="go fi-rs-caret-right"></i></li>               
             </ul>
         </li>
         <li>

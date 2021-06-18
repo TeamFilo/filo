@@ -69,12 +69,15 @@
                 $('#cardTable ul li img').hide();
                 $('#cardTable ul li span').show().css('display','block');
             }
- 
+ 			
+            
+            
             // 게임 시작
             function startGame() {
                 var sec = 6;
                 
-                $('#info').hide(); // 안내 문구 가리기
+                $('.gameIntro').hide(); // 안내 문구 가리기
+                $('.gameBG').hide(); // 안내 문구 가리기
                 scoreInit(); // 점수 초기화
                 setTable(); // 카드 배치
                 
@@ -196,23 +199,26 @@
 			</script>
 			<div class="right_game index_game">
 				<div class="gameWrap">
-			            <div>
+					<div class="gameBG">
+			            <div class="gameIntro">
 			                <p class="tit">같은 그림 찾기!</p>
+			                <p class="sub">
+			                	카드를 두장씩 뒤집어 같은 그림을 찾는 게임입니다.<br/>
+			                	*맞으면 10점 획득 틀릴 시 5점 감점*
+			                </p>
                             <button id='gameBtn'>start</button>
-                            <p>score : <p id='score'>0</p></p>
 			            </div>
-			            
-			            <div>
-			                <div id='countDown'>
+			        </div>    
+			            <div class="cardTop">
+			                <p id='countDown'>
 			                    ready
-			                </div>
-			                <div id='cardTable'>
-			                </div>
-			                <div id='info'>
-			                    start 버튼을 눌러주세요<br>
-			                </div>
-			            </div>
-			            
+			                </p>
+			                 <p class="scoreWrap">score : 
+			                 	<span id='score'>0</span>
+			                 </p>
+			            </div>    
+		                <div id='cardTable'>
+		                </div>
 			        </div>
 			        <!-- width 500px End -->
 		        </div>
@@ -221,5 +227,13 @@
 		    <!-- right_game End -->
 		</div>
 		<!-- //wrapAll game end -->
+		
+		<script>
+			$(document).ready(function(){
+				setTable();
+	        	hiddenCards();
+			});
+			
+		</script>
 </body>
 </html>

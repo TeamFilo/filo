@@ -1,10 +1,12 @@
 /*card CSS*/
 .center{text-align: center;}
 #startBtn{border: none; color: white; background-color: #ff3f02; width: 80px;padding: 5px; font-weight: bold; cursor: pointer;}
+.cardTop {overflow:hidden; margin: 0 0 20px; color: #fff; font-size: 20pt;}
+#countDown {float: left; }
+.scoreWrap {float:right;}
 #cardTable ul {overflow:hidden;}
-#cardTable ul li {float:left; overflow:hidden; width:16%; height:138px; background: #ff3f02; border-radius:7px; margin:0 0.8% 0.8% 0; cursor:pointer;}
+#cardTable ul li {float:left; overflow:hidden; width:16%; height:138px; background: #2C2D31; border-radius:7px; margin:0 0.8% 0.8% 0; cursor:pointer;}
 #cardTable ul li:nth-child(6n) {margin:0 0 0.8% 0;}
 #cardTable ul li img{width: 100%;}
-#cardTable ul li span{display: none; text-align:center; font-size: 25pt; font-weight: bold; color: #21252A; line-height:138px; }
-#countDown{background-color: #FE9A2E; color: white; font-size: 20pt;}
+#cardTable ul li span{display: none; text-align:center; font-size: 25pt; font-weight: bold; color: #ff3f02; line-height:138px; }
 #info{width: 1008px; height: 250px; background-color: #F7F2E0; color: white; padding-top: 230px;}
