@@ -59,7 +59,7 @@
                         <span class="divide"></span>
                         <a href="findPw.fl"><span class="link">비밀번호 찾기</span></a>
                         <span class="divide"></span>
-                        <a href=""><span class="link">회원가입</span></a>
+                        <a href="join.fl"><span class="link">회원가입</span></a>
                     </div>
                 </form>
             </div>
