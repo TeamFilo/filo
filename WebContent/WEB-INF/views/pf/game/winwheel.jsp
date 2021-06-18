@@ -39,7 +39,14 @@
 		                                </tr>
 		                            </table>
 		                             -->
-		                            <img id="spin_button" src="/filo/resources/images/pf/spin_off.png" alt="Spin" onClick="startSpin();" />
+		                            <c:if test="${rouletteCnt == 0}">
+										<img id="spin_button" src="/filo/resources/images/pf/spin_off.png" alt="Spin" onClick="startSpin();" />
+									</c:if>
+									<c:if test="${rouletteCnt != 0}">
+										<p>오늘 이미 참여 하셨습니다!<br/></p>
+										
+									</c:if>
+									
 		                            <br /><br />
 		                        </div>
 		                    </td>
@@ -118,6 +125,7 @@
 							data: JSON.stringify(getPoint),
 						});
 		                alert("축하합니다! " +getPoint+"가 적립됩니다!");
+		                location.reload(true);
 		            }
 		
 		            // =======================================================================================================================
@@ -191,6 +199,7 @@
 					                    }
 					
 					                    // Disable the spin button so can't click again while wheel is spinning.
+					                    
 					                    document.getElementById('spin_button').src       = "/filo/resources/images/pf/spin_off.png";
 					                    document.getElementById('spin_button').className = "";
 					
@@ -202,6 +211,7 @@
 					                    wheelSpinning = true;
 					                }
 								}else{
+									
 									alert("이미 참여하셨습니다");
 								}
 							}
