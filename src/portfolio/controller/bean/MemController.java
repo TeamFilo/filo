@@ -128,7 +128,8 @@ public class MemController {
 	
 	//아이디 찾기 
 	@RequestMapping("findId.fl")
-	public String findIdForm() {
+	public String findIdForm(Model model, String past) {
+		model.addAttribute("past",past);
 		
 		return "member/findIdForm";
 	}
@@ -136,7 +137,7 @@ public class MemController {
 	//아이디 찾기 
 	//findIdForm에서 입력한 email을 받아와서 이 email의 아이디를 보여줘야함 
 	@RequestMapping("findIdPro.fl")
-	public String findIdPro(String email, Model model)throws Exception {
+	public String findIdPro(String email, Model model, String past)throws Exception {
 		TmUserDTO mem = memService.emailCheck(email);
 		String comId=null;
 		if(mem!=null) {
@@ -145,13 +146,15 @@ public class MemController {
 		}
 		model.addAttribute("mem", mem);
 		model.addAttribute("comId", comId);
+		model.addAttribute("past",past);
 		
 		return "member/findIdPro";
 	}
 	
 	//비로그인 일 때 비밀번호 찾기 form
 	@RequestMapping("findPw.fl")
-	public String findPw() {
+	public String findPw(Model model, String past) {
+		model.addAttribute("past",past);
 		
 		return "member/findPw";
 	}

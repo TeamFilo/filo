@@ -10,28 +10,32 @@
 	</script>
 	</c:if>
 	
-	<c:if test="${past == null}">
-    <div class="mypageWrap">
-    </c:if>
-	<c:if test="${past == 'tm'}">
-    <div class="mypageWrap tm">
-    </c:if>
-    <c:if test="${past == 'gm'}">
-    <div class="mypageWrap gm">
-    </c:if>
+	<c:choose>
+		<c:when test="${past == 'gm'}">
+			<div class="mypageWrap gm">
+		</c:when>
+		<c:when test="${past == 'tm'}">
+			<div class="mypageWrap tm">
+		</c:when>
+		<c:otherwise>
+			<div class="mypageWrap">
+		</c:otherwise>
+	</c:choose>
 
         <div class="signupWrap">
-        	<c:if test="${past == null}">
-            <a href="/filo/index.fl"><p class="logo">filo<span>First in, last out</span></p></a>
-            </c:if>
-        	<c:if test="${past == 'tm'}">
-            <a href="/filo/mem/index.fl"><p class="logo tm">TRAVEL MAKER</p></a>
-            </c:if>
-            <c:if test="${past == 'gm'}">
-            <a href="/filo/game/main.fl"><p class="logo gm">FILO GAMES</p></a>
-            </c:if>
+        	<c:choose>
+				<c:when test="${past == 'gm'}">
+					<a href="/filo/game/main.fl"><p class="logo gm">FILO GAMES</p></a>
+				</c:when>
+				<c:when test="${past == 'tm'}">
+					<a href="/filo/mem/index.fl"><p class="logo tm">TRAVEL MAKER</p></a>
+				</c:when>
+				<c:otherwise>
+					<a href="/filo/index.fl"><p class="logo">filo<span>First in, last out</span></p></a>
+				</c:otherwise>
+			</c:choose> 
             <div class="inputField">
-                <form action="/filo/member/loginPro.fl" method="post">                
+                <form action="/filo/joinPro.fl" id="signupForm" onsubmit="return subCheck()" method="post">                
 		        	<c:if test="${past == 'tm'}">
 		            <input type="hidden" name="past" value="tm"/>
 		            </c:if>
@@ -48,7 +52,7 @@
                     
                     <div class="inputOuter inputOuter2">
                     	<p class="tit">비밀번호</p>
-                        <input type="password" id="pwInput" name="password" placeholder="숫자 혹은 영어로 이루어진 6~12자리" maxlength="12"/>
+                        <input type="password" id="pwInput" name="pw" placeholder="숫자 혹은 영어로 이루어진 6~12자리" maxlength="12"/>
 	                    <p class="existError pwError"></p>
                     </div>
                     
@@ -88,13 +92,13 @@
                     	<p class="tit">성별</p>
                         <select name="gender">
 						    <!-- <option value="" hidden>선택</option> -->
-						    <option value="남자" selected="selected">남자</option>
-						    <option value="여자">여자</option>
+						    <option value="0" selected="selected">남자</option>
+						    <option value="1">여자</option>
 						</select>
                     </div>
                     
                     <div class="inputOuter btn">
-                        <button type="submit">로그인</button>
+                        <button type="submit">가입하기</button>
                     </div>
                     
            		 </form>
