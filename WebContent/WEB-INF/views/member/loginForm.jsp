@@ -38,10 +38,10 @@
 		            <input type="hidden" name="past" value="gm"/>
 		            </c:if>
                     <div class="inputOuter">
-                        <input type="text" name="id" autocomplete="off" placeholder="아이디" maxlength="41"/>
+                        <input type="text" name="id" autocomplete="off" placeholder="아이디" maxlength="12"/>
                     </div>
                     <div class="inputOuter">
-                        <input type="password" name="pw" autocomplete="off" placeholder="비밀번호" maxlength="16" />                        
+                    	<input type="password" name="pw" autocomplete="off" placeholder="비밀번호" maxlength="16" />
                     </div>
                     <div class="inputOuter btn">
                         <button type="submit">로그인</button>
@@ -59,7 +59,7 @@
                         <span class="divide"></span>
                         <a href="findPw.fl"><span class="link">비밀번호 찾기</span></a>
                         <span class="divide"></span>
-                        <a href="join.fl"><span class="link">회원가입</span></a>
+                        <a href="join.fl?past=${past}"><span class="link">회원가입</span></a>
                     </div>
                 </form>
             </div>
