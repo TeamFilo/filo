@@ -11,7 +11,7 @@
         <li><a href="/filo/admin/posList.fl">포지션</a></li>
         <li><a href="/filo/mem/index.fl">메인 홈</a></li>        
     </ul>
-</div>
+</div> 
 <script>
 	var nowUrl = window.location.pathname;
 	console.log(nowUrl)

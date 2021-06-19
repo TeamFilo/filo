@@ -187,8 +187,8 @@
                 $('#score').text(score);
             }
  
-            $(document).on('click', '#gameBtn', function(){
-            	$("#gameBtn").hide();
+            $(document).on('click', '.gameBtn', function(){
+            	$(".gameBtn").hide();
                 var data = {"gameCate":3};
                 $.ajax({
 					type:"post",
@@ -220,7 +220,7 @@
 			                	카드를 두장씩 뒤집어 같은 그림을 찾는 게임입니다.<br/>
 			                	*맞으면 10점 획득 틀릴 시 5점 감점*
 			                </p>
-                            <button id='gameBtn'>start</button>
+                            <button class='gameBtn'>start</button>
 
                             <button id='reGameBtn'>다시하기</button>
                             <p>score : <p id='score'>0</p></p>

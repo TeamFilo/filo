@@ -3,8 +3,8 @@ const game = ()=>{
 
     //start the game
     const startGame = () =>{
-        const playBtn = document.querySelector('.intro button');
-        const introScreen = document.querySelector('.intro');
+        const playBtn = document.querySelector('.gameBtn');
+        const introScreen = document.querySelector('.gameCIntro');
         let match = document.querySelector('.match');
 
        /* hands.forEach(hand =>{
