@@ -8,10 +8,16 @@
 	<link rel="icon" type="image/vnd.microsoft.icon"  href="./demo/img/favicon.ico" />
 	<style>
 		#demo1 {
-		  width: 300px;
-		  height: 200px;
-		  border: solid 1px;
+		  width: 574px;
+		  height: 384px;
 		  display: inline-block;
+		  
+		}
+		#demo1 canvas{
+		  border-radius:7px;
+		}
+		#demo1 img{
+		  border-radius:7px;
 		}
 	</style>
 
@@ -114,12 +120,12 @@
 					//wScratchPad
 					$('#demo1').wScratchPad({
 						bg: '/filo/resources/images/pf/'+ranImg,
-						fg: '#949194',
+						fg: '#ff3f02',
 						scratchMove: function (e, percent) {
 							console.log(percent);
 							var msg = "";
 							var point = 0;
-							if (percent > 30) {
+							if (percent > 40) {
 								this.clear();
 								if(ranNum==1){
 									msg = "오우 이런... 꽝이네요!";
