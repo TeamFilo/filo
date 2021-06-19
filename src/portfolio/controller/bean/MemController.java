@@ -76,7 +76,7 @@ public class MemController {
 	//회원가입 폼 페이지 
 	@RequestMapping("join.fl")
 	public String join() {
-		return "pf/member/join";
+		return "member/join";
 	}
 	
 	//회원가입 처리
@@ -84,31 +84,33 @@ public class MemController {
 	public String joinPro(TmUserDTO dto) {
 		memService.addMember(dto);
 		gameService.addWallet(dto.getId());
-		return "pf/member/joinPro";
+		return "member/joinPro";
 	}
 	
 	//로그인 폼
 	@RequestMapping("login.fl")
-	public String login() {
-		return "pf/member/login";
+	public String login(Model model, String past) {
+		model.addAttribute("past",past);
+		return "member/loginForm";
 	}
 	
 	//로그인 처리
 	@RequestMapping("loginPro.fl")
-	public String loginPro(TmUserDTO dto, Model model, String auto) {
+	public String loginPro(TmUserDTO dto, Model model, String auto, String past) {
 		//id, pw 확인
 		int result = memService.idPwCheck(dto);
 		//자동 로그인 시 쿠키 처리
 		memService.addCookie(dto,auto);
 		//뷰에 로그인 결과 넘겨주기 
+		model.addAttribute("past",past);
 		model.addAttribute("result",result);
 		
-		return "pf/member/loginPro";
+		return "member/loginPro";
 	}
 	
 	//로그아웃
 	@RequestMapping("logout.fl")
-	public String logout(TmUserDTO dto, String auto) {
+	public String logout(TmUserDTO dto, Model model, String auto, String past) {
 		//세션 지워주기 
 		memService.removeSession("memId");
 		memService.removeSession("memColor");
@@ -116,17 +118,18 @@ public class MemController {
 		memService.removeSession("memIcon");
 		//자동 로그인 했다면 쿠키 지워 주기 
 		memService.removeCookie(dto, auto);
+		model.addAttribute("past",past);
 		
-		return "redirect:index.fl";
+		return "member/logout";
 	}
 	
 	
 	
 	//아이디 찾기 
-	@RequestMapping("findIdForm.fl")
+	@RequestMapping("findId.fl")
 	public String findIdForm() {
 		
-		return "tm/client/member/findIdForm";
+		return "member/findIdForm";
 	}
 	
 	//아이디 찾기 
@@ -142,14 +145,14 @@ public class MemController {
 		model.addAttribute("mem", mem);
 		model.addAttribute("comId", comId);
 		
-		return "tm/client/member/findIdPro";
+		return "member/findIdPro";
 	}
 	
 	//비로그인 일 때 비밀번호 찾기 form
 	@RequestMapping("findPw.fl")
 	public String findPw() {
 		
-		return "tm/client/member/findPw";
+		return "member/findPw";
 	}
 	
 	
@@ -183,7 +186,7 @@ public class MemController {
 		int result = memService.idEmailCheck(mem);
 		model.addAttribute("result", result);
 		model.addAttribute("mem", mem);
-		return "tm/client/member/modiPwForm";
+		return "member/modiPw";
 	}
 	
 	//비밀번호 재설정 Pro

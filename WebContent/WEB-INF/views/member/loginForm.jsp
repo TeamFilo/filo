@@ -9,12 +9,34 @@
 	</script>
 	</c:if>
 	
-	<div class="mypageWrap">
+	<c:if test="${past == null}">
+    <div class="mypageWrap">
+    </c:if>
+	<c:if test="${past == 'tm'}">
+    <div class="mypageWrap tm">
+    </c:if>
+    <c:if test="${past == 'gm'}">
+    <div class="mypageWrap gm">
+    </c:if>
 
         <div class="loginWrap">
-            <a href="/"><p class="logo">filo <span>First in, last out</span></p></a>
+        	<c:if test="${past == null}">
+            <a href="/filo/index.fl"><p class="logo">filo<span>First in, last out</span></p></a>
+            </c:if>
+        	<c:if test="${past == 'tm'}">
+            <a href="/filo/mem/index.fl"><p class="logo tm">TRAVEL MAKER</p></a>
+            </c:if>
+            <c:if test="${past == 'gm'}">
+            <a href="/filo/game/main.fl"><p class="logo gm">FILO GAMES</p></a>
+            </c:if>
             <div class="inputField">
-                <form action="/filo/mem/loginPro.fl" method="post">
+                <form action="/filo/member/loginPro.fl" method="post">                
+		        	<c:if test="${past == 'tm'}">
+		            <input type="hidden" name="past" value="tm"/>
+		            </c:if>
+		            <c:if test="${past == 'gm'}">
+		            <input type="hidden" name="past" value="gm"/>
+		            </c:if>
                     <div class="inputOuter">
                         <input type="text" name="id" autocomplete="off" placeholder="아이디" maxlength="41"/>
                     </div>
@@ -33,9 +55,11 @@
                     </div>
                     <p class="line"></p>
                     <div class="inputOuter none">
-                        <a href=""><span class="link">아이디 찾기</span></a>
+                        <a href="findId.fl"><span class="link">아이디 찾기</span></a>
                         <span class="divide"></span>
-                        <a href=""><span class="link">비밀번호 찾기</span></a>
+                        <a href="findPw.fl"><span class="link">비밀번호 찾기</span></a>
+                        <span class="divide"></span>
+                        <a href="join.fl"><span class="link">회원가입</span></a>
                     </div>
                 </form>
             </div>
@@ -49,11 +73,12 @@
 
     <script>
         $('.inputOuter > input').focusin(function(){
-            $(this).parent('.inputOuter').css('border','1px solid #ff3f02');
+            $(this).addClass('on');
         });
         $('.inputOuter > input').focusout(function(){
-            $(this).parent('.inputOuter').css('border','1px solid #dadada');
+            $(this).removeClass('on');
         });
     </script>
-</body>
-</html>
+
+<jsp:include page="/WEB-INF/views/include/footer.jsp" />
+<!-- //footer end -->
