@@ -1,15 +1,17 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
-	<c:if test="${past == null}">
-	<ul class="footer">
-	</c:if>
-	<c:if test="${past == 'gm'}">
-	<ul class="footer gm">
-	</c:if>
-	<c:if test="${past == 'tm'}">
-	<ul class="footer tm">
-	</c:if>
+	<c:choose>
+		<c:when test="${past == 'gm'}">
+			<ul class="footer gm">
+		</c:when>
+		<c:when test="${past == 'tm'}">
+			<ul class="footer tm">
+		</c:when>
+		<c:otherwise>
+			<ul class="footer">
+		</c:otherwise>
+	</c:choose>
 		<li>
 		   <ul class="icon">
 			  <li></li>
@@ -34,7 +36,7 @@
 		   </select>
 		</li>
 		<li>
-		   <p>ⓒ 2021 FILO Co., Ltd. All Rights Reserved.</p>
+		   <p>Copyright 2021, Team FILO. all rights reserved.</p>
 		</li>
 	</ul>
 	<!-- //footer end -->
