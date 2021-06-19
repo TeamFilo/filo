@@ -47,6 +47,8 @@ public class MemberController {
 	@Autowired
 	private GameService gameService = null;
 	
+	
+
 	@RequestMapping("index.fl")
 	public String index(Model model) {
 		//쿠키 가져오기 
@@ -70,83 +72,6 @@ public class MemberController {
 	@RequestMapping("error500page.fl")
 	public String error500() {
 		return "tm/client/error500";
-	}
-	
-	//회원가입 폼 페이지 
-	@RequestMapping("signupForm.fl")
-	public String signupForm() {
-		return "tm/client/member/signupForm";
-	}
-	
-	//회원가입 처리
-	@RequestMapping("signupPro.fl")
-	public String signupPro(TmUserDTO dto) {
-		memService.addMember(dto);
-		gameService.addWallet(dto.getId());
-		return "tm/client/member/signupPro";
-	}
-	
-	//로그인 폼
-	@RequestMapping("loginForm.fl")
-	public String loginForm() {
-		return "tm/client/member/loginForm";
-	}
-	
-	//로그인 처리
-	@RequestMapping("loginPro.fl")
-	public String loginPro(TmUserDTO dto, Model model, String auto) {
-		//id, pw 확인
-		int result = memService.idPwCheck(dto);
-		//자동 로그인 시 쿠키 처리
-		memService.addCookie(dto,auto);
-		//뷰에 로그인 결과 넘겨주기 
-		model.addAttribute("result",result);
-		
-		return "tm/client/member/loginPro";
-	}
-	
-	//로그아웃
-	@RequestMapping("logout.fl")
-	public String logout(TmUserDTO dto, String auto) {
-		//세션 지워주기 
-		memService.removeSession("memId");
-		memService.removeSession("memColor");
-		memService.removeSession("memSkin");
-		memService.removeSession("memIcon");
-		//자동 로그인 했다면 쿠키 지워 주기 
-		memService.removeCookie(dto, auto);
-		
-		return "redirect:index.fl";
-	}
-	
-	//아이디 찾기 
-	@RequestMapping("findIdForm.fl")
-	public String findIdForm() {
-		
-		return "tm/client/member/findIdForm";
-	}
-	
-	//아이디 찾기 
-	//findIdForm에서 입력한 email을 받아와서 이 email의 아이디를 보여줘야함 
-	@RequestMapping("findIdPro.fl")
-	public String findIdPro(String email, Model model)throws Exception {
-		TmUserDTO mem = memService.emailCheck(email);
-		String comId=null;
-		if(mem!=null) {
-			String id = mem.getId();
-			comId = memService.idStar(id);
-		}
-		model.addAttribute("mem", mem);
-		model.addAttribute("comId", comId);
-		
-		return "tm/client/member/findIdPro";
-	}
-	
-	//비로그인 일 때 비밀번호 찾기 form
-	@RequestMapping("findPw.fl")
-	public String findPw() {
-		
-		return "tm/client/member/findPw";
 	}
 	
 	
@@ -342,6 +267,7 @@ public class MemberController {
 
 	/* 	타 유저 이력 페이지 	*/
 	
+	
 	//회원의 여행이력
 	@RequestMapping("userHistory.fl")
 	public String userHistory(String userId, Model model) throws Exception {
@@ -451,6 +377,6 @@ public class MemberController {
 		return map;
 	}
 	
-	
+
 	
 }
