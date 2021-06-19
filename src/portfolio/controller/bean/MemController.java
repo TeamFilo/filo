@@ -75,7 +75,8 @@ public class MemController {
 	
 	//회원가입 폼 페이지 
 	@RequestMapping("join.fl")
-	public String join() {
+	public String join(Model model, String past) {
+		model.addAttribute("past",past);
 		return "member/join";
 	}
 	

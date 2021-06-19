@@ -1,5 +1,15 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+
+	<c:if test="${past == null}">
 	<ul class="footer">
+	</c:if>
+	<c:if test="${past == 'gm'}">
+	<ul class="footer gm">
+	</c:if>
+	<c:if test="${past == 'tm'}">
+	<ul class="footer tm">
+	</c:if>
 		<li>
 		   <ul class="icon">
 			  <li></li>
@@ -50,7 +60,7 @@
 	
 	AOS.init({
 	  easing: 'ease-in-out-sine'
-	});
+	});	
 	</script>
 
 </body>

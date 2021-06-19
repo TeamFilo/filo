@@ -272,12 +272,17 @@
 
 
 /*mypage basic*/
-.mypageWrap {width: 100%; height: 100vh; position: relative;}
+.mypageWrap {width: 100%; min-height: 100vh; position: relative;}
 .mypageWrap .inputField .inputOuter {background: transparent; border: 0; margin: 0 0 8px;}
+.mypageWrap .inputField .inputOuter.inputOuter2 {padding:0 0 5px; margin:0;}
+.mypageWrap .inputField .inputOuter.inputOuter2 .existError {color:#e65f3e; font-size:13px; margin:10px 0 0;}
+.mypageWrap .inputField .inputOuter .tit {font-size:14px; font-weight:500; margin:15px 0 8px;}
 .mypageWrap .inputField .inputOuter input {width: 100%; height:49px; background: transparent; border: 1px solid #dadada; outline: 0; font-size:14px; padding: 15px 35px 16px 18px;}
 .mypageWrap .inputField .inputOuter input.on {border:1px solid #ff3f02;}
 .mypageWrap .inputField .inputOuter input::placeholder {color:#aaa;}
 .mypageWrap .inputField .inputOuter:focus input {border: 0;}
+.mypageWrap .inputField .inputOuter select {width: 100%; height:49px; background: transparent; border: 1px solid #dadada; outline: 0; font-size:14px; padding: 15px 35px 16px 18px; margin:0 0 30px;}
+.mypageWrap .inputField .inputOuter select.on {border:1px solid #ff3f02;}
 .mypageWrap .inputField .inputOuter.btn {background: #ff3f02; border: 0; padding: 0; margin: 12px 0 12px;}
 .mypageWrap .inputField .inputOuter.btn button {width: 100%; height: 56px;  background: transparent; border: 0; outline: 0; line-height: 55px; color:#fff; font-size:16px; font-weight: 700; cursor:pointer; padding: 0;}
 .mypageWrap .inputField .inputOuter.none {width: 100%; background: transparent; border: 0; text-align: center; padding: 0; margin: 0;}
@@ -295,14 +300,21 @@
 .mypageWrap .copy span {color:#ff3f02; font-weight:700;}
 
 .mypageWrap.tm .inputField .inputOuter input.on {border:1px solid #ff0000;}
+.mypageWrap.tm .inputField .inputOuter select.on {border:1px solid #ff0000;}
 .mypageWrap.tm .inputField .inputOuter.btn {background: #ff0000;}
 .mypageWrap.tm .inputField .inputOuter.none label input[id="auto"]:checked + span.img {background: url(/filo/resources/images/ic_check_on_tm.png)no-repeat center; background-size: 20px auto;}
 .mypageWrap.tm .copy span {color:#ff0000;}
 
 .mypageWrap.gm {background:#21252A;}
 .mypageWrap.gm .copy {color:#fff;}
+.mypageWrap.gm .inputField .inputOuter.inputOuter2 .existError {color:#8542ff;}
+.mypageWrap.gm .inputField .inputOuter .tit {color:#fff;}
 .mypageWrap.gm .inputField .inputOuter input {background: #2C2D31; border:0; border-radius:8px; color:#fff;}
 .mypageWrap.gm .inputField .inputOuter input.on {border:1px solid #8542ff;}
+.mypageWrap.gm .inputField .inputOuter select {background: #2C2D31; border:0; border-radius:8px; color:#fff;}
+.mypageWrap.gm .inputField .inputOuter select.on {border:1px solid #8542ff;}
+.mypageWrap.gm .inputField .inputOuter select option {color:#000;}
+.mypageWrap.gm .inputField .inputOuter.btn {overflow:hidden; border-radius:8px;}
 .mypageWrap.gm .inputField .inputOuter.btn button {background: #8542ff;}
 .mypageWrap.gm .inputField .inputOuter.none label input[id="auto"]:checked + span.img {background: url(/filo/resources/images/ic_check_on_gm.png)no-repeat center; background-size: 20px auto;}
 .mypageWrap.gm .inputField .line {background: #fff;}
@@ -314,10 +326,17 @@
 .loginWrap .logo {color:#ff3f02; text-align: center; font-size: 100px; font-weight: 500; margin: 50px 0;}
 .loginWrap .logo span {display: block; color:#000; font-family: 'Noto Sans KR', sans-serif; font-size:18px; font-weight: 300;}
 .loginWrap .logo.tm {line-height:90px; color:#ff0000; font-family: 'Play', sans-serif; font-size: 100px; font-weight:700;}
-.loginWrap .logo.gm {color:#8542ff; font-family: 'Do Hyeon', sans-serif;; font-size: 90px; font-weight:700;}
+.loginWrap .logo.gm {color:#8542ff; font-family: 'Do Hyeon', sans-serif; font-size: 90px; font-weight:700;}
+
+/*signup*/
+.signupWrap {width: 460px; padding:80px 0 160px; margin:0 auto;}
+.signupWrap .logo {color:#ff3f02; text-align: center; font-size: 100px; font-weight: 500; margin: 50px 0;}
+.signupWrap .logo span {display: block; color:#000; font-family: 'Noto Sans KR', sans-serif; font-size:18px; font-weight: 300;}
+.signpupWrap .logo.tm {line-height:90px; color:#ff0000; font-family: 'Play', sans-serif; font-size: 100px; font-weight:700;}
+.signupWrap .logo.gm {color:#8542ff; font-family: 'Do Hyeon', sans-serif; font-size: 90px; font-weight:700;}
 
 /*new signupForm*/
-.tableWrap {display:table; width:100%; height:100%;}
+/* .tableWrap {display:table; width:100%; height:100%;}
 .signupWrap {display:table-cell; vertical-align:middle; padding:50px 0; position:relative;}
 .signHead {max-width:520px; margin:0 auto; text-align:center; font-size:30px; font-weight:500;}
 .signArticle {max-width:680px; min-height:592px; margin:40px auto; padding:58px 69px 139px; border:1px solid #e5e5e5; border-radius:2px; box-sizing:border-box;}
@@ -330,7 +349,6 @@
 .signInput {width:100%; height:48px; border-width:0 0 2px 0; border-color:#ebebeb; padding: 11px 70px 8px 0; font-family: 'Play', 'Noto Sans KR', sans-serif; font-size:18px; font-weight:bold; color: #252525; box-sizing: border-box; text-decoration: none;}
 .screenIn {position:absolute; top:0; left:0; width:100%; height:47px; line-height:47px; color:#ccc;}
 .screenOut {overflow:hidden; width:0; height:0; line-height:0; position:absolute; text-indent:-999px;}
-.existError {margin-top:10px; color:#e65f3e; font-size:13px;}
 
 .wrapRadio {}
 .radioItem {display:inline-block; height:48px; line-height:47px;}
@@ -342,7 +360,7 @@
 
 .errorBor {border-color:#e65f3e;}
 .errorBor1 {border-color:#e65f3e;}
-input:focus {outline:none;}
+input:focus {outline:none;} */
 
 /*findId*/
 .travelPWrap {display:table; width:100%; height:100%; min-width:320px;border-collapse: separate;}

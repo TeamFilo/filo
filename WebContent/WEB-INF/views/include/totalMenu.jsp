@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+
 <div id="totalMenuWrap">
     <ul class="menu">
         <li>
@@ -77,8 +78,8 @@
     //포폴 메뉴 선택했을 때 토탈메뉴 닫기 처리
     $('#totalMenuWrap > ul > li > .depth > li').click(function(){
     	$('#ham').removeClass("active");
-    	$('#logo').fadeOut();
-	    $('#sign').fadeOut();
+    	$('#logo').fadeIn();
+	    $('#sign').fadeIn();
 	    $('#mCover').fadeOut();
 	    $('#totalMenuWrap').fadeOut();
 	    $('#totalMenuWrap > .menu > li').eq(1).animate({left:"50px",opacity:"0"}, 10);
@@ -116,7 +117,7 @@
 		$('.total_depth_profile > li').eq(5).addClass('on');
 	}else if(nowUrl === "/filo/game/main.fl"){	//game
 		menuOn(".total_depth_game");
-		$('.total_depth_game > li').eq(0).addClass('on');
+		$('.total_depth_game > li').eq(0).addClass('on');		
 	}else if(nowUrl === "/filo/game/rockPS.fl"){
 		menuOn(".total_depth_game");
 		$('.total_depth_game > li').eq(1).addClass('on');
@@ -138,8 +139,18 @@
 	}else if(nowUrl === ""){	//game guide
 		menuOn(".total_depth_guide");
 		$('.total_depth_guide > li').eq(0).addClass('on');
+		$('#totalMenuWrap').addClass('gm');
 	}else if(nowUrl === "/filo/mem/index.fl"){	//travel maker
 		menuOn(".total_depth_travelmaker");
 		$('.total_depth_travelmaker > li').eq(0).addClass('on');
 	}
+	
+	//플랫폼별 모드변경
+	$(document).ready(function(){
+		if(nowUrl.includes("game")){
+			$('#totalMenuWrap').addClass('gm');
+		}else if(nowUrl.includes("travelmaker")){
+			$('#totalMenuWrap').addClass('tm');
+		}
+	});
 </script>
