@@ -21,6 +21,7 @@
 		}
 	</style>
 
+
 <body class="noscrb">
 
 		<div class="wrapAll game">	
