@@ -22,7 +22,7 @@
 							<a href="findPw.fl" class="linkComm">비밀번호 재설정</a>
 						</div>	
 					</div>
-						<button onclick="window.location='/filo/mem/loginForm.fl'" class="subBtn">로그인</button>
+						<button onclick="window.location='/filo/member/login.fl?past=tm'" class="subBtn">로그인</button>
 					<!--  <input type="button" value="비밀번호 수정" onclick="window.location='/travelMaker/mem/findPw.tm'"/>-->
 				</div>
 			</div>
