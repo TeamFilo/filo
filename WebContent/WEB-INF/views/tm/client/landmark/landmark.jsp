@@ -10,7 +10,7 @@
 	<c:if test="${sessionScope.memId==null}">
 		<script>
 			alert("로그인 후에 접근 가능합니다");
-			location.href='/filo/mem/loginForm.fl';
+			location.href='/filo/member/login.fl?past=tm';
 		</script>
 	</c:if>
 	<h2 class="pageTit" data-aos="fade-in" data-aos-duration="500">모두 함께 만들어가는 랜드마크,<br/>서로 정보를 공유해보세요!</h2>
