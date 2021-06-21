@@ -12,7 +12,7 @@
 			<c:if test="${sessionScope.memId==null}">
 				<script>
 					alert("로그인 후에 이용해주세요");
-					location.href="/filo/member/login.fl";
+					location.href="/filo/member/login.fl?past=gm";
 				</script>
 			</c:if>
 			<script>
@@ -190,7 +190,7 @@
             }
  
             $(document).on('click', '.gameBtn', function(){
-            	$(.#gameBtn").hide();
+            	$(".gameBtn").hide();
                 var data = {"gameCate":3};
                 $.ajax({
 					type:"post",

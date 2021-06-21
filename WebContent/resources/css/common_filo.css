@@ -384,9 +384,10 @@ body.noscrb::-webkit-scrollbar {display: none;}
 progress {-webkit-appearance: none; width: 100%;}
 ::-webkit-progress-bar {background-color: #21252a; border-radius: 15px; width: 100%; height: 9px;  }
 ::-webkit-progress-value {background-color: #ff3f02; border-radius: 10px;  }
-#left_game .swiper-container .gameBio .proBar {overflow: hidden; margin:0 0 70px;}
+#left_game .swiper-container .gameBio .proBar {overflow: hidden; margin:0 0 70px; position:relative; z-index:2;}
 #left_game .swiper-container .gameBio .proBar .txt.percen {float:right; margin:5px 0 0; color:#fff;}
 #left_game .swiper-container .gameBio .proBar .txt {float:left; margin:5px 0 0;}
+#left_game .barBG {width:100%; height:50px; background:#8542ff; position:absolute; top:150px; left:0; z-index:1;}
 #left_game .swiper-container .gameBio .pIconWrap {overflow: hidden; width: 100%; margin:0 0 30px; line-height:22px; position: relative; }
 #left_game .swiper-container .gameBio .pIconWrap .txt {float:left;}
 #left_game .swiper-container .gameBio .pIconWrap img {float: right; width: 22px; height: auto;}
