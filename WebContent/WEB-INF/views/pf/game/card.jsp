@@ -138,6 +138,8 @@
             					data: JSON.stringify(data),
             				});
                             alert('성공!!\n'+score+'점 입니다!');
+                            $('.gameBG').show();
+                            $('.gameIntro2').show();
                             $('#reGameBtn').show();
                            
                             
@@ -188,7 +190,7 @@
             }
  
             $(document).on('click', '.gameBtn', function(){
-            	$(".gameBtn").hide();
+            	$(.#gameBtn").hide();
                 var data = {"gameCate":3};
                 $.ajax({
 					type:"post",
@@ -221,11 +223,10 @@
 			                	*맞으면 10점 획득 틀릴 시 5점 감점*
 			                </p>
                             <button class='gameBtn'>start</button>
-
-                            <button id='reGameBtn'>다시하기</button>
-                            <p>score : <p id='score'>0</p></p>
-
 			            </div>
+			            <div class="gameIntro2">
+                            <button id='reGameBtn' class="gameBtn">Re?</button>
+                        </div>
 			        </div>    
 			            <div class="cardTop">
 			                <p id='countDown'>
