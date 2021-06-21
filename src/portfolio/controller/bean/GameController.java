@@ -522,6 +522,18 @@ public class GameController {
 		return "pf/game/scratchTest";
 	}
 	
+	
+	//겜스타트버튼누르면 포인트 새로고침
+	@ResponseBody
+	@RequestMapping("gamePointCh.fl")
+	public int gamePointCh() {
+		String user = (String)RequestContextHolder.getRequestAttributes().getAttribute("memId", RequestAttributes.SCOPE_SESSION);
+		int rePoint = gameService.getWallet(user).getPoint();
+		return rePoint;
+	}
+		
+
+	
 	/*
 	@ResponseBody
 	@RequestMapping("gameStartPointCh.fl")

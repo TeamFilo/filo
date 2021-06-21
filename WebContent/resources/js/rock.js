@@ -5,6 +5,7 @@ const game = ()=>{
     //start the game
     const startGame = () =>{
         const playBtn = document.querySelector('.intro button');
+        
         const introScreen = document.querySelector('.intro');
         let match = document.querySelector('.match');
         const hands = document.querySelectorAll('.hands img');
@@ -29,6 +30,7 @@ const game = ()=>{
 						if(up>=np){
 							introScreen.classList.add('fadeOut');
 							match.classList.add('fadeIn');
+							lg_reload();
 						}else{
 							alert("포인트가 부족합니다!");
 						}
@@ -137,6 +139,7 @@ const game = ()=>{
 					success : function(result){
 						var check = JSON.parse(result);
 						console.log(check);
+						lg_reload();
 					}
 				});
 	    	});

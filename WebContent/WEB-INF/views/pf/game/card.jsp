@@ -17,6 +17,7 @@
 			</c:if>
 			<script>
 			$(document).ready(function(){
+				lg_reload();
 				$('#reGameBtn').hide();
 				
 			});
@@ -137,7 +138,10 @@
             					contentType: "application/json",
             					data: JSON.stringify(data),
             				});
+                            //리로드추가
+                            
                             alert('성공!!\n'+score+'점 입니다!');
+                            lg_reload();
                             $('.gameBG').show();
                             $('.gameIntro2').show();
                             $('#reGameBtn').show();
@@ -201,9 +205,11 @@
 					success : function(result){
 						var np = result.needPoint;
 						var up = result.userPoint;
+						lg_reload();
 						if(up>=np){
 			            	if(gameState == '') {
 			                    startGame();
+			                    lg_reload();
 			                    gameState = 'alreadyStart'
 			                }
 						}else{
@@ -225,7 +231,8 @@
                             <button class='gameBtn'>start</button>
 			            </div>
 			            <div class="gameIntro2">
-                            <button id='reGameBtn' class="gameBtn">Re?</button>
+			            <!-- 아래버튼 클래스 gameBtn2 바꿈  -->
+                            <button id='reGameBtn' class="gameBtn2">Re?</button>
                         </div>
 			        </div>    
 			            <div class="cardTop">

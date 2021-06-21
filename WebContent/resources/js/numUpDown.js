@@ -28,6 +28,7 @@ const game = ()=>{
 						if(up>=np){
 							introScreen.classList.add('fadeOut');
 							match.classList.add('fadeIn');
+							lg_reload();
 						}else{
 							alert("포인트가 부족합니다!");
 						}

@@ -61,9 +61,11 @@
 							res_input = res.input;
 							res_result = res.result;
 							if(res.result==0){
+								lg_reload();
 								$('.cls').html("<h1>LOSE:( 정답은 "+${answer}+"이었습니다</h1><button onclick=\"window.location.reload()\">다시 하기</button>");
 								$('.updownGame').hide();
 							}else if(res.result==1){
+								lg_reload();
 								$('.cls').html("<h1>WIN:) 정답은 "+${answer}+"이었습니다</h1><button onclick=\"window.location.reload()\">다시 하기</button>");
 								$('.updownGame').hide();
 							}else if(res.result==-1){
