@@ -391,7 +391,7 @@ progress {-webkit-appearance: none; width: 100%;}
 #left_game .swiper-container .gameBio .pIconWrap .txt {float:left;}
 #left_game .swiper-container .gameBio .pIconWrap img {float: right; width: 22px; height: auto;}
 #left_game .swiper-container .gameBio .pIconWrap .sub {float:right; margin:0 0 0 10px; font-size:18px; line-height: 22px;}
-#left_game .swiper-container .gameBio .graBtn {width: calc(100% - 60px); height: 75px; line-height: 75px; text-align: center; border-radius:5px ; cursor: pointer; background: linear-gradient(45deg, #8542ff, #00eeff); color:#fff; position:absolute; bottom:30px; }
+#left_game .swiper-container .gameBio .graBtn {width: calc(100% - 60px); height: 75px; line-height: 75px; text-align: center; border-radius:5px ; cursor: pointer; background: linear-gradient(to bottom right,#8542ff, #fff942); color:#fff; position:absolute; bottom:30px; }
 #left_game .swiper-container .gameBio .btn1 {width: calc(100% - 100px); height: 45px; line-height: 45px; position:absolute; left:30px; bottom:130px;}
 #left_game .swiper-container .gameBio .btn2 {width: calc(100% - 100px); height: 45px; line-height: 45px; background: linear-gradient(45deg, #ff3f02, #00eeff); position:absolute; left:60px; bottom:60px;}
 
@@ -424,7 +424,7 @@ progress {-webkit-appearance: none; width: 100%;}
 #left_game .swiper-container .todayRec .totalRecord .recordWrap li .sub {color:#9D9992;}
 #left_game .swiper-container .todayRec .totalRecord .recordWrap li:nth-child(2) {width: 16%; margin:0 12% 0 0;}
 #left_game .swiper-container .todayRec .totalRecord .recordWrap li:nth-child(3) {width:25%; margin:0 3% 0 0;}
-#left_game .swiper-container .todayRec .totalRecord .recordWrap li .onWin {color:#00eeff;}
+#left_game .swiper-container .todayRec .totalRecord .recordWrap li .onWin {color:#fff942;}
 
 /*right_game*/
 .right_game {width: 100%; height: 100%; opacity: 0; transition: .8s; padding: 40px 0 40px 40px; position: relative;}

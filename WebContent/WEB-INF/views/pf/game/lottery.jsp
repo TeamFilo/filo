@@ -19,6 +19,7 @@
 		#demo1 img{
 		  border-radius:7px;
 		}
+		.beforeScratch img {display:block; margin: 0 auto;}
 	</style>
 
 
@@ -38,13 +39,14 @@
 			
 			<div class="right_game index_game">
 				<!-- view -->
-				<div class="beforeScratch">
-					<img src="/filo/resources/images/pf/lotteryNone.png" id="lotteryNone" ondragstart="return false"/><br/>
-					<button onclick="possibleCheck();">START</button>
-				</div>
-				<div id="demo1" class="scratchpad"></div>
-				<div class="afterScratch"></div>
-	 		
+				<div class="gameWrap">
+					<div class="beforeScratch">
+						<img src="/filo/resources/images/pf/lotteryNone.png" id="lotteryNone" ondragstart="return false"/><br/>
+						<button class="gameBtn" onclick="possibleCheck();">START</button>
+					</div>
+					<div id="demo1" class="scratchpad"></div>
+					<div class="afterScratch"></div>
+				</div>	 		
 		 		<!-- script -->
 				<script>
 					var cntPossible = false;
@@ -121,12 +123,12 @@
 					//wScratchPad
 					$('#demo1').wScratchPad({
 						bg: '/filo/resources/images/pf/'+ranImg,
-						fg: '#ff3f02',
+						fg: '#8542ff',
 						scratchMove: function (e, percent) {
 							console.log(percent);
 							var msg = "";
 							var point = 0;
-							if (percent > 40) {
+							if (percent > 35) {
 								this.clear();
 								if(ranNum==1){
 									msg = "오우 이런... 꽝이네요!";
