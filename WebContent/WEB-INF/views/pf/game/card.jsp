@@ -190,7 +190,7 @@
             }
  
             $(document).on('click', '.gameBtn', function(){
-            	$(.#gameBtn").hide();
+            	$(".gameBtn").hide();
                 var data = {"gameCate":3};
                 $.ajax({
 					type:"post",
