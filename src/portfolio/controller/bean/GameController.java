@@ -418,7 +418,7 @@ public class GameController {
 	@RequestMapping("insertCardResult.fl")
 	public void insertCardResult(@RequestBody Map<String,Integer> map) {
 		String user = (String)RequestContextHolder.getRequestAttributes().getAttribute("memId", RequestAttributes.SCOPE_SESSION);
-		int score = map.get("score");
+		int score = map.get("score")*2;
 		int gameCate = map.get("gameCate");
 	/*	오늘 첫 게임인지 테스트해서 첫 게임일 때는 점수 더 넣어주기	*/
 		if(gameService.didPlayToday(user, gameCate)==0) {
