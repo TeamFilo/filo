@@ -200,6 +200,12 @@ body.noscrb::-webkit-scrollbar {display: none;}
   -webkit-transition-timing-function: ease-out;
   transition-timing-function: ease-out;
 }
+#fullpage .slide.gm .bounce-to-right:before {
+	background: #8542ff;
+}
+#fullpage .slide.tm .bounce-to-right:before {
+	background: #ff0000;
+}
 .bounce-to-right:hover, .bounce-to-right:focus, .bounce-to-right:active {
   color: white;
 }
@@ -292,7 +298,7 @@ body.noscrb::-webkit-scrollbar {display: none;}
 }
 
 /*top*/
-#top_pf {width:100%; height:80px; background:#fff; border-bottom:1px solid #f3f3f3; position:fixed;top:0;left:0; z-index:999;}
+#top_pf {width:100%; height:80px; background:transparent; border-bottom:1px solid rgba(255,255,255,.25); position:fixed;top:0;left:0; z-index:999;}
 #top_pf #logo {width:65px; height:32px; background: url(../images/pf/logo_top_pf.png)no-repeat center; background-size: auto 100%; position: absolute;top: 24px;left: 30px; z-index:997;}
 #top_pf #sign {overflow:hidden; position: absolute;top: 24px;right: 110px; z-index:997;}
 #top_pf #sign .btnSign {float:left; background:#ccc; border-radius:3px; line-height:24px; color:#fff; font-size: 13px; font-weight: 500; transition:.3s; padding:4px 12px; margin: 0 0 0 5px;}
@@ -309,8 +315,8 @@ body.noscrb::-webkit-scrollbar {display: none;}
 #totalMenuWrap .menu > li:first-child .tit_big span {display: block; color:#fff; font-size:30px; font-weight: 200; text-shadow: #fff 0 0 0; margin: 12px 0 15px;}
 #totalMenuWrap .menu > li:first-child .tit_small {line-height: 20px; color:#fff; font-size:16px; font-weight: 400; position: absolute;bottom: 0;left: 0;}
 #totalMenuWrap .menu > li:first-child .tit_small span {display: block; color:rgba(255,255,255,.6); font-size: 13px; margin: 25px 0 0;}
-#totalMenuWrap .menu > li:first-child .tit_user {background:#fff; line-height:1.3; color:#000; font-size:28px; font-weight:200; padding:43px 0 36px 50px;}
-#totalMenuWrap .menu > li:first-child .tit_user span {color:#000; font-size:35px; font-weight:500;}
+#totalMenuWrap .menu > li:first-child .tit_user {line-height:1.3; color:#fff; font-size:28px; font-weight:200; margin:43px 0 36px;}
+#totalMenuWrap .menu > li:first-child .tit_user span {color:#fff; font-size:35px; font-weight:500;}
 #totalMenuWrap .menu > li:last-child {border: 0;}
 #totalMenuWrap .menu > li .sub {display: inline-block; background: #666; line-height: 15px; letter-spacing: 0.9; color:#fff; font-size:12px; font-weight: 500; transition: .3s; padding: 1px 17px 0.5px 2.5px; position: relative;}
 #totalMenuWrap .menu > li:hover .sub {background: #ff3f02; transform: rotate(-4deg);}
@@ -343,6 +349,8 @@ body.noscrb::-webkit-scrollbar {display: none;}
 #totalMenuWrap.gm .menu > li:first-child .tit_big span {color:#21252a; font-weight:300; text-shadow: none;}
 #totalMenuWrap.gm .menu > li:first-child .tit_small {color:#21252a;}
 #totalMenuWrap.gm .menu > li:first-child .tit_small span {color:#21252a;}
+#totalMenuWrap.gm .menu > li:first-child .tit_user {color:#21252a;}
+#totalMenuWrap.gm .menu > li:first-child .tit_user span {color:#21252a;}
 #totalMenuWrap.gm .menu > li:hover .sub {background: #8542ff; transform: rotate(-4deg);}
 #totalMenuWrap.gm .menu > li .sub.on {background: #8542ff; transform: rotate(-4deg);}
 #totalMenuWrap.gm .menu > li .sub span {background: #21252a;}
@@ -375,35 +383,34 @@ body.noscrb::-webkit-scrollbar {display: none;}
 #left_game .swiper-container .swiper-slide {border-radius: 15px; background: #2C2D31; color:#fff; padding: 30px; position:relative;}
 
 #left_game .swiper-container .gameBio .bioWrap {position: relative; margin: 0 0 50px;}
-#left_game .swiper-container .gameBio img {width: 100px; height: 100px;}
-#left_game .swiper-container .gameBio .nameWrap {position: absolute; top:50%; left:120px; transform: translateY(-50%);}
+#left_game .swiper-container .gameBio img {width: 80px; height: 80px;}
+#left_game .swiper-container .gameBio .nameWrap {position: absolute; top:50%; left:130px; transform: translateY(-50%);}
 #left_game .swiper-container .gameBio .nameWrapB {position: absolute; top:50%;}
 #left_game .swiper-container .gameBio .nameWrap .tit {margin:0 0 10px 0;}
 #left_game .swiper-container .gameBio .nameWrapB .tit {line-height:32px;}
 #left_game .swiper-container .gameBio .abDown {font-size:15px; position:absolute; bottom:30px; right:30px;}
 progress {-webkit-appearance: none; width: 100%;}
 ::-webkit-progress-bar {background-color: #21252a; border-radius: 15px; width: 100%; height: 9px;  }
-::-webkit-progress-value {background-color: #ff3f02; border-radius: 10px;  }
+::-webkit-progress-value {background-color: #8542ff; border-radius: 10px;  }
 #left_game .swiper-container .gameBio .proBar {overflow: hidden; margin:0 0 70px; position:relative; z-index:2;}
 #left_game .swiper-container .gameBio .proBar .txt.percen {float:right; margin:5px 0 0; color:#fff;}
 #left_game .swiper-container .gameBio .proBar .txt {float:left; margin:5px 0 0;}
-#left_game .barBG {width:100%; height:50px; background:#8542ff; position:absolute; top:150px; left:0; z-index:1;}
 #left_game .swiper-container .gameBio .pIconWrap {overflow: hidden; width: 100%; margin:0 0 30px; line-height:22px; position: relative; }
 #left_game .swiper-container .gameBio .pIconWrap .txt {float:left;}
 #left_game .swiper-container .gameBio .pIconWrap img {float: right; width: 22px; height: auto;}
 #left_game .swiper-container .gameBio .pIconWrap .sub {float:right; margin:0 0 0 10px; font-size:18px; line-height: 22px;}
-#left_game .swiper-container .gameBio .graBtn {width: calc(100% - 60px); height: 75px; line-height: 75px; text-align: center; border-radius:5px ; cursor: pointer; background: linear-gradient(45deg,#00eeff,#ff3f02); color:#fff; position:absolute; bottom:30px; }
+#left_game .swiper-container .gameBio .graBtn {width: calc(100% - 60px); height: 75px; line-height: 75px; text-align: center; border-radius:5px ; cursor: pointer; background: linear-gradient(to bottom right,#8542ff, #fff942); color:#fff; position:absolute; bottom:30px; }
 #left_game .swiper-container .gameBio .btn1 {width: calc(100% - 100px); height: 45px; line-height: 45px; position:absolute; left:30px; bottom:130px;}
 #left_game .swiper-container .gameBio .btn2 {width: calc(100% - 100px); height: 45px; line-height: 45px; background: linear-gradient(45deg, #ff3f02, #00eeff); position:absolute; left:60px; bottom:60px;}
 
+#left_game .player {position:relative; z-index:2;}
 #left_game .player li {overflow:hidden; margin:0 0 35px 0; position:relative;}
-#left_game .player .myRank {background:#1f1f1f;}
 #left_game .player li img {float:left; width:50px; height:50px;}
 #left_game .player li .box {float:left; overflow:hidden; max-width:140px; text-indent:18px;}
 #left_game .player li .box .user {font-size:20px; margin: 6.5px 0 5px 0;}
 #left_game .player li .box .name {color:rgba(255,255,255,.5); font-size:12px; font-weight:100;}
 #left_game .player li .rank {line-height:50px; font-size:22px; font-weight:500; position:absolute;top:0;right:0;}
-
+#left_game .myRankBG {width:100%; height:70px; background:#000; position:absolute; left:0; bottom:30px; z-index:1;}
 /*20 20 20 16 m32*/
 #left_game .swiper-container .morePoint .gameCount li {overflow: hidden; width: 100%; margin: 0 0 40px 0;}
 #left_game .swiper-container .morePoint .gameCount li > * {float:left; width: 20%; margin: 0 11% 0 0 }
@@ -425,7 +432,7 @@ progress {-webkit-appearance: none; width: 100%;}
 #left_game .swiper-container .todayRec .totalRecord .recordWrap li .sub {color:#9D9992;}
 #left_game .swiper-container .todayRec .totalRecord .recordWrap li:nth-child(2) {width: 16%; margin:0 12% 0 0;}
 #left_game .swiper-container .todayRec .totalRecord .recordWrap li:nth-child(3) {width:25%; margin:0 3% 0 0;}
-#left_game .swiper-container .todayRec .totalRecord .recordWrap li .onWin {color:#00eeff;}
+#left_game .swiper-container .todayRec .totalRecord .recordWrap li .onWin {color:#fff942;}
 
 /*right_game*/
 .right_game {width: 100%; height: 100%; opacity: 0; transition: .8s; padding: 40px 0 40px 40px; position: relative;}

@@ -168,6 +168,7 @@
                     </c:if>
                 </ul>
                 <!--player End-->
+                <div class="myRankBG"></div>
             </div>
             <!--rankWrap End-->
             <c:if test="${!empty todayRecords}">
