@@ -60,7 +60,7 @@
 							data: JSON.stringify(0),
 							success : function(result){
 								var count = Number(result);
-								if(count>=5){
+								if(count>=10){
 									cntPossible = false;
 								}else{
 									cntPossible = true;
@@ -173,8 +173,8 @@
 			            
 				</script>
 				
-				<p id="before"> 긁기전 남은횟수: 5회중 ${5-lotteryCnt}회 남았습니다.</p>
-				<p id="after">긁은 후남은횟수 : 5회중 ${4-lotteryCnt }회 남았습니다.</p>
+				<p id="before"> 긁기전 남은횟수: 10회중 ${10-lotteryCnt}회 남았습니다.</p>
+				<p id="after">긁은 후남은횟수 : 10회중 ${9-lotteryCnt }회 남았습니다.</p>
 				<p id="dragInfo">마우스로 긁어보세요!</p>
 				
 			

@@ -67,14 +67,14 @@
 		                'textFontSize' : 28,    // Set font size as desired.
 		                'segments'     :        // Define segments including colour and text.
 	            	    [
-		                     {'fillStyle' : '#eae56f', 'text' : '5point'},
-		                     {'fillStyle' : '#89f26e', 'text' : '10point'},
-		                     {'fillStyle' : '#7de6ef', 'text' : '5point'},
-		                     {'fillStyle' : '#e7706f', 'text' : '10point'},
-		                     {'fillStyle' : '#eae56f', 'text' : '5point'},
-		                     {'fillStyle' : '#89f26e', 'text' : '10point'},
-		                     {'fillStyle' : '#7de6ef', 'text' : '100point'},
-		                     {'fillStyle' : '#e7706f', 'text' : '1point'}
+		                     {'fillStyle' : '#eae56f', 'text' : '50point'},
+		                     {'fillStyle' : '#89f26e', 'text' : '100point'},
+		                     {'fillStyle' : '#7de6ef', 'text' : '50point'},
+		                     {'fillStyle' : '#e7706f', 'text' : '150point'},
+		                     {'fillStyle' : '#eae56f', 'text' : '50point'},
+		                     {'fillStyle' : '#89f26e', 'text' : '200point'},
+		                     {'fillStyle' : '#7de6ef', 'text' : '50point'},
+		                     {'fillStyle' : '#e7706f', 'text' : '300point'}
 		                ],
 		                'animation' :           // Specify the animation to use.
 		                {

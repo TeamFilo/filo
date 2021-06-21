@@ -287,11 +287,11 @@ public class GameController {
 		/*	오늘 첫 게임인지 테스트해서 첫 게임일 때는 점수 더 넣어주기	*/
 			int gp = 0;
 			if(gameService.didPlayToday(user, 2)==0) {
-				gp = 60;
+				gp = 110;
 			}else {
-				gp = 50;
+				gp = 100;
 			}
-			gameService.insRecordPoint(user,2,gp);	//이기면 50포인트
+			gameService.insRecordPoint(user,2,gp);	//이기면 100포인트
 		}else if(gameResult==0) {
 			gameService.insRecordPoint(user, 2, 0);
 		}
