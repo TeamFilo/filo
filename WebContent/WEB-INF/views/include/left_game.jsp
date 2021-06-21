@@ -4,6 +4,26 @@
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 <div id="left_game">
+
+	<script>
+		//보유포인트 갱신
+		function lg_reload(){
+			$.ajax({
+				type:"post",
+				url: "/filo/game/gamePointCh.fl",
+			//	dataType: "json",
+				contentType: "application/json",
+			//	data: JSON.stringify(data),
+				success : function(result){
+					var reloadPoint =result;
+					document.getElementById("reP").innerHTML= reloadPoint+"P";
+				}
+			});
+		}
+	</script>
+
+
+
     <div class="swiper-container" id="left_game_swiper">
     
         <div class="swiper-wrapper">
@@ -38,7 +58,7 @@
 		                <!--  -->
 		                <div class="pIconWrap">
 		                	<p class="txt">TOTAL POINT</p>
-		                    <p class="sub">${wal.point}P</p>
+		                    <p class="sub" id="reP">${wal.point}P</p>
 		                    <img src="/filo/resources/images/pf/pIco.png" />
 		                </div>
 		                
@@ -123,7 +143,7 @@
 	                     	   <img src="/filo/resources/images/pf/${r.value.idIcon}.png">
 	                    	</c:if>
 	                        <div class="box">
-	                            <p class="user">${r.value.id}</p>
+	                            <p class="user"><strong style="color:${r.value.idColor}";>${r.value.id}</strong></p>
 	                            <p class="name">${r.value.nickname}</p> 
 	                        </div>
 	                        <p class="rank">${r.key}</p>
@@ -140,7 +160,7 @@
                      	   <img src="/filo/resources/images/pf/${sessionScope.memIcon}.png">
                     	</c:if>
                         <div class="box">
-                            <p class="user">${userInfo.id}</p>
+                            <p class="user"><strong style="color:${sessionScope.memColor}";>${userInfo.id}</strong></p>
                             <p class="name">${userInfo.nickname}</p> 
                         </div>        
                         <p class="rank">${myRank}</p>

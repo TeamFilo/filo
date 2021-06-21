@@ -209,6 +209,8 @@
 					                    // Set to true so that power can't be changed and spin button re-enabled during
 					                    // the current animation. The user will have to reset before spinning again.
 					                    wheelSpinning = true;
+					                    
+					                    
 					                }
 								}else{
 									
