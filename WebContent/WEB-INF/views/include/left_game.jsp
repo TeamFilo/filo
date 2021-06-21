@@ -123,7 +123,7 @@
 	                     	   <img src="/filo/resources/images/pf/${r.value.idIcon}.png">
 	                    	</c:if>
 	                        <div class="box">
-	                            <p class="user">${r.value.id}</p>
+	                            <p class="user"><strong style="color:${r.value.idColor}";>${r.value.id}</strong></p>
 	                            <p class="name">${r.value.nickname}</p> 
 	                        </div>
 	                        <p class="rank">${r.key}</p>
@@ -140,7 +140,7 @@
                      	   <img src="/filo/resources/images/pf/${sessionScope.memIcon}.png">
                     	</c:if>
                         <div class="box">
-                            <p class="user">${userInfo.id}</p>
+                            <p class="user"><strong style="color:${sessionScope.memColor}";>${userInfo.id}</strong></p>
                             <p class="name">${userInfo.nickname}</p> 
                         </div>        
                         <p class="rank">${myRank}</p>
