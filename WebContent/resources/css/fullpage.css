@@ -27,6 +27,15 @@ html.fp-enabled,
     float: left;
     position:relative;
 }
+.fp-slide.pf {
+	background:#ff3f02;
+}
+.fp-slide.gm {
+	background:#8542ff;
+}
+.fp-slide.tm {
+	background:#ff0000;
+}
 .fp-slide, .fp-slidesContainer {
     height: 100%;
     display: block;
