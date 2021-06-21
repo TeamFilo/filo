@@ -33,7 +33,9 @@
 		                    <p class="txt percen">${gamePercent}%</p>
 		                </div>
 		                <!--proBar End-->
-		                
+		                <div class="barBG">
+		                </div>
+		                <!--  -->
 		                <div class="pIconWrap">
 		                	<p class="txt">TOTAL POINT</p>
 		                    <p class="sub">${wal.point}P</p>
