@@ -81,33 +81,38 @@
 		</script>
 		
 		<div class="right_game index_game">
+		<div class="gameWrap">
+				<div class="gameCIntro">
+		            <p class="tit">Up and Down</p>
+	                <p class="sub">
+	                	1에서 25 사이의 숫자를 맞춰보세요<br/>
+	                	*기회는 단 3번!*
+	                </p>
+		            <button class="gameBtn">Let's play</button>
+		        </div>
+			    <!--intro End-->
+				
+				<div class="match updown fadeOut">
 		
-			<div class="intro">
-	            <h2>numUpDown</h2>
-	            <button>Let's play</button>
-	        </div>
-		    <!--intro End-->
-			
-			<div class="match fadeOut">
-	
-				<h1>${user}</h1>
-				<h1>1에서 25 사이의 숫자를 입력하세요</h1>
-				
-				<!-- 업다운 및 결과 보여주는 부분 -->
-				<div class="cls"></div>
-				
-				<!-- 게임 부분 -->
-				<div class="updownGame">
-					<h2 style="color:#000;">정답:${answer}</h2>
-					<form id="guessForm" name="inputForm" onsubmit="return check()" method="post">
-						남은 기회: <input type="text" name="chance" id="chance" value="3"/><br/>
-						<input type="text" name="start" id="start" value="1"/> ~ <input type="text" name="end" id="end" value="25"/> 사이의 숫자 입력<br/>
-						<input type="number" min="1" max="25" name="guess"/>
-						<input type="submit" value="guess &#33;"/>
-					</form>
+					<p>1에서 25 사이의 숫자를 입력하세요</p>
+					
+					<!-- 업다운 및 결과 보여주는 부분 -->
+					<div class="cls"></div>
+					
+					<!-- 게임 부분 -->
+					<div class="updownGame">
+						<h2 style="color:#fff;">정답:${answer}</h2>
+						<form id="guessForm" name="inputForm" onsubmit="return check()" method="post">
+							남은 기회: <input type="text" class="inp"  name="chance" id="chance" value="3"/><br/>
+							<input type="text" name="start" id="start" value="1"/> ~ <input type="text" name="end" id="end" value="25"/> 사이의 숫자 입력<br/>
+							<input type="number" min="1" max="25" name="guess"/>
+							<input type="submit" value="guess &#33;"/>
+						</form>
+					</div>
 				</div>
+				<!--match End-->
 			</div>
-		<!--match End-->
+			<!--gameWrap End-->
 		</div>
 		<!-- right_game End -->
 	</div>

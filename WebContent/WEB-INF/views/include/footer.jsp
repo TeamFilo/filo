@@ -1,5 +1,17 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" %>
-	<ul class="footer">
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+
+	<c:choose>
+		<c:when test="${past == 'gm'}">
+			<ul class="footer gm">
+		</c:when>
+		<c:when test="${past == 'tm'}">
+			<ul class="footer tm">
+		</c:when>
+		<c:otherwise>
+			<ul class="footer">
+		</c:otherwise>
+	</c:choose>
 		<li>
 		   <ul class="icon">
 			  <li></li>
@@ -24,7 +36,7 @@
 		   </select>
 		</li>
 		<li>
-		   <p>ⓒ 2021 FILO Co., Ltd. All Rights Reserved.</p>
+		   <p>Copyright 2021, Team FILO. all rights reserved.</p>
 		</li>
 	</ul>
 	<!-- //footer end -->
@@ -50,7 +62,7 @@
 	
 	AOS.init({
 	  easing: 'ease-in-out-sine'
-	});
+	});	
 	</script>
 
 </body>

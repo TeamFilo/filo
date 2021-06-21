@@ -11,7 +11,7 @@
 	<c:if test="${sessionScope.memId==null}">
 		<script>
 			alert("자세한 정보를 보시려면 로그인을 해주세요.");
-			location.href='/filo/mem/loginForm.fl';
+			location.href='/filo/member/login.fl?past=tm';
 		</script>
 		<script>
 		

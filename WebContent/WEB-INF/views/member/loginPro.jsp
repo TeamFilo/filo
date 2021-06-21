@@ -9,6 +9,25 @@
 				</script>
 			</c:if>
 			<c:if test="${result == 1}">
+				
+				<c:choose>
+					<c:when test="${past == 'gm'}">
+					<script>
+					document.location.href="/filo/game/main.fl";
+					</script>
+					</c:when>
+					<c:when test="${past == 'tm'}">
+					<script>
+					document.location.href="/filo/mem/index.fl";
+					</script>
+					</c:when>
+					<c:otherwise>
+					<script>
+					document.location.href="/filo/index.fl";
+					</script>
+					</c:otherwise>
+				</c:choose>
+				
 				<c:if test="${past == null}">
 				<script>
 				document.location.href="/filo/index.fl";

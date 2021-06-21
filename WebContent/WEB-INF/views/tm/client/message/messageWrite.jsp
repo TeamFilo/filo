@@ -8,7 +8,7 @@
 		<c:if test="${sessionScope.memId==null}">
 			<script>
 				alert("로그인 후에 접근 가능합니다");
-				location.href='/filo/mem/loginForm.fl';
+				location.href='/filo/member/login.fl?past=tm';
 			</script>
 		</c:if>
 	
