@@ -470,6 +470,14 @@ public class GameController {
 		model.addAttribute("gameNum", gameNum);
 		
 		
+		//룰렛들어갈때 했는지 확인
+		String num = "4";
+		int winCnt = dailyCntCheck(num);
+		model.addAttribute("winCnt", winCnt);
+		
+		
+		
+		
 		return "pf/game/winwheel";
 	}
 	
@@ -484,6 +492,7 @@ public class GameController {
 		gameService.updateWheelCnt(user);
 	//2)gameRecord에 레코드 insert
 		gameService.insRecordPoint(user, 4, p);
+		
 		
 		
 	}

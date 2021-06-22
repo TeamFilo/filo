@@ -14,6 +14,33 @@
 				</script>
 			</c:if>
 			
+			<c:if test="${winCnt == 1}">
+				<script>
+				alert('이미 참여하셨습니다.');
+				location.href="/filo/game/main.fl";
+				</script>
+			</c:if>
+			<!-- 
+			<script>
+			$(document).ready(function(){
+				var gameCate = 4;	//gameCate
+							$.ajax({
+								type:"post",
+								url: "/filo/game/dailyCntCheck.fl",
+								dataType: "json",
+								contentType: "application/json",
+								data: JSON.stringify(gameCate),
+								success : function(result){
+									if(result == 1){
+										alert('이미 참여하셨습니다.');
+										location.href="/filo/game/main.fl";
+									}
+								}
+						});
+			});
+			</script>
+			-->
+			
 			<div class="right_game index_game">
 				<div class="gameBtnWrap wheel">
 					<button class="gameBtn" id="spin_button" onClick="startSpin();" >GO!</button>
@@ -37,6 +64,28 @@
             	</div>
 		        <!-- gameWrap End -->
 		        <script>
+		        /*
+			        $(document).ready(function(){
+						var gameCate = 4;	//gameCate
+									$.ajax({
+										type:"post",
+										url: "/filo/game/dailyCntCheck.fl",
+										dataType: "json",
+										contentType: "application/json",
+										data: JSON.stringify(gameCate),
+										success : function(result){
+											if(result == 1){
+												alert('이미 참여하셨습니다.');
+												location.href="/filo/game/main.fl";
+											}
+										}
+								});
+					});
+		        */
+		        
+		        
+		        
+		        
 		            // Create new wheel object specifying the parameters at creation time.
 		            let theWheel = new Winwheel({
 		                'numSegments'  : 8,     // Specify number of segments.
@@ -102,7 +151,8 @@
 							data: JSON.stringify(getPoint),
 						});
 		                alert("축하합니다! " +getPoint+"가 적립됩니다!");
-		                location.reload(true);
+		                lg_reload();
+		                //location.reload(true);
 		            }
 		
 		            // =======================================================================================================================
