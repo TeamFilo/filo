@@ -13,14 +13,20 @@
         	<jsp:include page="/WEB-INF/views/include/top_game.jsp" />
        		<jsp:include page="/WEB-INF/views/include/left_game.jsp" />
        		
+			<c:if test="${sessionScope.memId==null}">
+				<script>
+					alert("로그인 후에 이용해주세요");
+					location.href="/filo/member/login.fl?past=gm";
+				</script>
+			</c:if>
+			
        		<div class="right_game index_game">
        		
-				<c:if test="${sessionScope.memId==null}">
-					<script>
-						alert("로그인 후에 이용해주세요");
-						location.href="/filo/member/login.fl?past=gm";
-					</script>
-				</c:if>
+       			<div class="gameBtnWrap rock">
+					<button class="gameBtn">START</button>
+				</div>
+				<!-- //gameBtnWrap end -->
+       		
 				<div class="gameWrap">
 			    	<form class="sscore">
 			        <div class="score">
@@ -39,7 +45,6 @@
 			            <h2>가위바위보 계단 올라가기</h2>
 			            <p>컴퓨터에게 가위바위보를 이겨 계단을 먼저 올라가면 승리!
 			            <br/>*바위로 승리 시 1칸, 가위 2칸, 보 3칸 진행*</p>
-			            <button class="gameBtn">Let's play</button>
 			        </div>
 			        <!--intro End-->
 			        <div class="match fadeOut">
@@ -56,7 +61,9 @@
 			        </div>
 			        <div class="end fadeOut">
 			        	<h2>Game End </h2>
-			        	<button onclick="rp();" class="gameBtn">다시 하기</button><br/><br/><br/>	        	
+			        	<div class="gameBtnWrap rockRe">
+			        		<button onclick="rp();" class="gameBtn">다시 하기</button>   	
+			        	</div>
 			        </div>
 			        <!--match End-->
 			        <div class="stair">

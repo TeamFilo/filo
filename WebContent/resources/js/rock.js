@@ -4,7 +4,7 @@ const game = ()=>{
 
     //start the game
     const startGame = () =>{
-        const playBtn = document.querySelector('.intro button');
+        const playBtn = document.querySelector('.gameBtn');
         
         const introScreen = document.querySelector('.intro');
         let match = document.querySelector('.match');
@@ -29,6 +29,7 @@ const game = ()=>{
 						var up = result.userPoint;
 						if(up>=np){
 							introScreen.classList.add('fadeOut');
+							playBtn.classList.add('fadeOut');
 							match.classList.add('fadeIn');
 							lg_reload();
 						}else{

@@ -249,20 +249,28 @@
 .gameWrap .tit {font-size:50px; font-weight:bold; color:#fff;}
 .gameWrap .sub {font-size:16px; color:#fff; line-height:20px; margin:30px 0 0;}
 
-.gameBtnWrap {overflow:hidden; position:absolute;}
+.gameBtnWrap {overflow:hidden; position:absolute; z-index:2;}
 .gameBtnWrap .gameBtn {float:left; width:100px; height:50px; margin:0 3px 0 0; color:#ffff; background-color: #8542ff; border:none; cursor: pointer;}
 .gameBtnWrap .gameBtn:last-child {margin:0;}
 .gameBtnWrap .gameBtn2 {width:100px; height:50px; margin-top:20px; color:#ffff; background-color: #8542ff; border:none; cursor: pointer;}
 
 .gameBtnWrap.lottery {left:50%; bottom:0; transform:translateX(-50%);}
 .gameBtnWrap.lottery .gameBtn {color:#8542ff; background:#fff; font-weight:bold;}
+.gameBtnWrap.rock {left:50%; top:50%; transform:translateX(-50%);}
+.gameBtnWrap.rockRe {left:50%; top:140%; transform:translateX(-50%);}
+.gameBtnWrap.card {left:50%; top:55%; transform:translateX(-50%);}
+.gameBtnWrap.wheel {left:50%; top:65%; transform:translateX(-50%);}
 
 
 /*up down*/
 .gameWrap .match.updown {color:#fff;}
 .updownGame input {background:transparent; color:#fff;}
+
+/*winWheel*/
+#canvas {position:absolute; top:0; left:50%; transform:translateX(-50%);}
+
 /*index game*/
-.index_game .inner1 {width: calc(100% - 30px); height: calc(100% - 430px); border-radius: 15px; background: url(/resources/images/g_bg1.png)no-repeat bottom right 300px, #2C2D31; background-size: auto 80%;}
+.index_game .inner1 {width: 100%; height: calc(100% - 430px); border-radius: 15px; background: url(/resources/images/g_bg1.png)no-repeat bottom right 300px, #2C2D31; background-size: auto 80%;}
 
 .index_game .inner2 {width: calc(100% - 30px); height: 400px; position: absolute;bottom: 30px;left: 30px; z-index: 996;}
 .index_game .inner2 .swiper-container {width: 100%; height: 100%;}

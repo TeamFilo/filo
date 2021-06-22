@@ -220,6 +220,12 @@
             });        
 			</script>
 			<div class="right_game index_game">
+			
+				<div class="gameBtnWrap card">
+					<button class="gameBtn">START</button>
+				</div>
+				<!-- //gameBtnWrap end -->
+				
 				<div class="gameWrap">
 					<div class="gameBG">
 			            <div class="gameIntro">
@@ -228,11 +234,10 @@
 			                	카드를 두장씩 뒤집어 같은 그림을 찾는 게임입니다.<br/>
 			                	*맞으면 10점 획득 틀릴 시 5점 감점*
 			                </p>
-                            <button class='gameBtn'>start</button>
 			            </div>
-			            <div class="gameIntro2">
+			            <div class="gameIntro2 gameBtnWrap card">
 			            <!-- 아래버튼 클래스 gameBtn2 바꿈  -->
-                            <button id='reGameBtn' class="gameBtn2">Re?</button>
+                            <button id='reGameBtn' class="gameBtn">Re?</button>
                         </div>
 			        </div>    
 			            <div class="cardTop">
