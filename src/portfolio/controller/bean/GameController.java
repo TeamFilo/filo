@@ -362,7 +362,7 @@ public class GameController {
 		return "";
 	}
 	
-	
+	/*
 	//jbr
 	@RequestMapping("randomPick.fl")
 	public String randomPick(Model model) {
@@ -370,6 +370,7 @@ public class GameController {
 		model.addAttribute("result", result);
 		return "pf/game/randomPick";
 	}
+	*/
 	
 	//jbr
 	@RequestMapping("card.fl")
@@ -530,6 +531,21 @@ public class GameController {
 		String user = (String)RequestContextHolder.getRequestAttributes().getAttribute("memId", RequestAttributes.SCOPE_SESSION);
 		int rePoint = gameService.getWallet(user).getPoint();
 		return rePoint;
+	}
+	
+	
+	//복권용 포인트 확인
+	@ResponseBody
+	@RequestMapping("lottPointCh.fl")
+	public Map lottPointCh(@RequestBody Map<String, Integer> map) {
+		String user = (String)RequestContextHolder.getRequestAttributes().getAttribute("memId", RequestAttributes.SCOPE_SESSION);
+		int needPoint = gameService.getGameInfo(map.get("gameCate")).getNeedPoint();
+		int userPoint = gameService.getWallet(user).getPoint();
+	
+		map.put("needPoint",needPoint);
+		map.put("userPoint",userPoint);
+		System.out.println("복궈전용 에이작스 들어왔따" + "needPoint = "+ needPoint + ", userPoint" + userPoint);
+		return map;
 	}
 		
 
