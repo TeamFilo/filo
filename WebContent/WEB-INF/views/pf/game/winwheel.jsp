@@ -15,50 +15,27 @@
 			</c:if>
 			
 			<div class="right_game index_game">
-		        <div align="center">
-		            <table cellpadding="0" cellspacing="0" border="0">
-		                <tr>
-		                    <td>
-		                        <div class="power_controls">
-		                            <br />
-		                            <br />
-		                            <!-- 
-		                            <br />
-		                            <table class="power" cellpadding="10" cellspacing="0">
-		                                <tr>
-		                                    <th align="center">Power</th>
-		                                </tr>
-		                                <tr>
-		                                    <td width="78" align="center" id="pw3" onClick="powerSelected(3);">High</td>
-		                                </tr>
-		                                <tr>
-		                                    <td align="center" id="pw2" onClick="powerSelected(2);">Med</td>
-		                                </tr>
-		                                <tr>
-		                                    <td align="center" id="pw1" onClick="powerSelected(1);">Low</td>
-		                                </tr>
-		                            </table>
-		                             -->
-		                            <c:if test="${rouletteCnt == 0}">
-										<img id="spin_button" src="/filo/resources/images/pf/spin_off.png" alt="Spin" onClick="startSpin();" />
-									</c:if>
-									<c:if test="${rouletteCnt != 0}">
-										<p>오늘 이미 참여 하셨습니다!<br/></p>
-										
-									</c:if>
-									
-		                            <br /><br />
-		                        </div>
-		                    </td>
-		                    <td width="438" height="582" class="the_wheel" align="center" valign="center">
-		                        <canvas id="canvas" width="434" height="434">
-		                            <p style="{color: white}" align="center">Sorry, your browser doesn't support canvas. Please try another.</p>
-		                        </canvas>
-		                    </td>
-		                </tr>
-		            </table>
-		        </div>
-		        
+				<div class="gameBtnWrap wheel">
+					<button class="gameBtn" id="spin_button" onClick="startSpin();" >GO!</button>
+				</div>
+				
+		    	<div class="gameWrap">
+                   <div class="power_controls">
+                   		<!-- 
+                       	<c:if test="${rouletteCnt == 0}">
+							//<img id="spin_button" src="/filo/resources/images/pf/spin_off.png" alt="Spin" onClick="startSpin();" />
+						</c:if>
+						<c:if test="${rouletteCnt != 0}">
+							<p>오늘 이미 참여 하셨습니다!<br/></p>
+						</c:if>
+						 -->
+                   </div>
+             		<!-- power -->
+                   <canvas id="canvas" width="434" height="434">
+                       <p style="{color: white}" align="center">Sorry, your browser doesn't support canvas. Please try another.</p>
+                   </canvas>
+            	</div>
+		        <!-- gameWrap End -->
 		        <script>
 		            // Create new wheel object specifying the parameters at creation time.
 		            let theWheel = new Winwheel({
@@ -200,7 +177,7 @@
 					
 					                    // Disable the spin button so can't click again while wheel is spinning.
 					                    
-					                    document.getElementById('spin_button').src       = "/filo/resources/images/pf/spin_off.png";
+					                    //document.getElementById('spin_button').src       = "/filo/resources/images/pf/spin_off.png";
 					                    document.getElementById('spin_button').className = "";
 					
 					                    // Begin the spin animation by calling startAnimation on the wheel object.
