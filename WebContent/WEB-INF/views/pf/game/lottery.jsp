@@ -43,24 +43,35 @@
 			<div class="right_game index_game">
 				
 				<div class="gameBtnWrap lottery">
-					<button class="gameBtn" onclick="possibleCheck();">START</button>
+					<button class="gameBtn" onclick="lottStartBtn();">START</button>
+					<button id="oneMore">다시하기</button>
 				</div>
 				<!-- //gameBtnWrap end -->
 			
 				<!-- view -->
 				<div class="gameWrap">
 					<div class="beforeScratch">
-						<img src="/filo/resources/images/pf/lotteryNone.png" id="lotteryNone" ondragstart="return false"/><br/>
+					 	<img src="/filo/resources/images/pf/lotteryNone.png" id="lotteryNone" ondragstart="return false"/><br/> 
 					</div>
 					<div id="demo1" class="scratchpad"></div>
-					<div class="afterScratch"></div>
 				</div>	 
+				
+				<p id="before"> 긁기전 남은횟수: 10회중 ${10-lotteryCnt}회 남았습니다.</p>
+				<p id="after">긁은 후남은횟수 : 10회중 ${9-lotteryCnt }회 남았습니다.</p>
+				<p id="dragInfo">마우스로 긁어보세요!</p>
 		 		<!-- script -->
 				<script>
-					var cntPossible = false;
-					var pointPossible = false;
+					$('#before').show();
+					$('#after').hide();
+					$('#dragInfo').hide();
+				
+					$('#oneMore').hide();
+					$('.scratchpad').hide();
 					
-					$(document).ready(function(){
+					function lottStartBtn(){
+						var cntPossible = false;
+						var pointPossible = false;
+						
 						//회원 포인트와 복권 구매 횟수 체크
 						$.ajax({
 							type:"post",
@@ -76,11 +87,13 @@
 									cntPossible = true;
 								}
 							}
-						});
+						});		
+						
+						//내 포인트 확인
 						var data = {"gameCate":0};
 						$.ajax({
 							type:"post",
-							url: "/filo/game/pointCheck.fl",
+							url: "/filo/game/lottPointCh.fl",
 							dataType: "json",
 							contentType: "application/json",
 							data: JSON.stringify(data),
@@ -92,34 +105,45 @@
 								}else{
 									pointPossible = false;
 								}
-							}
-						});
-						$("#demo1").hide();
-						$("#after").hide();
-						$('#dragInfo').hide();
-					});
-					
-					function possibleCheck(){
-						$('#before').hide();
-						$('#dragInfo').show();
-						
-						if(!cntPossible && pointPossible){
-							alert("일일 구매 횟수를 초과하였습니다");
-						}
-						if(!pointPossible && cntPossible){
-							alert("포인트가 부족합니다");
-						}
-						if(!pointPossible && !cntPossible){
-							alert("일일 구매 횟수도 초과하셨고 포인트도 없네요");
-						}
-						if(cntPossible && pointPossible){
-							$("#demo1").show();
-							$('.beforeScratch').hide();
-						}
-					}
+								
+							//	alert('pointPossible = ' + pointPossible + ', cntPossible = ' + cntPossible);
+								if(!cntPossible && pointPossible){
+									alert("일일 구매 횟수를 초과하였습니다");
+								}
+								if(!pointPossible && cntPossible){
+									alert("포인트가 부족합니다");
+								}
+								if(!pointPossible && !cntPossible){
+									alert("일일 구매 횟수도 초과하셨고 포인트도 없네요");
+								}
+								if(cntPossible && pointPossible){
+									$('.beforeScratch').hide();  // 가짜이미지 숨김
+									$('.scratchpad').show();  //찐스크래치나타남
+									$('.gameBtn').hide();//시작버튼 숨김
+									
+									$('#before').hide();
+									$('#after').hide();
+									$('#dragInfo').show();
+									
+									//스타트 버튼 누르면 포인트 깎인다
+									var data = {"gameCate":0};
+									$.ajax({
+										type:"post",
+										url: "/filo/game/pointCheck.fl",
+										dataType: "json",
+										contentType: "application/json",
+										data: JSON.stringify(data),
+										success : function(result){
+											lg_reload();
+										}
+									}); //스타트 버튼 누르면 내 포인트 깎이는 에이작스 닫힘
+								} //이프문 닫힘
+							} //success닫힘
+						}); //내포인트 확인 에이작스 닫힘 
+					} //lottStartBtn
 					
 					var ranNum = "${ranNum}";
-				/*	임시로 정한 value
+					/*	임시로 정한 value
 					ranNum 1~6
 					1) 꽝
 					2) 10point (1/2배)
@@ -128,6 +152,7 @@
 					5) 100point (5배)
 					6) 200point (10배)	*/
 					var ranImg = "<c:out value='${ranImg}'/>";
+				
 					//wScratchPad
 					$('#demo1').wScratchPad({
 						bg: '/filo/resources/images/pf/'+ranImg,
@@ -154,7 +179,6 @@
 									msg = "200point 획득! 대박...";
 									point = 200;
 								}
-								alert(msg);
 								
 								//ajax
 								$.ajax({
@@ -166,28 +190,40 @@
 									data: JSON.stringify(point),
 								});
 								
-								$('.scratchpad').wScratchPad('reset');
-								$('.scratchpad').hide();
+								alert(msg);
+								lg_reload();
+								//$('.afterScratch').html("<img src='/filo/resources/images/pf/lotteryNone.png' id='lotteryNone' ondragstart='return false'/><br/>");
+								
+								$('.scratchpad').wScratchPad('reset'); 
+								$('.scratchpad').hide(); //패드 숨겼음 
+								$('.beforeScratch').show(); //가짜이미지 다시나타남
+								
+								$('#before').hide();
 								$('#after').show();
 								$('#dragInfo').hide();
-								$('.afterScratch').html("<img src='/filo/resources/images/pf/lotteryNone.png' id='lotteryNone' ondragstart='return false'/><br/><button id='oneMore'>한번 더 긁기</button>");
+
+								$('#oneMore').show(); //다시하기버튼 
 							}
 						}
-					});
+					});  //스크래치패드 끝
+				
 					$('#demo1').wScratchPad('cursor', 'url("/filo/resources/images/pf/coin.png") 5 5, default');
 					$('#demo1').wScratchPad('size', 30);
+
 					
 					$(document).on('click', '#oneMore', function(){
-						location.href="/filo/game/lottery.fl";
+						location.href="/filo/game/lottery.fl?oneMore=1";
 					});
-			            
 				</script>
 				
-				<p id="before"> 긁기전 남은횟수: 10회중 ${10-lotteryCnt}회 남았습니다.</p>
-				<p id="after">긁은 후남은횟수 : 10회중 ${9-lotteryCnt }회 남았습니다.</p>
-				<p id="dragInfo">마우스로 긁어보세요!</p>
 				
+				<c:if test="${param.oneMore == 1}">
+					<script> 
+						lottStartBtn();
+					</script>
+				</c:if>
 			
+
 				<!--  -->
 			
 			
