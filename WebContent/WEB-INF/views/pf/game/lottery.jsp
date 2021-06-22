@@ -8,18 +8,21 @@
 	<link rel="icon" type="image/vnd.microsoft.icon"  href="./demo/img/favicon.ico" />
 	<style>
 		#demo1 {
-		  width: 574px;
-		  height: 384px;
-		  display: inline-block;
+		  width: 550px;
+		  height: 365px;
+		  display: block;
+		  margin: 0 auto;
 		  
 		}
 		#demo1 canvas{
 		  border-radius:7px;
+		  
 		}
 		#demo1 img{
 		  border-radius:7px;
 		}
 		.beforeScratch img {display:block; margin: 0 auto;}
+		.afterScratch img {display:block; margin: 0 auto;}
 	</style>
 
 
@@ -38,15 +41,20 @@
 			</c:if>
 			
 			<div class="right_game index_game">
+				
+				<div class="gameBtnWrap lottery">
+					<button class="gameBtn" onclick="possibleCheck();">START</button>
+				</div>
+				<!-- //gameBtnWrap end -->
+			
 				<!-- view -->
 				<div class="gameWrap">
 					<div class="beforeScratch">
 						<img src="/filo/resources/images/pf/lotteryNone.png" id="lotteryNone" ondragstart="return false"/><br/>
-						<button class="gameBtn" onclick="possibleCheck();">START</button>
 					</div>
 					<div id="demo1" class="scratchpad"></div>
 					<div class="afterScratch"></div>
-				</div>	 		
+				</div>	 
 		 		<!-- script -->
 				<script>
 					var cntPossible = false;
