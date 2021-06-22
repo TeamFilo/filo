@@ -44,26 +44,33 @@
 				
 				<div class="gameBtnWrap lottery">
 					<button class="gameBtn" onclick="lottStartBtn();">START</button>
-					<button id="oneMore">다시하기</button>
+					<button class="gameBtn" id="oneMore">다시하기</button>
 				</div>
 				<!-- //gameBtnWrap end -->
 			
 				<!-- view -->
 				<div class="gameWrap">
+					<div class="countWrap">
+						<p id="before"> ${10-lotteryCnt}/10</p>
+						<p id="after">${9-lotteryCnt}/10</p>
+					</div>
+					<div class="gameIntro lottery">
+		                <p class="tit">복권 긁기!</p>
+		                <p class="sub">
+		                	복권을 긁어 POINT를 획들하세요.<br/>
+		                	*하루에 10번의 기회가 주어집니다!*
+		                </p>
+		            </div>
 					<div class="beforeScratch">
 					 	<img src="/filo/resources/images/pf/lotteryNone.png" id="lotteryNone" ondragstart="return false"/><br/> 
 					</div>
 					<div id="demo1" class="scratchpad"></div>
 				</div>	 
 				
-				<p id="before"> 긁기전 남은횟수: 10회중 ${10-lotteryCnt}회 남았습니다.</p>
-				<p id="after">긁은 후남은횟수 : 10회중 ${9-lotteryCnt }회 남았습니다.</p>
-				<p id="dragInfo">마우스로 긁어보세요!</p>
 		 		<!-- script -->
 				<script>
 					$('#before').show();
 					$('#after').hide();
-					$('#dragInfo').hide();
 				
 					$('#oneMore').hide();
 					$('.scratchpad').hide();
@@ -123,7 +130,6 @@
 									
 									$('#before').hide();
 									$('#after').hide();
-									$('#dragInfo').show();
 									
 									//스타트 버튼 누르면 포인트 깎인다
 									var data = {"gameCate":0};
@@ -200,7 +206,6 @@
 								
 								$('#before').hide();
 								$('#after').show();
-								$('#dragInfo').hide();
 
 								$('#oneMore').show(); //다시하기버튼 
 							}
