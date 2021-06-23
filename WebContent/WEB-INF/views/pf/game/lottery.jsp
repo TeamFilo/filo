@@ -25,7 +25,7 @@
 		.afterScratch img {display:block; margin: 0 auto;}
 	</style>
 
-
+ 
 <body class="noscrb">
 
 		<div class="wrapAll game">	
