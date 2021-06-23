@@ -27,15 +27,6 @@ html.fp-enabled,
     float: left;
     position:relative;
 }
-.fp-slide.pf {
-	background:#ff3f02;
-}
-.fp-slide.gm {
-	background:#8542ff;
-}
-.fp-slide.tm {
-	background:#ff0000;
-}
 .fp-slide, .fp-slidesContainer {
     height: 100%;
     display: block;
@@ -84,20 +75,20 @@ html.fp-enabled,
     left: 15px;
     width: 0;
     border-width: 38.5px 34px 38.5px 0;
-    border-color: transparent rgba(255,63,2,.35) transparent transparent;
+    border-color: transparent #ccc transparent transparent;
     transition:.3s;
 }
 .fp-controlArrow.fp-prev:hover {
-	border-color: transparent rgba(255,63,2,1) transparent transparent;
+	border-color: transparent #000 transparent transparent;
 }
 .fp-controlArrow.fp-next {
     right: 15px;
     border-width: 38.5px 0 38.5px 34px;
-    border-color: transparent transparent transparent rgba(255,63,2,.25);
+    border-color: transparent transparent transparent rgba(255,255,255,.5);
     transition:.3s;
 }
 .fp-controlArrow.fp-next:hover {
-	border-color: transparent transparent transparent rgba(255,63,2,1);
+	border-color: transparent transparent transparent rgba(255,255,255,1);
 }
 .fp-scrollable {
     overflow: hidden;

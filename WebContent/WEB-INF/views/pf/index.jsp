@@ -34,12 +34,30 @@
         </div>
         
         <div class="section" id="section1">
-            <div class="slide pf" id="slide1">            
-            	<div class="box_left"></div>
-            	<div class="box_boundary"></div>
-            	
-            	<div class="box_review">123</div>
-            	
+        	<div class="slide_left">
+           		<div class="box"></div>
+           		<div class="boundary"></div>
+           	</div>
+           	<ul class="slide_review slide_review2-1">
+           		<li></li>
+           		<li></li>
+           		<li></li>
+           		<li></li>
+           	</ul>
+           	<ul class="slide_review slide_review2-2">
+           		<li></li>
+           		<li></li>
+           		<li></li>
+           		<li></li>
+           	</ul>
+           	<ul class="slide_review slide_review2-3">
+           		<li></li>
+           		<li></li>
+           		<li></li>
+           		<li></li>
+           	</ul>
+        	<div class="slide_bg"></div>
+            <div class="slide pf" id="slide1">
                 <div class="titWrap titWrap2-1">
                     <p class="tit">Portfolio</p>
                     <p class="sub">
@@ -50,16 +68,11 @@
 						포트폴리오에 사용된 기술에 대한 설명입니다.<br/>
 			                     아래 Detail 버튼으로 자세한 내용을 확인해보세요.
                     </p>
-                    <div class="btnDef bounce-to-right btnPop btnPop1" id="deBtn1">Detail</div>
+                    <div class="btnDef bounce-to-right btnPop btnPop2-1" id="deBtn1">Detail</div>
                  </div>
             </div>
 
             <div class="slide gm" id="slide2">
-            	<div class="box_left"></div>
-            	<div class="box_boundary"></div>
-            	
-            	<div class="box_review">123</div>
-            	
                 <div class="titWrap titWrap2-2">
                     <p class="tit">Game</p>
                     <p class="sub">
@@ -71,17 +84,12 @@
 			                       게임을 통해 포인트를 획득하고<br/>
 			                       이모티콘, 아이디 색상 등의 아이템을 구매해보세요!
                     </p>
-                    <div class="btnDef bounce-to-right btnPop btnPop2" id="deBtn2">Detail</div>
-                    <div class="btnDef bounce-to-right btnPop" id="goBtn2"><a href="/filo/game/main.fl">Go</a></div>
+                    <div class="btnDef bounce-to-right btnPop btnPop2 btnPop2-2" id="deBtn2">Detail</div>
+                    <div class="btnDef bounce-to-right btnPop btnPop2-2" id="goBtn2"><a href="/filo/game/main.fl">Go</a></div>
                  </div>
             </div>
 
-            <div class="slide tm" id="slide3">
-            	<div class="box_left"></div>
-            	<div class="box_boundary"></div>
-            	
-            	<div class="box_review">123</div>
-            	
+            <div class="slide tm" id="slide3">            	
                 <div class="titWrap titWrap2-3">
                     <p class="tit">TravelMaker</p>
                     <p class="sub">
@@ -93,8 +101,8 @@
 						여행 테마를 정하고 필요한 포지션의 팀원들을 모아<br/>
 						우리만의 특별한 여행을 떠나보세요! 
                     </p>
-                    <div class="btnDef bounce-to-right btnPop btnPop3" id="deBtn3">Detail</div>
-                    <div class="btnDef bounce-to-right btnPop" id="goBtn3"><a href="/filo/mem/index.fl">Go</a></div>
+                    <div class="btnDef bounce-to-right btnPop btnPop2-3" id="deBtn3">Detail</div>
+                    <div class="btnDef bounce-to-right btnPop btnPop2-3" id="goBtn3"><a href="/filo/mem/index.fl">Go</a></div>
                  </div>
             </div>
         </div>
@@ -112,7 +120,7 @@
                 	개개인의 특성과 연락처를<br/>
                 	확인하실 수 있습니다.	                	
                 </p>
-              		<div class="btnDef bounce-to-right btnPop" id="goBtn4"><a href="/filo/profile/main.fl">Go</a></div>
+              		<div class="btnDef bounce-to-right btnPop btnPop3" id="goBtn4"><a href="/filo/profile/main.fl">Go</a></div>
              </div>
              <!-- titWrap End -->
         </div>
@@ -532,208 +540,134 @@
     <!-- //popWrap end -->
 	    
     <div class="btnGoTop"><img src="/filo/resources/images/pf/goTop.png"></div>
-		
-	<script type="text/javascript">
-	var deleteLog = false;
-	
-	//adding the params info into the page
-	function addToLog(callbackName, params){
-	    var callbackData = '<h4>' + callbackName + '</h4>';
-	    Object.keys(params).forEach(function(key){
-	        var content =  params[key];
-	
-	        if(content !== null && typeof content === 'object'){
-	            content = JSON.stringify(content);
-	        }
-	        callbackData += '<p><b>' + key + '</b>: ' + content + '</p>';
-	    });
-	    callbackData += '<br />';
-	
-	    document.getElementById('callbacksDiv').innerHTML += callbackData;
-	}
-	
-	var nowSlide = 0;
-	
+    
+	<script type="text/javascript">	
+	let slideNum = "2-1";
 	var myFullpage = new fullpage('#fullpage', {
-	    anchors: ['1stPage', '2ndPage', '3rdPage','4thPage'],
-	    onLeave: function(origin, destination, direction){
-	        var params = {
-	            origin: origin,
-	            destination:destination,
-	            direction: direction
-	        };
-	
-	        //clearing the logging in the screen
-	        if(deleteLog){
-	            document.getElementById('callbacksDiv').innerHTML = '';
-	        }
-	
-	        addToLog('onLeave', params);
-	
-	        console.log("--- onLeave ---");
-	        console.log(params);
-	
-	        if(!params.destination.isLast && !params.origin.isLast){                    
-	            $('.img').fadeOut();
-	            $('.titWrap > .tit').css({opacity:'0', top:'-80px'});
-	            $('.titWrap > .sub').css({opacity:'0', left:'-80px'});
-	            $('.titWrap > .txt').css({opacity:'0', left:'-80px'});
-	            $('.btnPop').css({opacity:'0'});
-	        }
-	
-	        if(params.destination.isLast){
-	            $('.fullpageImgWrap').animate({bottom:"300px"},400);
-	        }else{
-	            $('.fullpageImgWrap').animate({bottom:"0"},400);
-	        }
-	    },
-	    onSlideLeave: function(section, origin, destination, direction){
-	        var params = {
-	            section: section,
-	            origin: origin,
-	            destination: destination,
-	            direction: direction
-	        };
-	
-	        //clearing the logging in the screen
-	        if(deleteLog){
-	            document.getElementById('callbacksDiv').innerHTML = '';
-	        }
-	
-	        addToLog('onSlideLeave', params);
-	
-	        console.log("--- onSlideLeave ---");
-	        console.log(params);
-	        
-	        nowSlide = params.destination.index;
-	        $('.img').fadeOut();
-	        $('.titWrap > .tit').css({opacity:'0', top:'-80px'});
-	        $('.titWrap > .sub').css({opacity:'0', left:'-80px'});
-	        $('.titWrap > .txt').css({opacity:'0', left:'-80px'});
-	        $('.btnPop').css({opacity:'0'});
-	    },
-	    afterLoad: function(origin, destination, direction){
-	        var params = {
-	            origin: origin,
-	            destination: destination,
-	            direction: direction
-	        };
-	
-	        //clearing the logging in the screen
-	        if(deleteLog){
-	        document.getElementById('callbacksDiv').innerHTML = '';
-	        }
-	        addToLog('afterLoad', params);
-	
-	        console.log("--- afterLoad ---");
-	        console.log(params);
-	
-	        var nowPage = params.destination.anchor;
-	        console.log("nowPage : " + nowPage);
-	        $('.total_depth_main > li').removeClass('on');
-	        
-	        if(nowPage === "1stPage"){
-	            $('.fullpageImgWrap').css('background','#f6f6f6');
-	            $('.img1').fadeIn();
-	            $('.titWrap1 > .tit').animate({top:"0",opacity:"1"}, 700);
-	            $('.titWrap1 > .sub').delay(400).animate({left:"0",opacity:"1"}, 700);
-	            $('.titWrap1 > .txt').delay(700).animate({left:"0",opacity:"1"}, 700);
-	            $('.total_depth_main > li').eq(0).addClass('on');
-	        }else if(nowPage === "2ndPage" && nowSlide === 0){
-	            $('.fullpageImgWrap').css('background','#f6f6f6');
-	            $('.img2-1').fadeIn();
-	            $('.titWrap2-1 > .tit').animate({top:"0",opacity:"1"}, 700);
-	            $('.titWrap2-1 > .sub').delay(400).animate({left:"0",opacity:"1"}, 700);
-	            $('.titWrap2-1 > .txt').delay(700).animate({left:"0",opacity:"1"}, 700);
-	            $('#deBtn1').delay(700).animate({bottom:"0",opacity:"1"}, 700);
-	            $('#goBtn1').delay(700).animate({bottom:"0",opacity:"1"}, 700);
-	            $('.total_depth_main > li').eq(1).addClass('on');
-	        }else if(nowPage === "2ndPage" && nowSlide === 1){
-	            $('.fullpageImgWrap').css('background','#f6f6f6');
-	            $('.img2-2').fadeIn();
-	            $('.titWrap2-2 > .tit').animate({top:"0",opacity:"1"}, 700);
-	            $('.titWrap2-2 > .sub').delay(400).animate({left:"0",opacity:"1"}, 700);
-	            $('.titWrap2-2 > .txt').delay(700).animate({left:"0",opacity:"1"}, 700);
-	            $('#deBtn2').delay(700).animate({bottom:"0",opacity:"1"}, 750);
-	            $('#goBtn2').delay(700).animate({bottom:"0",opacity:"1"}, 750);
-	            $('.total_depth_main > li').eq(2).addClass('on');
-	        }else if(nowPage === "2ndPage" && nowSlide === 2){
-	            $('.fullpageImgWrap').css('background','#f6f6f6');
-	            $('.img2-3').fadeIn();
-	            $('.titWrap2-3 > .tit').animate({top:"0",opacity:"1"}, 700);
-	            $('.titWrap2-3 > .sub').delay(400).animate({left:"0",opacity:"1"}, 700);
-	            $('.titWrap2-3 > .txt').delay(700).animate({left:"0",opacity:"1"}, 700);
-	            $('#deBtn3').delay(700).animate({bottom:"0",opacity:"1"}, 750);
-	            $('#goBtn3').delay(700).animate({bottom:"0",opacity:"1"}, 750);
-	            $('.total_depth_main > li').eq(3).addClass('on');
-	        }else if(nowPage === "3rdPage"){
-	            $('.fullpageImgWrap').css('background','#f6f6f6');
-	            $('.img3').fadeIn();
-	            $('.titWrap3 > .tit').animate({top:"0",opacity:"1"}, 700);
-	            $('.titWrap3 > .sub').delay(400).animate({left:"0",opacity:"1"}, 700);
-	            $('.titWrap3 > .txt').delay(700).animate({left:"0",opacity:"1"}, 700);
-	            $('#goBtn4').delay(700).animate({bottom:"0",opacity:"1"}, 750);
-	            return queryString = "#3rdPage";
-	        }
-	
-	        deleteLog = true;
-	    },
-	    afterSlideLoad: function(section, origin, destination, direction){
-	        var params = {
-	            section: section,
-	            origin: origin,
-	            destination: destination,
-	            direction: direction
-	        };
-	
-	        //clearing the logging in the screen
-	        if(deleteLog){
-	        document.getElementById('callbacksDiv').innerHTML = '';
-	        }
-	        addToLog('afterSlideLoad', params);
-	
-	        console.log("--- afterSlideLoad ---");
-	        console.log(params);
-	        
-	        nowSlide = params.destination.index;
-	        console.log("nowSlide : " + nowSlide);
-	        $('.total_depth_main > li').removeClass('on');
-	        
-	        if(nowSlide === 0){
-	            $('.fullpageImgWrap').css('background','#f6f6f6');
-	            $('.img2-1').fadeIn();
-	            $('.titWrap2-1 > .tit').animate({top:"0",opacity:"1"}, 700);
-	            $('.titWrap2-1 > .sub').delay(400).animate({left:"0",opacity:"1"}, 700);
-	            $('.titWrap2-1 > .txt').delay(700).animate({left:"0",opacity:"1"}, 700);
-	            $('#deBtn1').delay(700).animate({bottom:"0",opacity:"1"}, 750);
-	            $('#goBtn1').delay(700).animate({bottom:"0",opacity:"1"}, 750);
-	            $('.total_depth_main > li').eq(1).addClass('on');
-	        }else if(nowSlide === 1){
-	            $('.fullpageImgWrap').css('background','#f6f6f6');
-	            $('.img2-2').fadeIn();
-	            $('.titWrap2-2 > .tit').animate({top:"0",opacity:"1"}, 700);
-	            $('.titWrap2-2 > .sub').delay(400).animate({left:"0",opacity:"1"}, 700);
-	            $('.titWrap2-2 > .txt').delay(700).animate({left:"0",opacity:"1"}, 700);
-	            $('#deBtn2').delay(700).animate({bottom:"0",opacity:"1"}, 750);
-	            $('#goBtn2').delay(700).animate({bottom:"0",opacity:"1"}, 750);
-	            $('.total_depth_main > li').eq(2).addClass('on');
-	        }else if(nowSlide === 2){
-	            $('.fullpageImgWrap').css('background','#f6f6f6');
-	            $('.img2-3').fadeIn();
-	            $('.titWrap2-3 > .tit').animate({top:"0",opacity:"1"}, 700);
-	            $('.titWrap2-3 > .sub').delay(400).animate({left:"0",opacity:"1"}, 700);
-	            $('.titWrap2-3 > .txt').delay(700).animate({left:"0",opacity:"1"}, 700);
-	            $('#deBtn3').delay(700).animate({bottom:"0",opacity:"1"}, 750);
-	            $('#goBtn3').delay(700).animate({bottom:"0",opacity:"1"}, 750);
-	            $('.total_depth_main > li').eq(3).addClass('on');
-	        }
-	
-	        deleteLog = true;
-	    }
+		onLeave: function(origin, destination, direction){
+			$('.slide_left > .box').css('background','transparent');
+        	$('.slide_left > .boundary').css('border-bottom','100vh solid transparent');
+			$('.slide_bg').css('background','transparent');
+			$('.slide_review2-1').hide();
+			$('.slide_review2-2').hide();
+			$('.slide_review2-3').hide();
+			$('.titWrap > .tit').hide().animate({opacity:'0', top:'-80px'});
+			$('.titWrap > .sub').hide().animate({opacity:'0', left:'-80px'});
+			$('.titWrap > .txt').hide().animate({opacity:'0', left:'-80px'});
+			$('.slide_review').hide().animate({left:'-100%'},1000);
+			$('.btnPop').hide().animate({opacity:'0'});
+		},
+		afterLoad: function(origin, destination, direction){
+			console.log();
+			if(destination.index == 0){
+				$('#logo').removeClass('gm').removeClass('tm').addClass('pf');
+				$('#ham').removeClass('white');
+	        	$('#sign').removeClass('white');
+				$('.titWrap1 > .tit').show().animate({opacity:'1', top:'0'},700);
+				$('.titWrap1 > .sub').delay(300).show().animate({opacity:'1', left:'0'},700);
+				$('.titWrap1 > .txt').delay(600).show().animate({opacity:'1', left:'0'},700);
+            }else if(destination.index == 1 && slideNum === "2-1"){
+            	$('#logo').removeClass('gm').removeClass('tm').addClass('pf');
+            	$('#ham').addClass('white');
+            	$('#sign').addClass('white');
+            	$('.slide_left > .box').css('background','#fff');
+            	$('.slide_left > .boundary').css('border-bottom','100vh solid #fff');
+            	$('.slide_bg').css('background','#ff3f02')
+				$('.slide_review2-1').show().animate({left:'800px'},1000);
+            	$('.titWrap2-1 > .tit').delay(200).show().animate({opacity:'1', top:'0'},700);
+				$('.titWrap2-1 > .sub').delay(500).show().animate({opacity:'1', left:'0'},700);
+				$('.titWrap2-1 > .txt').delay(700).show().animate({opacity:'1', left:'0'},700);
+				$('.btnPop2-1').show().animate({opacity:'1'},700);
+            }else if(destination.index == 1 && slideNum === "2-2"){
+            	$('#logo').removeClass('pf').removeClass('tm').addClass('gm');
+            	$('#ham').addClass('white');
+            	$('#sign').addClass('white');
+            	$('.slide_left > .box').css('background','#fff');
+            	$('.slide_left > .boundary').css('border-bottom','100vh solid #fff');
+            	$('.slide_left > .box').css('background','#21252A');
+            	$('.slide_left > .boundary').css('border-bottom','100vh solid #21252A');
+            	$('.slide_bg').css('background','#8542ff');
+				$('.slide_review2-2').show().animate({left:'800px'},1000);
+            	$('.titWrap2-2 > .tit').delay(200).show().animate({opacity:'1', top:'0'},700);
+				$('.titWrap2-2 > .sub').delay(500).show().animate({opacity:'1', left:'0'},700);
+				$('.titWrap2-2 > .txt').delay(700).show().animate({opacity:'1', left:'0'},700);
+				$('.btnPop2-2').show().animate({opacity:'1'},700);
+            }else if(destination.index == 1 && slideNum === "2-3"){
+            	$('#logo').removeClass('pf').removeClass('gm').addClass('tm');
+            	$('#ham').addClass('white');
+            	$('#sign').addClass('white');
+            	$('.slide_left > .box').css('background','#fff');
+            	$('.slide_left > .boundary').css('border-bottom','100vh solid #fff');
+            	$('.slide_bg').css('background','#ff0000')
+				$('.slide_review2-3').show().animate({left:'800px'},1000);
+            	$('.titWrap2-3 > .tit').delay(200).show().animate({opacity:'1', top:'0'},700);
+				$('.titWrap2-3 > .sub').delay(500).show().animate({opacity:'1', left:'0'},700);
+				$('.titWrap2-3 > .txt').delay(700).show().show().animate({opacity:'1', left:'0'},700);
+				$('.btnPop2-3').show().animate({opacity:'1'},700);
+            }else if(destination.index == 2){
+            	$('#logo').removeClass('gm').removeClass('tm').addClass('pf');
+            	$('#ham').removeClass('white');
+            	$('#sign').removeClass('white');
+            	$('.titWrap3 > .tit').show().animate({opacity:'1', top:'0'},700);
+				$('.titWrap3 > .sub').delay(300).show().animate({opacity:'1', left:'0'},700);
+				$('.titWrap3 > .txt').delay(600).show().animate({opacity:'1', left:'0'},700);
+				$('.btnPop3').show().animate({opacity:'1'},700);
+            }
+        },
+        onSlideLeave: function(section, origin, destination, direction){        	
+        	$('.titWrap > .tit').hide().animate({opacity:'0', top:'-80px'});
+			$('.titWrap > .sub').hide().animate({opacity:'0', left:'-80px'});
+			$('.titWrap > .txt').hide().animate({opacity:'0', left:'-80px'});
+			$('.btnPop').hide().animate({opacity:'0'});
+			$('.slide_review').hide().animate({left:'-100%'},1000);
+        },
+        afterSlideLoad: function(section, origin, destination, direction){
+        	if(destination.index == 0){
+        		$('#logo').removeClass('gm').removeClass('tm').addClass('pf');
+        		$('#ham').addClass('white');
+        		$('#sign').addClass('white');
+        		$('.slide_left > .box').css('background','#fff');
+            	$('.slide_left > .boundary').css('border-bottom','100vh solid #fff');
+        		$('.slide_bg').css('background','#ff3f02')
+				$('.slide_review2-1').show().animate({left:'800px'},1000);
+				$('.titWrap2-1 > .tit').delay(200).show().animate({opacity:'1', top:'0'},700);
+				$('.titWrap2-1 > .sub').delay(500).show().animate({opacity:'1', left:'0'},700);
+				$('.titWrap2-1 > .txt').delay(700).show().animate({opacity:'1', left:'0'},700);
+				$('.btnPop2-1').show().animate({opacity:'1'},700);
+				slideNum = "2-1";
+            }else if(destination.index == 1){
+            	$('#logo').removeClass('pf').removeClass('tm').addClass('gm');
+            	$('#ham').addClass('white');
+            	$('#sign').addClass('white');
+            	$('.slide_left > .box').css('background','#21252A');
+            	$('.slide_left > .boundary').css('border-bottom','100vh solid #21252A');
+            	$('.slide_bg').css('background','#8542ff')
+            	$('.slide_review2-2').show().animate({left:'800px'},1000);
+            	$('.titWrap2-2 > .tit').delay(200).show().animate({opacity:'1', top:'0'},700);
+				$('.titWrap2-2 > .sub').delay(500).show().animate({opacity:'1', left:'0'},700);
+				$('.titWrap2-2 > .txt').delay(700).show().animate({opacity:'1', left:'0'},700);				
+				$('.btnPop2-2').show().animate({opacity:'1'},700);
+				slideNum = "2-2";
+            }else if(destination.index == 2){
+            	$('#logo').removeClass('pf').removeClass('gm').addClass('tm');
+            	$('#ham').addClass('white');
+            	$('#sign').addClass('white');
+            	$('.slide_left > .box').css('background','#fff');
+            	$('.slide_left > .boundary').css('border-bottom','100vh solid #fff');
+            	$('.slide_bg').css('background','#ff0000')
+				$('.slide_review2-3').show().animate({left:'800px'},1000);
+            	$('.titWrap2-3 > .tit').delay(200).show().animate({opacity:'1', top:'0'},700);
+				$('.titWrap2-3 > .sub').delay(500).show().animate({opacity:'1', left:'0'},700);
+				$('.titWrap2-3 > .txt').delay(700).show().animate({opacity:'1', left:'0'},700);
+				$('.btnPop2-3').show().animate({opacity:'1'},700);
+				slideNum = "2-3";
+            }
+        }
+        
 	});
 	
 	//layer pop-up
-	$('.btnPop1').click(function(){
+	$('#deBtn1').click(function(){
 	    $('body').on('scroll mousewheel', function(event) {
 	        event.preventDefault();
 	        event.stopPropagation();
@@ -743,7 +677,7 @@
 	    $('.popWrap').fadeIn();    
 	    $('.popWrap > .inner > li').eq(0).fadeIn();
 	});
-	$('.btnPop2').click(function(){
+	$('#deBtn2').click(function(){
 	    $('body').on('scroll mousewheel', function(event) {
 	        event.preventDefault();
 	        event.stopPropagation();
@@ -753,7 +687,7 @@
 	    $('.popWrap').fadeIn();    
 	    $('.popWrap > .inner > li').eq(1).fadeIn();
 	});
-	$('.btnPop3').click(function(){
+	$('#deBtn3').click(function(){
 	    $('body').on('scroll mousewheel', function(event) {
 	        event.preventDefault();
 	        event.stopPropagation();
