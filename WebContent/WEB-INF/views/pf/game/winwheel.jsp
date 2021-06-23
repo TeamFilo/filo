@@ -46,8 +46,16 @@
 					<button class="gameBtn" id="spin_button" onClick="startSpin();" >GO!</button>
 				</div>
 				
-		    	<div class="gameWrap">
-                   <div class="power_controls">
+		    	<div class="gameWrap wheel">
+		    		<div class="gameIntro wheel">
+			                <p class="tit">룰렛 돌리기!</p>
+			                <p class="sub">
+			                	룰렛을 돌려 포인트를 획득해보세요<br/>
+			                	*하루에 1번만 가능*
+			                </p>
+		            </div>
+		    		<img src="/filo/resources/images/pf/arrow_wh.png"/>
+                	<div class="power_controls">
                    		<!-- 
                        	<c:if test="${rouletteCnt == 0}">
 							//<img id="spin_button" src="/filo/resources/images/pf/spin_off.png" alt="Spin" onClick="startSpin();" />
@@ -82,9 +90,6 @@
 								});
 					});
 		        */
-		        
-		        
-		        
 		        
 		            // Create new wheel object specifying the parameters at creation time.
 		            let theWheel = new Winwheel({
@@ -228,7 +233,7 @@
 					                    // Disable the spin button so can't click again while wheel is spinning.
 					                    
 					                    //document.getElementById('spin_button').src       = "/filo/resources/images/pf/spin_off.png";
-					                    document.getElementById('spin_button').className = "";
+					                    //document.getElementById('spin_button').className = "";
 					
 					                    // Begin the spin animation by calling startAnimation on the wheel object.
 					                    theWheel.startAnimation();
