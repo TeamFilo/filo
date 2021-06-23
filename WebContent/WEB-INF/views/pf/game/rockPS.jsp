@@ -29,16 +29,16 @@
        		
 				<div class="gameWrap">
 			    	<form class="sscore">
-			        <div class="score">
-			            <div class="playerScore">
-			                <h2>${userInfo.nickname}</h2>
-			                <p id="pScoreResult">0</p>
-			            </div>
-			            <div class="computerScore">
-			                <h2>Computer</h2>
-			                <p id="cScoreResult">0</p>
-			            </div>
-			        </div>
+				        <div class="score">
+				            <div class="playerScore">
+				                <h2>${userInfo.nickname}</h2>
+				                <p id="pScoreResult">0</p>
+				            </div>
+				            <div class="computerScore">
+				                <h2>Computer</h2>
+				                <p id="cScoreResult">0</p>
+				            </div>
+				        </div>
 			        </form>
 			        <!--score End-->
 			        <div class="intro">
