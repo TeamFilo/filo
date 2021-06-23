@@ -262,6 +262,7 @@
 .gameBtnWrap.wheel {left:50%; top:85%; transform:translateX(-50%);}
 
 /*lottery*/
+.gameWrap .beforScratch img {display:block; position:absolute; top:12%; left:50%; transform:translate(-50%); z-index:2;}
 .gameWrap .countWrap {width:200px; margin: 0 auto; color:#fff; font-size:60px; font-weight:bold; text-align:center; padding:10px 0 20px; }
 .gameIntro.lottery {top:57%;}
 
@@ -271,9 +272,9 @@
 
 /*winWheel*/
 .gameWrap.wheel {height:1000px;}
+.gameWrap.wheel img {display:block; width:100px; position:absolute; top:12%; left:50%; transform:translate(-50%); z-index:2;}
 .gameWrap .gameIntro.wheel {top:3%;}
 #canvas {position:absolute; top:17%; left:50%; transform:translateX(-50%);}
-.gameWrap .beforScratch img {display:block; width:100px; position:absolute; top:12%; left:50%; transform:translate(-50%); z-index:2;}
 
 /*index game*/
 .index_game .inner1 {width: 100%; height: calc(100% - 430px); border-radius: 15px; background: url(/resources/images/g_bg1.png)no-repeat bottom right 300px, #2C2D31; background-size: auto 80%;}

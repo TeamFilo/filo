@@ -401,7 +401,7 @@ progress {-webkit-appearance: none; width: 100%;}
 #left_game .swiper-container .gameBio .pIconWrap .sub {float:right; margin:0 0 0 10px; font-size:18px; line-height: 22px;}
 #left_game .swiper-container .gameBio .graBtn {width: calc(100% - 60px); height: 75px; line-height: 75px; text-align: center; border-radius:5px ; cursor: pointer; background: linear-gradient(to bottom right,#8542ff, #fff942	); color:#fff; position:absolute; bottom:30px; }
 #left_game .swiper-container .gameBio .btn1 {width: calc(100% - 100px); height: 45px; line-height: 45px; position:absolute; left:30px; bottom:130px;}
-#left_game .swiper-container .gameBio .btn2 {width: calc(100% - 100px); height: 45px; line-height: 45px; background: linear-gradient(45deg, #ff3f02, #00eeff); position:absolute; left:60px; bottom:60px;}
+#left_game .swiper-container .gameBio .btn2 {width: calc(100% - 100px); height: 45px; line-height: 45px; background: linear-gradient(to top left,#8542ff,#fff942); position:absolute; left:60px; bottom:60px;}
 
 #left_game .player {position:relative; z-index:2;}
 #left_game .player li {overflow:hidden; margin:0 0 35px 0; position:relative;}
@@ -410,7 +410,7 @@ progress {-webkit-appearance: none; width: 100%;}
 #left_game .player li .box .user {font-size:20px; margin: 6.5px 0 5px 0;}
 #left_game .player li .box .name {color:rgba(255,255,255,.5); font-size:12px; font-weight:100;}
 #left_game .player li .rank {line-height:50px; font-size:22px; font-weight:500; position:absolute;top:0;right:0;}
-#left_game .myRankBG {width:100%; height:70px; background:#000; position:absolute; left:0; bottom:30px; z-index:1;}
+#left_game .myRankBG {width:100%; height:70px; background:#8542ff; position:absolute; left:0; bottom:30px; z-index:1;}
 /*20 20 20 16 m32*/
 #left_game .swiper-container .morePoint .gameCount li {overflow: hidden; width: 100%; margin: 0 0 40px 0;}
 #left_game .swiper-container .morePoint .gameCount li > * {float:left; width: 20%; margin: 0 11% 0 0 }

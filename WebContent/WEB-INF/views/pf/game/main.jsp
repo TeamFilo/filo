@@ -45,6 +45,30 @@
                                 <p>Click to Start</p>
                                 <img src="/filo/resources/images/pf/g_arrow_r.png" alt="">
                             </div>
+                            <a href="/filo/game/card.fl"><img src="/filo/resources/images/pf/g1.png" alt="" class="gImg"></a>
+                            <div class="txtWrap">
+                                <p class="tit">
+                                    CARD
+                                </p>                               
+                                <p class="txt">
+				                                    가위바위보 게임입니다!<br/>
+				                                    이기면 올라가고 지면 내려갑니다.<br/>
+				                                    마지막 칸에 먼저 도달하면 포인트 획득!<br/>
+                                </p>                                
+                                <p class="txt_hide">
+                                    <span>소모포인트</span> 10<br/>
+                                    <span>난이도</span> ★★★☆☆<br/>
+                                    <span>소모시간</span> ★★★☆☆
+                                    <span class="start">Click the image to start the game!</span>
+                                </p>                                
+                            </div>
+                        </div>
+                        
+                        <div class="swiper-slide">
+                            <div class="here">
+                                <p>Click to Start</p>
+                                <img src="/filo/resources/images/pf/g_arrow_r.png" alt="">
+                            </div>
                             <a href="/filo/game/lottery.fl"><img src="/filo/resources/images/pf/g2.png" alt="" class="gImg"></a>
                             <div class="txtWrap">
                                 <p class="tit">
@@ -87,7 +111,7 @@
                                 </p>                                
                             </div>
                         </div>
-                        
+                        <!--  
                         <div class="swiper-slide">
                             <div class="here">
                                 <p>Click to Start</p>
@@ -111,30 +135,8 @@
                                 </p>                                
                             </div>
                         </div>
+                        -->
                         
-                        <div class="swiper-slide">
-                            <div class="here">
-                                <p>Click to Start</p>
-                                <img src="/filo/resources/images/pf/g_arrow_r.png" alt="">
-                            </div>
-                            <a href="/filo/game/card.fl"><img src="/filo/resources/images/pf/g1.png" alt="" class="gImg"></a>
-                            <div class="txtWrap">
-                                <p class="tit">
-                                    CARD
-                                </p>                               
-                                <p class="txt">
-				                                    가위바위보 게임입니다!<br/>
-				                                    이기면 올라가고 지면 내려갑니다.<br/>
-				                                    마지막 칸에 먼저 도달하면 포인트 획득!<br/>
-                                </p>                                
-                                <p class="txt_hide">
-                                    <span>소모포인트</span> 10<br/>
-                                    <span>난이도</span> ★★★☆☆<br/>
-                                    <span>소모시간</span> ★★★☆☆
-                                    <span class="start">Click the image to start the game!</span>
-                                </p>                                
-                            </div>
-                        </div>
                         
                     </div>
                     <!-- swiper-wrapper End -->
