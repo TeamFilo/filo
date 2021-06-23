@@ -120,14 +120,21 @@
 							</c:forEach>
 						</c:if>
 						<!-- gameNum 사이즈가 0아닐때 -->
+						
 						<c:if test="${fn:length(gameNum)==0}">
+							<script>
+								$('.morePoint').hide();
+							</script>
+						<!-- 
 							<li>
 							 	<div class="subWrap">
 				                	<p class="sub">첫판 보너스 끝</p>
 				                </div> 
 				             </li>
+				        -->    
 						</c:if>
 						<!-- gameNum 사이즈가 0일때 -->
+						
 	                </ul>
 	            </div>
             </c:if>
