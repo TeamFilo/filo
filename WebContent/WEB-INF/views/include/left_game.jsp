@@ -106,6 +106,7 @@
 				                        <a href="/filo/game/rockPS.fl"><div class="goBtn"><img src="/filo/resources/images/tm/arrowR.png"></div></a>
 				                    </li>
 			                    </c:if>
+			                    <!--  
 			                    <c:if test="${gn == 1}">
 				                    <li>
 				                        <img src="/filo/resources/images/pf/upDown.png">
@@ -115,6 +116,7 @@
 				                        <a href="/filo/game/updown.fl"><div class="goBtn"><img src="/filo/resources/images/tm/arrowR.png"></div></a>
 				                    </li>
 			                  	</c:if>
+			                  	-->
 							</c:forEach>
 						</c:if>
 						<!-- gameNum 사이즈가 0아닐때 -->
@@ -168,7 +170,9 @@
                     </c:if>
                 </ul>
                 <!--player End-->
-                <div class="myRankBG"></div>
+                <c:if test="${sessionScope.memId!=null}">
+                	<div class="myRankBG"></div>
+                </c:if>
             </div>
             <!--rankWrap End-->
             <c:if test="${!empty todayRecords}">
