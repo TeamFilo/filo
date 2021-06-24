@@ -6,7 +6,8 @@ const game = ()=>{
     const startGame = () =>{
         const playBtn = document.querySelector('.gameBtn');
         
-        const introScreen = document.querySelector('.intro');
+        const introScreen = document.querySelector('.gameIntro');
+        const gameBG = document.querySelector('.gameBG');
         let match = document.querySelector('.match');
         const hands = document.querySelectorAll('.hands img');
 
@@ -29,6 +30,7 @@ const game = ()=>{
 						var up = result.userPoint;
 						if(up>=np){
 							introScreen.classList.add('fadeOut');
+							gameBG.classList.add('fadeOut');
 							playBtn.classList.add('fadeOut');
 							match.classList.add('fadeIn');
 							lg_reload();

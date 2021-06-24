@@ -229,17 +229,13 @@
 .eduWrap .inner li .txt {line-height: 1.7; font-size: 18px; font-weight: 400;}
 
 /*common game*/
-.gameWrap { width:70%; margin:40px auto; position:relative;}
+.gameWrap { width:70%; height:630px; margin:40px auto; position:relative; z-index:1;}
 
-.gameWrap .gameBG {width:100%; height:100%; background:rgba(33,37,42,0.5); text-align:center; position:absolute; }
-.gameWrap .gameBG .gameIntro {position:absolute; top:50%; left:50%; transform:translate(-50%,-50%);}
-.gameWrap .gameBG .gameIntro2 {position:absolute; top:50%; left:50%; transform:translate(-50%,-50%);}
-.gameWrap .tit {font-size:50px; font-weight:bold; color:#fff;}
-.gameWrap .sub {font-size:16px; color:#fff; margin:30px 0 0;}
-.gameWrap .gameBG {width:100%; height:100%; background:rgba(33,37,42,0.5);  position:absolute; }
-.gameWrap .gameIntro {text-align:center; position:absolute; top:50%; left:50%; transform:translate(-50%,-50%);}
+.gameWrap .gameBG {width:100%; height:100%; background:rgba(33,37,42,0.8); text-align:center; position:absolute; z-index:2;}
+.gameWrap .gameIntro {text-align:center; position:absolute; top:50%; left:50%; transform:translate(-50%,-50%); z-index:3;}
+.gameWrap .gameIntro.rock {top:40%;}
 .gameWrap .gameCIntro {text-align:center; }
-.gameWrap .tit {font-size:50px; font-weight:bold; color:#fff;}
+.gameWrap .tit {width:550px; font-size:50px; font-weight:bold; color:#fff;}
 .gameWrap .sub {font-size:16px; color:#fff; line-height:20px; margin:30px 0 0;}
 
 .gameBtnWrap {overflow:hidden; position:absolute; z-index:2;}
