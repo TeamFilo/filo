@@ -306,7 +306,9 @@ public class GameController {
 	public String lottery(Model model) {
 		
 		int ranNum = (int)(Math.random()*5+1);
-		String ranImg = "lottery"+ranNum+".png";
+		
+		String ranImg = "lot"+ranNum+".png";
+//		String ranImg = "lottery"+ranNum+".png";
 		//System.out.println("랜덤이미지" + ranImg); 
 		model.addAttribute("ranNum",ranNum);
 		model.addAttribute("ranImg",ranImg);
