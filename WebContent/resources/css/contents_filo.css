@@ -7,9 +7,9 @@
 .wrapAll {padding:0;}
 .wrapAll.wrapAll2 {padding:0 0 0 310px;}
 .titWrapMy {position: relative;}
-.titWrap .tit {font-size:90px; color:#ff3f02; font-weight:bold;}
-.titWrap .sub {font-size:50px; line-height:60px; margin:20px 0 40px 0;}
-.titWrap .txt {font-size:20px; line-height:35px;}
+.titWrap .tit {font-size:87px; color:#ff3f02; font-weight:bold;}
+.titWrap .sub {font-size:43px; line-height:55px; margin:20px 0 30px 0;}
+.titWrap .txt {font-size:17px; line-height:30px;}
 .titWrap .txt.right {text-align: right; line-height: 25px; color:#555; position: absolute;top: 0;right: 0;}
 .titWrap .sTit {font-size:25px; font-weight:bold; line-height:35px;}
 .btnDef {width: 150px; height: 47px; background: #ccc; line-height: 47px; color:#fff; font-size: 17px; cursor: pointer; transition: .3s; padding: 0 20px;}
@@ -42,9 +42,15 @@
 #fullpage .tm .titWrap .tit {color:#ff0000;}
 
 #fullpage .slide {overflow:hidden; position:relative;}
-#fullpage .slide_review {overflow:hidden; width:1000px; height:700px; padding:25px; position:absolute;top:50%;left:-100%; transform:translateY(-50%); z-index:-2;}
-#fullpage .slide_review li {float:left; width:calc((100% - 100px)/2); height:calc((100% - 50px)/2); background:#eee; margin:0 50px 50px 0; transform:rotate(3deg);}
+
+#fullpage .slide_review {overflow:hidden; width:1000px; height:600px; padding:25px; position:absolute;top:50%;left:-100%; transform:translateY(-50%); z-index:-2;}
+#fullpage .slide_review li {float:left; overflow:hidden; width:calc((100% - 100px)/2); height:calc((100% - 50px)/2); margin:0 50px 50px 0; transform:rotate(-2deg);}
 #fullpage .slide_review li:nth-child(2n) {margin:0 0 50px 0;}
+#fullpage .slide_review2-2 li:nth-child(1) {background:url(/filo/resources/images/pf/gm1.jpg)no-repeat center; background-size:100% auto;}
+#fullpage .slide_review2-2 li:nth-child(2) {background:url(/filo/resources/images/pf/gm2.jpg)no-repeat center; background-size:100% auto;}
+#fullpage .slide_review2-2 li:nth-child(3) {background:url(/filo/resources/images/pf/gm3.jpg)no-repeat center; background-size:100% auto;}
+#fullpage .slide_review2-2 li:nth-child(4) {background:url(/filo/resources/images/pf/gm4.jpg)no-repeat center; background-size:100% auto;}
+
 #fullpage .slide_left {overflow:hidden; width:100%; transition:.3s; position:absolute;top:0;left:0;z-index:-1;}
 #fullpage .slide_left .box {float:left; width:40%; height:100vh; background:#fff; transition:.3s;}
 #fullpage .slide_left .boundary {float:left; border-right:100px solid transparent; border-bottom:100vh solid #fff; transition:.3s;}

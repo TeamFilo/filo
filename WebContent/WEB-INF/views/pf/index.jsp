@@ -544,6 +544,7 @@
 	<script type="text/javascript">	
 	let slideNum = "2-1";
 	var myFullpage = new fullpage('#fullpage', {
+		anchors: ['1stPage', '2ndPage', '3rdPage','4thPage'],
 		onLeave: function(origin, destination, direction){
 			$('.slide_left > .box').css('background','transparent');
         	$('.slide_left > .boundary').css('border-bottom','100vh solid transparent');
@@ -556,6 +557,7 @@
 			$('.titWrap > .txt').hide().animate({opacity:'0', left:'-80px'});
 			$('.slide_review').hide().animate({left:'-100%'},1000);
 			$('.btnPop').hide().animate({opacity:'0'});
+			$('.total_depth_main > li').removeClass('on');
 		},
 		afterLoad: function(origin, destination, direction){
 			console.log();
@@ -566,6 +568,7 @@
 				$('.titWrap1 > .tit').show().animate({opacity:'1', top:'0'},700);
 				$('.titWrap1 > .sub').delay(300).show().animate({opacity:'1', left:'0'},700);
 				$('.titWrap1 > .txt').delay(600).show().animate({opacity:'1', left:'0'},700);
+				$('.total_depth_main > li').eq(0).addClass('on');
             }else if(destination.index == 1 && slideNum === "2-1"){
             	$('#logo').removeClass('gm').removeClass('tm').addClass('pf');
             	$('#ham').addClass('white');
@@ -573,11 +576,12 @@
             	$('.slide_left > .box').css('background','#fff');
             	$('.slide_left > .boundary').css('border-bottom','100vh solid #fff');
             	$('.slide_bg').css('background','#ff3f02')
-				$('.slide_review2-1').show().animate({left:'800px'},1000);
+				$('.slide_review2-1').show().animate({left:'870px'},1000);
             	$('.titWrap2-1 > .tit').delay(200).show().animate({opacity:'1', top:'0'},700);
 				$('.titWrap2-1 > .sub').delay(500).show().animate({opacity:'1', left:'0'},700);
 				$('.titWrap2-1 > .txt').delay(700).show().animate({opacity:'1', left:'0'},700);
 				$('.btnPop2-1').show().animate({opacity:'1'},700);
+				$('.total_depth_main > li').eq(1).addClass('on');
             }else if(destination.index == 1 && slideNum === "2-2"){
             	$('#logo').removeClass('pf').removeClass('tm').addClass('gm');
             	$('#ham').addClass('white');
@@ -587,11 +591,12 @@
             	$('.slide_left > .box').css('background','#21252A');
             	$('.slide_left > .boundary').css('border-bottom','100vh solid #21252A');
             	$('.slide_bg').css('background','#8542ff');
-				$('.slide_review2-2').show().animate({left:'800px'},1000);
+				$('.slide_review2-2').show().animate({left:'870px'},1000);
             	$('.titWrap2-2 > .tit').delay(200).show().animate({opacity:'1', top:'0'},700);
 				$('.titWrap2-2 > .sub').delay(500).show().animate({opacity:'1', left:'0'},700);
 				$('.titWrap2-2 > .txt').delay(700).show().animate({opacity:'1', left:'0'},700);
 				$('.btnPop2-2').show().animate({opacity:'1'},700);
+				$('.total_depth_main > li').eq(2).addClass('on');
             }else if(destination.index == 1 && slideNum === "2-3"){
             	$('#logo').removeClass('pf').removeClass('gm').addClass('tm');
             	$('#ham').addClass('white');
@@ -599,11 +604,12 @@
             	$('.slide_left > .box').css('background','#fff');
             	$('.slide_left > .boundary').css('border-bottom','100vh solid #fff');
             	$('.slide_bg').css('background','#ff0000')
-				$('.slide_review2-3').show().animate({left:'800px'},1000);
+				$('.slide_review2-3').show().animate({left:'870px'},1000);
             	$('.titWrap2-3 > .tit').delay(200).show().animate({opacity:'1', top:'0'},700);
 				$('.titWrap2-3 > .sub').delay(500).show().animate({opacity:'1', left:'0'},700);
 				$('.titWrap2-3 > .txt').delay(700).show().show().animate({opacity:'1', left:'0'},700);
 				$('.btnPop2-3').show().animate({opacity:'1'},700);
+				$('.total_depth_main > li').eq(3).addClass('on');
             }else if(destination.index == 2){
             	$('#logo').removeClass('gm').removeClass('tm').addClass('pf');
             	$('#ham').removeClass('white');
@@ -620,6 +626,7 @@
 			$('.titWrap > .txt').hide().animate({opacity:'0', left:'-80px'});
 			$('.btnPop').hide().animate({opacity:'0'});
 			$('.slide_review').hide().animate({left:'-100%'},1000);
+			$('.total_depth_main > li').removeClass('on');
         },
         afterSlideLoad: function(section, origin, destination, direction){
         	if(destination.index == 0){
@@ -629,11 +636,12 @@
         		$('.slide_left > .box').css('background','#fff');
             	$('.slide_left > .boundary').css('border-bottom','100vh solid #fff');
         		$('.slide_bg').css('background','#ff3f02')
-				$('.slide_review2-1').show().animate({left:'800px'},1000);
+				$('.slide_review2-1').show().animate({left:'870px'},1000);
 				$('.titWrap2-1 > .tit').delay(200).show().animate({opacity:'1', top:'0'},700);
 				$('.titWrap2-1 > .sub').delay(500).show().animate({opacity:'1', left:'0'},700);
 				$('.titWrap2-1 > .txt').delay(700).show().animate({opacity:'1', left:'0'},700);
 				$('.btnPop2-1').show().animate({opacity:'1'},700);
+				$('.total_depth_main > li').eq(1).addClass('on');
 				slideNum = "2-1";
             }else if(destination.index == 1){
             	$('#logo').removeClass('pf').removeClass('tm').addClass('gm');
@@ -642,11 +650,12 @@
             	$('.slide_left > .box').css('background','#21252A');
             	$('.slide_left > .boundary').css('border-bottom','100vh solid #21252A');
             	$('.slide_bg').css('background','#8542ff')
-            	$('.slide_review2-2').show().animate({left:'800px'},1000);
+            	$('.slide_review2-2').show().animate({left:'870px'},1000);
             	$('.titWrap2-2 > .tit').delay(200).show().animate({opacity:'1', top:'0'},700);
 				$('.titWrap2-2 > .sub').delay(500).show().animate({opacity:'1', left:'0'},700);
 				$('.titWrap2-2 > .txt').delay(700).show().animate({opacity:'1', left:'0'},700);				
 				$('.btnPop2-2').show().animate({opacity:'1'},700);
+				$('.total_depth_main > li').eq(2).addClass('on');
 				slideNum = "2-2";
             }else if(destination.index == 2){
             	$('#logo').removeClass('pf').removeClass('gm').addClass('tm');
@@ -655,11 +664,12 @@
             	$('.slide_left > .box').css('background','#fff');
             	$('.slide_left > .boundary').css('border-bottom','100vh solid #fff');
             	$('.slide_bg').css('background','#ff0000')
-				$('.slide_review2-3').show().animate({left:'800px'},1000);
+				$('.slide_review2-3').show().animate({left:'870px'},1000);
             	$('.titWrap2-3 > .tit').delay(200).show().animate({opacity:'1', top:'0'},700);
 				$('.titWrap2-3 > .sub').delay(500).show().animate({opacity:'1', left:'0'},700);
 				$('.titWrap2-3 > .txt').delay(700).show().animate({opacity:'1', left:'0'},700);
 				$('.btnPop2-3').show().animate({opacity:'1'},700);
+				$('.total_depth_main > li').eq(3).addClass('on');
 				slideNum = "2-3";
             }
         }

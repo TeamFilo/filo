@@ -269,7 +269,7 @@ body.noscrb::-webkit-scrollbar {display: none;}
 }
 #ham span {
   display: block;
-  background: #ff3f02;
+  background: #000;
   width: 36px;
   height: 4px;
   transition: background 0.3s,margin 0.25s 0.25s, transform 0.25s ;
@@ -277,14 +277,15 @@ body.noscrb::-webkit-scrollbar {display: none;}
 #ham.white span {
   background: #fff;
 }
-#ham:hover span {
-	background: #ff3f02;
-}
 #ham .bar1 {margin-bottom: 6px;}
 #ham .bar3 {margin-top: 6px;}
 
 #ham.active span {
+  background:#000;
   transition: margin 0.25s, transform 0.25s 0.25s;
+}
+#ham.active.white span {
+  background: #000;
 }
 
 #ham.active .bar1 {
@@ -307,7 +308,7 @@ body.noscrb::-webkit-scrollbar {display: none;}
 #top_pf #logo.gm {background: url(../images/pf/logo_top_gm.png)no-repeat center; background-size: auto 100%;}
 #top_pf #logo.tm {background: url(../images/pf/logo_top_tm.png)no-repeat center; background-size: auto 100%;}
 #top_pf #sign {overflow:hidden; position: absolute;top: 24px;right: 110px; z-index:997;}
-#top_pf #sign .btnSign {float:left; line-height:24px; color:#999; font-size: 13px; font-weight: 500; transition:.3s; padding:4px 12px; margin: 0 0 0 5px;}
+#top_pf #sign .btnSign {float:left; line-height:24px; color:#000; font-size: 13px; font-weight: 500; transition:.3s; padding:4px 12px; margin: 0 0 0 5px;}
 #top_pf #sign.white .btnSign {color:#fff;}
 #top_pf #sign .btnSign:hover {text-decoration:underline;}
 #top_pf #sign .txtSign {float:left; line-height:32px; font-size: 16px; font-weight: 400; margin: 0 30px 0 0;}
