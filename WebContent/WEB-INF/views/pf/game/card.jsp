@@ -18,7 +18,7 @@
 			<script>
 			$(document).ready(function(){
 				lg_reload();
-				$('#reGameBtn').hide();
+				$('#gameEnd').hide();
 				
 			});
 			
@@ -82,7 +82,7 @@
             function startGame() {
                 var sec = 6;
                 
-                $('.gameIntro').hide(); // 안내 문구 가리기
+                $('#gameStart').hide(); // 안내 문구 가리기
                 $('.gameBG').hide(); // 안내 문구 가리기
                 scoreInit(); // 점수 초기화
                 setTable(); // 카드 배치
@@ -143,10 +143,8 @@
                             alert('성공!!\n'+score+'점 입니다!');
                             lg_reload();
                             $('.gameBG').show();
-                            $('.gameIntro2').show();
+                            $('#gameEnd').show();
                             $('#reGameBtn').show();
-                           
-                            
                           
                         }
                     }else { // 불일치
@@ -155,7 +153,6 @@
                     }
                 }
             });
-            
             
             $(document).on('click', '#reGameBtn', function(){
             	location.href="/filo/game/card.fl";
@@ -228,15 +225,14 @@
 				
 				<div class="gameWrap">
 					<div class="gameBG">
-			            <div class="gameIntro">
+			            <div id="gameStart" class="gameIntro">
 			                <p class="tit">같은 그림 찾기!</p>
 			                <p class="sub">
 			                	카드를 두장씩 뒤집어 같은 그림을 찾는 게임입니다.<br/>
 			                	*맞으면 10점 획득 틀릴 시 5점 감점*
 			                </p>
 			            </div>
-			            <div class="gameIntro2 gameBtnWrap card">
-			            <!-- 아래버튼 클래스 gameBtn2 바꿈  -->
+			            <div id="gameEnd" class="gameIntro gameBtnWrap">
                             <button id='reGameBtn' class="gameBtn">Re?</button>
                         </div>
 			        </div>    
