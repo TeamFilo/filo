@@ -17,8 +17,7 @@
 			<a href="/filo/member/login.fl"><p class="btnSign">로그인</p></a>
 		</c:if>
 		<c:if test="${sessionScope.memId != null}">
-			<p class="txtSign">환영합니다! 
-			<c:if test="${sessionScope.memIcon == null}"><img src="/filo/resources/images/pf/user.png" width="30"></c:if>
+			<p class="txtSign">환영합니다!
 			<c:if test="${sessionScope.memIcon != null}"><img src="<c:url value="/resources/images/pf/${sessionScope.memIcon}.png"/>" width="30" /></c:if>
 			<strong style="color:${sessionScope.memColor}";>${sessionScope.memId}</strong>님</p>
 			<a href="/filo/member/logout.fl"><p class="btnSign">로그아웃</p></a>
