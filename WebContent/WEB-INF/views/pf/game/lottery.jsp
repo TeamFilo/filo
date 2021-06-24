@@ -170,20 +170,20 @@
 							if (percent > 35) {
 								this.clear();
 								if(ranNum==1){
-									msg = "오우 이런... 꽝이네요!";
+									msg = "오우 이런... 꽝이네요! 한판 더?";
 									point = 0;
 								}else if(ranNum==2){
-									msg = "20point를 써서 10point를 얻었어요!";
-									point = 10;
+									msg = "티끌 모아 티끌!! 5point를 얻었어요!";
+									point = 5;
 								}else if(ranNum==3 || ranNum==4){
-									msg = "20point 획득! 본전이네요";
-									point = 20;
+									msg = "와우 ! 10point 획득!";
+									point = 10;
 								}else if(ranNum==5){
-									msg = "100point 획득! 운이 아주 좋은데요?";
-									point = 100;
+									msg = "50point 획득! 운이 좋은데요?";
+									point = 50;
 								}else if(ranNum==6){
-									msg = "200point 획득! 대박...";
-									point = 200;
+									msg = "100point 획득! 대박...";
+									point = 100;
 								}
 								
 								//ajax
