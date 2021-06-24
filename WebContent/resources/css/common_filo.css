@@ -406,9 +406,9 @@ progress {-webkit-appearance: none; width: 100%;}
 #left_game .swiper-container .gameBio .pIconWrap .txt {float:left;}
 #left_game .swiper-container .gameBio .pIconWrap img {float: right; width: 22px; height: auto;}
 #left_game .swiper-container .gameBio .pIconWrap .sub {float:right; margin:0 0 0 10px; font-size:18px; line-height: 22px;}
-#left_game .swiper-container .gameBio .graBtn {width: calc(100% - 60px); height: 75px; line-height: 75px; text-align: center; border-radius:5px ; cursor: pointer; background: linear-gradient(to bottom right,#8542ff, #fff942	); color:#fff; position:absolute; bottom:30px; }
+#left_game .swiper-container .gameBio .graBtn {width: calc(100% - 60px); height: 75px; line-height: 75px; text-align: center; border-radius:5px ; cursor: pointer; background: #8542ff; color:#fff; position:absolute; bottom:30px; }
 #left_game .swiper-container .gameBio .btn1 {width: calc(100% - 100px); height: 45px; line-height: 45px; position:absolute; left:30px; bottom:130px;}
-#left_game .swiper-container .gameBio .btn2 {width: calc(100% - 100px); height: 45px; line-height: 45px; background: linear-gradient(to top left,#8542ff,#fff942); position:absolute; left:60px; bottom:60px;}
+#left_game .swiper-container .gameBio .btn2 {width: calc(100% - 100px); height: 45px; line-height: 45px; background: #8542ff; position:absolute; left:60px; bottom:60px;}
 
 #left_game .player {position:relative; z-index:2;}
 #left_game .player li {overflow:hidden; margin:0 0 35px 0; position:relative;}

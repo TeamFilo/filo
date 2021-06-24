@@ -112,6 +112,7 @@
 
             <ul class="tab_cont">
                 <li>
+                	<!-- 
                     ID color
 					<h1>색깔구매</h1>
 					<h4>색깔을 골라주세요</h4>
@@ -123,6 +124,9 @@
                         <input type="hidden" name="priceColor" value="10"/>
 						<input type="submit" value="구매하기" />
 					</form>
+					 -->
+					 <div class="">
+					 </div>
 					<script>
 						var nowIdColor = '${nowIdColor}';
 						$("#picker1").colorPick({
