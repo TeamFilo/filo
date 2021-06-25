@@ -21,14 +21,27 @@
 			</c:if>
 			
        		<div class="right_game index_game">
-       		
+				<div class="gameBG"></div>
+       			 <div class="gameIntro rock">
+			            <p class="tit">가위바위보 계단 올라가기!</p>
+			            <p class="sub">컴퓨터에게 가위바위보를 이겨 계단을 먼저 올라가면 승리!
+			            <br/>*바위로 승리 시 1칸, 가위 2칸, 보 3칸 진행*</p>
+		        </div>
+		        <!--intro End-->
+		        <div class="end fadeOut">
+			        	<h2>Game End </h2>
+			        	<div class="gameBtnWrap rockRe">
+			        		<button onclick="rp();" class="gameBtn">다시 하기</button>   	
+			        		<button class="gameBtn">메인으로</button>   	
+			        	</div>
+		        </div>
+		        
        			<div class="gameBtnWrap rock">
 					<button class="gameBtn">START</button>
 				</div>
 				<!-- //gameBtnWrap end -->
        		
 				<div class="gameWrap">
-					<div class="gameBG"></div>
 			    	<form class="sscore">
 				        <div class="score">
 				            <div class="playerScore">
@@ -42,14 +55,9 @@
 				        </div>
 			        </form>
 			        <!--score End-->
-			        <div class="gameIntro rock">
-			            <p class="tit">가위바위보 계단 올라가기!</p>
-			            <p class="sub">컴퓨터에게 가위바위보를 이겨 계단을 먼저 올라가면 승리!
-			            <br/>*바위로 승리 시 1칸, 가위 2칸, 보 3칸 진행*</p>
-			        </div>
-			        <!--intro End-->
+			       
 			        <div class="match fadeOut">
-			            <h2 class="winner">안내면 진다 가위 바위 보!!!!!</h2>
+			            <h2 class="winner">안내면 진다 가위 바위 보!!!</h2>
 			            <div class="hands">
 			                <img class="playerHand" src="/filo/resources/images/pf/rock.png"/>
 			                <img class="computerHand" src="/filo/resources/images/pf/rock.png"/>
@@ -60,12 +68,7 @@
 			                <button class="paper">paper</button>
 			            </div>
 			        </div>
-			        <div class="end fadeOut">
-			        	<h2>Game End </h2>
-			        	<div class="gameBtnWrap rockRe">
-			        		<button onclick="rp();" class="gameBtn">다시 하기</button>   	
-			        	</div>
-			        </div>
+			        
 			        <!--match End-->
 			        <div class="stair">
 			            <div class="step">

@@ -221,20 +221,11 @@
 					});
 				</script>
 				
-				
 				<c:if test="${param.oneMore == 1}">
 					<script> 
 						lottStartBtn();
 					</script>
 				</c:if>
-			
-
-				<!--  -->
-			
-			
-				<!--  -->
-				
-				
 			</div>
 			<!-- right_game End -->
 		</div>
