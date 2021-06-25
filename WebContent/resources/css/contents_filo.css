@@ -7,9 +7,9 @@
 .wrapAll {padding:0;}
 .wrapAll.wrapAll2 {padding:0 0 0 310px;}
 .titWrapMy {position: relative;}
-.titWrap .tit {font-size:87px; color:#ff3f02; font-weight:bold;}
-.titWrap .sub {font-size:43px; line-height:55px; margin:20px 0 30px 0;}
-.titWrap .txt {font-size:17px; line-height:30px;}
+.titWrap .tit {font-size:100px; color:#ff3f02; font-weight:bold;}
+.titWrap .sub {font-size:40px; line-height:50px; margin:20px 0 25px;}
+.titWrap .txt {color:rgba(0,0,0,.6); font-size:17px; line-height:26px;}
 .titWrap .txt.right {text-align: right; line-height: 25px; color:#555; position: absolute;top: 0;right: 0;}
 .titWrap .sTit {font-size:25px; font-weight:bold; line-height:35px;}
 .btnDef {width: 150px; height: 47px; background: #ccc; line-height: 47px; color:#fff; font-size: 17px; cursor: pointer; transition: .3s; padding: 0 20px;}
@@ -37,6 +37,7 @@
 #fullpage .titWrap .tit {top: -80px;}
 #fullpage .titWrap .sub {left: -80px;}
 #fullpage .titWrap .txt {left: -80px;}
+#fullpage .titWrap.center {text-align: center; top:45%;left:50%; transform: translate(-50%,-50%);}
 #fullpage .gm .titWrap p {color:#fff;}
 #fullpage .gm .titWrap .tit {color:#8542ff;}
 #fullpage .tm .titWrap .tit {color:#ff0000;}

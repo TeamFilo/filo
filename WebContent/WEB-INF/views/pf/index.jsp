@@ -18,17 +18,16 @@
 
    	<div id="fullpage">
         <div class="section active" id="section0">
-            <div class="titWrap titWrap1">
+            <div class="titWrap titWrap1 center">
 
                 <p class="tit">We are FILO!</p>
                 <p class="sub">
-                	First In Last Out<br>				    				                   
+                	"First In Last Out"<br>				    				                   
                 	Team FILO를 소개합니다.
                 </p>
                 <p class="txt">
-                	남다른 열정과 뜻을 가진 4명이 모였습니다.<br/>
-                	부족하지만 나름의 결과물을 준비해봤어요.<br/>
-                	방문해주셔서 감사합니다 :)
+                	남다른 열정과 뜻을 가진 개발자들 입니다.<br/>
+                	나름의 결과물을 준비해봤어요.
                 </p>
              </div>             
         </div>
