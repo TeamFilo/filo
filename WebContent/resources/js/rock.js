@@ -7,7 +7,7 @@ const game = ()=>{
         const playBtn = document.querySelector('.gameBtn');
         
         const introScreen = document.querySelector('.gameIntro');
-        const gameBG = document.querySelector('.gameBG');
+        let gameBG = document.querySelector('.gameBG');
         let match = document.querySelector('.match');
         const hands = document.querySelectorAll('.hands img');
 
@@ -16,7 +16,7 @@ const game = ()=>{
                 this.style.animation='';
             });
         })
-
+        
         playBtn.addEventListener('click', () => {
 				var data = {"gameCate":2};
 				$.ajax({
@@ -46,10 +46,13 @@ const game = ()=>{
     const endGame = () =>{
     	let match = document.querySelector('.match');
     	let end = document.querySelector('.end');
+    	let gameBG = document.querySelector('.gameBG');
     	end.classList.remove('fadeOut');
     	end.classList.add('fadeIn');
     	match.classList.remove('fadeIn');
     	match.classList.add('fadeOut');
+    	gameBG.classList.remove('fadeOut');
+    	gameBG.classList.add('fadeIn');
     }
 
     //play Match
@@ -81,7 +84,7 @@ const game = ()=>{
             });
         });
     };
-
+    
     const updateScore = () => {
         const playerScore = document.querySelector('.playerScore p');
         const computerScore = document.querySelector('.computerScore p');
@@ -191,6 +194,7 @@ const game = ()=>{
                 return;
             }
         }
+        
         //checking for a paper
         if(playerChoice === 'scissors'){
             if(computerChoice ==='rock'){
