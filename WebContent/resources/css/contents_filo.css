@@ -57,6 +57,18 @@
 #fullpage .slide_left .boundary {float:left; border-right:100px solid transparent; border-bottom:100vh solid #fff; transition:.3s;}
 #fullpage .slide_bg {width:100%; height:100vh; background:#fff; transition:.3s; position:absolute;top:0;left:0; z-index:-3;}
 
+.scrolldown {display:none; position: absolute; bottom: 320px; left: 50%; transform: translateX(-50%); z-index: 2; display: inline-block; color: #000; transition: opacity .3s;}
+.scrolldown:hover {opacity:.5;}
+.scrolldown span {position: absolute; top: 0; left: 50%; width: 24px; height: 24px; margin-left: -12px; border-left: 1px solid #000; border-bottom: 1px solid #000; transform: rotate(-45deg); animation: sdb07 2s infinite; opacity: 0; box-sizing: border-box;}
+.scrolldown span:nth-of-type(1) {animation-delay: 0s;}
+.scrolldown span:nth-of-type(2) {top: 16px; animation-delay: .15s;}
+.scrolldown span:nth-of-type(3) {top: 32px; animation-delay: .3s;}
+
+@keyframes sdb07 {
+    0% {opacity: 0;}
+    50% {opacity: 1;}
+    100% {opacity: 0;}
+}
 
 @media screen and (max-width: 1600px) {
 	#fullpage .titWrap {position: absolute;top: 50%;left: 150px; transform: translateY(-50%);}

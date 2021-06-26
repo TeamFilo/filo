@@ -308,7 +308,7 @@ body.noscrb::-webkit-scrollbar {display: none;}
 #top_pf #logo.gm {background: url(../images/pf/logo_top_gm.png)no-repeat center; background-size: auto 100%;}
 #top_pf #logo.tm {background: url(../images/pf/logo_top_tm.png)no-repeat center; background-size: auto 100%;}
 #top_pf #sign {overflow:hidden; position: absolute;top: 24px;right: 110px; z-index:997;}
-#top_pf #sign .btnSign {float:left; line-height:24px; color:#000; font-size: 13px; font-weight: 500; transition:.3s; padding:4px 12px; margin: 0 0 0 5px;}
+#top_pf #sign .btnSign {float:left; line-height:24px; color:#000; font-size: 14px; font-weight: 500; transition:.3s; padding:4px 12px; margin: 0 0 0 5px;}
 #top_pf #sign.white .btnSign {color:#fff;}
 #top_pf #sign .btnSign:hover {text-decoration:underline;}
 #top_pf #sign .txtSign {float:left; line-height:32px; font-size: 16px; font-weight: 400; margin: 0 30px 0 0;}

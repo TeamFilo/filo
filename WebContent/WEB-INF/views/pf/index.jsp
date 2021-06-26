@@ -18,8 +18,9 @@
 
    	<div id="fullpage">
         <div class="section active" id="section0">
+        
             <div class="titWrap titWrap1 center">
-
+			
                 <p class="tit">We are FILO!</p>
                 <p class="sub">
                 	"First In Last Out"<br>				    				                   
@@ -29,7 +30,8 @@
                 	남다른 열정과 뜻을 가진 개발자들 입니다.<br/>
                 	나름의 결과물을 준비해봤어요.
                 </p>
-             </div>             
+             </div>
+             <a href="/filo/index.fl#2ndPage" class="scrolldown"><span></span><span></span><span></span></a>
         </div>
         
         <div class="section" id="section1">
@@ -557,6 +559,7 @@
 			$('.slide_review').hide().animate({left:'-100%'},1000);
 			$('.btnPop').hide().animate({opacity:'0'});
 			$('.total_depth_main > li').removeClass('on');
+			$('.scrolldown').hide();
 		},
 		afterLoad: function(origin, destination, direction){
 			console.log();
@@ -568,6 +571,7 @@
 				$('.titWrap1 > .sub').delay(300).show().animate({opacity:'1', left:'0'},700);
 				$('.titWrap1 > .txt').delay(600).show().animate({opacity:'1', left:'0'},700);
 				$('.total_depth_main > li').eq(0).addClass('on');
+				$('.scrolldown').fadeIn();
             }else if(destination.index == 1 && slideNum === "2-1"){
             	$('#logo').removeClass('gm').removeClass('tm').addClass('pf');
             	$('#ham').addClass('white');
