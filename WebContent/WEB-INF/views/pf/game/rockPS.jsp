@@ -26,9 +26,13 @@
 			            <p class="tit">가위바위보 계단 올라가기!</p>
 			            <p class="sub">컴퓨터에게 가위바위보를 이겨 계단을 먼저 올라가면 승리!
 			            <br/>*바위로 승리 시 1칸, 가위 2칸, 보 3칸 진행*</p>
+		            <div class="gameBtnWrap rock">
+						<button class="gameBtn">START</button>
+					</div>
+					<!-- //gameBtnWrap end -->
 		        </div>
 		        <!--intro End-->
-		        <div class="end fadeOut">
+		        <div class="gameOut fadeOut">
 			        	<h2>Game End </h2>
 			        	<div class="gameBtnWrap rockRe">
 			        		<button onclick="rp();" class="gameBtn">다시 하기</button>   	
@@ -36,10 +40,7 @@
 			        	</div>
 		        </div>
 		        
-       			<div class="gameBtnWrap rock">
-					<button class="gameBtn">START</button>
-				</div>
-				<!-- //gameBtnWrap end -->
+       			
        		
 				<div class="gameWrap">
 			    	<form class="sscore">

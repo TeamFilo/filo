@@ -31,7 +31,6 @@ const game = ()=>{
 						if(up>=np){
 							introScreen.classList.add('fadeOut');
 							gameBG.classList.add('fadeOut');
-							playBtn.classList.add('fadeOut');
 							match.classList.add('fadeIn');
 							lg_reload();
 						}else{
@@ -45,7 +44,7 @@ const game = ()=>{
   //end the game
     const endGame = () =>{
     	let match = document.querySelector('.match');
-    	let end = document.querySelector('.end');
+    	let end = document.querySelector('.gameOut');
     	let gameBG = document.querySelector('.gameBG');
     	end.classList.remove('fadeOut');
     	end.classList.add('fadeIn');
