@@ -4,11 +4,11 @@
    
 <body class="noscrb">
 		<div class="wrapAll game">
-		<script>
-			function rp(){
-				window.location.reload();
-			}
-		</script>
+			<script>
+				function rp(){
+					window.location.reload();
+				}
+			</script>
 		
         	<jsp:include page="/WEB-INF/views/include/top_game.jsp" />
        		<jsp:include page="/WEB-INF/views/include/left_game.jsp" />
@@ -31,17 +31,15 @@
 					</div>
 					<!-- //gameBtnWrap end -->
 		        </div>
-		        <!--intro End-->
+		        <!--gameintro End-->
 		        <div class="gameOut fadeOut">
-			        	<h2>Game End </h2>
+			        	<p class="tit">Game End</p>
 			        	<div class="gameBtnWrap rockRe">
 			        		<button onclick="rp();" class="gameBtn">다시 하기</button>   	
 			        		<button class="gameBtn">메인으로</button>   	
 			        	</div>
 		        </div>
-		        
-       			
-       		
+       			<!--gameOut End-->
 				<div class="gameWrap">
 			    	<form class="sscore">
 				        <div class="score">

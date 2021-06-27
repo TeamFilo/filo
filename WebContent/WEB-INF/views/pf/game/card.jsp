@@ -4,7 +4,11 @@
    
 <body class="noscrb">
 		<div class="wrapAll game">	
-			
+			<script>
+				function rp(){
+					window.location.reload();
+				}
+			</script>
 			<jsp:include page="/WEB-INF/views/include/top_game.jsp" />
       		<jsp:include page="/WEB-INF/views/include/left_game.jsp" />
        		
@@ -18,7 +22,7 @@
 			<script>
 			$(document).ready(function(){
 				lg_reload();
-				$('#gameEnd').hide();
+				$('.gameOut').hide();
 				
 			});
 			
@@ -82,8 +86,8 @@
             function startGame() {
                 var sec = 6;
                 
-                $('#gameStart').hide(); // 안내 문구 가리기
-                $('.gameBG').hide(); // 안내 문구 가리기
+                $('.gameIntro').fadeOut(); // 안내 문구 가리기
+                $('.gameBG').fadeOut(); // 안내 문구 가리기
                 scoreInit(); // 점수 초기화
                 setTable(); // 카드 배치
                 
@@ -143,8 +147,7 @@
                             alert('성공!!\n'+score+'점 입니다!');
                             lg_reload();
                             $('.gameBG').show();
-                            $('#gameEnd').show();
-                            $('#reGameBtn').show();
+                            $('.gameOut').show();
                           
                         }
                     }else { // 불일치
@@ -157,9 +160,6 @@
             $(document).on('click', '#reGameBtn', function(){
             	location.href="/filo/game/card.fl";
             });
-            
-            
-            
  
             // 두개의 카드 다시 뒤집기
             function back() {
@@ -191,7 +191,6 @@
             }
  
             $(document).on('click', '.gameBtn', function(){
-            	$(".gameBtn").hide();
                 var data = {"gameCate":3};
                 $.ajax({
 					type:"post",
@@ -217,25 +216,29 @@
             });        
 			</script>
 			<div class="right_game index_game">
-			
-				<div class="gameBtnWrap card">
-					<button class="gameBtn">START</button>
-				</div>
-				<!-- //gameBtnWrap end -->
-				
 				<div class="gameWrap">
-					<div class="gameBG">
-			            <div id="gameStart" class="gameIntro">
-			                <p class="tit">같은 그림 찾기!</p>
-			                <p class="sub">
-			                	카드를 두장씩 뒤집어 같은 그림을 찾는 게임입니다.<br/>
-			                	*맞으면 10점 획득 틀릴 시 5점 감점*
-			                </p>
-			            </div>
-			            <div id="gameEnd" class="gameIntro gameBtnWrap">
-                            <button id='reGameBtn' class="gameBtn">Re?</button>
-                        </div>
-			        </div>    
+					<div class="gameBG"></div>
+		            <div id="gameStart" class="gameIntro">
+		                <p class="tit">같은 그림 찾기!</p>
+		                <p class="sub">
+		                	카드를 두장씩 뒤집어 같은 그림을 찾는 게임입니다.<br/>
+		                	*맞으면 10점 획득 틀릴 시 5점 감점*
+		                </p>
+		                <div class="gameBtnWrap card">
+							<button class="gameBtn">START</button>
+						</div>
+						<!-- //gameBtnWrap end -->
+		            </div>
+		            <!-- gameIntro End -->
+                    <div class="gameOut">
+			        	<p class="tit">Game End</p>
+			        	<div class="gameBtnWrap rockRe">
+			        		<button onclick="rp();" class="gameBtn">다시 하기</button>   	
+			        		<button class="gameBtn">메인으로</button>   	
+			        	</div>
+			        </div>
+	       			<!--gameOut End-->
+			            
 			            <div class="cardTop">
 			                <p id='countDown'>
 			                    ready
