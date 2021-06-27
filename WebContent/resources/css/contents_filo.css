@@ -251,9 +251,9 @@
 .gameWrap { width:70%; height:630px; margin:40px auto; position:relative; z-index:1;}
 
 .right_game .gameBG {width:100%; height:100%; background:rgba(33,37,42,0.8); text-align:center; transition:1s; position:absolute; z-index:2;}
-.right_game .gameIntro {text-align:center; position:absolute; top:50%; left:50%; transform:translate(-50%,-50%); z-index:3;}
+.right_game .gameIntro {text-align:center; transition:.3S; position:absolute; top:50%; left:50%; transform:translate(-50%,-50%); z-index:3;}
 .right_game .gameIntro.rock {top:40%;}
-.gameOut {width:100%; color:#fff; font-size:45px; text-align:center; position:absolute; top:35%; left:50%; transform:translate(-50%,-50%); transition:opacity 0.5s ease 0.5s; z-index:2;}
+.gameOut {color:#fff; font-size:45px; text-align:center; position:absolute; top:35%; left:50%; transform:translate(-50%,-50%); transition:opacity 0.5s ease 0.5s; z-index:2;}
 .gameWrap .gameCIntro {text-align:center;}
 .right_game .tit {width:600px; font-size:50px; font-weight:bold; color:#fff;}
 .right_game .sub {font-size:16px; color:#fff; line-height:20px; margin:30px 0 0;}
@@ -261,13 +261,12 @@
 .gameBtnWrap {position:absolute; bottom:0; z-index:3;}
 .gameBtnWrap .gameBtn {float:left; width:100px; height:50px; margin:0 3px 0 0; border-radius:3px; color:#ffff; background-color: #8542ff; border:none; cursor: pointer;}
 .gameBtnWrap .gameBtn:last-child {margin:0;}
-.gameBtnWrap .gameBtn2 {width:100px; height:50px; margin-top:20px; color:#ffff; background-color: #8542ff; border:none; cursor: pointer;}
 
 .gameBtnWrap.lottery {left:50%; bottom:25%; transform:translateX(-50%);}
 .gameBtnWrap.lottery .gameBtn {color:#8542ff; background:#fff; font-weight:bold;}
 .gameBtnWrap.rock {left:50%; bottom:-70px; transform:translateX(-50%);}
 .gameBtnWrap.rockRe {left:50%; top:140%; transform:translateX(-50%);}
-.gameBtnWrap.card {left:50%; top:55%; transform:translateX(-50%);}
+.gameBtnWrap.card {left:50%; bottom:-55%; transform:translateX(-50%);}
 .gameBtnWrap.wheel {left:50%; top:85%; transform:translateX(-50%);}
 
 /*lottery*/
