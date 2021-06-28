@@ -89,7 +89,10 @@
                 $('.gameIntro').fadeOut(); // 안내 문구 가리기
                 $('.gameBG').fadeOut(); // 안내 문구 가리기
                 scoreInit(); // 점수 초기화
-                setTable(); // 카드 배치
+                
+                setTimeout("setTable()", 800);
+                
+               // setTable(); // 카드 배치
                 
                 //카운트 다운
                 function setText(){
