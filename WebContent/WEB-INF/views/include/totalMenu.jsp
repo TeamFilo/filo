@@ -22,12 +22,12 @@
             </ul>            
             <ul class="depth total_depth_profile">
             	<p class="tit_depth">PROFILE<span></span></p>
-                <li><a href="/filo/profile/main.fl"></a><i class="fi fi-rs-home"></i>프로필 홈<i class="go fi-rs-caret-right"></i></li>
-                <li><a href="/filo/profile/team.fl"></a><i class="fi fi-rs-users"></i>팀 프로필<i class="go fi-rs-caret-right"></i></li>
+                <li><a href="/filo/profile/main.fl" onclick="alert('준비중입니다!');"></a><i class="fi fi-rs-home"></i>프로필 홈<i class="go fi-rs-caret-right"></i></li>
+                <!-- <li><a href="/filo/profile/team.fl"></a><i class="fi fi-rs-users"></i>팀 프로필<i class="go fi-rs-caret-right"></i></li>
                 <li><a href="/filo/profile/lsm.fl"></a><i class="fi fi-rs-user"></i>이승민 프로필<i class="go fi-rs-caret-right"></i></li>
                 <li><a href="/filo/profile/jbr.fl"></a><i class="fi fi-rs-user"></i>정보름 프로필<i class="go fi-rs-caret-right"></i></li>
                 <li><a href="/filo/profile/lsh.fl"></a><i class="fi fi-rs-user"></i>이승헌 프로필<i class="go fi-rs-caret-right"></i></li>
-                <li><a href="/filo/profile/hys.fl"></a><i class="fi fi-rs-user"></i>허윤서 프로필<i class="go fi-rs-caret-right"></i></li>                    
+                <li><a href="/filo/profile/hys.fl"></a><i class="fi fi-rs-user"></i>허윤서 프로필<i class="go fi-rs-caret-right"></i></li> -->                    
             </ul>
         </li>
         <li>
@@ -48,7 +48,7 @@
             </ul>
             <ul class="depth total_depth_guide">
 	            <p class="tit_depth">GUIDE</p>
-                <li><a href=""></a><i class="fi fi-rs-info"></i>게임 가이드<i class="go fi-rs-caret-right"></i></li>
+                <li><a href="" onclick="alert('준비중입니다!');"></a><i class="fi fi-rs-info"></i>게임 가이드<i class="go fi-rs-caret-right"></i></li>
             </ul>
         </li>
         <li>

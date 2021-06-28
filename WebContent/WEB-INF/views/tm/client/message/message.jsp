@@ -86,13 +86,13 @@
 							</ul>
 						</li>
 						</c:forEach>
-					</ul>
-					<div class="btnWrap">
-						<p onclick="window.location='messageWrite.fl'" class="btn btnY">쪽지쓰기</p>
-						<input type="submit" value="삭제" class="btn btnC"/>
-					</div>
-				</form>
+					</ul>					
 				</c:if>
+				<div class="btnWrap">
+					<p onclick="window.location='messageWrite.fl'" class="btn btnY">쪽지쓰기</p>
+					<input type="submit" value="삭제" class="btn btnC"/>
+				</div>
+				</form>
 			</div>
 			
 			
