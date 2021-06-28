@@ -4,10 +4,12 @@
    
 <body class="noscrb">
 		<div class="wrapAll game">	
+		<!-- 
 			<script>
 				function rp(){
 					window.location.reload();
 				}
+		 -->
 			</script>
 			<jsp:include page="/WEB-INF/views/include/top_game.jsp" />
       		<jsp:include page="/WEB-INF/views/include/left_game.jsp" />
@@ -86,13 +88,15 @@
             function startGame() {
                 var sec = 6;
                 
-                $('.gameIntro').fadeOut(); // 안내 문구 가리기
-                $('.gameBG').fadeOut(); // 안내 문구 가리기
+                $('.gameIntro').fadeOut(1000); // 안내 문구 가리기
+                $('.gameBG').fadeOut(1000); // 안내 문구 가리기
                 scoreInit(); // 점수 초기화
                 
-                setTimeout("setTable()", 800);
                 
-               // setTable(); // 카드 배치
+               // $('#cardTable').next().fadeIn(60000);
+             	setTimeout("setTable()", 1200);
+			//	setTable(); // 카드 배치
+                
                 
                 //카운트 다운
                 function setText(){
@@ -160,6 +164,7 @@
                 }
             });
             
+            //다시하기 버튼
             $(document).on('click', '#reGameBtn', function(){
             	location.href="/filo/game/card.fl";
             });
@@ -236,8 +241,14 @@
                     <div class="gameOut">
 			        	<p class="tit">Game End</p>
 			        	<div class="gameBtnWrap rockRe">
+			        	
+			        	<!-- 원본 
 			        		<button onclick="rp();" class="gameBtn">다시 하기</button>   	
-			        		<button class="gameBtn">메인으로</button>   	
+			        		<button class="gameBtn">메인으로</button>    -->	
+			        	<!-- 임시수정 -->	
+			        		<button class="gameBtn2" id="reGameBtn">다시 하기</button>   	
+			        		<button class="gameBtn2" onclick="location.href = '/filo/game/main.fl'">메인으로</button>   	
+			        		
 			        	</div>
 			        </div>
 	       			<!--gameOut End-->
