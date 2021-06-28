@@ -70,6 +70,7 @@
             <ul class="depth total_depth_mypage">
 	            <p class="tit_depth">MY PAGE</p>
                 <li><a href=""></a><i class="fi fi-rs-home"></i>마이페이지 홈<i class="go fi-rs-caret-right"></i></li>
+                <li><a href="/filo/admin/index.fl"></a><i class="fi fi-rs-home"></i>관리자페이지<i class="go fi-rs-caret-right"></i></li>
             </ul>
         </li>
     </ul>
