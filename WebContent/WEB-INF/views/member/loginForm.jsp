@@ -42,6 +42,7 @@
 		            <input type="hidden" name="past" value="gm"/>
 		            </c:if>
                     <div class="inputOuter">
+                    	<p class="tit">filo 통합 회원 로그인입니다.</p>
                         <input type="text" name="id" autocomplete="off" placeholder="아이디" maxlength="12"/>
                     </div>
                     <div class="inputOuter">
