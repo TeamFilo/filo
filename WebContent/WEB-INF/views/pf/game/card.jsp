@@ -90,7 +90,7 @@
                 $('.gameBG').fadeOut(); // 안내 문구 가리기
                 scoreInit(); // 점수 초기화
                 
-                setTimeout("setTable()", 800);
+                setTimeout("setTable()", 1200);
                 
                // setTable(); // 카드 배치
                 
