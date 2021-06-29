@@ -121,7 +121,7 @@
                 	개개인의 특성과 연락처를<br/>
                 	확인하실 수 있습니다.	                	
                 </p>
-              		<div class="btnDef bounce-to-right btnPop btnPop3" id="goBtn4"><a href="/filo/profile/main.fl">Go</a></div>
+              		<div class="btnDef bounce-to-right btnPop btnPop3" id="goBtn4"><a href="" onclick="alert('준비중입니다!')">Go</a></div>
              </div>
              <!-- titWrap End -->
         </div>

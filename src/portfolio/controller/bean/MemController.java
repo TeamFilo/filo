@@ -162,7 +162,7 @@ public class MemController {
 	
 	//pos 대분류 선택
 	@ResponseBody
-	@RequestMapping("ajaxModiPw.fl")
+	@RequestMapping("modiPw.fl")
 	public String ajaxModiPw(@RequestBody Map<Object,Object> map) throws Exception {
 		String result = "";
 		String id = (String)map.get("id");

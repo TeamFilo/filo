@@ -22,7 +22,7 @@
             </ul>            
             <ul class="depth total_depth_profile">
             	<p class="tit_depth">PROFILE<span></span></p>
-                <li><a href="/filo/profile/main.fl" onclick="alert('준비중입니다!');"></a><i class="fi fi-rs-home"></i>프로필 홈<i class="go fi-rs-caret-right"></i></li>
+                <li><a href="" onclick="alert('준비중입니다!');"></a><i class="fi fi-rs-home"></i>프로필 홈<i class="go fi-rs-caret-right"></i></li>
                 <!-- <li><a href="/filo/profile/team.fl"></a><i class="fi fi-rs-users"></i>팀 프로필<i class="go fi-rs-caret-right"></i></li>
                 <li><a href="/filo/profile/lsm.fl"></a><i class="fi fi-rs-user"></i>이승민 프로필<i class="go fi-rs-caret-right"></i></li>
                 <li><a href="/filo/profile/jbr.fl"></a><i class="fi fi-rs-user"></i>정보름 프로필<i class="go fi-rs-caret-right"></i></li>
@@ -70,7 +70,9 @@
             <ul class="depth total_depth_mypage">
 	            <p class="tit_depth">MY PAGE</p>
                 <li><a href=""></a><i class="fi fi-rs-home"></i>마이페이지 홈<i class="go fi-rs-caret-right"></i></li>
-                <li><a href="/filo/admin/index.fl"></a><i class="fi fi-rs-home"></i>관리자페이지<i class="go fi-rs-caret-right"></i></li>
+                <c:if test="${sessionScope.memId == 'admin'}">
+                <li><a href="/filo/admin/member.fl"></a><i class="fi fi-rs-home"></i>관리자페이지<i class="go fi-rs-caret-right"></i></li>
+                </c:if>
             </ul>
         </li>
     </ul>
