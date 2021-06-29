@@ -201,7 +201,7 @@
                 $('#score').text(score);
             }
  
-            $(document).on('click', '.gameBtn', function(){
+            $(document).on('click', '#gameSBtn', function(){
                 var data = {"gameCate":3};
                 $.ajax({
 					type:"post",
@@ -236,7 +236,7 @@
 		                	*맞으면 10점 획득 틀릴 시 5점 감점*
 		                </p>
 		                <div class="gameBtnWrap card">
-							<button class="gameBtn">START</button>
+							<button id="gameSBtn" class="gameBtn">START</button>
 						</div>
 						<!-- //gameBtnWrap end -->
 		            </div>
@@ -244,14 +244,8 @@
                     <div class="gameOut">
 			        	<p class="tit">Game End</p>
 			        	<div class="gameBtnWrap rockRe">
-			        	
-			        	<!-- 원본 
-			        		<button onclick="rp();" class="gameBtn">다시 하기</button>   	
-			        		<button class="gameBtn">메인으로</button>    -->	
-			        	<!-- 임시수정 -->	
-			        		<button class="gameBtn2" id="reGameBtn">다시 하기</button>   	
-			        		<button class="gameBtn2" onclick="location.href = '/filo/game/main.fl'">메인으로</button>   	
-			        		
+			        		<button class="gameBtn" id="reGameBtn">다시 하기</button>   	
+			        		<button class="gameBtn" onclick="location.href = '/filo/game/main.fl'">메인으로</button>   	
 			        	</div>
 			        </div>
 	       			<!--gameOut End-->

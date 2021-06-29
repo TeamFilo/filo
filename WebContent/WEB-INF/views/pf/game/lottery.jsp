@@ -41,12 +41,26 @@
 			</c:if>
 			
 			<div class="right_game index_game">
-				
-				<div class="gameBtnWrap lottery">
-					<button class="gameBtn" onclick="lottStartBtn();">START</button>
-					<button class="gameBtn" id="oneMore">다시하기</button>
-				</div>
-				<!-- //gameBtnWrap end -->
+				<div class="gameBG"></div>
+				<div class="gameIntro lottery">
+		                <p class="tit">복권 긁기!</p>
+		                <p class="sub">
+		                	복권을 긁어 POINT를 획들하세요.<br/>
+		                	*하루에 10번의 기회가 주어집니다!*
+		                </p>
+		                <div class="gameBtnWrap lottery">
+							<button class="gameBtn" onclick="lottStartBtn();">START</button>
+						</div>
+	            </div>
+	            <!-- gameIntro End -->
+	            <div class="gameOut">
+			        	<p class="tit">Game End</p>
+			        	<div class="gameBtnWrap rockRe">
+			        		<button class="gameBtn" id="oneMore">다시하기</button>   	
+			        		<button class="gameBtn" onclick="location.href = '/filo/game/main.fl'">메인으로</button>   	
+			        	</div>
+		        </div>
+       			<!--gameOut End-->
 			
 				<!-- view -->
 				<div class="gameWrap">
@@ -54,28 +68,24 @@
 						<p id="before"> ${10-lotteryCnt}/10</p>
 						<p id="after">${9-lotteryCnt}/10</p>
 					</div>
-					<div class="gameIntro lottery">
-		                <p class="tit">복권 긁기!</p>
-		                <p class="sub">
-		                	복권을 긁어 POINT를 획들하세요.<br/>
-		                	*하루에 10번의 기회가 주어집니다!*
-		                </p>
-		            </div>
+					<!-- count Wrap End -->
 					<div class="beforeScratch">
 					 	<img src="/filo/resources/images/pf/lotteryNone.png" id="lotteryNone" ondragstart="return false"/><br/> 
 					</div>
 					<div id="demo1" class="scratchpad"></div>
 				</div>	 
+				<!--  gameWrap End -->
 				
 		 		<!-- script -->
 				<script>
 					$('#before').show();
 					$('#after').hide();
-				
-					$('#oneMore').hide();
+					$('.gameOut').hide();
 					$('.scratchpad').hide();
 					
 					function lottStartBtn(){
+						$('.gameIntro').hide();
+						$('.gameBG').hide();
 						var cntPossible = false;
 						var pointPossible = false;
 						
@@ -92,6 +102,7 @@
 									cntPossible = false;
 								}else{
 									cntPossible = true;
+									
 								}
 							}
 						});		
@@ -126,7 +137,6 @@
 								if(cntPossible && pointPossible){
 									$('.beforeScratch').hide();  // 가짜이미지 숨김
 									$('.scratchpad').show();  //찐스크래치나타남
-									$('.gameBtn').hide();//시작버튼 숨김
 									
 									$('#before').hide();
 									$('#after').hide();
@@ -206,8 +216,8 @@
 								
 								$('#before').hide();
 								$('#after').show();
-
-								$('#oneMore').show(); //다시하기버튼 
+								
+								$('.gameOut').show();
 							}
 						}
 					});  //스크래치패드 끝
@@ -218,6 +228,7 @@
 					
 					$(document).on('click', '#oneMore', function(){
 						location.href="/filo/game/lottery.fl?oneMore=1";
+						
 					});
 				</script>
 				

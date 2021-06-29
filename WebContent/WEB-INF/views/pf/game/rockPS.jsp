@@ -21,7 +21,7 @@
 			</c:if>
 			
        		<div class="right_game index_game">
-				<div class="gameBG"></div>
+				 <div class="gameBG"></div>
        			 <div class="gameIntro rock">
 			            <p class="tit">가위바위보 계단 올라가기!</p>
 			            <p class="sub">컴퓨터에게 가위바위보를 이겨 계단을 먼저 올라가면 승리!
