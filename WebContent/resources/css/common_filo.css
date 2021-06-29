@@ -331,7 +331,7 @@ body.noscrb::-webkit-scrollbar {display: none;}
 #totalMenuWrap .menu > li .sub.on {background: #ff3f02; transform: rotate(-4deg);}
 #totalMenuWrap .menu > li .sub span {display: block; width: 15px; height: 15px; background: #fff; transform: rotate(45deg); position: absolute;top: 1px;right: -6px;}
 #totalMenuWrap .menu > li .tit {height: 50px; margin: 5px 0 0; position: relative;}
-#totalMenuWrap .menu > li .tit span {line-height: 50px; color:#61544f; font-size:30px; font-weight: 500; position: absolute;top: 0;left: 0;}
+#totalMenuWrap .menu > li .tit span {line-height: 50px; color:#61544f; font-size:30px; font-weight: 600; position: absolute;top: 0;left: 0;}
 #totalMenuWrap .menu > li .tit span.en {display: block;}
 #totalMenuWrap .menu > li .tit span.ko {display: none;}
 #totalMenuWrap .menu > li:hover .tit span.en {display: none;}

@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" %>
 <div id="adminMenuWrap">
-	<a href="/filo/admin/member.fl"><p class="logo">Travel Maker</p></a>
+	<a href="/filo/index.fl"><p class="logo">filo admin</p></a>
 	<ul class="menu">
         <li><a href="/filo/admin/member.fl">회원관리</a></li>
         <li><a href="/filo/admin/adminGroup.fl">그룹관리</a></li>
@@ -9,7 +9,7 @@
     <!-- <li><a href="/filo/admin/reason.fl">신고사유/문의유형</a></li> -->  
         <li><a href="/filo/admin/rkPos.fl">랭크</a></li>
         <li><a href="/filo/admin/posList.fl">포지션</a></li>
-        <li><a href="/filo/mem/index.fl">메인 홈</a></li>        
+        <li><a href="/filo/index.fl">filo 홈으로</a></li>        
     </ul>
 </div> 
 <script>
