@@ -92,6 +92,9 @@
                 $('.gameBG').fadeOut(1000); // 안내 문구 가리기
                 scoreInit(); // 점수 초기화
                 
+
+                setTimeout("setTable()", 1200);
+
                 
                // $('#cardTable').next().fadeIn(60000);
              	setTimeout("setTable()", 1200);
