@@ -98,7 +98,7 @@ public class MemberController {
 		return  json;
 	}
 	//비밀번호 찾기 Pro
-	//아이디,비밀번호 맞는지 확인
+	//아이디,이메일 맞는지 확인
 	//맞다면 비밀번호 변경 가능
 	@RequestMapping("modiPwForm.fl")
 	public String findPwPro(TmUserDTO mem,Model model) {
