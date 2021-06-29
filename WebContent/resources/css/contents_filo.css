@@ -262,7 +262,7 @@
 .gameBtnWrap .gameBtn {float:left; width:100px; height:50px; margin:0 3px 0 0; border-radius:3px; color:#ffff; background-color: #8542ff; border:none; cursor: pointer;}
 .gameBtnWrap .gameBtn:last-child {margin:0;}
 
-.gameBtnWrap.lottery {left:50%; bottom:25%; transform:translateX(-50%);}
+.gameBtnWrap.lottery {left:50%; bottom:-70px; transform:translateX(-50%);}
 .gameBtnWrap.lottery .gameBtn {color:#8542ff; background:#fff; font-weight:bold;}
 .gameBtnWrap.rock {left:50%; bottom:-70px; transform:translateX(-50%);}
 .gameBtnWrap.rockRe {left:50%; top:140%; transform:translateX(-50%);}
@@ -272,7 +272,7 @@
 /*lottery*/
 .gameWrap .beforScratch img {display:block; position:absolute; top:12%; left:50%; transform:translate(-50%); z-index:2;}
 .gameWrap .countWrap {width:200px; margin: 0 auto; color:#fff; font-size:60px; font-weight:bold; text-align:center; padding:10px 0 20px; }
-.gameIntro.lottery {top:57%;}
+.gameIntro.lottery {top:40%;}
 
 /*up down*/
 .gameWrap .match.updown {color:#fff;}
