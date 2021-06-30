@@ -164,12 +164,12 @@
         <ul class="inner" id="popWrapTop">
             <li>
                 <div class="vodWrap">
-                    <video src="/filo/resources/images/pf/headVideo.mp4" autoplay muted loop></video>
+                    <video src="/filo/resources/images/pf/portfolio.mp4" autoplay muted loop></video>
                     <div class="pCover"></div>
                     <div class="btnPopClose"></div>
                     <div class="txtWrap">
-                        <p class="bTxt">Make your Own Travel</p>
-                        <p class="tit">Travel Maker 1</p>
+                        <p class="bTxt">We are FILO!</p>
+                        <p class="tit">Portfolio</p>
                         <div class="btnDef bounce-to-right">Go</div>
                     </div>
                     <!--txtWrap End-->
@@ -291,12 +291,12 @@
             </li>
             <li>
                 <div class="vodWrap">
-                    <video src="/filo/resources/images/pf/headVideo.mp4" autoplay muted loop></video>
+                    <video src="/filo/resources/images/pf/game.mp4" autoplay muted loop></video>
                     <div class="pCover"></div>
                     <div class="btnPopClose"></div>
                     <div class="txtWrap">
-                        <p class="bTxt">Make your Own Travel</p>
-                        <p class="tit">Travel Maker 2</p>
+                        <p class="bTxt">Earn Point Playing Games</p>
+                        <p class="tit">Game</p>
                         <div class="btnDef bounce-to-right">Go</div>
                     </div>
                     
@@ -419,12 +419,12 @@
             </li>
             <li>
                 <div class="vodWrap">
-                    <video src="/filo/resources/images/pf/headVideo.mp4" autoplay muted loop></video>
+                    <video src="/filo/resources/images/pf/travel.mp4" autoplay muted loop></video>
                     <div class="pCover"></div>
                     <div class="btnPopClose"></div>
                     <div class="txtWrap">
                         <p class="bTxt">Make your Own Travel</p>
-                        <p class="tit">Travel Maker 3</p>
+                        <p class="tit">Travel Maker</p>
                         <div class="btnDef bounce-to-right">Go</div>
                     </div>
                     <!--txtWrap End-->
