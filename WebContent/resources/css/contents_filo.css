@@ -101,8 +101,8 @@
 .popWrap::-webkit-scrollbar {display: none;}
 .popWrap .inner {padding: 100px 0 250px;}
 .popWrap .inner > li {display: none; width: 100%; background: #fff;}
-.popWrap .inner > li .vodWrap {position: relative;}
-.popWrap .inner > li .vodWrap video {width: 100%;}
+.popWrap .inner > li .vodWrap {overflow:hidden; height:690px; position: relative;}
+.popWrap .inner > li .vodWrap video {width: 100%; position:absolute; top:-150px;}
 .popWrap .inner > li .vodWrap .pCover {width: 100%; height:100%; background: rgba(0, 0, 0, 0.6); position: absolute; top: 0; left: 0; z-index: 1;}
 .popWrap .inner > li .vodWrap .btnPopClose {width:51px; height:51px; background: url(/filo/resources/images/pf/xBtn.png)no-repeat center; cursor: pointer; transition:.3s; position: absolute; top: 50px; right: 50px; z-index: 2;}
 .popWrap .inner > li .vodWrap .btnPopClose:hover {width:51px; height:51px; background: url(/filo/resources/images/pf/xBtn_on.png)no-repeat center;}

@@ -200,10 +200,18 @@ body.noscrb::-webkit-scrollbar {display: none;}
   -webkit-transition-timing-function: ease-out;
   transition-timing-function: ease-out;
 }
+/*
 #fullpage .slide.gm .bounce-to-right:before {
 	background: #8542ff;
 }
 #fullpage .slide.tm .bounce-to-right:before {
+	background: #ff0000;
+}
+*/
+.gm .bounce-to-right:before {
+	background: #8542ff;
+}
+.tm .bounce-to-right:before {
 	background: #ff0000;
 }
 .bounce-to-right:hover, .bounce-to-right:focus, .bounce-to-right:active {

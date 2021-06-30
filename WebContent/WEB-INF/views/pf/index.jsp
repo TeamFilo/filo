@@ -289,7 +289,7 @@
                 </div>
                 <!--contWrap End-->
             </li>
-            <li>
+            <li class="gm">
                 <div class="vodWrap">
                     <video src="/filo/resources/images/pf/game.mp4" autoplay muted loop></video>
                     <div class="pCover"></div>
@@ -417,9 +417,9 @@
                 </div>
                 <!--contWrap End-->
             </li>
-            <li>
+            <li class="tm">
                 <div class="vodWrap">
-                    <video src="/filo/resources/images/pf/travel.mp4" autoplay muted loop></video>
+                    <video src="/filo/resources/images/pf/travelM.mp4" autoplay muted loop></video>
                     <div class="pCover"></div>
                     <div class="btnPopClose"></div>
                     <div class="txtWrap">
