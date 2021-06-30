@@ -207,7 +207,7 @@
                             </li>
                             <li>
                                 <p class="ssTit">Language </p>
-                                <p class="bTxt">Html, css, Js</p>
+                                <p class="bTxt">Html5, css3, javascript, jQuery</p>
                             </li>
                             <li>
                                 <p class="ssTit">Contribution </p>
@@ -222,15 +222,15 @@
                         <ul class="techWrap">
                             <li>
                                 <p class="ssTit">Server</p>
-                                <p class="bTxt">Tomcat 8.5</p>
+                                <p class="bTxt">Oracle 19c</p>
                             </li>
                             <li>
                                 <p class="ssTit">Tool</p>
                                 <p class="bTxt">Visual Studio, Eclipse</p>
                             </li>
                             <li>
-                                <p class="ssTit">Language </p>
-                                <p class="bTxt">Html, css, Js</p>
+                                <p class="ssTit">Environment</p>
+                                <p class="bTxt">JAVA, javascript, JSP</p>
                             </li>
                             <li>
                                 <p class="ssTit">Contribution </p>
@@ -244,43 +244,33 @@
                         <p class="sTit">Main Point</p>
                         <ul class="pointWrap">
                             <li>
-                                <p class="bTxt">Chatting</p>
+                                <p class="bTxt">Sign up</p>
                                 <img src="/filo/resources/images/tm/myhomeimg.png">
                                 <p class="deTit">컬러 콘텐츠의 실습 교재를 통해 NCS 컬러시스템<br /> 을 학습하고  콘텐츠의 실습 교재를 통해 NCS </p>
                             </li>
                             <li>
-                                <p class="bTxt">Full Page</p>
+                                <p class="bTxt">Login</p>
                                 <img src="/filo/resources/images/tm/tl4.jpg">
                                 <p class="deTit">컬러 콘텐츠의 실습 교재를 통해 NCS 컬러시스템<br /> 을 학습하고  콘텐츠의 실습 교재를 통해 NCS </p>
                             </li>
                             <li>
-                                <p class="bTxt">Set Interval</p>
+                                <p class="bTxt">Fullpage js</p>
                                 <img src="/filo/resources/images/tm/tl2.jpg">
                                 <p class="deTit">컬러 콘텐츠의 실습 교재를 통해 NCS 컬러시스템<br /> 을 학습하고  콘텐츠의 실습 교재를 통해 NCS </p>
                             </li>
                             <li>
-                                <p class="bTxt">여행 떠나기</p>
+                                <p class="bTxt">Detail pop-up</p>
                                 <img src="/filo/resources/images/tm/pbg5.jpg">
                                 <p class="deTit">컬러 콘텐츠의 실습 교재를 통해 NCS 컬러시스템<br /> 을 학습하고  콘텐츠의 실습 교재를 통해 NCS </p>
                             </li>
                             <li>
-                                <p class="bTxt">여행 떠나기</p>
+                                <p class="bTxt">Right pop-menu</p>
                                 <img src="/filo/resources/images/tm/mout.jpg">
                                 <p class="deTit">컬러 콘텐츠의 실습 교재를 통해 NCS 컬러시스템<br /> 을 학습하고  콘텐츠의 실습 교재를 통해 NCS </p>
                             </li>
                             <li>
-                                <p class="bTxt">여행 떠나기</p>
+                                <p class="bTxt">AOS</p>
                                 <img src="/filo/resources/images/tm/mv1.jpg">
-                                <p class="deTit">컬러 콘텐츠의 실습 교재를 통해 NCS 컬러시스템<br /> 을 학습하고  콘텐츠의 실습 교재를 통해 NCS </p>
-                            </li>
-                            <li>
-                                <p class="bTxt">여행 떠나기</p>
-                                <img src="/filo/resources/images/tm/pbg3.jpg">
-                                <p class="deTit">컬러 콘텐츠의 실습 교재를 통해 NCS 컬러시스템<br /> 을 학습하고  콘텐츠의 실습 교재를 통해 NCS </p>
-                            </li>
-                            <li>
-                                <p class="bTxt">여행 떠나기</p>
-                                <img src="/filo/resources/images/tm/pbg4.jpg">
                                 <p class="deTit">컬러 콘텐츠의 실습 교재를 통해 NCS 컬러시스템<br /> 을 학습하고  콘텐츠의 실습 교재를 통해 NCS </p>
                             </li>
                         </ul>
