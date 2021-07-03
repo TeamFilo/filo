@@ -517,14 +517,18 @@ public class GameController {
 	@RequestMapping("dailyCntCheck.fl")
 	public int dailyCntCheck(@RequestBody String gameCate) {
 		String user = (String)RequestContextHolder.getRequestAttributes().getAttribute("memId", RequestAttributes.SCOPE_SESSION);
+		System.out.println("user"+user);
 		int cate = Integer.parseInt(gameCate);
-		WalletDTO wallet = gameService.getWallet(user);
 		int count = -1;
-		if(cate==0) {	//복권
-			count = wallet.getLotteryCnt();
-		}else if(cate==4) {	//룰렛
-			count = wallet.getRouletteCnt();
+		if(user != null) {
+			WalletDTO wallet = gameService.getWallet(user);
+			if(cate==0) {	//복권
+				count = wallet.getLotteryCnt();
+			}else if(cate==4) {	//룰렛
+				count = wallet.getRouletteCnt();
+			}
 		}
+		
 		return count;
 	}
 	
